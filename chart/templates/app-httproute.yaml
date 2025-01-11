@@ -1,0 +1,16 @@
+{{- if .Values.httpRoute.enabled -}}
+kind: HTTPRoute
+apiVersion: gateway.networking.k8s.io/v1beta1
+metadata:
+  name: {{ include "kompasio-site.fullname" . }}-app
+spec:
+  parentRefs:
+  - namespace: kube-system
+    name: external-http
+  hostnames:
+  - kompasio-app-prod.apps.czetech.net
+  rules:
+  - backendRefs:
+    - name: {{ include "kompasio-site.fullname" . }}-app
+      port: 80
+{{- end }}

@@ -1,0 +1,28 @@
+# Helm chart {{ template "chart.name" . }}
+
+{{ template "chart.deprecationWarning" . }}
+
+{{ template "chart.description" . }}
+
+{{ template "chart.homepageLine" . }}
+
+{{ template "chart.requirementsSection" . }}
+
+{{ template "chart.valuesSection" . }}
+
+{{ template "chart.sourcesSection" . }}
+
+[gateway]: https://gateway-api.sigs.k8s.io/
+[gateway-parentrefs]: https://gateway-api.sigs.k8s.io/references/spec/#gateway.networking.k8s.io/v1beta1.ParentReference
+[gcp-healthcheck]: https://cloud.google.com/kubernetes-engine/docs/how-to/configure-gateway-resources#configure_health_check
+[k8s-affinity]: https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#affinity-and-anti-affinity
+[k8s-imagepull]: https://kubernetes.io/docs/concepts/containers/images/#updating-images
+[k8s-lifecycle]: https://kubernetes.io/docs/concepts/containers/container-lifecycle-hooks/
+[k8s-nodeselector]: https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/
+[k8s-pathtype]: https://kubernetes.io/docs/concepts/services-networking/ingress/#path-types
+[k8s-registry]: https://kubernetes.io/docs/concepts/containers/images/#using-a-private-registry
+[k8s-resources]: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/
+[k8s-servicetype]: https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types
+[k8s-tls]: https://kubernetes.io/docs/concepts/services-networking/ingress/#tls
+[k8s-tolerations]: https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/
+[values.yaml]: values.yaml

@@ -1,0 +1,16 @@
+{{- if .Values.healthCheckPolicy.enabled -}}
+apiVersion: networking.gke.io/v1
+kind: HealthCheckPolicy
+metadata:
+  name: {{ include "kompasio-site.fullname" . }}-app
+spec:
+  default:
+    config:
+      type: HTTP
+      httpHealthCheck:
+        requestPath: /
+  targetRef:
+    group: ""
+    kind: Service
+    name: {{ include "kompasio-site.fullname" . }}-app
+{{- end }}

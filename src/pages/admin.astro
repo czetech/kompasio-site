@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>Content Manager</title>
+  </head>
+</html>
+
+<script>
+  import CMS from 'decap-cms-app';
+  CMS.init({
+    config: {
+      backend: {
+        name: "github",
+        repo: import.meta.env.PUBLIC_REPO,
+        base_url: "https://kompasio-site-prod.apps.czetech.net",
+        open_authoring: true,
+      },
+      collections: [
+        {
+          name: "categories",
+          label: "Categories",
+          label_singular: "Category",
+          description: "Journeys categories",
+          folder: "collections/categories",
+          create: true,
+          fields: [
+            {
+              name: "title",
+              hint: "Category name",
+            },
+            {
+              name: "description",
+              widget: "text",
+              required: false,
+              hint: "Short text under the category name",
+            },
+          ],
+        },
+        {
+          name: "journeys",
+          label: "Journeys",
+          label_singular: "Journey",
+          description: "Life situations",
+          folder: "collections/journeys",
+          create: true,
+          fields: [
+            {
+              name: "title",
+              hint: "Journey name",
+            },
+            {
+              name: "category",
+              widget: "relation",
+              collection: "categories",
+              value_field: "title",
+              search_fields: [
+                "title",
+              ],
+            },
+            {
+              name: "steps",
+              widget: "list",
+              fields: [
+                {
+                  name: "name",
+                  hint: "Step name",
+                },
+                {
+                  name: "body",
+                  widget: "markdown",
+                },
+                {
+                  name: "tasks",
+                  widget: "list",
+                  field: {
+                    name: "task",
+                  },
+                },
+              ],
+            },
+          ],
+        },
+        /*{
+          name: "featured",
+          label: "Featured",
+          description: "Featured categories",
+          folder: "content/featured",
+          create: true,
+          fields: [
+            {
+              name: "category",
+              widget: "relation",
+              collection: "categories",
+              value_field: "name",
+              search_fields: [
+                "name",
+              ],
+              multiple: true,
+            },
+          ],
+        },*/
+        {
+          name: "faq",
+          identifier_field: "question",
+          label: "FAQ",
+          label_singular: "Question",
+          description: "Frequently asked questions",
+          folder: "collections/faq",
+          create: true,
+          fields: [
+            {
+              name: "question",
+            },
+            {
+              name: "answer",
+              widget: "text",
+            },
+          ],
+        },
+      ],
+      media_folder: "media",
+      publish_mode: "editorial_workflow",
+      load_config_file: false,
+    }
+  });
+</script>
