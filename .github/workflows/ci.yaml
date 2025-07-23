@@ -33,4 +33,4 @@ jobs:
         cache-from: type=gha
         cache-to: type=gha,mode=max
         push: true
-        tags: ghcr.io/czetech/kompasio-site:test-1
+        tags: ghcr.io/czetech/kompasio-site:test-2
