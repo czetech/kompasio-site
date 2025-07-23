@@ -1,0 +1,118 @@
+# -- Override the name of the chart
+nameOverride: ""
+
+# -- Override the default fully qualified app name
+fullnameOverride: ""
+
+image:
+
+  # -- Image repository
+  repository: registry.gitlab.com/czetech/kompasio-site/main
+
+  # -- Image tag
+  tag: latest
+
+  # -- [Image pull policy][k8s-imagepull] (imagePullPolicy of a container)
+  pullPolicy: IfNotPresent
+
+# -- [Registry secret][k8s-registry] (imagePullSecrets of a pod, see example in
+# [values.yaml])
+imagePullSecrets:
+- name: registry-credentials
+# Example:
+# - name: registry-secret-name
+
+http:
+
+  # -- _http deployment_ annotations
+  annotations: {}
+
+  # -- Number of _http deployment_ replicas
+  replicas: 1
+
+  # -- _http deployment_ pod annotations
+  podAnnotations: {}
+
+  # -- _http deployment_ pod [affinity][k8s-affinity]
+  affinity: {}
+
+  # -- _http deployment_ container [lifecycle hooks][k8s-lifecycle]
+  lifecycle: {}
+
+  # -- _http deployment_ container [resources][k8s-resources]
+  resources: {}
+
+  # -- _http deployment_ pod [node selector][k8s-nodeselector]
+  nodeSelector: {}
+
+  # -- _http deployment_ pod [tolerations][k8s-tolerations]
+  tolerations: []
+
+  service:
+
+    # -- _http service_ annotations
+    annotations: {}
+
+    # -- (int) _http service_ node port
+    nodePort: null
+
+    # -- _http service_ port
+    port: 80
+
+    # -- _http service_ [type][k8s-servicetype]
+    type: ClusterIP
+
+ingress:
+
+  # -- Ingress record generation
+  enabled: false
+
+  # -- Ingress annotations
+  annotations: {}
+
+  # -- (string) Ingress class name
+  className: null
+
+  # -- List of hosts pointing to an application (list of strings)
+  hosts: []
+
+  # -- Path pointing to an application (the format depends on the Kubernetes
+  # provider)
+  path: /
+
+  # -- Ingress [path type][k8s-pathtype]
+  pathType: Prefix
+
+  # -- Additional arbitrary paths that may need to be added to the ingress
+  # before the main path (see example in [values.yaml])
+  precedingPaths: []
+  # Example for ALB ingress controller that requires a special rule to handle
+  # SSL redirects:
+  # - path: /*
+  #   backend:
+  #     serviceName: ssl-redirect
+  #     servicePort: use-annotation
+
+  # -- Same as precedingPaths but added after the main path
+  succeedingPaths: []
+
+  # -- Ingress [TLS certificates][k8s-tls]
+  tls: []
+
+httpRoute:
+
+  # -- Add route for [Kubernetes Gateway API][gateway]
+  enabled: true
+
+  # -- Route [parents][gateway-parentrefs]
+  parentRefs:
+  - namespace: kube-system
+    name: external-http
+
+  # -- List of hostnames pointing to an application (list of strings)
+  hostnames: []
+
+healthCheckPolicy:
+
+  # -- Add [GCP health check policy][gcp-healthcheck]
+  enabled: true

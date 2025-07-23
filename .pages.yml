@@ -1,0 +1,143 @@
+media:
+- name: images
+  label: Images
+  input: public/images
+  output: /images
+  extensions:
+  - apng
+  - avif
+  - gif
+  - jpeg
+  - jpg
+  - png
+  - svg
+  - webp
+content:
+- name: guides
+  label: Guides
+  type: file
+  path: content/guides.yaml
+  fields:
+  - name: featured
+    label: Featured
+    description: Featured journeys.
+    type: reference
+    options:
+      collection: guides_journeys
+      multiple: true
+      search: title
+      value: "{uuid}"
+      label: "{title}"
+  format: yaml
+- name: guides_categories
+  label: Guides - Categories
+  type: collection
+  path: content/guides_categories
+  fields:
+  - name: title
+    label: Title
+    description: Category name.
+    type: text
+    required: true
+  - name: description
+    label: Description
+    description: Short category description.
+    type: rich-text-lite
+    options:
+      media: false
+  - name: uuid
+    type: uuid
+    hidden: true
+  filename: "{primary}.yaml"
+  view:
+    fields:
+    - title
+    - description
+    sort:
+    - title
+    search:
+    - title
+  format: yaml
+  subfolders: false
+- name: guides_journeys
+  label: Guides - Journeys
+  type: collection
+  path: content/guides_journeys
+  fields:
+  - name: title
+    label: Title
+    description: Journey name.
+    type: text
+    required: true
+  - name: category
+    label: Category
+    description: Journey category.
+    type: reference
+    required: true
+    options:
+      collection: guides_categories
+      search: title
+      value: "{uuid}"
+      label: "{title}"
+  - name: description
+    label: Description
+    description: Short journey description.
+    type: rich-text-lite
+    options:
+      media: false
+  - name: steps
+    label: Steps
+    description: Journey step.
+    type: object
+    list:
+      collapsible:
+        summary: "{index} - {fields.title}"
+    required: true
+    fields:
+    - name: title
+      label: Title
+      description: Step name.
+      type: text
+      required: true
+    - name: body
+      label: Body
+      description: Step body.
+      type: rich-text-full
+      required: true
+      options:
+        media: images
+    - name: tasks
+      label: Tasks
+      description: Step task.
+      type: object
+      list:
+        collapsible:
+          summary: "{fields.body}"
+      fields:
+      - name: body
+        label: Body
+        description: Task body.
+        type: text
+        required: true
+      - name: uuid
+        type: uuid
+        hidden: true
+    - name: uuid
+      type: uuid
+      hidden: true
+  - name: uuid
+    type: uuid
+    hidden: true
+  filename: "{primary}.yaml"
+  view:
+    fields:
+    - title
+    - description
+    sort:
+    - title
+    search:
+    - title
+  format: yaml
+  subfolders: false
+settings:
+  hide: true

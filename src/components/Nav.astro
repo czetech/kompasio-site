@@ -1,0 +1,70 @@
+---
+import Logo from "~/assets/kompasio-logo.svg";
+import NavItem from "./NavItem.tsx";
+import NavToggle from "./NavToggle.tsx";
+
+const navItems = [
+  {
+    title: "Miesta",
+    href: "https://kompasio.sk/app/sk/map/",
+  },
+  {
+    title: "Návody",
+    href: "/navody",
+    test: "^\/(?:navody|zivotne-situacie)(?:\/.*)?$",
+  },
+  {
+    title: "Kontakt",
+    href: "/kontakt",
+  },
+  {
+    title: "Chcem podporiť",
+    href: "https://www.modrahliadka.sk/podpora/",
+  },
+];
+---
+
+<style>
+  nav {
+    background-image:
+      linear-gradient(to top, transparent, var(--color-vibrant-blue)),
+      linear-gradient(
+        to right,
+        var(--color-vibrant-blue-dark),
+        var(--color-vibrant-blue),
+        var(--color-vibrant-blue-light)
+      );
+  }
+</style>
+<nav
+  transition:persist
+  class={`text-shuttle-white relative flex flex-col items-center justify-between
+    px-4 py-2 md:flex-row md:px-8 md:py-3`}
+>
+  <a href="/" class="flex h-8 flex-col justify-center" aria-label="Kompasio">
+    <Logo fill="currentColor" class="h-6 md:h-7" />
+  </a>
+  <NavToggle client:load />
+  <div
+    id="menu-content"
+    class={`grid grid-rows-[0fr] invisible duration-250
+      peer-[.is-open]:grid-rows-[1fr] peer-[.is-open]:visible md:grid-rows-none
+      md:visible peer-[.is-open]:[&>*]:opacity-100`}
+  >
+    <div class="overflow-hidden opacity-0 duration-250 md:opacity-100">
+      <ul class="flex flex-col items-center gap-y-2 py-2 md:flex-row md:py-0">
+        {
+          navItems.map((navItem, index) => (
+            <NavItem
+              client:load
+              pathname={Astro.url.pathname}
+              first={index === 0}
+              last={index === navItems.length - 1}
+              {...navItem}
+            />
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "kompasio-site.fullname" . }}-github
+  annotations:
+    {{- toYaml .Values.http.service.annotations | nindent 4 }}
+  labels:
+    {{- include "kompasio-site.labels" . | nindent 4 }}
+    app.kubernetes.io/component: github
+spec:
+  ports:
+  - name: http
+    nodePort: {{ toYaml .Values.http.service.nodePort }}
+    port: {{ toYaml .Values.http.service.port }}
+    protocol: TCP
+    targetPort: http
+  selector:
+    {{- include "kompasio-site.selectorLabels" . | nindent 4 }}
+    app.kubernetes.io/component: github
+  type: {{ toYaml .Values.http.service.type }}

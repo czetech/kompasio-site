@@ -1,0 +1,17 @@
+apiVersion: v2
+name: kompasio-site
+version: 0.1.0
+kubeVersion: ">= 1.14.0-0"
+description: Example Helm chart.
+type: application
+keywords:
+- example
+- template
+home: https://opensource.cze.tech/example-chart
+sources:
+- https://github.com/czetech/example-chart
+maintainers:
+- name: Petr Czepiec
+  email: petr@czepiec.me
+  url: https://czepiec.me/
+appVersion: 0.1.0

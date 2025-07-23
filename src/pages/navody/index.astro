@@ -1,0 +1,47 @@
+---
+import { getCollection } from "astro:content";
+import path from "pathe";
+
+import Section from "~/components/Section.astro";
+import Item from "~/components/Item.astro";
+import List from "~/components/List.astro";
+import BaseLayout from "~/layouts/BaseLayout.astro";
+import Button from "~/components/Button";
+
+const categories = await getCollection("guidesCategories");
+---
+
+<BaseLayout navBorder={true}>
+  <div class="gradient flex w-full justify-center">
+    <div class="flex w-full max-w-6xl flex-col gap-y-4 p-4 md:gap-y-8 md:p-8">
+      <h1
+        class="text-shuttle-white max-w-6xl text-2xl font-semibold md:text-3xl"
+      >
+        Jednoduché návody ako lorem ipsum dolor sit amet
+      </h1>
+      <form class="bg-shuttle-white flex h-12 rounded-sm">
+        <input
+          type="search"
+          placeholder="Vyhladávanie"
+          class="w-full rounded-l-sm px-4"
+        />
+        <Button class="rounded-l-none">Hľadať</Button>
+      </form>
+    </div>
+  </div>
+  <Section heading="Kategórie">
+    <List columns={true}>
+      {
+        categories.map((category) => (
+          <Item
+            heading={category.data.title}
+            href={path.join("/navody", category.id)}
+            description={category.data.description}
+          />
+        ))
+      }
+    </List>
+  </Section>
+  <Section heading="Vybrané návody" />
+  </Section>
+</BaseLayout>

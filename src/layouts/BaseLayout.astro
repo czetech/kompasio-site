@@ -1,0 +1,49 @@
+---
+import { ClientRouter } from "astro:transitions";
+import "@fontsource/poppins/400.css";
+import "@fontsource/poppins/500.css";
+import "@fontsource/poppins/600.css";
+
+import "~/styles/global.css";
+import Nav from "~/components/Nav.astro";
+
+const { navBorder } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="author" content="Modrá hliadka" />
+    <meta name="application-name" content="Kompasio" />
+    <meta
+      name="description"
+      content="Kompasio je portál pre autistov resp. osoby s poruchou autistického spektra (PAS)."
+    />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="keywords" content="autizmus, pas" />
+
+    {/* theme-color same as var(--color-vibrant-blue) */}
+    <meta name="theme-color" content="hsl(240, 85%, 55%)" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>Kompasio</title>
+    <ClientRouter fallback="none" />
+  </head>
+  <body>
+    <div class="text-space-blue bg-shuttle-white flex min-h-dvh flex-col">
+      <header>
+        <Nav border={navBorder} />
+      </header>
+      <main class="flex grow flex-col items-center">
+        <slot />
+      </main>
+      <footer
+        class={`bg-vibrant-blue-light text-shuttle-white flex h-16 justify-center
+          p-2`}
+      >
+        © Modrá hliadka
+      </footer>
+    </div>
+  </body>
+</html>

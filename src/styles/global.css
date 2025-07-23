@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+@theme {
+  --animate-draw: 1s 0.25s ease-in-out forwards draw;
+  --animate-spring: 2s 0.5s ease-out spring;
+
+  /*
+   * Colors based on the visual identity document: 
+   * https://drive.google.com/file/d/1Gtw-TQNFnPbmCOwDD76a69UnNhRuqngU/view
+   * Colors have been adapted for web use.
+   * For selected colors, lighter and darker variants are also provided.
+   */
+  --color-frontier-gray: hsl(0, 0.7%, 73.1%);
+  --color-red-orange: hsl(18.7, 93%, 57%);
+  --color-red-orange-dark: hsl(18.7, 93%, 54%);
+  --color-red-orange-light: hsl(18.7, 93%, 60%);
+  --color-shuttle-white: hsl(0, 0%, 98%);
+  --color-shuttle-white-dark: hsl(0, 0%, 95%);
+  --color-shuttle-white-light: hsl(0, 0%, 100%);
+  --color-space-blue: hsl(210, 87.9%, 12.9%);
+  --color-vibrant-blue: hsl(240, 85%, 55%);
+  --color-vibrant-blue-dark: hsl(240, 100%, 40%);
+  --color-vibrant-blue-light: hsl(240, 70%, 60%);
+
+  --font-sans: "Poppins", sans-serif;
+
+  @keyframes draw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes spring {
+    25% {
+      transform: translateX(var(--spring-shift)) scaleX(1.01);
+      opacity: 0.95;
+    }
+    45% {
+      transform: translateX(calc(var(--spring-shift) * -0.33)) scaleX(0.995);
+      opacity: 1;
+    }
+    70% {
+      transform: translateX(calc(var(--spring-shift) * 0.15)) scaleX(1.005);
+      opacity: 0.98;
+    }
+    85% {
+      transform: translateX(calc(var(--spring-shift) * -0.05));
+      opacity: 1;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .draw path {
+    stroke-dasharray: var(--path-length);
+    stroke-dashoffset: calc(var(--path-length) * -1);
+  }
+}
+
+.gradient {
+  /* Solid color for browser compatibility (gradient not work on FF 125) */
+  @apply bg-vibrant-blue from-vibrant-blue-dark via-vibrant-blue to-vibrant-blue-light bg-linear-to-r;
+}
+
+.markdown {
+  a {
+    @apply text-vibrant-blue-dark hover:underline;
+  }
+
+  p {
+    @apply mb-2 md:mb-3;
+  }
+
+  h3 {
+    @apply mb-3 text-lg font-semibold md:mb-4 md:text-xl;
+  }
+
+  ul {
+    @apply list-disc list-outside mb-3 md:mb-4 pl-6 md:pl-7;
+  }
+
+  ol {
+    @apply list-decimal list-outside mb-3 md:mb-4 pl-6 md:pl-8;
+  }
+
+  li > p {
+    @apply mb-1;
+  }
+
+  blockquote {
+    @apply border-l-4 border-frontier-gray pl-3 md:pl-4 italic my-4 md:my-6;
+  }
+
+  table {
+    @apply w-full my-4 md:my-6;
+  }
+
+  th, td {
+    @apply border border-frontier-gray p-2 md:p-3 text-left;
+  }
+
+  thead {
+    @apply bg-shuttle-white-dark;
+  }
+
+  th {
+    @apply font-semibold;
+  }
+
+  code {
+    @apply bg-shuttle-white-dark rounded px-2 py-1 text-sm;
+  }
+
+  img {
+    @apply max-w-full h-auto my-4 md:my-6;
+  }
+}

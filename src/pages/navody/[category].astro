@@ -1,0 +1,33 @@
+---
+import { getCollection } from "astro:content";
+
+import BaseLayout from "~/layouts/BaseLayout.astro";
+import Section from "~/components/Section.astro";
+import List from "~/components/List.astro";
+import Item from "~/components/Item.astro";
+
+const { category } = Astro.props;
+
+const journeys = await getCollection("guidesJourneys");
+
+export const getStaticPaths = async () => {
+  return (await getCollection("guidesCategories")).map((category) => ({
+    params: { category: category.id },
+    props: { category },
+  }));
+};
+---
+
+<BaseLayout>
+  <Section heading={category.data.title}>
+    <List>
+      {journeys.map( journey => (
+          <Item
+            heading={journey.data.title}
+            href={`/zivotne-situacie/${journey.id}`}
+            description={journey.data.description}
+          />
+        ))}
+    </List>
+  </Section>
+</BaseLayout>

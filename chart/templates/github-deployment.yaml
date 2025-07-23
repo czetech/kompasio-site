@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "kompasio-site.fullname" . }}-github
+  annotations:
+    {{- toYaml .Values.http.annotations | nindent 4 }}
+  labels:
+    {{- include "kompasio-site.labels" . | nindent 4 }}
+    app.kubernetes.io/component: github
+spec:
+  replicas: {{ toYaml .Values.http.replicas }}
+  selector:
+    matchLabels:
+      {{- include "kompasio-site.selectorLabels" . | nindent 6 }}
+      app.kubernetes.io/component: github
+  template:
+    metadata:
+      annotations:
+        {{- toYaml .Values.http.podAnnotations | nindent 8 }}
+      labels:
+        {{- include "kompasio-site.selectorLabels" . | nindent 8 }}
+        app.kubernetes.io/component: github
+    spec:
+      affinity:
+        {{- toYaml .Values.http.affinity | nindent 8 }}
+      containers:
+      - name: app
+        env:
+        - name: OAUTH_GITHUB_CLIENT_ID
+          value: Ov23liMduQuTI2AccjjC
+        - name: OAUTH_GITHUB_CLIENT_SECRET
+          value: ef845886ec6690b48c98994959b7f8392f6e7213
+        image: petrczepiec/decap-cms-github-backend
+        imagePullPolicy: {{ toYaml .Values.image.pullPolicy }}
+        lifecycle:
+          {{- toYaml .Values.http.lifecycle | nindent 10 }}
+        ports:
+        - name: http
+          containerPort: 80
+        resources:
+          {{- toYaml .Values.http.resources | nindent 10 }}
+      imagePullSecrets:
+        {{- toYaml .Values.imagePullSecrets | nindent 8 }}
+      nodeSelector:
+        {{- toYaml .Values.http.nodeSelector | nindent 8 }}
+      tolerations:
+        {{- toYaml .Values.http.tolerations | nindent 8 }}

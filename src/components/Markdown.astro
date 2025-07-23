@@ -1,0 +1,24 @@
+---
+import { unified } from 'unified';
+import remarkParse from 'remark-parse';
+import remarkRehype from 'remark-rehype';
+import rehypeExternalLinks from 'rehype-external-links';
+import rehypeStringify from 'rehype-stringify';
+import remarkGfm from 'remark-gfm';
+import rehypeRaw from 'rehype-raw';
+
+interface Props {
+  content: string;
+}
+
+const { content } = Astro.props;
+
+const file = await unified().use(remarkParse).use(remarkGfm).use(remarkRehype, { allowDangerousHtml: true }).use(rehypeRaw).use(rehypeExternalLinks, {
+    rel: ["nofollow", 'noopener', 'noreferrer'],
+    target: '_blank'
+  }).use(rehypeStringify).process(content);
+
+const html = String(file);
+---
+
+<div class="markdown" set:html={html}></div>

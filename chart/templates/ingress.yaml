@@ -1,0 +1,46 @@
+{{- if .Values.ingress.enabled -}}
+{{- if semverCompare ">=1.19-0" .Capabilities.KubeVersion.GitVersion -}}
+apiVersion: networking.k8s.io/v1
+{{- else }}
+apiVersion: networking.k8s.io/v1beta1
+{{- end }}
+kind: Ingress
+metadata:
+  name: {{ include "kompasio-site.fullname" . }}
+  annotations:
+    {{- toYaml .Values.ingress.annotations | nindent 4 }}
+  labels:
+    {{- include "kompasio-site.labels" . | nindent 4 }}
+spec:
+  {{- if semverCompare ">=1.18-0" .Capabilities.KubeVersion.GitVersion }}
+  ingressClassName: {{ toYaml .Values.ingress.className }}
+  {{- end }}
+  rules:
+  {{- range .Values.ingress.hosts }}
+  - host: {{ toYaml . }}
+    http:
+      paths:
+      {{- if $.Values.ingress.precedingPaths }}
+      {{- toYaml $.Values.ingress.precedingPaths | nindent 6 }}
+      {{- end }}
+      - backend:
+          {{- if semverCompare ">=1.19-0" $.Capabilities.KubeVersion.GitVersion }}
+          service:
+            name: {{ include "kompasio-site.fullname" $ }}-http
+            port:
+              name: http
+          {{- else }}
+          serviceName: {{ include "kompasio-site.fullname" $ }}-http
+          servicePort: http
+          {{- end }}
+        path: {{ toYaml $.Values.ingress.path }}
+        {{- if semverCompare ">=1.18-0" $.Capabilities.KubeVersion.GitVersion }}
+        pathType: {{ toYaml $.Values.ingress.pathType }}
+        {{- end }}
+      {{- if $.Values.ingress.succeedingPaths }}
+      {{- toYaml $.Values.ingress.succeedingPaths | nindent 6 }}
+      {{- end }}
+  {{- end }}
+  tls:
+    {{- toYaml .Values.ingress.tls | nindent 4 }}
+{{- end }}
