@@ -3,11 +3,13 @@ on:
   push: {}
 permissions:
   contents: read
+  packages: write
 jobs:
   image:
     name: Build image
     permissions:
       contents: read
+      packages: write
     runs-on: ubuntu-24.04
     steps:
     - name: Checkout
