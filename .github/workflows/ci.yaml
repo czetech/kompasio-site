@@ -55,4 +55,4 @@ jobs:
           --app-version "${{ steps.versioning.outputs.version }}"
     - name: Push Helm Chart to GHCR
       run: |
-        helm push "${{ steps.versioning.outputs.chart_name }}-${{ steps.versioning.outputs.version }}.tgz" oci://ghcr.io/czetech/charts
+        helm push "${{ steps.versioning.outputs.chart_name }}-${{ steps.versioning.outputs.version }}.tgz" oci://ghcr.io/czetech/kompasio-site-chart
