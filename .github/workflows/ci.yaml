@@ -21,7 +21,7 @@ jobs:
         CHART_NAME=$(yq e '.name' ./chart/Chart.yaml)
         TIMESTAMP=$(date -u +'%Y%m%d%H%M%S')
         SHA=$(echo "${{ github.sha }}" | cut -c1-7)
-        VERSION="${BASE_VERSION}-${TIMESTAMP}+${SHA}"
+        VERSION="${BASE_VERSION}-${TIMESTAMP}-${SHA}"
         echo "version=${VERSION}" >> $GITHUB_OUTPUT
         echo "chart_name=${CHART_NAME}" >> $GITHUB_OUTPUT
         echo "Generated Version: ${VERSION}"
