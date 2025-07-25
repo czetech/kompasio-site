@@ -1,0 +1,8 @@
+---
+project: kompasio-site
+configVersion: 1
+deploy:
+  helmChartDir: chart
+---
+image: kompasio-site
+dockerfile: Dockerfile
