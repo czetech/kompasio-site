@@ -7,9 +7,9 @@ type: application
 keywords:
 - example
 - template
-home: https://opensource.cze.tech/example-chart
+home: https://opensource.cze.tech/kompasio-site
 sources:
-- https://github.com/czetech/example-chart
+- https://github.com/czetech/kompasio-site
 maintainers:
 - name: Petr Czepiec
   email: petr@czepiec.me
