@@ -25,7 +25,7 @@ spec:
         {{- toYaml .Values.http.affinity | nindent 8 }}
       containers:
       - name: app
-        image: {{ toYaml (print .Values.image.repository ":" .Values.image.tag) }}
+        image: {{- .Values.image.repository }}:{{- if .Values.image.tag }}{{- .Values.image.tag -}}{{- else }}{{- .Chart.AppVersion -}}{{- end -}}
         imagePullPolicy: {{ toYaml .Values.image.pullPolicy }}
         lifecycle:
           {{- toYaml .Values.http.lifecycle | nindent 10 }}

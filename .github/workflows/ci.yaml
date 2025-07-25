@@ -14,6 +14,18 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683  # v4.2.2
+    - name: Generate Version Tag
+      id: versioning
+      run: |
+        BASE_VERSION=$(jq -r '.version' ./package.json)
+        CHART_NAME=$(yq e '.name' ./chart/Chart.yaml)
+        TIMESTAMP=$(date -u +'%Y%m%d%H%M%S')
+        SHA=$(echo "${{ github.sha }}" | cut -c1-7)
+        VERSION="${BASE_VERSION}-${TIMESTAMP}+${SHA}"
+        echo "version=${VERSION}" >> $GITHUB_OUTPUT
+        echo "chart_name=${CHART_NAME}" >> $GITHUB_OUTPUT
+        echo "Generated Version: ${VERSION}"
+        echo "Chart Name: ${CHART_NAME}"
     - name: Log in to GitHub Container Registry
       uses:
         docker/login-action@74a5d142397b4f367a81961eba4e8cd7edddf772  # v3.4.0
@@ -33,4 +45,14 @@ jobs:
         cache-from: type=gha
         cache-to: type=gha,mode=max
         push: true
-        tags: ghcr.io/czetech/kompasio-site:test-2
+        tags: ghcr.io/czetech/kompasio-site:${{ steps.versioning.outputs.version }}
+    - name: Install Helm
+      uses: azure/setup-helm@b9e51907a09c216f16ebe8536097933489208112  # v4.3.0
+    - name: Package Helm Chart
+      run: |
+        helm package ./chart \
+          --version "${{ steps.versioning.outputs.version }}" \
+          --app-version "${{ steps.versioning.outputs.version }}"
+    - name: Push Helm Chart to GHCR
+      run: |
+        helm push "${{ steps.package.outputs.chart_name }}-${{ steps.package.outputs.version }}.tgz" oci://ghcr.io/czetech/charts

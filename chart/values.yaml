@@ -7,10 +7,10 @@ fullnameOverride: ""
 image:
 
   # -- Image repository
-  repository: registry.gitlab.com/czetech/kompasio-site/main
+  repository: ghcr.io/czetech/kompasio-site
 
   # -- Image tag
-  tag: latest
+  tag: ""
 
   # -- [Image pull policy][k8s-imagepull] (imagePullPolicy of a container)
   pullPolicy: IfNotPresent
