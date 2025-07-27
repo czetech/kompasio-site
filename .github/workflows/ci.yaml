@@ -18,14 +18,10 @@ jobs:
       id: versioning
       run: |
         BASE_VERSION=$(jq -r '.version' ./package.json)
-        CHART_NAME=$(yq e '.name' ./chart/Chart.yaml)
         TIMESTAMP=$(date -u +'%Y%m%d%H%M%S')
         SHA=$(echo "${{ github.sha }}" | cut -c1-7)
-        VERSION="${BASE_VERSION}-${TIMESTAMP}-${SHA}"
+        VERSION="${{ github.ref_name }}-${BASE_VERSION}-${TIMESTAMP}-${SHA}"
         echo "version=${VERSION}" >> $GITHUB_OUTPUT
-        echo "chart_name=${CHART_NAME}" >> $GITHUB_OUTPUT
-        echo "Generated Version: ${VERSION}"
-        echo "Chart Name: ${CHART_NAME}"
     - name: Log in to GitHub Container Registry
       uses:
         docker/login-action@74a5d142397b4f367a81961eba4e8cd7edddf772  # v3.4.0
@@ -55,4 +51,4 @@ jobs:
           --app-version "${{ steps.versioning.outputs.version }}"
     - name: Push Helm Chart to GHCR
       run: |
-        helm push "${{ steps.versioning.outputs.chart_name }}-${{ steps.versioning.outputs.version }}.tgz" oci://ghcr.io/czetech/kompasio-site-chart
+        helm push "kompasio-site-${{ steps.versioning.outputs.version }}.tgz" oci://ghcr.io/czetech/charts
