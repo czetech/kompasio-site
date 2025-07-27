@@ -21,7 +21,7 @@ jobs:
         BRANCH_NAME=$(echo "${{ github.ref_name }}" | sed 's/[^a-zA-Z0-9]/-/g')
         TIMESTAMP=$(date -u +'%Y%m%d%H%M%S')
         SHA=$(echo "${{ github.sha }}" | cut -c1-7)
-        VERSION="${BASE_VERSION}-${BRANCH_NAMEgit statu}-${TIMESTAMP}-${SHA}"
+        VERSION="${BASE_VERSION}-${BRANCH_NAME}-${TIMESTAMP}-${SHA}"
         echo "version=${VERSION}" >> $GITHUB_OUTPUT
     - name: Log in to GitHub Container Registry
       uses:
