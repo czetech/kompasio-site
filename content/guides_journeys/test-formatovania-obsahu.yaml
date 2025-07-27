@@ -83,6 +83,9 @@ steps:
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.
       Vestibulum euismod sapien non fermentum tincidunt. Donec at orci metus
       consectetur aliquet.
+
+
+      .
     tasks:
       - body: V úlohe nejde formátovať
         uuid: 4456f9cb-3b93-4f58-995e-8992e7bafd58
