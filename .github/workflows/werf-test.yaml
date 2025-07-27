@@ -34,4 +34,7 @@ jobs:
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
     - uses: werf/actions/install@v2
-    - run: werf bundle publish --repo ghcr.io/czetech/kompasio-site-werf --tag="${{ steps.versioning.outputs.version }}"
+    - run: |
+        echo "$(werf ci-env gitlab --as-file)"
+        source "$(werf ci-env gitlab --as-file)"
+        werf bundle publish --repo ghcr.io/czetech/kompasio-site-werf --tag="${{ steps.versioning.outputs.version }}"
