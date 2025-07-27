@@ -22,7 +22,8 @@ jobs:
         TIMESTAMP=$(date -u +'%Y%m%d%H%M%S')
         SHA=$(echo "${{ github.sha }}" | cut -c1-7)
         VERSION="${BASE_VERSION}-${TIMESTAMP}-${SHA}"
-        echo "version=${VERSION}" >> $GITHUB_OUTPUT
+        #echo "version=${VERSION}" >> $GITHUB_OUTPUT
+        echo "version=0.1.2" >> $GITHUB_OUTPUT
         echo "chart_name=${CHART_NAME}" >> $GITHUB_OUTPUT
         echo "Generated Version: ${VERSION}"
         echo "Chart Name: ${CHART_NAME}"
