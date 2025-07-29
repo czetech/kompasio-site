@@ -85,7 +85,7 @@ steps:
       consectetur aliquet.
 
 
-      test 2
+      test 3
     tasks:
       - body: V úlohe nejde formátovať
         uuid: 4456f9cb-3b93-4f58-995e-8992e7bafd58
