@@ -1,5 +1,5 @@
 title: Preukaz PAS - čo je to a na čo slúži
-category: 3d1a90a9-3de0-4b41-8307-47d0a934445c
+category: 0672d6e8-1771-46a1-9520-42437b3f2026
 description: Základné informácie o preukaze PAS
 steps:
   - title: ČO JE PREUKAZ PAS A AKO VYZERÁ?
@@ -31,7 +31,7 @@ steps:
       prevencie**.
     uuid: b44ae805-28e7-4030-a65d-a83bb8eabe17
   - title: |
-      🎯 AKÝ JE ÚČEL PREUKAZU PAS?
+      AKÝ JE ÚČEL PREUKAZU PAS?
     body: >-
       📄 PAS preukaz ako osobitná forma výpisu zo zdravotnej dokumentácie:  
 
@@ -45,25 +45,23 @@ steps:
       starostlivosti**.
 
 
-      👥 PAS preukaz **uľahčuje držiteľovi komunikáciu** v rôznych životných
+      PAS preukaz **uľahčuje držiteľovi komunikáciu** v rôznych životných
       situáciách:
 
 
-      *   🏛️ komunikácia s úradmi
+      *   🏛️ komunikácia s úradmi,
           
-      *   👮‍♂️ kontakt s príslušníkmi ozbrojených zborov
+      *   👮‍♂️ kontakt s príslušníkmi ozbrojených zborov,
           
-      *   🚌 cestovanie vo verejnej doprave
+      *   🚌 cestovanie vo verejnej doprave,
           
       *   🚑 krízové situácie (havária, úraz, požiar, strata rodiny,
-      neprítomnosť sprevádzajúcej osoby)
+      neprítomnosť sprevádzajúcej osoby),
           
-
-      🏥 akútna ZS alebo hospitalizácia  
-
-      🔬 senzoricky alebo situačne náročné vyšetrenia v rámci plánovanej ZS
+      *   🏥 akútna ZS alebo hospitalizácia (senzoricky alebo situačne náročné
+      vyšetrenia v rámci plánovanej ZS).
     uuid: d93c78b3-04e2-48d9-b8b6-4c462e2cc739
-  - title: 🩺 KTO VYDÁVA PREUKAZ PAS? KDE OŇ ŽIADAŤ?
+  - title: KTO VYDÁVA PREUKAZ PAS? KDE OŇ ŽIADAŤ?
     body: >-
       👨‍⚕️ Preukaz PAS vydáva **poskytovateľ zdravotnej starostlivosti v
       špecializačnom odbore psychiatria alebo detská psychiatria**.
@@ -73,18 +71,18 @@ steps:
       psychiatra alebo detského psychiatra.**
     uuid: 16e8703d-2784-4ea8-801e-efc196f7b46a
   - title: |
-      👤 KTO SI MÔŽE ŽIADAŤ O PREUKAZ PAS?
+      KTO SI MÔŽE ŽIADAŤ O PREUKAZ PAS?
     body: |-
       ✅ Fyzická osoba s potvrdenou diagnózou PAS  
       👨‍👩‍👦 Alebo jej zákonný zástupca
     uuid: 5ceb75d3-cd73-4b92-9540-6970e3717d1e
-  - title: 📇 AKÉ ÚDAJE SA NACHÁDZAJÚ NA PREUKAZE PAS?
+  - title: AKÉ ÚDAJE SA NACHÁDZAJÚ NA PREUKAZE PAS?
     body: >-
       📸 Fotografia a identifikačné údaje držiteľa PAS preukazu:
 
 
       *   🧍 meno, priezvisko, dátum narodenia a bydlisko
-
+          
 
       📞 Kontaktné tel. číslo:
 
@@ -129,54 +127,52 @@ steps:
       🖋️ Pečiatka poskytovateľa a podpis určeného lekára
     uuid: 22039d68-9739-45d7-a0b0-731cbe8d270a
   - title: |
-      ❓ČASTO KLADENÉ OTÁZKY
+      ČASTO KLADENÉ OTÁZKY
     body: >-
       ### **💵 JE PREUKAZ PAS SPOPLATNENÝ?**
 
 
-      🚫 **Nemal by byť.** Podľa **Vestníka MZ SR, čiastka 29-38 zo dňa
-      30.07.2024, Ročník 72, článok IX., bod 2)**:  
+      **Nemal by byť.** Podľa **Vestníka MZ SR, čiastka 29-38 zo dňa 30.07.2024,
+      Ročník 72, článok IX., bod 2)**:  
 
-      🗣️ \_“Vydanie PAS preukazu je bezodplatné.”  
+      “Vydanie PAS preukazu je bezodplatné.”  
 
-      \_👉 Ak sa špecialista pýta poplatok za jeho vydanie, **upozorni ho na
-      tento Vestník**.  
+      Ak sa špecialista pýta poplatok za jeho vydanie, **upozorni ho na tento
+      Vestník**.  
 
-      📎 Celé znenie je dostupné na stránke MZ SR.
-
-
-      ## **❓JE PREUKAZ PAS VEREJNE ZNÁMY?**
+      Celé znenie je dostupné na stránke MZ SR.
 
 
-      📅 **Preukaz PAS bol na Slovensku zavedený v roku 2020**.  
+      ### **❓JE PREUKAZ PAS SPOPLATNENÝ?**
 
-      🧐 Zatiaľ ho **veľa inštitúcií nepozná** – nie je tak rozšírený ako ŤZP
+
+      **Preukaz PAS bol na Slovensku zavedený v roku 2020**.  
+
+      Zatiaľ ho **veľa inštitúcií nepozná** – nie je tak rozšírený ako ŤZP
       preukaz.  
 
-      🧩 Každý držiteľ PAS preukazu však **pomáha šíriť povedomie** tým, že ho
+      Každý držiteľ PAS preukazu však **pomáha šíriť povedomie** tým, že ho
       používa.  
 
-      💡 Tým vzdeláva spoločnosť o jeho **existencii, význame a funkcii**.
+      Tým vzdeláva spoločnosť o jeho **existencii, význame a funkcii**.
 
 
-      ## **🔄 Je  PAS PREUKAZ TO ISTÉ AKO  ŤZP PREUKAZ?**
+      ### **🔄 Je  PAS PREUKAZ TO ISTÉ AKO  ŤZP PREUKAZ?**
 
 
-      🛑 \*\*Nie, PAS preukaz nie je to isté ako ŤZP preukaz.  
-
-      \*\*
+      ### Nie, PAS preukaz nie je to isté ako ŤZP preukaz.  
 
 
       ### **🧠 PAS PREUKAZ:**
 
 
-      📌 Vydáva: \*\*psychiater / detský psychiater  
+      📌Vydáva: psychiater / detský psychiater  
 
-      \*\*🏛️ Jurisdikcia: \*\*Ministerstvo zdravotníctva SR (MZ SR)  
+      🏛️ Jurisdikcia: Ministerstvo zdravotníctva SR (MZ SR)  
 
-      \*\*🎯 Určený \*\*výlučne pre osoby s potvrdenou diagnózou autizmu (PAS)  
+      🎯 Určený: výlučne pre osoby s potvrdenou diagnózou autizmu (PAS)  
 
-      \*\*📋 Slúži na rýchle preukázanie diagnózy v zdravotníckych, krízových,
+      📋 Slúži na rýchle preukázanie diagnózy v zdravotníckych, krízových,
       dopravných a úradných situáciách  
 
       🧭 Pomáha navodiť porozumenie v situáciách, ktoré sú **pre osoby s PAS
@@ -189,17 +185,16 @@ steps:
       ### **♿ ŤZP PREUKAZ:**
 
 
-      📌 Vydáva: \*\*úrad práce, sociálnych vecí a rodiny  
+      📌Vydáva: Úrad práce, sociálnych vecí a rodiny  
 
-      \*\*🏛️ Jurisdikcia: \*\*Ministerstvo práce, sociálnych vecí a rodiny
-      (MPSVaR)  
+      🏛️ Jurisdikcia: Ministerstvo práce, sociálnych vecí a rodiny (MPSVaR)  
 
-      \*\*⚖️ Posudzuje: \*\*posudkový lekár sociálnej poisťovne  
+      ⚖️ Posudzuje: posudkový lekár sociálnej poisťovne  
 
-      \*\*🧾 Podmienka: \*\*funkčné postihnutie >50 %  
+      🧾 Podmienka: funkčné postihnutie >50 %  
 
-      \*\*👥 Platí pre rôzne diagnózy (napr. diabetici s potrebou inzulínu,
-      pohybové poruchy a pod.)  
+      👥 Platí pre rôzne diagnózy (napr. diabetici s potrebou inzulínu, pohybové
+      poruchy a pod.)  
 
       📉 PAS nemusí automaticky znamenať nárok na ŤZP preukaz!
 
