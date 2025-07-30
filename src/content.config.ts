@@ -2,9 +2,16 @@ import { defineCollection } from "astro:content";
 import { glob } from "astro/loaders";
 import path from "pathe";
 
-const yamlExt = ".yaml";
-const yamlGlob = `*${yamlExt}`;
+const yamlExt = "yaml";
+const yamlGlob = ["*", yamlExt].join(".");
 const collectionsBase = "content";
+
+const guides = defineCollection({
+  loader: glob({
+    pattern: ["guides", yamlExt].join("."),
+    base: collectionsBase,
+  }),
+});
 
 const guidesCategories = defineCollection({
   loader: glob({
@@ -20,4 +27,4 @@ const guidesJourneys = defineCollection({
   }),
 });
 
-export const collections = { guidesCategories, guidesJourneys };
+export const collections = { guides, guidesCategories, guidesJourneys };

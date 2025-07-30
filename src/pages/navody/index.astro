@@ -1,5 +1,5 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection, getEntry } from "astro:content";
 import path from "pathe";
 
 import Section from "~/components/Section.astro";
@@ -9,6 +9,10 @@ import BaseLayout from "~/layouts/BaseLayout.astro";
 import Button from "~/components/Button";
 
 const categories = await getCollection("guidesCategories");
+
+const guidesConfig = await getEntry("guides", "guides");
+
+const featuredJourneys = await getCollection("guidesJourneys", ({data}) => guidesConfig.data.featured.includes(data.uuid));
 ---
 
 <BaseLayout navBorder={true}>
@@ -42,6 +46,17 @@ const categories = await getCollection("guidesCategories");
       }
     </List>
   </Section>
-  <Section heading="Vybrané návody" />
+  <Section heading="Vybrané návody">
+    <List>
+      {
+        featuredJourneys.map((journey) => (
+          <Item
+            heading={journey.data.title}
+            href={path.join("/zivotne-situacie", journey.id)}
+            description={journey.data.description}
+          />
+        ))
+      }
+    </List>
   </Section>
 </BaseLayout>
