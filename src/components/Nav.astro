@@ -24,21 +24,9 @@ const navItems = [
 ];
 ---
 
-<style>
-  nav {
-    background-image:
-      linear-gradient(to top, transparent, var(--color-vibrant-blue)),
-      linear-gradient(
-        to right,
-        var(--color-vibrant-blue-dark),
-        var(--color-vibrant-blue),
-        var(--color-vibrant-blue-light)
-      );
-  }
-</style>
 <nav
   transition:persist
-  class={`text-shuttle-white relative flex flex-col items-center justify-between
+  class={`text-vibrant-blue border-b relative flex flex-col items-center justify-between
     px-4 py-2 md:flex-row md:px-8 md:py-3`}
 >
   <a href="/" class="flex h-8 flex-col justify-center" aria-label="Kompasio">

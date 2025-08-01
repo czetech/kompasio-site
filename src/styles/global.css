@@ -18,9 +18,9 @@
   --color-shuttle-white-dark: hsl(0, 0%, 95%);
   --color-shuttle-white-light: hsl(0, 0%, 100%);
   --color-space-blue: hsl(210, 87.9%, 12.9%);
-  --color-vibrant-blue: hsl(240, 85%, 55%);
+  --color-vibrant-blue: hsl(240, 100%, 50%);
   --color-vibrant-blue-dark: hsl(240, 100%, 40%);
-  --color-vibrant-blue-light: hsl(240, 70%, 60%);
+  --color-vibrant-blue-light: hsl(240, 100%, 60%);
 
   --font-sans: "Poppins", sans-serif;
 

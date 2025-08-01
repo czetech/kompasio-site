@@ -42,15 +42,19 @@ const NavToggle: Component = () => {
     >
       <svg
         class={`h-8 [&_path]:duration-250
-          group-[.is-open]:[&_path:nth-child(odd)]:opacity-0`}
+          group-[.is-open]:[&_g_path:nth-child(odd)]:opacity-0`}
         viewBox="0 0 32 32"
         stroke="currentColor"
-        stroke-width="2"
+        fill="none"
+        stroke-width="1"
         aria-hidden="true"
       >
-        <path d="M4 8h24"></path>
-        <path d="M4 16h24"></path>
-        <path d="M4 24h24"></path>
+        <circle cx="16" cy="16" r="15"></circle>
+        <g>
+          <path d="M8 11h16"></path>
+          <path d="M8 16h16"></path>
+          <path d="M8 21h16"></path>
+        </g>
       </svg>
     </button>
   );

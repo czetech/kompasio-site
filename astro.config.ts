@@ -10,10 +10,4 @@ export default defineConfig({
       tailwindcss(),
     ],
   },
-  redirects: {
-    "/": {
-      destination: "/navody",
-      status: 302,
-    },
-  },
 });
