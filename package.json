@@ -10,6 +10,7 @@
   "dependencies": {
     "@astrojs/solid-js": "^5.0.8",
     "@fontsource/poppins": "^5.2.5",
+    "@lucide/astro": "^0.536.0",
     "@solid-primitives/presence": "^0.1.0",
     "@solid-primitives/storage": "^4.3.2",
     "@tailwindcss/vite": "^4.0.15",

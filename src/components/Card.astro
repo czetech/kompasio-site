@@ -1,8 +1,19 @@
 ---
-const { title, description, href } = Astro.props;
+import { ArrowUpRight, ArrowRight } from '@lucide/astro';
+
+const { title, href, color } = Astro.props;
+
+const external = /^https?:\/\//.test(href);
+
+const Arrow = external ? ArrowUpRight : ArrowRight;
+
+const colorMap = {"blue": ["bg-vibrant-blue", "text-shuttle-white"], "orange": ["bg-red-orange", "text-shuttle-white"], "white": ["text-vibrant-blue", "border"]};
 ---
-<a href="/navody">
-  <div class="rounded-2xl bg-vibrant-blue h-32 w-64 text-shuttle-white p-4">
-    <h1 class="text-xl font-semibold">{title}</h1>
+<a href={href}>
+  <div class="rounded-2xl h-32 w-64 p-4" class:list={[colorMap[color]]}>
+    <div class="flex gap-4 justify-between">
+      <h1 class="text-xl font-semibold">{title}</h1>
+      <Arrow class="border rounded-full p-1 h-8 w-8 flex-none" />
+    </div>
   </div>
 </a>
