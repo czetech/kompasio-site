@@ -1,1 +1,13 @@
-cards: []
+cards:
+  - title: Mapka
+    color: orange
+    url: https://kompasio.sk/app/sk/map/
+  - title: Miesta podpory
+    color: blue
+    url: https://kompasio.sk/app/sk/map/zoznam/
+  - title: Návody životných situácií
+    color: white
+    url: /navody
+  - title: Dáta o autizme
+    color: white
+    url: https://kompasio.sk/app/sk/map/data
