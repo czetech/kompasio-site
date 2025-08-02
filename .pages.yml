@@ -20,11 +20,11 @@ content:
   fields:
   - name: cards
     label: Cards
-    description: Landing cards.
+    description: Landing card.
     type: object
     list:
       collapsible:
-        summary: "{index} - {fields.title}"
+        summary: "{fields.title}"
     fields:
     - name: title
       label: Title
