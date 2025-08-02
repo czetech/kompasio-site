@@ -6,6 +6,13 @@ const yamlExt = "yaml";
 const yamlGlob = ["*", yamlExt].join(".");
 const collectionsBase = "content";
 
+const landing = defineCollection({
+  loader: glob({
+    pattern: ["landing", yamlExt].join("."),
+    base: collectionsBase,
+  }),
+});
+
 const guides = defineCollection({
   loader: glob({
     pattern: ["guides", yamlExt].join("."),
@@ -27,4 +34,4 @@ const guidesJourneys = defineCollection({
   }),
 });
 
-export const collections = { guides, guidesCategories, guidesJourneys };
+export const collections = { landing, guides, guidesCategories, guidesJourneys };

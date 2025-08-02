@@ -13,6 +13,43 @@ media:
   - svg
   - webp
 content:
+- name: landing
+  label: Landing
+  type: file
+  path: content/landing.yaml
+  fields:
+  - name: cards
+    label: Cards
+    description: Landing cards.
+    type: object
+    list:
+      collapsible:
+        summary: "{index} - {fields.title}"
+    fields:
+    - name: title
+      label: Title
+      description: Card title.
+      type: text
+      required: true
+    - name: color
+      label: Color
+      description: Card color.
+      type: select
+      required: true
+      options:
+        values:
+        - value: blue
+          label: Blue
+        - value: orange
+          label: Orange
+        - value: white
+          label: White
+    - name: url
+      label: URL
+      description: Card destination URL.
+      type: text
+      required: true
+  format: yaml
 - name: guides
   label: Guides
   type: file
