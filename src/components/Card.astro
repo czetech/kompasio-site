@@ -1,5 +1,6 @@
 ---
-import { ArrowUpRight, ArrowRight } from '@lucide/astro';
+import ArrowUpRight from '@lucide/astro/icons/arrow-up-right';
+import ArrowRight from "@lucide/astro/icons/arrow-right";
 
 const { title, href, color } = Astro.props;
 
@@ -9,7 +10,7 @@ const Arrow = external ? ArrowUpRight : ArrowRight;
 
 const colorMap = {"blue": ["bg-vibrant-blue", "text-shuttle-white"], "orange": ["bg-red-orange", "text-shuttle-white"], "white": ["text-vibrant-blue", "border"]};
 ---
-<a href={href}>
+<a href={href} target={external ? "_blank" : null}>
   <div class="rounded-2xl h-32 w-64 p-4" class:list={[colorMap[color]]}>
     <div class="flex gap-4 justify-between">
       <h1 class="text-xl font-semibold">{title}</h1>

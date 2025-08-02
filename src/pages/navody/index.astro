@@ -9,9 +9,9 @@ import BaseLayout from "~/layouts/BaseLayout.astro";
 
 const categories = await getCollection("guidesCategories");
 
-const guidesConfig = await getEntry("guides", "guides");
+const guides = await getEntry("guides", "guides");
 
-const featuredJourneys = await getCollection("guidesJourneys", ({data}) => guidesConfig.data.featured.includes(data.uuid));
+const featuredJourneys = await getCollection("guidesJourneys", ({data}) => guides.data.featured.includes(data.uuid));
 ---
 
 <BaseLayout>

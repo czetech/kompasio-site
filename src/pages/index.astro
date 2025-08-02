@@ -1,12 +1,16 @@
 ---
+import { getEntry } from "astro:content";
 import BaseLayout from "~/layouts/BaseLayout.astro";
 import Card from "~/components/Card.astro";
+
+const landing = await getEntry("landing", "landing");
 ---
 <BaseLayout>
   <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 m-8">
-    <Card title="Mapka" href="https://kompasio.sk/app/sk/map/" color="orange" />
-    <Card title="Miesta podpory" href="https://kompasio.sk/app/sk/map/zoznam/" color="blue" />
-    <Card title="Návody životných situácií" href="/navody" color="white" />
-    <Card title="Dáta o autizme" href="https://kompasio.sk/app/sk/map/data" color="white" />
+    {
+      landing.data.cards.map((card) => (
+        <Card title={card.title} color={card.color} href={card.url} />
+      ))
+    }
   </div>
 </BaseLayout>
