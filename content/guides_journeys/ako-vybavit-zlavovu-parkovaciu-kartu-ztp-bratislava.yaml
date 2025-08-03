@@ -6,8 +6,14 @@ description: >-
   doteraz (apka PAAS, parkomat, apka HOPIN).
 
 
+  Parkovacia karta sa vzťahuje na vozidlo, resp na EVČ (ŠPZ).
+
+
   Nikam nechoďte. Celý proces vybavíte online.
 steps:
+  - title: Pripravte si dokumenty
+    body: Podľa toho, aký je vzťah medzi židateľom, osobou Z
+    uuid: fb472954-b366-4caa-8393-7b60a7483840
   - title: Registrácia v PAAS cez Parkdots
     body: |-
       Najprv si vytvorte konto v systéme parkdots.
