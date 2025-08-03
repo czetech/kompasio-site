@@ -12,7 +12,41 @@ description: >-
   Nikam nechoďte. Celý proces vybavíte online.
 steps:
   - title: Pripravte si dokumenty
-    body: Podľa toho, aký je vzťah medzi židateľom, osobou Z
+    body: >-
+      Podľa toho, aký je vzťah medzi židateľom, osobou s ŤZP a autom, bude
+      potrebné v procese nahrať dokumenty.
+
+
+      **Parkovací preukaz osoby s ŤZP**  
+
+      Ten budete potrebovať v každom prípade. Ak ho ešte nemáte v mobile,
+      odporúčame si z neho urobiť PDF napr. cez apku LENS. Ak si na to
+      netrúfate, iba si odfoťte **prednú aj zadnú stranu** mobilom, je možné
+      nahrať aj dva súbory.
+
+
+      **Firemné vozidlo na súkromné účely**  
+
+      Ak máte auto od zamestnávateľa, ale od vlastnej firmy, magistrát požaduje
+      zaslanie nasledujúceho potvrdenia zamestnávateľa.
+
+
+      UPOZORNENIE: Vyplnenie takéhoto potvrdenie môže viesť v niektorých
+      prípadoch k daňovým povinnostiam prevyšujúcim potenciálnu zľavu na
+      parkovaní. Poraďte sa so svojím daňovým poradcom.
+
+
+      **Nájomná zmluva**  
+
+      Ak máte auto prenajaté (napr. z požičovne, operatívny leasing, od firmy,
+      od kamaráta, od rodičov, alebo aj od otcovho koňa brata) bude nutné
+      doložiť písomnú nájomnú zmluvu.
+
+
+      Pozor, magistrát poskytuje zľavu iba tým, kotrí majú auto prenajaté "za
+      komerčných podmienok".  
+
+      Vzor nájomnej zmluvy nájdte napr aj TU.
     uuid: fb472954-b366-4caa-8393-7b60a7483840
   - title: Registrácia v PAAS cez Parkdots
     body: |-
