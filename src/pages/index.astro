@@ -4,8 +4,17 @@ import BaseLayout from "~/layouts/BaseLayout.astro";
 import Card from "~/components/Card.astro";
 
 const landing = await getEntry("landing", "landing");
+
 ---
 <BaseLayout>
+  <div class="lg:relative w-full max-w-212 mx-auto flex flex-col gap-y-4">
+    <div class="flex justify-end w-full">
+      <img src={landing.data.heroImage} />
+    </div>
+    <div class="lg:absolute lg:top-0 flex lg:flex-col justify-center h-full lg:w-96 w-full lg:flex-none">
+      <h1 class="text-5xl text-vibrant-blue font-semibold">{landing.data.heroTitle}</h1>
+    </div>
+  </div>
   <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 m-8">
     {
       landing.data.cards.map((card) => (
