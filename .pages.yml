@@ -18,6 +18,18 @@ content:
   type: file
   path: content/landing.yaml
   fields:
+  - name: heroImage
+    label: Hero Image
+    description: Landing hero image.
+    type: image
+    required: true
+    options:
+      media: images
+  - name: heroTitle
+    label: Hero Title
+    description: Landing hero title.
+    type: text
+    required: true
   - name: cards
     label: Cards
     description: Landing card.
