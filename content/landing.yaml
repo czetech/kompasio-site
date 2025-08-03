@@ -5,9 +5,16 @@ cards:
   - title: Miesta podpory
     color: blue
     url: https://kompasio.sk/app/sk/map/zoznam/
+    description: Zariadenia a služby poskytujúce pomoc v oblasti vzdelávania,
+      duševného zdravia a rozvoja, ako sú diagnostika, terapia, CPP, školy či
+      centrá voľného času.
   - title: Návody životných situácií
     color: white
     url: /navody
+    description: Praktické postupy, ako vybaviť ZŤP, predĺžený rodičovský príspevok
+      a ďalšie žiadosti.
   - title: Dáta o autizme
     color: white
     url: https://kompasio.sk/app/sk/map/data
+    description: Všetky dáta zahŕňajú aktuálne informácie o autizme, štatistiky zo
+      zdravotných poisťovní a údaje o žiakoch na školách.
