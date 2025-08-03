@@ -49,6 +49,18 @@ content:
       description: Card destination URL.
       type: text
       required: true
+    - name: image
+      label: Image
+      description: Card image.
+      type: image
+      options:
+        media: images
+    - name: description
+      label: Description
+      description: Short card description.
+      type: rich-text-lite
+      options:
+        media: false
   format: yaml
 - name: guides
   label: Guides
