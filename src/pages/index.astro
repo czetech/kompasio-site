@@ -9,7 +9,7 @@ const landing = await getEntry("landing", "landing");
   <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 m-8">
     {
       landing.data.cards.map((card) => (
-        <Card title={card.title} color={card.color} href={card.url} />
+      <Card title={card.title} color={card.color} href={card.url} description={card.description} />
       ))
     }
   </div>
