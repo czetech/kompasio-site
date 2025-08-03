@@ -1,0 +1,20 @@
+title: Ako vybaviť zľavovú parkovaciu kartu ŽTP - Bratislava
+category: 0672d6e8-1771-46a1-9520-42437b3f2026
+description: Parkovacia karta v systému PAAS pre osobu s ŽTP. Vybavíte online.
+steps:
+  - title: Registrácia v PAAS cez Parkdots
+    body: |-
+      Najprv si vytvorte konto v systéme parkdots.
+
+      Prejdite na stránku [**pakrdots.com**](https://parkdots.com)
+
+      Vpravo hore kliknite na **Môj účet.**
+
+      Ak nemáte účet, zvoľte **Registrácia.**
+
+      Ak už účet máte, **prihláste sa.**
+    tasks:
+      - body: Konto vytvorené
+        uuid: f1e2f7b1-e4b0-4b5b-b8d2-172e561bad4f
+    uuid: f6263913-84b0-4c9f-905e-6d13be58cf36
+uuid: ebbd7580-051f-4e94-b8bd-7ced2ba03970
