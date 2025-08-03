@@ -47,6 +47,9 @@ steps:
       komerčných podmienok".  
 
       Vzor nájomnej zmluvy nájdte napr aj TU.
+    tasks:
+      - body: Doklady pripravené
+        uuid: ca5bd259-8578-46c1-b37c-a47c82719298
     uuid: fb472954-b366-4caa-8393-7b60a7483840
   - title: Registrácia v PAAS cez Parkdots
     body: |-
