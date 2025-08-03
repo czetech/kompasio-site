@@ -2,6 +2,7 @@ cards:
   - title: Mapka
     color: orange
     url: https://kompasio.sk/app/sk/map/
+    image: /images/map.png
   - title: Miesta podpory
     color: blue
     url: https://kompasio.sk/app/sk/map/zoznam/
