@@ -11,9 +11,9 @@
    * For selected colors, lighter and darker variants are also provided.
    */
   --color-frontier-gray: hsl(0, 0.7%, 73.1%);
-  --color-red-orange: hsl(18.7, 93%, 57%);
-  --color-red-orange-dark: hsl(18.7, 93%, 54%);
-  --color-red-orange-light: hsl(18.7, 93%, 60%);
+  --color-red-orange: hsl(19, 100%, 50%);
+  --color-red-orange-dark: hsl(19, 100%, 40%);
+  --color-red-orange-light: hsl(19, 100%, 60%);
   --color-shuttle-white: hsl(0, 0%, 98%);
   --color-shuttle-white-dark: hsl(0, 0%, 95%);
   --color-shuttle-white-light: hsl(0, 0%, 100%);
