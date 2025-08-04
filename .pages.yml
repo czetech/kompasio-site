@@ -212,17 +212,17 @@ content:
     type: text
     required: true
   - name: cardTitle
-    label: Title
+    label: Card title
     description: Contact card title.
     type: text
     required: true
   - name: emailLabel
-    label: Email Label
+    label: Email label
     description: Contact card email label.
     type: text
     required: true
   - name: emailAddress
-    label: Email Address
+    label: Email address
     description: Contact card email address.
     type: text
     required: true

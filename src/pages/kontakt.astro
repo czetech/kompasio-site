@@ -14,12 +14,12 @@ const contact = await getEntry("contact", "contact");
   </div>
   <div class="grow p-8 flex justify-center flex-col items-center">
     <div class="bg-vibrant-blue p-8 max-w-144 w-full rounded-2xl flex flex-col gap-y-16 text-shuttle-white">
-      <h2 class="text-xl md:text-2xl font-semibold">Kontaktujte nás</h2>
-      <div class="flex flex-col gap-y-2">
-        <p>Napíšte nám</p>
-        <a class="border rounded-full flex self-start items-center gap-x-4 pr-4">
+      <h2 class="text-xl md:text-2xl font-semibold">{contact.data.cardTitle}</h2>
+      <div class="flex flex-col gap-y-4">
+        <p>{contact.data.emailLabel}</p>
+        <a href={`mailto:${contact.data.emailAddress}`} class="border rounded-full flex self-start items-center gap-x-4 pr-4">
           <Mail class="p-1.5 w-8 h-8 border rounded-full" />
-          <span>kompas@modrahliadka.sk</span>
+          <span>{contact.data.emailAddress}</span>
         </a>
       </div>
     </div>
