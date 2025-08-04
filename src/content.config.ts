@@ -34,4 +34,11 @@ const guidesJourneys = defineCollection({
   }),
 });
 
-export const collections = { landing, guides, guidesCategories, guidesJourneys };
+const contact = defineCollection({
+  loader: glob({
+    pattern: ["contact", yamlExt].join("."),
+    base: collectionsBase,
+  }),
+});
+
+export const collections = { landing, guides, guidesCategories, guidesJourneys, contact };

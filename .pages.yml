@@ -25,7 +25,7 @@ content:
     required: true
   - name: heroImage
     label: Hero Image
-    description: Landing hero image.
+    description: Landing hero image. Minimal resolution 258x16px.
     type: image
     required: true
     options:
@@ -201,5 +201,30 @@ content:
     - title
   format: yaml
   subfolders: false
+- name: contact
+  label: Contact
+  type: file
+  path: content/contact.yaml
+  fields:
+  - name: title
+    label: Title
+    description: Contact title.
+    type: text
+    required: true
+  - name: cardTitle
+    label: Title
+    description: Contact card title.
+    type: text
+    required: true
+  - name: emailLabel
+    label: Email Label
+    description: Contact card email label.
+    type: text
+    required: true
+  - name: emailAddress
+    label: Email Address
+    description: Contact card email address.
+    type: text
+    required: true
 settings:
   hide: true

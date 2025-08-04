@@ -21,10 +21,6 @@ const { navBorder } = Astro.props;
     />
     <meta name="generator" content={Astro.generator} />
     <meta name="keywords" content="autizmus, pas" />
-
-    {/* theme-color same as var(--color-vibrant-blue) */}
-    <meta name="theme-color" content="hsl(240, 85%, 55%)" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <title>Kompasio</title>
@@ -35,7 +31,7 @@ const { navBorder } = Astro.props;
       <header>
         <Nav border={navBorder} />
       </header>
-      <main class="flex grow flex-col items-center">
+      <main class="grow flex flex-col">
         <slot />
       </main>
       <footer
