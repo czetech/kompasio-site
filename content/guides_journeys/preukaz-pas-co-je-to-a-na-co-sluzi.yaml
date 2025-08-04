@@ -4,19 +4,19 @@ description: Základné informácie o preukaze PAS
 steps:
   - title: Čo je preukaz PAS a načo slúži?
     body: >-
-      📄 Je to **osobitná forma výpisu zo zdravotnej dokumentácie**,
+      📄 Je to osobitná forma výpisu zo zdravotnej dokumentácie,
 
 
-      👤 slúži na **identifikáciu pacienta s poruchou autistického spektra
-      (ďalej len „PAS“)**
+      👤 slúži na identifikáciu pacienta s poruchou autistického spektra (ďalej
+      len „PAS“)
 
 
-      📋 obsahuje údaje potrebné na ďalšie poskytovanie **zdravotnej
-      starostlivosti (ďalej len “ZS”)**,
+      📋 obsahuje údaje potrebné na ďalšie poskytovanie zdravotnej
+      starostlivosti (ďalej len “ZS”),
 
 
-      🎯 slúžiace najmä na **zabezpečenie potrebného individuálneho prístupu k
-      pacientovi**.
+      🎯 slúžiace najmä na zabezpečenie potrebného individuálneho prístupu k
+      pacientovi.
 
 
       Individuálny prístup k pacientovi môže zahŕňať:
@@ -31,22 +31,22 @@ steps:
       *   ℹ️ informovanie pacienta alebo sprevádzajúcej či opatrujúcej osoby o
       potrebných postupoch
           
-      *   ➡️ cieľ: **zabezpečenie optimálnej primárnej až kvartérnej zdravotnej
-      prevencie**.
+      *   ➡️ cieľ: zabezpečenie optimálnej primárnej až kvartérnej zdravotnej
+      prevencie.
     uuid: b44ae805-28e7-4030-a65d-a83bb8eabe17
   - title: "Aký je účel preukazu PAS? "
     body: >-
       📄 PAS preukaz ako osobitná forma výpisu zo zdravotnej dokumentácie:
 
-        
+
       💬 slúži ako **podporný komunikačný nástroj** pri poskytovaní a
       zabezpečovaní potrebnej zdravotnej starostlivosti osobe s PAS.
 
-        
+
       📑 Obsahuje údaje dôležité pre **zabezpečenie individuálneho prístupu a
       rovnosti v prístupe k ZS**,
 
-        
+
       🚨 u osôb s PAS je častejší výskyt **zanedbanej zdravotnej
       starostlivosti**.
 
@@ -81,7 +81,6 @@ steps:
     body: |-
       ✅ Fyzická osoba s potvrdenou diagnózou PAS,
 
-        
       👨‍👩‍👦 Alebo jej zákonný zástupca.
     uuid: 5ceb75d3-cd73-4b92-9540-6970e3717d1e
   - title: "Aké údaje sa nachádzajú na preukaze PAS? "
@@ -145,7 +144,7 @@ steps:
 
       “Vydanie PAS preukazu je bezodplatné.”
 
-        
+
       Ak sa špecialista pýta poplatok za jeho vydanie, **upozorni ho na tento
       Vestník**. Celé znenie je dostupné na stránke [_<u>MZ
       SR.</u>_](https://www.health.gov.sk/?vestniky-mz-sr)
