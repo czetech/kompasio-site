@@ -1,0 +1,14 @@
+---
+import { getEntry } from "astro:content";
+import BaseLayout from "~/layouts/BaseLayout.astro";
+import ArrowDown from "@lucide/astro/icons/arrow-down";
+
+const vpp = await getEntry("vpp", "vpp");
+---
+
+<BaseLayout>
+  <div class="flex gap-x-4 items-center p-8 justify-center">
+    <ArrowDown class="p-1 border rounded-full w-8 h-8" />
+    <h1 class="font-semibold text-2xl md:text-3xl">{vpp.data.title}</h1>
+  </div>
+</BaseLayout>
