@@ -15,7 +15,7 @@ const landing = await getEntry("landing", "landing");
       <h1 class="text-5xl text-vibrant-blue font-semibold">{landing.data.heroTitle}</h1>
     </div>
   </div>
-  <div class="grid gap-8 sm:grid-cols-2 md:grid-cols-[repeat(2,16rem)] lg:grid-cols-[repeat(3,16rem)] xl:grid-cols-[repeat(4,16rem)] 2xl:grid-cols-[repeat(5,16rem)] p-8 justify-center.">
+  <div class="grid gap-8 sm:grid-cols-2 md:grid-cols-[repeat(2,16rem)] lg:grid-cols-[repeat(3,16rem)] xl:grid-cols-[repeat(4,16rem)] 2xl:grid-cols-[repeat(5,16rem)] p-8 justify-center">
     {
       landing.data.cards.map((card) => (
       <Card title={card.title} color={card.color} href={card.url} image={card.image} description={card.description} />
