@@ -4,6 +4,8 @@ nameOverride: ""
 # -- Override the default fully qualified app name
 fullnameOverride: ""
 
+databaseUrl: mysql://user:password@example.com
+
 image:
 
   # -- Image repository
