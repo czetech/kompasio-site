@@ -5,7 +5,5 @@ const { path } = Astro.props;
 
 const images = import.meta.glob('/src/assets/images/*.{jpeg,jpg,png,gif}');
 
-console.log(images);
-console.log(path)
 ---
 <Image src={images[`/src/assets${path}`]()} alt="" layout="constrained" />
