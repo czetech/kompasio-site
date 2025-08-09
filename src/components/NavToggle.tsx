@@ -1,5 +1,6 @@
 import type { Component } from "solid-js";
 import { createSignal, onMount, createEffect, onCleanup } from "solid-js";
+import Circle from "./Circle.tsx"
 
 const NavToggle: Component = () => {
   let buttonRef;
@@ -40,22 +41,21 @@ const NavToggle: Component = () => {
       onClick={handleClick}
       class="absolute right-3 md:hidden"
     >
+      <Circle>
       <svg
         class={`h-8 [&_path]:duration-250
-          group-[.is-open]:[&_g_path:nth-child(odd)]:opacity-0`}
-        viewBox="0 0 32 32"
+          group-[.is-open]:[&_path:nth-child(odd)]:opacity-0`}
+        viewBox="0 0 24 24"
         stroke="currentColor"
         fill="none"
-        stroke-width="1"
+        stroke-width="2"
         aria-hidden="true"
       >
-        <circle cx="16" cy="16" r="15"></circle>
-        <g>
-          <path d="M8 11h16"></path>
-          <path d="M8 16h16"></path>
-          <path d="M8 21h16"></path>
-        </g>
+        <path d="M3 6h18"></path>
+        <path d="M3 12h18"></path>
+        <path d="M3 18h18"></path>
       </svg>
+      </Circle>
     </button>
   );
 };

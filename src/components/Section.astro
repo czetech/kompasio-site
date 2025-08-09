@@ -1,8 +1,12 @@
 ---
+import CircleArrow from "~/components/CircleArrow.tsx";
 const { heading } = Astro.props;
 ---
 
 <section class="w-full max-w-6xl p-4 md:p-8">
-  <h2 class="mb-4 text-2xl font-semibold md:mb-8 md:text-3xl">{heading}</h2>
+  <div class="flex justify-center items-center gap-x-4 mb-4 md:mb-8">
+    <CircleArrow direction="180" />
+    <h2 class="text-2xl font-semibold md:text-3xl">{heading}</h2>
+  </div>
   <slot />
 </section>

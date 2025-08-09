@@ -28,7 +28,7 @@ const NavItem: Component = (props) => {
   });
 
   return (
-    <li class={"border-current/50"} classList={{ "md:border-r": !props.last }}>
+    <li class={"border-current/50"} classList={{ "md:border-r-2": !props.last }}>
       <a
         href={props.href}
         target={external ? "_blank" : null}

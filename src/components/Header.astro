@@ -23,10 +23,9 @@ const navItems = [
   },
 ];
 ---
-
+<header transition:persist>
 <nav
-  transition:persist
-  class={`text-vibrant-blue border-b relative flex flex-col items-center justify-between
+  class={`text-vibrant-blue border-b-2 relative flex flex-col items-center justify-between
     px-4 py-2 md:flex-row md:px-8 md:py-3`}
 >
   <a href="/" class="flex h-8 flex-col justify-center" aria-label="Kompasio">
@@ -56,3 +55,4 @@ const navItems = [
     </div>
   </div>
 </nav>
+</header>

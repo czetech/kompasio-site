@@ -5,9 +5,8 @@ import "@fontsource/poppins/500.css";
 import "@fontsource/poppins/600.css";
 
 import "~/styles/global.css";
-import Nav from "~/components/Nav.astro";
-
-const { navBorder } = Astro.props;
+import Header from "~/components/Header.astro";
+import Footer from "~/components/Footer.astro"
 ---
 
 <html lang="en">
@@ -26,22 +25,11 @@ const { navBorder } = Astro.props;
     <title>Kompasio</title>
     <ClientRouter fallback="none" />
   </head>
-  <body>
-    <div class="text-space-blue bg-shuttle-white flex min-h-dvh flex-col">
-      <header>
-        <Nav border={navBorder} />
-      </header>
-      <main class="grow flex flex-col">
-        <slot />
-      </main>
-      <footer
-        class={`bg-frontier-gray text-shuttle-white flex h-16 justify-center
-          p-2 gap-4`}
-      >
-        <span>© Modrá hliadka</span>
-        <a href="/vpp">VPP</a>
-        <a href="/gdpr">GDPR</a>
-      </footer>
-    </div>
+  <body class="text-space-blue bg-shuttle-white flex min-h-dvh flex-col">
+    <Header />
+    <main class="grow flex flex-col items-center">
+      <slot />
+    </main>
+    <Footer />
   </body>
 </html>

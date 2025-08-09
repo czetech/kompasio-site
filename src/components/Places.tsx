@@ -1,6 +1,6 @@
 import type { Component } from 'solid-js';
 import { createResource, createSignal, Show, For, createMemo } from 'solid-js';
-import Select from './Select';
+import Select from './Select.tsx';
 
 const fetchLocations = async () => {
   const response = await fetch('/api/locations.json');

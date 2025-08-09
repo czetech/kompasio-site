@@ -3,13 +3,16 @@ import { getEntry } from "astro:content";
 import BaseLayout from "~/layouts/BaseLayout.astro";
 import ArrowDown from "@lucide/astro/icons/arrow-down";
 import Mail from "@lucide/astro/icons/mail";
+import Circle from "~/components/Circle.tsx"
 
 const contact = await getEntry("contact", "contact");
 ---
 
 <BaseLayout>
   <div class="flex gap-x-4 items-center p-8 justify-center">
-    <ArrowDown class="p-1 border rounded-full w-8 h-8" />
+    <Circle>
+      <ArrowDown />
+    </Circle>
     <h1 class="font-semibold text-2xl md:text-3xl">{contact.data.title}</h1>
   </div>
   <div class="grow p-8 flex justify-center flex-col items-center">
