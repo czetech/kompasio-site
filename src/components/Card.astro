@@ -2,6 +2,7 @@
 import ArrowUpRight from '@lucide/astro/icons/arrow-up-right';
 import ArrowRight from "@lucide/astro/icons/arrow-right";
 import Markdown from "~/components/Markdown.astro";
+import ContentImage from "~/components/ContentImage.astro";
 
 const { title, href, color, image, description } = Astro.props;
 
@@ -15,7 +16,7 @@ const colorMap = {"blue": ["bg-vibrant-blue", "text-shuttle-white"], "orange": [
   <div class="rounded-2xl p-6 grid gap-4 grid-cols-[1fr_auto]" class:list={[colorMap[color]]}>
     <h3 class="text-xl md:text-2xl font-semibold">{title}</h3>
     <Arrow class="border-2 rounded-full p-1 w-8 h-8" />
-    {image && <img src={image} class="rounded-lg col-span-2 mt-2" />}
+    {image && <ContentImage path={image} class="rounded-lg col-span-2 mt-2" />}
     {description && <div class="text-sm col-span-2">
       <Markdown content={description} />
     </div>}
