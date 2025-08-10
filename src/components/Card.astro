@@ -12,13 +12,15 @@ const Arrow = external ? ArrowUpRight : ArrowRight;
 
 const colorMap = {"blue": ["bg-vibrant-blue", "text-shuttle-white"], "orange": ["bg-red-orange", "text-shuttle-white"], "white": ["text-vibrant-blue", "border-2"]};
 ---
-<a href={href} target={external ? "_blank" : null}>
-  <div class="rounded-2xl p-6 grid gap-4 grid-cols-[1fr_auto]" class:list={[colorMap[color]]}>
-    <h3 class="text-xl md:text-2xl font-semibold">{title}</h3>
-    <Arrow class="border-2 rounded-full p-1 w-8 h-8" />
-    {image && <ContentImage path={image} class="rounded-lg col-span-2 mt-2" />}
-    {description && <div class="text-sm col-span-2">
-      <Markdown content={description} />
-    </div>}
-  </div>
-</a>
+<div class="rounded-2xl" class:list={[colorMap[color]]}>
+  <a href={href} target={external ? "_blank" : null}>
+    <div class="p-6 grid gap-4 grid-cols-[1fr_auto]">
+      <h2 class="text-xl md:text-2xl font-semibold">{title}</h2>
+      <Arrow class="border-2 rounded-full p-1 w-8 h-8" />
+      {image && <ContentImage path={image} class="rounded-lg col-span-2 mt-2" />}
+      {description && <div class="text-sm col-span-2">
+        <Markdown content={description} />
+      </div>}
+    </div>
+  </a>
+</div>
