@@ -1,9 +1,8 @@
 ---
 import { Image } from 'astro:assets';
 
-const { path } = Astro.props;
+const { path, class: className } = Astro.props;
 
 const images = import.meta.glob('/src/assets/images/*.{jpeg,jpg,png,gif}');
-
 ---
-<Image src={images[`/src/assets${path}`]()} alt="" layout="constrained" />
+<Image src={images[`/src/assets${path}`]()} alt="" layout="constrained" class={className} />
