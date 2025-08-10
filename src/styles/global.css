@@ -10,14 +10,16 @@
    * Colors have been adapted for web use.
    * For selected colors, lighter and darker variants are also provided.
    */
-  --color-frontier-gray: hsl(0, 0.7%, 73.1%);
-  --color-red-orange: hsl(19, 100%, 50%);
+  /*--color-frontier-gray: hsl(0, 1%, 73%);*/
+  --color-frontier-gray: hsl(0, 1%, 46%);
+  /*--color-red-orange: hsl(19, 100%, 50%);*/
+  --color-red-orange: hsl(19, 100%, 41%);
   --color-red-orange-dark: hsl(19, 100%, 40%);
   --color-red-orange-light: hsl(19, 100%, 60%);
-  --color-shuttle-white: hsl(0, 0%, 98%);
+  --color-shuttle-white: hsl(0, 0%, 100%);
   --color-shuttle-white-dark: hsl(0, 0%, 95%);
   --color-shuttle-white-light: hsl(0, 0%, 100%);
-  --color-space-blue: hsl(210, 87.9%, 12.9%);
+  --color-space-blue: hsl(210, 88%, 13%);
   --color-vibrant-blue: hsl(240, 100%, 50%);
   --color-vibrant-blue-dark: hsl(240, 100%, 40%);
   --color-vibrant-blue-light: hsl(240, 100%, 60%);

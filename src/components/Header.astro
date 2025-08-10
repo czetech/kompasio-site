@@ -24,6 +24,7 @@ const navItems = [
 ];
 ---
 <header transition:persist>
+<p class="text-3xl">Your contrast preference is: <span id="contrast-preference"></span></p>
 <nav
   class={`text-vibrant-blue border-b-2 relative flex flex-col items-center justify-between
     px-4 py-2 md:flex-row md:px-8 md:py-3`}
@@ -56,3 +57,17 @@ const navItems = [
   </div>
 </nav>
 </header>
+
+<script>
+const contrastPreference = document.getElementById('contrast-preference');
+
+if (window.matchMedia('(prefers-contrast: more)').matches) {
+  contrastPreference.textContent = 'more';
+} else if (window.matchMedia('(prefers-contrast: less)').matches) {
+  contrastPreference.textContent = 'less';
+} else if (window.matchMedia('(prefers-contrast: custom)').matches) {
+  contrastPreference.textContent = 'custom';
+} else {
+  contrastPreference.textContent = 'no-preference';
+}
+</script>
