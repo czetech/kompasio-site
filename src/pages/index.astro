@@ -16,7 +16,7 @@ const landing = await getEntry("landing", "landing");
     </div>
   </div>
   <div class="p-8 flex justify-center w-full">
-    <div class="masonry relative w-full max-w-(--masonry-3col-width) xl:max-w-(--masonry-4col-width) 2xl:max-w-(--masonry-5col-width)">
+    <div class="masonry relative w-full max-w-(--masonry-3col-width) xl:max-w-(--masonry-4col-width) 2xl:max-w-(--masonry-5col-width) opacity-0 duration-100">
       {
         landing.data.cards.map((card) => (
         <div class="absolute">
@@ -35,20 +35,7 @@ const landing = await getEntry("landing", "landing");
   const masonryGap = 32;
   const masonryWidth = (columns) => masonryCardWidth * columns + masonryGap * (columns - 1);
 
-  document.querySelectorAll('.masonry').forEach(container => {
-    container.style.setProperty('--masonry-3col-width', `${masonryWidth(3)}px`);
-    container.style.setProperty('--masonry-4col-width', `${masonryWidth(4)}px`);
-    container.style.setProperty('--masonry-5col-width', `${masonryWidth(5)}px`);
-    new MiniMasonry({
-      baseWidth: masonryCardWidth,
-      container: container,
-      gutter: masonryGap,
-      surroundingGutter: false,
-      ultimateGutter: masonryGap,
-    });
-  });
-
-  document.addEventListener("astro:page-load", () => {
+  const masonry = () => {
     document.querySelectorAll('.masonry').forEach(container => {
       container.style.setProperty('--masonry-3col-width', `${masonryWidth(3)}px`);
       container.style.setProperty('--masonry-4col-width', `${masonryWidth(4)}px`);
@@ -60,6 +47,13 @@ const landing = await getEntry("landing", "landing");
         surroundingGutter: false,
         ultimateGutter: masonryGap,
       });
+      container.classList.remove("opacity-0");
     });
+  };
+
+  masonry();
+
+  document.addEventListener("astro:page-load", () => {
+    masonry();
   });
 </script>
