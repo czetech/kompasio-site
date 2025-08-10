@@ -35,6 +35,19 @@ const landing = await getEntry("landing", "landing");
   const masonryGap = 32;
   const masonryWidth = (columns) => masonryCardWidth * columns + masonryGap * (columns - 1);
 
+  document.querySelectorAll('.masonry').forEach(container => {
+    container.style.setProperty('--masonry-3col-width', `${masonryWidth(3)}px`);
+    container.style.setProperty('--masonry-4col-width', `${masonryWidth(4)}px`);
+    container.style.setProperty('--masonry-5col-width', `${masonryWidth(5)}px`);
+    new MiniMasonry({
+      baseWidth: masonryCardWidth,
+      container: container,
+      gutter: masonryGap,
+      surroundingGutter: false,
+      ultimateGutter: masonryGap,
+    });
+  });
+
   document.addEventListener("astro:page-load", () => {
     document.querySelectorAll('.masonry').forEach(container => {
       container.style.setProperty('--masonry-3col-width', `${masonryWidth(3)}px`);
