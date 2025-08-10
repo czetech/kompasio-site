@@ -33,27 +33,18 @@ const landing = await getEntry("landing", "landing");
 
   const masonryCardWidth = 256;
   const masonryGap = 32;
-  const masonryWidth = (columns) => masonryCardWidth * columns + masonryGap * (columns - 1);
+  const masonryWidthPx = (columns) => `${masonryCardWidth * columns + masonryGap * (columns - 1)}px`;
 
-  const masonry = () => {
-    document.querySelectorAll('.masonry').forEach(container => {
-      container.style.setProperty('--masonry-3col-width', `${masonryWidth(3)}px`);
-      container.style.setProperty('--masonry-4col-width', `${masonryWidth(4)}px`);
-      container.style.setProperty('--masonry-5col-width', `${masonryWidth(5)}px`);
-      new MiniMasonry({
-        baseWidth: masonryCardWidth,
-        container: container,
-        gutter: masonryGap,
-        surroundingGutter: false,
-        ultimateGutter: masonryGap,
-      });
-      container.classList.remove("opacity-0");
-    });
-  };
-
-  masonry();
-
-  document.addEventListener("astro:page-load", () => {
-    masonry();
+  const masonryElement = document.querySelector('.masonry');
+  masonryElement.style.setProperty('--masonry-3col-width', masonryWidthPx(3));
+  masonryElement.style.setProperty('--masonry-4col-width', masonryWidthPx(4));
+  masonryElement.style.setProperty('--masonry-5col-width', masonryWidthPx(5));
+  new MiniMasonry({
+    baseWidth: masonryCardWidth,
+    container: masonryElement,
+    gutter: masonryGap,
+    surroundingGutter: false,
+    ultimateGutter: masonryGap,
   });
+  masonryElement.classList.remove("opacity-0");
 </script>
