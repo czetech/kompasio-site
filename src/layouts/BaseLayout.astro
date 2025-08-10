@@ -25,11 +25,13 @@ import Footer from "~/components/Footer.astro"
     <title>Kompasio</title>
     <ClientRouter fallback="none" />
   </head>
-  <body class="text-space-blue bg-shuttle-white flex min-h-dvh flex-col">
-    <Header />
-    <main class="grow flex flex-col items-center">
-      <slot />
-    </main>
+  <body class="text-space-blue bg-shuttle-white flex flex-col">
+    <div class="grow flex flex-col min-h-dvh">
+      <Header />
+      <main class="grow flex flex-col items-center">
+        <slot />
+      </main>
+    </div>
     <Footer />
   </body>
 </html>
