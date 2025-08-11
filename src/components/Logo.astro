@@ -1,0 +1,8 @@
+---
+import SvgLogo from "~/assets/kompasio-logo.svg";
+
+const { class: className } = Astro.props;
+---
+<a href="/" class={className} aria-label="Kompasio">
+  <SvgLogo fill="currentColor" class="h-full w-full" />
+</a>

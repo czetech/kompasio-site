@@ -1,11 +1,65 @@
 ---
+import Logo from "~/components/Logo.astro";
+import Circle from "~/components/Circle.tsx";
+import Plus from "lucide-solid/icons/plus";
+import HeartHandshake from "lucide-solid/icons/heart-handshake";
+import ArrowRight from "lucide-solid/icons/arrow-right";
 
+const navItems = [
+  {
+    title: "Miesta",
+    href: "/miesta",
+  },
+  {
+    title: "Návody",
+    href: "/navody",
+    test: "^\/(?:navody|zivotne-situacie)(?:\/.*)?$",
+  },
+  {
+    title: "Kontakt",
+    href: "/kontakt",
+  },
+  {
+    title: "Chcem podporiť",
+    href: "https://www.modrahliadka.sk/podpora/",
+  },
+];
 ---
-<footer
-  class={`bg-frontier-gray text-shuttle-white flex h-16 justify-center
-    p-2 gap-4`}
->
-  <span>© Modrá hliadka</span>
-  <a href="/vpp">VPP</a>
-  <a href="/gdpr">GDPR</a>
+<footer class={`bg-frontier-gray text-shuttle-white`}>
+  <div class="flex justify-between">
+    <Logo />
+    <div>
+      <a class="rounded-full bg-shuttle-white text-vibrant-blue flex items-center border-y-2 border-r-2">
+        <Circle>
+          <Plus />
+        </Circle>
+        <div class="px-4">Pridaj nové miesto</div>
+      </a>
+      <a class="rounded-full bg-shuttle-white text-vibrant-blue flex items-center border-y-2 border-r-2">
+        <Circle>
+          <ArrowRight />
+        </Circle>
+        <div class="px-4">Ako to funguje?</div>
+      </a>
+      <a class="rounded-full bg-shuttle-white text-vibrant-blue flex items-center border-y-2 border-r-2">
+        <Circle>
+          <HeartHandshake />
+        </Circle>
+        <div class="px-4">Chcem podporiť</div>
+      </a>
+    </div>
+  </div>
+  <hr class="border-t-2" />
+  <div class="flex flex-col">
+    {
+      navItems.map((navItem) => (
+      <a href={navItem.href}>{navItem.title}</a>
+      ))
+    }
+    <a href="/vpp">Podmienky používania</a>
+    <a href="/gdpr">GDPR</a>
+    <span>Copiright © 2024 Modrá hliadka</span>
+  </div>
+  <p>Projekt je spolufinancovanaý Európskou úniou v programe Impact Lab Nadácie Pontis.</p>
+  <p>Spolufinancované Európskou úniou v rámci projektu č.101091634 – Impact Acceleration of Slovak CSOs. Vyjadrené názory a stanoviská sú názormi a stanoviskami autora/-ov a nemusia nevyhnutne odrážať názory Európskej únie alebo Európskej výkonnej agentúry pre vzdelávanie a kultúru (EACEA). Európska únia ani Európska výkonná agentúra pre vzdelávanie a kultúru za ne nezodpovedá.</p>
 </footer>

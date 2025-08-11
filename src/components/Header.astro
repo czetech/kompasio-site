@@ -1,5 +1,5 @@
 ---
-import Logo from "~/assets/kompasio-logo.svg";
+import Logo from "~/components/Logo.astro";
 import NavItem from "./NavItem.tsx";
 import NavToggle from "./NavToggle.tsx";
 
@@ -28,9 +28,7 @@ const navItems = [
   class={`text-vibrant-blue border-b-2 relative flex flex-col items-center justify-between
     px-4 py-2 md:flex-row md:px-8 md:py-3`}
 >
-  <a href="/" class="flex h-8 flex-col justify-center" aria-label="Kompasio">
-    <Logo fill="currentColor" class="h-6 md:h-7" />
-  </a>
+  <Logo class="h-6 md:h-7" />
   <NavToggle client:load />
   <div
     id="menu-content"
