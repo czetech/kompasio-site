@@ -17,7 +17,7 @@ const contact = await getEntry("contact", "contact");
   </div>
   <div class="grow p-8 flex justify-center flex-col items-center w-full">
     <Card title={contact.data.cardTitle} color="blue" class="max-w-128 w-full">
-      <p class="mb-3 mt-16">{contact.data.emailLabel}</p>
+      <p class="mb-4 mt-16">{contact.data.emailLabel}</p>
       <a href={`mailto:${contact.data.emailAddress}`} class="border-y-2 border-r-2 rounded-full flex self-start items-center gap-x-4 pr-4">
         <Circle>
           <Mail />
