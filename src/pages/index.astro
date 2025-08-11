@@ -1,61 +1,9 @@
 ---
-import { getEntry } from "astro:content";
 import BaseLayout from "~/layouts/BaseLayout.astro";
-import Card from "~/components/Card.astro";
-import ContentImage from "~/components/ContentImage.astro";
-
-const landing = await getEntry("landing", "landing");
+import Launchpad from "~/components/Launchpad.astro";
+import Hero from "~/components/Hero.astro";
 ---
 <BaseLayout>
-  <div class="lg:relative w-full max-w-212 mx-auto flex flex-col gap-y-4">
-    <div class="flex justify-end w-full">
-      <ContentImage path={landing.data.heroImage} />
-    </div>
-    <div class="lg:absolute lg:top-0 flex lg:flex-col justify-center h-full lg:w-96 w-full lg:flex-none">
-      <h1 class="text-5xl text-vibrant-blue font-semibold">{landing.data.heroTitle}</h1>
-    </div>
-  </div>
-  <div class="p-8 flex justify-center w-full">
-    <div class="masonry-launchpad relative w-full max-w-(--masonry-3col-width) xl:max-w-(--masonry-4col-width) 2xl:max-w-(--masonry-5col-width) opacity-0 duration-100">
-      {
-        landing.data.cards.map((card) => (
-        <div class="absolute">
-          <Card title={card.title} color={card.color} href={card.url} image={card.image} description={card.description} />
-        </div>
-        ))
-      }
-    </div>
-  </div>
+  <Hero />
+  <Launchpad />
 </BaseLayout>
-
-<script>
-  import MiniMasonry from "minimasonry";
-
-  const masonryCardWidth = 256;
-  const masonryGap = 32;
-  const masonryWidthPx = (columns) => `${masonryCardWidth * columns + masonryGap * (columns - 1)}px`;
-
-  const initMasonry = () => {
-    const masonryElement = document.querySelector('.masonry-launchpad');
-
-    if (!masonryElement) {
-      return;
-    }
-
-    masonryElement.style.setProperty('--masonry-3col-width', masonryWidthPx(3));
-    masonryElement.style.setProperty('--masonry-4col-width', masonryWidthPx(4));
-    masonryElement.style.setProperty('--masonry-5col-width', masonryWidthPx(5));
-    new MiniMasonry({
-      baseWidth: masonryCardWidth,
-      container: masonryElement,
-      gutter: masonryGap,
-      surroundingGutter: false,
-      ultimateGutter: masonryGap,
-    });
-    masonryElement.classList.remove("opacity-0");
-  };
-
-  initMasonry();
-
-  document.addEventListener("astro:after-swap", initMasonry);
-</script>

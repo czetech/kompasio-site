@@ -1,0 +1,14 @@
+---
+import { getEntry } from "astro:content";
+import ContentImage from "~/components/ContentImage.astro";
+
+const landing = await getEntry("landing", "landing");
+---
+<div class="lg:relative w-full max-w-212 mx-auto flex flex-col gap-y-4">
+  <div class="flex justify-end w-full">
+    <ContentImage path={landing.data.heroImage} />
+  </div>
+  <div class="lg:absolute lg:top-0 flex lg:flex-col justify-center h-full lg:w-96 w-full lg:flex-none">
+    <h1 class="text-5xl text-vibrant-blue font-semibold">{landing.data.heroTitle}</h1>
+  </div>
+</div>
