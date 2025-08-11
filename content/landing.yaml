@@ -9,11 +9,7 @@ cards:
   - title: Diagnostika autizmu
     color: blue
     url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=22&category%5B1%5D=diagnostika
-    image: /images/Návrh bez názvu (15).png
-    description: "[Zoznam poskytovateľov diagnostiky autizmu na Slovensku.
-      Diagnostika autizmu pre detí a
-      dospelých.](https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=22&cat\
-      egory%5B1%5D=diagnostika)"
+    image: /images/Bez názvu (1009 x 360 px).png
   - title: Návody životných situácií
     color: white
     url: /navody
