@@ -1,15 +1,19 @@
 heroTitle: Autizmus v Apke
 heroImage: /images/hero-example.png
 cards:
-  - title: Mapka
+  - title: Mapa a miesta podpory
     color: orange
-    url: https://kompasio.sk/app/sk/map/
+    url: https://kompasio.sk/app/sk/map/zoznam
     image: /images/map.png
-  - title: Miesta podpory
+    description: Nájdi poskytovateľov služieb podľa vlastných preferencií
+  - title: Diagnostika autizmu
     color: blue
-    url: https://kompasio.sk/app/sk/map/zoznam/
-    description: Zariadenia a služby poskytujúce pomoc v oblasti vzdelávania,
-      duševného zdravia a rozvoja.
+    url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=22&category%5B1%5D=diagnostika
+    image: /images/Návrh bez názvu (15).png
+    description: "[Zoznam poskytovateľov diagnostiky autizmu na Slovensku.
+      Diagnostika autizmu pre detí a
+      dospelých.](https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=22&cat\
+      egory%5B1%5D=diagnostika)"
   - title: Návody životných situácií
     color: white
     url: /navody
