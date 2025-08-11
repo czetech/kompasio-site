@@ -19,6 +19,10 @@ const NavToggle: Component = () => {
     if (event.key === "Escape" && isOpen()) setIsOpen(false);
   };
 
+  const handleAfterSwap = () => {
+    setIsOpen(false);
+  };
+
   createEffect(() => {
     parentClassList().toggle("is-open", isOpen());
   });
@@ -26,9 +30,11 @@ const NavToggle: Component = () => {
   onMount(() => {
     parentClassList().add("peer", "group");
     document.addEventListener("keydown", handleKeydown);
+    document.addEventListener("astro:after-swap", handleAfterSwap);
 
     onCleanup(() => {
       document.removeEventListener("keydown", handleKeydown);
+      document.removeEventListener("astro:after-swap", handleAfterSwap);
     });
   });
 
