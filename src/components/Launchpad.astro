@@ -1,6 +1,8 @@
 ---
 import { getEntry } from "astro:content";
 import Card from "~/components/Card.astro";
+import Markdown from "~/components/Markdown.astro";
+import ContentImage from "~/components/ContentImage.astro";
 
 const landing = await getEntry("landing", "landing");
 ---
@@ -8,9 +10,14 @@ const landing = await getEntry("landing", "landing");
   <div class="masonry-launchpad relative w-full max-w-(--masonry-3col-width) xl:max-w-(--masonry-4col-width) 2xl:max-w-(--masonry-5col-width) opacity-0">
     {
       landing.data.cards.map((card) => (
-      <div class="absolute">
-        <Card title={card.title} color={card.color} href={card.url} image={card.image} description={card.description} />
-      </div>
+        <Card title={card.title} color={card.color} href={card.url} class="absolute">
+          {card.image && <div class="flex justify-center">
+            <ContentImage path={card.image} class="rounded-lg col-span-2 mb-3" />
+          </div>}
+          {card.description && <div class="text-sm col-span-2">
+            <Markdown content={card.description} />
+          </div>}
+        </Card>
       ))
     }
   </div>

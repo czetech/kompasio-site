@@ -1,26 +1,18 @@
 ---
-import ArrowUpRight from '@lucide/astro/icons/arrow-up-right';
-import ArrowRight from "@lucide/astro/icons/arrow-right";
-import Markdown from "~/components/Markdown.astro";
-import ContentImage from "~/components/ContentImage.astro";
+import CircleArrow from "~/components/CircleArrow.tsx";
 
-const { title, href, color, image, description } = Astro.props;
+const { title, href, color = "white", class: className } = Astro.props;
 
 const external = /^https?:\/\//.test(href);
 
-const Arrow = external ? ArrowUpRight : ArrowRight;
+const Link = href ? 'a' : 'div';
 
 const colorMap = {"blue": ["bg-vibrant-blue", "text-shuttle-white"], "orange": ["bg-red-orange", "text-shuttle-white"], "white": ["text-vibrant-blue", "border-2"]};
 ---
-<div class="rounded-2xl" class:list={[colorMap[color]]}>
-  <a href={href} target={external ? "_blank" : null}>
-    <div class="p-6 grid gap-4 grid-cols-[1fr_auto]">
-      <h2 class="text-xl md:text-2xl font-semibold">{title}</h2>
-      <Arrow class="border-2 rounded-full p-1 w-8 h-8" />
-      {image && <ContentImage path={image} class="rounded-lg col-span-2 mt-2" />}
-      {description && <div class="text-sm col-span-2">
-        <Markdown content={description} />
-      </div>}
-    </div>
-  </a>
-</div>
+<Link href={href} target={external ? "_blank" : null} class="p-6 rounded-2xl" class:list={[colorMap[color], {"block": Link === "a"}, className]}>
+  <div class="flex gap-x-4 mb-4">
+    <h2 class="text-xl md:text-2xl font-semibold grow">{title}</h2>
+    {href && <CircleArrow direction={external ? 45 : 90} />}
+  </div>
+  <slot />
+</Link>

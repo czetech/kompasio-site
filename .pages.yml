@@ -44,11 +44,15 @@ content:
       description: Card title.
       type: text
       required: true
+    - name: url
+      label: URL
+      description: Card destination URL.
+      type: text
+      required: true
     - name: color
       label: Color
       description: Card color.
       type: select
-      required: true
       options:
         values:
         - value: blue
@@ -57,14 +61,11 @@ content:
           label: Orange
         - value: white
           label: White
-    - name: url
-      label: URL
-      description: Card destination URL.
-      type: text
-      required: true
     - name: image
       label: Image
-      description: Card image.
+      description: >-
+        Card image in original dimensions with a minimum size of 495x16px
+        (landscape).
       type: image
       options:
         media: images
