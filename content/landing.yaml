@@ -9,12 +9,12 @@ cards:
   - title: Diagnostika autizmu
     color: blue
     url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=22&category%5B1%5D=diagnostika
-    image: /images/Bez názvu (1009 x 360 px) (3).png
+    image: /images/Bez názvu (1009 x 360 px) (4).png
   - title: Návody životných situácií
     color: white
     url: /navody
-    description: Praktické postupy, ako vybaviť ZŤP, predĺžený rodičovský príspevok
-      a ďalšie žiadosti.
+    description: Infobáza plná návodov a praktických rád, ako vybaviť ŤZP, predĺžený
+      rodičovský príspevok a ďalšie životné situácie.
   - title: Dáta o autizme
     color: white
     url: https://kompasio.sk/app/sk/map/data
