@@ -60,8 +60,8 @@ cards:
     url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=organizacie-respektujuce-autizmus
     color: white
     image: /images/autism friendly organizacie.png
-    description: Objavte miesta, kde sa autizmus berie vážne – s rešpektom, úpravami
-      a porozumením.
+    description: Objavte miesta, kde sa autizmus už berie vážne – s rešpektom,
+      úpravami a porozumením.
   - title: "Knihy "
     url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=44
     color: orange
