@@ -1,11 +1,10 @@
 ---
 import { getEntry } from "astro:content";
 import BaseLayout from "~/layouts/BaseLayout.astro";
-import ArrowDown from "@lucide/astro/icons/arrow-down";
 import Mail from "@lucide/astro/icons/mail";
-import Circle from "~/components/Circle.tsx"
 import CircleArrow from "~/components/CircleArrow.tsx"
 import Card from "~/components/Card.astro";
+import Button from "~/components/Button.tsx";
 
 const contact = await getEntry("contact", "contact");
 ---
@@ -18,12 +17,9 @@ const contact = await getEntry("contact", "contact");
   <div class="grow p-8 flex justify-center flex-col items-center w-full">
     <Card title={contact.data.cardTitle} color="blue" class="max-w-120 w-full">
       <p class="mb-3 mt-16">{contact.data.emailLabel}</p>
-      <a href={`mailto:${contact.data.emailAddress}`} class="border-y-2 border-r-2 rounded-full flex self-start items-center gap-x-4 pr-4 h-8">
-        <Circle>
-          <Mail />
-        </Circle>
-        <span>{contact.data.emailAddress}</span>
-      </a>
+      <Button href={`mailto:${contact.data.emailAddress}`} text={contact.data.emailAddress}>
+        <Mail slot="icon" />
+      </Button>
     </Card>
   </div>
 </BaseLayout>

@@ -56,12 +56,12 @@ content:
       default: white
       options:
         values:
-        - value: white
-          label: White
         - value: blue
           label: Blue
         - value: orange
           label: Orange
+        - value: white
+          label: White
     - name: image
       label: Image
       description: >-
