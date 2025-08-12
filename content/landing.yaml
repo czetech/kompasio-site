@@ -9,17 +9,24 @@ cards:
   - title: Diagnostika autizmu
     url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=22&category%5B1%5D=diagnostika
     color: blue
-    image: /images/diagnostika PAS.png
+    image: /images/diagnostika_PAS.png
     description: Prehľad diagnostických centier na Slovensku. Pre deti aj dospelých.
-  - title: "Diagnostika autizmu "
-    url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=22&category%5B1%5D=diagnostika
-    color: blue
-    image: /images/diagnostika.png
+  - title: "Potvrdenie diagnózy "
+    url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=pedopsych
+    color: white
+    image: /images/white.png
+    description: Potrebujete potvrdenie diagnózy PAS pre Vaše dieťa? Zoznam
+      pedopsychiatrov nájdete tu.
   - title: Návody životných situácií
     url: /navody
     color: white
     description: Infobáza plná návodov a praktických rád, ako vybaviť ŤZP, predĺžený
       rodičovský príspevok a ďalšie životné situácie.
+  - title: "Podcasty na tému autizmu "
+    url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=podcasty
+    color: orange
+    image: /images/podcast.png
+    description: Započúvajte sa do rozhovorov o autizme a neurodiverzite.
   - title: Dáta o autizme
     url: https://kompasio.sk/app/sk/map/data
     color: white
@@ -37,20 +44,13 @@ cards:
     color: blue
     image: /images/obrazok2.png
     description: Aplikovaná behaviorálna analýza ( ABA ) - zoznam poskytovateľov.
-  - title: "Potvrdenie diagnózy "
-    url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=pedopsych
-    color: white
-    image: /images/white.png
-    description: Potrebujete potvrdenie diagnózy PAS pre Vaše dieťa? Zoznam
-      pedopsychiatrov nájdete tu.
-  - title: "Podcasty na tému autizmu "
-    url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=podcasty
-    color: orange
-    image: /images/podcast.png
-    description: Započúvajte sa do rozhovorov o autizme a neurodiverzite.
   - title: Zariadenia poradenstva a prevencie
     url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=84
     color: white
     image: /images/CPP.png
     description: Najaktuálnejší zoznam zariadení poradenstva a prevencie na
       Slovensku. Odborná pomoc pre Vaše deti.
+  - title: "Diagnostika autizmu "
+    url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=22&category%5B1%5D=diagnostika
+    color: blue
+    image: /images/diagnostika.png
