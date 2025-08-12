@@ -9,7 +9,7 @@ cards:
   - title: Diagnostika autizmu
     url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=22&category%5B1%5D=diagnostika
     color: blue
-    image: /images/Bez názvu (1009 x 360 px) (4).png
+    image: /images/diagnostika PAS.png
     description: Prehľad diagnostických centier na Slovensku. Pre deti aj dospelých.
   - title: "Diagnostika autizmu "
     url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=22&category%5B1%5D=diagnostika
@@ -48,3 +48,9 @@ cards:
     color: orange
     image: /images/podcast.png
     description: Započúvajte sa do rozhovorov o autizme a neurodiverzite.
+  - title: Zariadenia poradenstva a prevencie
+    url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=84
+    color: white
+    image: /images/CPP.png
+    description: Najaktuálnejší zoznam zariadení poradenstva a prevencie na
+      Slovensku. Odborná pomoc pre Vaše deti.
