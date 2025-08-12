@@ -9,7 +9,7 @@ cards:
   - title: Diagnostika autizmu
     url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=22&category%5B1%5D=diagnostika
     color: blue
-    image: /images/diagnostika_PAS.png
+    image: /images/diagnostikovanie.png
     description: Prehľad diagnostických centier na Slovensku. Pre deti aj dospelých.
   - title: "Potvrdenie diagnózy "
     url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=pedopsych
