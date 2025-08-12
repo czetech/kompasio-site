@@ -61,7 +61,7 @@ cards:
   - title: Dáta o autizme
     url: https://kompasio.sk/app/sk/map/data
     color: white
-    image: /images/obrazok.png
+    image: /images/data.png
     description: Všetky dáta zahŕňajú aktuálne informácie o autizme, štatistiky zo
       zdravotných poisťovní a údaje o žiakoch na školách.
   - title: "Knihy "
@@ -73,5 +73,5 @@ cards:
   - title: ABA terapia
     url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=aba
     color: blue
-    image: /images/obrazok2.png
+    image: /images/aba.png
     description: Aplikovaná behaviorálna analýza ( ABA ) - zoznam poskytovateľov.
