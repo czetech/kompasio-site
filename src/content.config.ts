@@ -41,9 +41,9 @@ const contact = defineCollection({
   }),
 });
 
-const vpp = defineCollection({
+const vop = defineCollection({
   loader: glob({
-    pattern: ["vpp", yamlExt].join("."),
+    pattern: ["vop", yamlExt].join("."),
     base: collectionsBase,
   }),
 });
@@ -55,4 +55,4 @@ const gdpr = defineCollection({
   }),
 });
 
-export const collections = { landing, guides, guidesCategories, guidesJourneys, contact, vpp, gdpr };
+export const collections = { landing, guides, guidesCategories, guidesJourneys, contact, vop, gdpr };
