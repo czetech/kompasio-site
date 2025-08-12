@@ -56,3 +56,9 @@ cards:
     image: /images/stomatolog.png
     description: Návšteva zubára bez stresu. Viete o ďalších zubných ambulanciách,
       kde je na prvom mieste pacient a jeho pohodlie? Dajte nám o nich vedieť.
+  - title: "O krok vpred "
+    url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=organizacie-respektujuce-autizmus
+    color: white
+    image: /images/autism friendly organizacie.png
+    description: Objavte miesta, kde sa autizmus berie vážne – s rešpektom, úpravami
+      a porozumením.
