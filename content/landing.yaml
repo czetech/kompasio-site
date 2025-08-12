@@ -22,46 +22,23 @@ cards:
     color: white
     description: Infobáza plná návodov a praktických rád, ako vybaviť ŤZP, predĺžený
       rodičovský príspevok a ďalšie životné situácie.
-  - title: "Podcasty na tému autizmu "
-    url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=podcasty
-    color: orange
-    image: /images/podcast.png
-    description: Započúvajte sa do rozhovorov o autizme a neurodiverzite.
-  - title: Dáta o autizme
-    url: https://kompasio.sk/app/sk/map/data
-    color: white
-    image: /images/obrazok.png
-    description: Všetky dáta zahŕňajú aktuálne informácie o autizme, štatistiky zo
-      zdravotných poisťovní a údaje o žiakoch na školách.
-  - title: Podporné skupiny
-    url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=podporne-skupiny
-    color: orange
-    image: /images/podporne.png
-    description: Nie ste v tom sami. Zdieľanie skúseností v bezpečnom prostredí.
-      Inšpirujte sa a povzbudzujte sa navzájom.
-  - title: ABA terapia
-    url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=aba
-    color: blue
-    image: /images/obrazok2.png
-    description: Aplikovaná behaviorálna analýza ( ABA ) - zoznam poskytovateľov.
-  - title: Zariadenia poradenstva a prevencie
-    url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=84
-    color: white
-    image: /images/CPP.png
-    description: Najaktuálnejší zoznam zariadení poradenstva a prevencie na
-      Slovensku. Odborná pomoc pre Vaše deti.
   - title: Zubári
     url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=stomatol&p%5B29%5D%5B0%5D=215
     color: blue
     image: /images/stomatolog.png
     description: Návšteva zubára bez stresu. Viete o ďalších zubných ambulanciách,
       kde je na prvom mieste pacient a jeho pohodlie? Dajte nám o nich vedieť.
-  - title: "O krok vpred "
-    url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=organizacie-respektujuce-autizmus
+  - title: "Podcasty na tému autizmu "
+    url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=podcasty
+    color: orange
+    image: /images/podcast.png
+    description: Započúvajte sa do rozhovorov o autizme a neurodiverzite.
+  - title: Zariadenia poradenstva a prevencie
+    url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=84
     color: white
-    image: /images/autism friendly organizacie.png
-    description: Objavte miesta, kde sa autizmus už berie vážne – s rešpektom,
-      úpravami a porozumením.
+    image: /images/CPP.png
+    description: Najaktuálnejší zoznam zariadení poradenstva a prevencie na
+      Slovensku. Odborná pomoc pre Vaše deti.
   - title: "Špecializované zariadenia "
     url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=specializovane-zariadenia
     color: white
@@ -69,9 +46,32 @@ cards:
     description: Zariadenia poskytujú podporu, starostlivosť a bezpečné prostredie
       pre deti aj dospelých na autistickom spektre. Špecifická odborná
       starostlivosť, denné programy alebo bývanie podľa individuálnych potrieb.
+  - title: Podporné skupiny
+    url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=podporne-skupiny
+    color: orange
+    image: /images/podporne.png
+    description: Nie ste v tom sami. Zdieľanie skúseností v bezpečnom prostredí.
+      Inšpirujte sa a povzbudzujte sa navzájom.
+  - title: "O krok vpred "
+    url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=organizacie-respektujuce-autizmus
+    color: white
+    image: /images/autism friendly organizacie.png
+    description: Objavte miesta, kde sa autizmus už berie vážne – s rešpektom,
+      úpravami a porozumením.
+  - title: Dáta o autizme
+    url: https://kompasio.sk/app/sk/map/data
+    color: white
+    image: /images/obrazok.png
+    description: Všetky dáta zahŕňajú aktuálne informácie o autizme, štatistiky zo
+      zdravotných poisťovní a údaje o žiakoch na školách.
   - title: "Knihy "
     url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=44
     color: orange
     image: /images/knihy.png
     description: Katalóg kníh - od odbornej literatúry po silné osobné príbehy.
       Inšpirujte sa vybraným zoznamom.
+  - title: ABA terapia
+    url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=aba
+    color: blue
+    image: /images/obrazok2.png
+    description: Aplikovaná behaviorálna analýza ( ABA ) - zoznam poskytovateľov.
