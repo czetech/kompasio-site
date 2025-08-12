@@ -52,6 +52,11 @@ cards:
     image: /images/podporne.png
     description: Nie ste v tom sami. Zdieľanie skúseností v bezpečnom prostredí.
       Inšpirujte sa a povzbudzujte sa navzájom.
+  - title: ABA terapia
+    url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=aba
+    color: blue
+    image: /images/aba.png
+    description: Aplikovaná behaviorálna analýza ( ABA ) - zoznam poskytovateľov.
   - title: "O krok vpred "
     url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=organizacie-respektujuce-autizmus
     color: white
@@ -70,8 +75,3 @@ cards:
     image: /images/knihy.png
     description: Katalóg kníh - od odbornej literatúry po silné osobné príbehy.
       Inšpirujte sa vybraným zoznamom.
-  - title: ABA terapia
-    url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=aba
-    color: blue
-    image: /images/aba.png
-    description: Aplikovaná behaviorálna analýza ( ABA ) - zoznam poskytovateľov.
