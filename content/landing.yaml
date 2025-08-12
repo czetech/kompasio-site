@@ -22,17 +22,17 @@ cards:
     color: white
     description: Infobáza plná návodov a praktických rád, ako vybaviť ŤZP, predĺžený
       rodičovský príspevok a ďalšie životné situácie.
+  - title: "Podcasty na tému autizmu "
+    url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=podcasty
+    color: orange
+    image: /images/podcast.png
+    description: Započúvajte sa do rozhovorov o autizme a neurodiverzite.
   - title: Zubári
     url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=stomatol&p%5B29%5D%5B0%5D=215
     color: blue
     image: /images/stomatolog.png
     description: Návšteva zubára bez stresu. Viete o ďalších zubných ambulanciách,
       kde je na prvom mieste pacient a jeho pohodlie? Dajte nám o nich vedieť.
-  - title: "Podcasty na tému autizmu "
-    url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=podcasty
-    color: orange
-    image: /images/podcast.png
-    description: Započúvajte sa do rozhovorov o autizme a neurodiverzite.
   - title: Zariadenia poradenstva a prevencie
     url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=84
     color: white
