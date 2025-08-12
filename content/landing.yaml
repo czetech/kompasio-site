@@ -56,7 +56,9 @@ cards:
     url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=aba
     color: blue
     image: /images/aba.png
-    description: Aplikovaná behaviorálna analýza ( ABA ) - zoznam poskytovateľov.
+    description: Aplikovaná behaviorálna analýza. Hľadáme odbornú pomoc? Prelistuje
+      zoznam inštitúcií, ktoré poskytujú ABA terapiu. Certifikovaní terapeuti
+      alebo odborníci využívajúci prvky ABA terapie.
   - title: "O krok vpred "
     url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=organizacie-respektujuce-autizmus
     color: white
