@@ -14,7 +14,7 @@ cards:
   - title: "Diagnostika autizmu "
     url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=22&category%5B1%5D=diagnostika
     color: blue
-    image: /images/Bez názvu (1009 x 360 px) (1009 x 660 px) (1).png
+    image: /images/diagnostika.png
   - title: Návody životných situácií
     url: /navody
     color: white
@@ -49,3 +49,9 @@ cards:
     image: /images/psychiater.png
     description: Potrebujete potvrdenie diagnózy PAS pre Vaše dieťa? Vyhľadajte
       pedopsychiatra v našom zozname.
+  - title: "Potvrdenie diagnózy "
+    url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=pedopsych
+    color: white
+    image: /images/white.png
+    description: Potrebujete potvrdenie diagnózy PAS pre Vaše dieťa? Zoznam
+      pedopsychiatrov nájdete tu.
