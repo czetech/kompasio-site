@@ -36,5 +36,11 @@ cards:
     url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=22&category%5B1%5D=diagnostika
     color: blue
     image: /images/Bez názvu (1009 x 360 px) (4).png
-    description: Zoznam diagnostických centier na Slovensku. Diagnostika pre detí aj
-      dospelých.
+    description: Pomáhame vám nájsť odbornú diagnostiku autizmu – spoľahlivo, rýchlo
+      a na jednom mieste.
+  - title: Podporné skupiny
+    url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=podporne-skupiny
+    color: orange
+    image: /images/Bez názvu (1009 x 360 px) (500 x 550 px).png
+    description: Zdieľanie skúseností v bezpečnom prostredí. Inšpirujte sa a
+      povzbudzujte sa navzájom.
