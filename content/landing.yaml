@@ -6,6 +6,11 @@ cards:
     color: orange
     image: /images/map.png
     description: Nájdi poskytovateľov služieb podľa vlastných preferencií.
+  - title: Diagnostika autizmu
+    url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=22&category%5B1%5D=diagnostika
+    color: blue
+    image: /images/Bez názvu (1009 x 360 px) (4).png
+    description: Prehľad diagnostických centier na Slovensku. Pre deti aj dospelých.
   - title: "Diagnostika autizmu "
     url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=22&category%5B1%5D=diagnostika
     color: blue
@@ -32,15 +37,15 @@ cards:
     color: blue
     image: /images/obrazok2.png
     description: Aplikovaná behaviorálna analýza ( ABA ) - zoznam poskytovateľov.
-  - title: Diagnostika autizmu
-    url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=22&category%5B1%5D=diagnostika
-    color: blue
-    image: /images/Bez názvu (1009 x 360 px) (4).png
-    description: Pomáhame vám nájsť odbornú diagnostiku autizmu – spoľahlivo, rýchlo
-      a na jednom mieste.
   - title: Podporné skupiny
     url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=podporne-skupiny
     color: orange
-    image: /images/Bez názvu (1009 x 360 px) (500 x 550 px).png
+    image: /images/podporneskupiny (2).png
     description: Zdieľanie skúseností v bezpečnom prostredí. Inšpirujte sa a
       povzbudzujte sa navzájom.
+  - title: "Potvrdenie diagnózy "
+    url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=pedopsych
+    color: white
+    image: /images/psychiater.png
+    description: Potrebujete potvrdenie diagnózy PAS pre Vaše dieťa? Vyhľadajte
+      psychiatra v našom zozname.
