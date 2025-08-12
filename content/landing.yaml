@@ -37,6 +37,12 @@ cards:
     color: blue
     image: /images/obrazok2.png
     description: Aplikovaná behaviorálna analýza ( ABA ) - zoznam poskytovateľov.
+  - title: "Potvrdenie diagnózy "
+    url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=pedopsych
+    color: white
+    image: /images/white.png
+    description: Potrebujete potvrdenie diagnózy PAS pre Vaše dieťa? Zoznam
+      pedopsychiatrov nájdete tu.
   - title: Podporné skupiny
     url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=podporne-skupiny
     color: orange
@@ -49,9 +55,3 @@ cards:
     image: /images/psychiater.png
     description: Potrebujete potvrdenie diagnózy PAS pre Vaše dieťa? Vyhľadajte
       pedopsychiatra v našom zozname.
-  - title: "Potvrdenie diagnózy "
-    url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=pedopsych
-    color: white
-    image: /images/white.png
-    description: Potrebujete potvrdenie diagnózy PAS pre Vaše dieťa? Zoznam
-      pedopsychiatrov nájdete tu.
