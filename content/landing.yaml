@@ -29,7 +29,7 @@ cards:
   - title: Podporné skupiny
     url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=podporne-skupiny
     color: orange
-    image: /images/Bez názvu (1009 x 360 px) (500 x 550 px) (300 x 300 px) (1).png
+    image: /images/podporne.png
     description: Nie ste v tom sami. Zdieľanie skúseností v bezpečnom prostredí.
       Inšpirujte sa a povzbudzujte sa navzájom.
   - title: ABA terapia
@@ -43,15 +43,8 @@ cards:
     image: /images/white.png
     description: Potrebujete potvrdenie diagnózy PAS pre Vaše dieťa? Zoznam
       pedopsychiatrov nájdete tu.
-  - title: Podporné skupiny
-    url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=podporne-skupiny
+  - title: "Podcasty na tému autizmu "
+    url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=podcasty
     color: orange
-    image: /images/podporneskupiny (2).png
-    description: Zdieľanie skúseností v bezpečnom prostredí. Inšpirujte sa a
-      povzbudzujte sa navzájom.
-  - title: "Potvrdenie diagnózy "
-    url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=pedopsych
-    color: white
-    image: /images/psychiater.png
-    description: Potrebujete potvrdenie diagnózy PAS pre Vaše dieťa? Vyhľadajte
-      pedopsychiatra v našom zozname.
+    image: /images/podcast.png
+    description: Započúvajte sa do rozhovorov o autizme a neurodiverzite.
