@@ -2,6 +2,8 @@
 import { getEntry } from "astro:content";
 import BaseLayout from "~/layouts/BaseLayout.astro";
 import ArrowDown from "@lucide/astro/icons/arrow-down";
+import Scrollable from "~/components/Scrollable.astro";
+import Markdown from "~/components/Markdown.astro";
 
 const gdpr = await getEntry("gdpr", "gdpr");
 ---
