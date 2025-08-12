@@ -62,12 +62,6 @@ cards:
     image: /images/autism friendly organizacie.png
     description: Objavte miesta, kde sa autizmus už berie vážne – s rešpektom,
       úpravami a porozumením.
-  - title: "Knihy "
-    url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=44
-    color: orange
-    image: /images/knihy.png
-    description: Katalóg kníh - od odbornej literatúry po silné osobné príbehy.
-      Inšpirujte sa vybraným zoznamom.
   - title: "Špecializované zariadenia "
     url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=specializovane-zariadenia
     color: white
@@ -75,3 +69,9 @@ cards:
     description: Zariadenia poskytujú podporu, starostlivosť a bezpečné prostredie
       pre deti aj dospelých na autistickom spektre. Špecifická odborná
       starostlivosť, denné programy alebo bývanie podľa individuálnych potrieb.
+  - title: "Knihy "
+    url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=44
+    color: orange
+    image: /images/knihy.png
+    description: Katalóg kníh - od odbornej literatúry po silné osobné príbehy.
+      Inšpirujte sa vybraným zoznamom.
