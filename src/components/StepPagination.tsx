@@ -1,4 +1,4 @@
-import Button from "./Button";
+import Button from "./Button2.tsx";
 import ChevronLeft from "lucide-solid/icons/chevron-left";
 import ChevronRight from "lucide-solid/icons/chevron-right";
 import { journeyStore } from "~/stores/journey";

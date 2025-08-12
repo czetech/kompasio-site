@@ -4,7 +4,7 @@ import { createStore, produce } from "solid-js/store";
 import { createPresence } from "@solid-primitives/presence";
 import Check from "lucide-solid/icons/check";
 
-import Button from "./Button";
+import Button from "./Button2.tsx";
 import InlineButton from "./InlineButton";
 import { journeyStore } from "~/stores/journey";
 

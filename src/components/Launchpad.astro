@@ -7,7 +7,7 @@ import ContentImage from "~/components/ContentImage.astro";
 const landing = await getEntry("landing", "landing");
 ---
 <div class="p-8 flex justify-center w-full">
-  <div class="masonry-launchpad relative w-full max-w-(--masonry-3col-width) xl:max-w-(--masonry-4col-width) 2xl:max-w-(--masonry-5col-width) opacity-0">
+  <div class="masonry-launchpad relative w-full max-w-(--masonry-2col-width) xl:max-w-(--masonry-3col-width) 2xl:max-w-(--masonry-4col-width) opacity-0">
     {
       landing.data.cards.map((card) => (
         <Card title={card.title} color={card.color} href={card.url} class="absolute">
@@ -26,7 +26,7 @@ const landing = await getEntry("landing", "landing");
 <script>
   import MiniMasonry from "minimasonry";
 
-  const cardWidth = 256;
+  const cardWidth = 320;
   const gap = 32;
   const widthPx = (columns) => `${cardWidth * columns + gap * (columns - 1)}px`;
 
@@ -37,9 +37,9 @@ const landing = await getEntry("landing", "landing");
       return;
     }
 
+    masonryElement.style.setProperty('--masonry-2col-width', widthPx(2));
     masonryElement.style.setProperty('--masonry-3col-width', widthPx(3));
     masonryElement.style.setProperty('--masonry-4col-width', widthPx(4));
-    masonryElement.style.setProperty('--masonry-5col-width', widthPx(5));
     new MiniMasonry({
       baseWidth: cardWidth,
       container: masonryElement,

@@ -53,18 +53,19 @@ content:
       label: Color
       description: Card color.
       type: select
+      default: white
       options:
         values:
+        - value: white
+          label: White
         - value: blue
           label: Blue
         - value: orange
           label: Orange
-        - value: white
-          label: White
     - name: image
       label: Image
       description: >-
-        Card image in original dimensions with a minimum size of 495x16px
+        Card image in original dimensions with a minimum size of 623x16px
         (landscape).
       type: image
       options:
@@ -154,6 +155,7 @@ content:
     type: object
     list:
       collapsible:
+        collapsed: true
         summary: "{index} - {fields.title}"
     required: true
     fields:
@@ -175,6 +177,7 @@ content:
       type: object
       list:
         collapsible:
+          collapsed: true
           summary: "{fields.body}"
       fields:
       - name: body
