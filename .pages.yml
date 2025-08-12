@@ -230,19 +230,19 @@ content:
     description: Contact card email address.
     type: text
     required: true
-- name: vpp
-  label: VPP
+- name: vop
+  label: VOP
   type: file
-  path: content/vpp.yaml
+  path: content/vop.yaml
   fields:
   - name: title
     label: Title
-    description: VPP title.
+    description: VOP title.
     type: text
     required: true
   - name: body
     label: Body
-    description: VPP body.
+    description: VOP body.
     type: rich-text-full
     required: true
     options:

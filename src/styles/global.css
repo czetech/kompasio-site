@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+@plugin 'tailwind-scrollbar' {
+  nocompatible: true;
+}
+
 @theme {
   --animate-draw: 1s 0.25s ease-in-out forwards draw;
   --animate-spring: 2s 0.5s ease-out spring;

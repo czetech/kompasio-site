@@ -4,6 +4,7 @@ import Circle from "~/components/Circle.tsx";
 import Plus from "lucide-solid/icons/plus";
 import HeartHandshake from "lucide-solid/icons/heart-handshake";
 import ArrowRight from "lucide-solid/icons/arrow-right";
+import Button from "~/components/Button.tsx";
 
 const navItems = [
   {
@@ -29,24 +30,15 @@ const navItems = [
   <div class="flex justify-between">
     <Logo />
     <div>
-      <a class="rounded-full bg-shuttle-white text-vibrant-blue flex items-center border-y-2 border-r-2">
-        <Circle>
-          <Plus />
-        </Circle>
-        <div class="px-4">Pridaj nové miesto</div>
-      </a>
-      <a class="rounded-full bg-shuttle-white text-vibrant-blue flex items-center border-y-2 border-r-2">
-        <Circle>
-          <ArrowRight />
-        </Circle>
-        <div class="px-4">Ako to funguje?</div>
-      </a>
-      <a class="rounded-full bg-shuttle-white text-vibrant-blue flex items-center border-y-2 border-r-2">
-        <Circle>
-          <HeartHandshake />
-        </Circle>
-        <div class="px-4">Chcem podporiť</div>
-      </a>
+      <Button text="Pridaj nové miesto">
+        <Plus slot="icon" />
+      </Button>
+      <Button text="Ako to funguje?">
+        <ArrowRight slot="icon" />
+      </Button>
+      <Button text="Chcem podporiť">
+        <HeartHandshake slot="icon" />
+      </Button>
     </div>
   </div>
   <hr class="border-t-2" />
@@ -56,7 +48,7 @@ const navItems = [
       <a href={navItem.href}>{navItem.title}</a>
       ))
     }
-    <a href="/vpp">Podmienky používania</a>
+    <a href="/vop">Podmienky používania</a>
     <a href="/gdpr">GDPR</a>
     <span>Copiright © 2024 Modrá hliadka</span>
   </div>
