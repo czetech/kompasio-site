@@ -25,7 +25,7 @@ cards:
   - title: "Podcasty na tému autizmu "
     url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=podcasty
     color: orange
-    image: /images/podcast.png
+    image: /images/podcasty.png
     description: Započúvajte sa do rozhovorov o autizme a neurodiverzite.
   - title: Zubári
     url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=stomatol&p%5B29%5D%5B0%5D=215
@@ -55,7 +55,7 @@ cards:
   - title: ABA terapia
     url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=aba
     color: blue
-    image: /images/aba.png
+    image: /images/ABAterapia.png
     description: Aplikovaná behaviorálna analýza. Hľadáte odbornú pomoc? Prelistujte
       zoznam inštitúcií, ktoré poskytujú ABA terapiu. Certifikovaní terapeuti
       alebo odborníci využívajúci prvky ABA terapie.
