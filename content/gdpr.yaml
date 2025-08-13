@@ -46,11 +46,10 @@ body: >-
       <p style="text-align: justify">Združenie môžete kontaktovať v prípade akýchkoľvek otázok týkajúcich sa spracúvania Vašich osobných údajov, emailom na <a href="mailto:gdpr@modrahliadka.sk">gdpr@modrahliadka.sk</a></p>
   3.  **ÚČEL, PRÁVNY ZÁKLAD, KATEGÓRIE OSOBNÝCH ÚDAJOV A DOBA UCHOVÁVANI**
       
-      |     |     |     |     |
-      | --- | --- | --- | --- |
       | **ÚČEL SPRACÚVANIA** | **PRÁVNY ZÁKLAD SPRACÚVANIA** | **KATEGÓRIE OSOBNÝCH ÚDAJOV** | **DOBA UCHOVÁVANIA** |
-      | Uzatváranie a plnenie rámcových zmlúv o poskytovaní služieb | Plnenie zmluvy podľa článku 6 ods. 1 písm. b) GDPR (fyzické osoby – podnikatelia)<br><br>Oprávnený záujem podľa článku 6 ods. 1 písm. f) GDPR (právnické osoby). | Meno, priezvisko, email, spoločnosť, funkcia. | Počas trvania zmluvného vzťahu s poskytovateľom služby. |
-      | Uzatváranie darovacích zmlúv | Plnenie zmluvy podľa článku 6 ods. 1 písm. b) GDPR. (fyzické osoby)<br><br>Oprávnený záujem podľa článku 6 ods. 1 písm. f) GDPR (právnické osoby). | Meno, priezvisko, rodné priezvisko, trvalý pobyt, dátum narodenia, rodné číslo, štátna príslušnosť, funkcia, e-mail. | 4 roky odo dňa uzatvorenia zmluvy. |
+      | --- | --- | --- | --- |
+      | Uzatváranie a plnenie rámcových zmlúv o poskytovaní služieb | Plnenie zmluvy podľa článku 6 ods. 1 písm. b) GDPR (fyzické osoby – podnikatelia)  <br>  <br>Oprávnený záujem podľa článku 6 ods. 1 písm. f) GDPR (právnické osoby). | Meno, priezvisko, email, spoločnosť, funkcia. | Počas trvania zmluvného vzťahu s poskytovateľom služby. |
+      | Uzatváranie darovacích zmlúv | Plnenie zmluvy podľa článku 6 ods. 1 písm. b) GDPR. (fyzické osoby)  <br>  <br>Oprávnený záujem podľa článku 6 ods. 1 písm. f) GDPR (právnické osoby). | Meno, priezvisko, rodné priezvisko, trvalý pobyt, dátum narodenia, rodné číslo, štátna príslušnosť, funkcia, e-mail. | 4 roky odo dňa uzatvorenia zmluvy. |
       | Zasielanie newslettra | Súhlas dotknutej osoby v zmysle článku 6 ods. 1 písm. a) Nariadenia GDPR. | E-mail. | Do odvolania súhlasu, maximálne však po dobu 5 rokov odo dňa udelenia súhlasu. |
       | Registrácia v Aplikácii | Plnenie zmluvy podľa článku 6 ods. 1 písm. b) GDPR | Meno, priezvisko, email a heslo. | Do zrušenia konta v Aplikácii. |
       | Vybavovanie sťažností | Plnenie zákonnej povinnosti podľa článku 6 ods. 1 písm. c) GDPR. | Meno a priezvisko, email, osobné údaje uvedené v sťažnosti. | Do vyriešenia sťažnosti. |
@@ -64,9 +63,8 @@ body: >-
       <p style="text-align: justify">Na oprávnené záujmy sa Združenie spolieha v&nbsp;prípade súdnych alebo mimosúdnych sporov alebo v&nbsp;konaniach s&nbsp;orgánmi verejnej moci, pri ktorých uplatňuje alebo bráni svoje právne nároky.&nbsp; &nbsp;</p><p style="text-align: justify">Združenie na základe oprávneného záujmu tiež spracúva osobné údaje kontaktných osôb alebo iných osôb oprávnených konať za alebo v&nbsp;mene zmluvných partnerov alebo podporovateľov.</p>
   5.  **SPRÍSTUPŇOVANIE  OSOBNÝCH ÚDAJOV**
       
-      |     |     |     |
-      | --- | --- | --- |
       | **Oblasť/Služba** | **Príjemca osobných údajov** | **Prenos mimo EHP** |
+      | --- | --- | --- |
       | Platobná brána | Stripe Technology Europe, Limited | Áno (USA) Prenos na základe zmluvy o spracúvaní osobných údajov (DPA) a rozhodnutia o primeranosti týkajúce sa rámca pre ochranu osobných údajov medzi EÚ a USA. |
 
       
