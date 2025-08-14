@@ -33,19 +33,19 @@ cards:
     image: /images/stomatolog.png
     description: Návšteva zubára bez stresu. Viete o ďalších zubných ambulanciách,
       kde je na prvom mieste pacient a jeho pohodlie? Dajte nám o nich vedieť.
+  - title: "Špecializované zariadenia "
+    url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=specializovane-zariadenia
+    color: white
+    image: /images/special zariadenia.png
+    description: Zariadenia poskytujú podporu, starostlivosť a bezpečné prostredie
+      pre deti aj dospelých na autistickom spektre. Špecifická odborná
+      starostlivosť, denné programy alebo bývanie podľa individuálnych potrieb.
   - title: Zariadenia poradenstva a prevencie
     url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=84
     color: white
     image: /images/CPP.png
     description: Najaktuálnejší zoznam zariadení poradenstva a prevencie na
       Slovensku. Odborná pomoc pre Vaše deti.
-  - title: "Špecializované zariadenia "
-    url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=specializovane-zariadenia
-    color: white
-    image: /images/specializovanie zariadenia.png
-    description: Zariadenia poskytujú podporu, starostlivosť a bezpečné prostredie
-      pre deti aj dospelých na autistickom spektre. Špecifická odborná
-      starostlivosť, denné programy alebo bývanie podľa individuálnych potrieb.
   - title: Podporné skupiny
     url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=podporne-skupiny
     color: orange
@@ -59,18 +59,18 @@ cards:
     description: Aplikovaná behaviorálna analýza. Hľadáte odbornú pomoc? Prelistujte
       zoznam inštitúcií, ktoré poskytujú ABA terapiu. Certifikovaní terapeuti
       alebo odborníci využívajúci prvky ABA terapie.
+  - title: Dáta o autizme
+    url: https://kompasio.sk/app/sk/map/data
+    color: white
+    image: /images/data_sk.png
+    description: Všetky dáta zahŕňajú aktuálne informácie o autizme, štatistiky zo
+      zdravotných poisťovní a údaje o žiakoch na školách.
   - title: "O krok vpred "
     url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=organizacie-respektujuce-autizmus
     color: white
     image: /images/autism friendly organizacie.png
     description: Objavte miesta, kde sa autizmus už berie vážne – s rešpektom,
       úpravami a porozumením.
-  - title: Dáta o autizme
-    url: https://kompasio.sk/app/sk/map/data
-    color: white
-    image: /images/data.png
-    description: Všetky dáta zahŕňajú aktuálne informácie o autizme, štatistiky zo
-      zdravotných poisťovní a údaje o žiakoch na školách.
   - title: "Knihy "
     url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=44
     color: orange
