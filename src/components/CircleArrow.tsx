@@ -8,7 +8,7 @@ const CircleArrow: Component = (props) => {
 
   return (
     <Circle>
-      <ArrowUp style={{transform: `rotate(${merged.direction}deg)`}} />
+      <ArrowUp style={{ transform: `rotate(${merged.direction}deg)` }} />
     </Circle>
   );
 };

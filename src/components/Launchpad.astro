@@ -6,17 +6,34 @@ import ContentImage from "~/components/ContentImage.astro";
 
 const landing = await getEntry("landing", "landing");
 ---
-<div class="p-8 flex justify-center w-full">
-  <div class="masonry-launchpad relative w-full max-w-(--masonry-2col-width) xl:max-w-(--masonry-3col-width) 2xl:max-w-(--masonry-4col-width) opacity-0">
+
+<div class="flex w-full justify-center p-8">
+  <div
+    class={`masonry-launchpad relative w-full max-w-(--masonry-2col-width)
+      opacity-0 xl:max-w-(--masonry-3col-width)
+      2xl:max-w-(--masonry-4col-width)`}
+  >
     {
       landing.data.cards.map((card) => (
-        <Card title={card.title} color={card.color} href={card.url} class="absolute">
-          {card.image && <div class="flex justify-center">
-            <ContentImage path={card.image} class="rounded-lg col-span-2 mb-3" />
-          </div>}
-          {card.description && <div class="text-sm col-span-2">
-            <Markdown content={card.description} />
-          </div>}
+        <Card
+          title={card.title}
+          color={card.color}
+          href={card.url}
+          class="absolute"
+        >
+          {card.image && (
+            <div class="flex justify-center">
+              <ContentImage
+                path={card.image}
+                class="col-span-2 mb-3 rounded-lg"
+              />
+            </div>
+          )}
+          {card.description && (
+            <div class="col-span-2 text-sm">
+              <Markdown content={card.description} />
+            </div>
+          )}
         </Card>
       ))
     }
@@ -31,15 +48,15 @@ const landing = await getEntry("landing", "landing");
   const widthPx = (columns) => `${cardWidth * columns + gap * (columns - 1)}px`;
 
   const initMasonry = () => {
-    const masonryElement = document.querySelector('.masonry-launchpad');
+    const masonryElement = document.querySelector(".masonry-launchpad");
 
     if (!masonryElement) {
       return;
     }
 
-    masonryElement.style.setProperty('--masonry-2col-width', widthPx(2));
-    masonryElement.style.setProperty('--masonry-3col-width', widthPx(3));
-    masonryElement.style.setProperty('--masonry-4col-width', widthPx(4));
+    masonryElement.style.setProperty("--masonry-2col-width", widthPx(2));
+    masonryElement.style.setProperty("--masonry-3col-width", widthPx(3));
+    masonryElement.style.setProperty("--masonry-4col-width", widthPx(4));
     new MiniMasonry({
       baseWidth: cardWidth,
       container: masonryElement,

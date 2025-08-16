@@ -1,32 +1,40 @@
-import type { Component } from 'solid-js';
-import { createResource, createSignal, Show, For, createMemo } from 'solid-js';
-import Select from './Select.tsx';
+import type { Component } from "solid-js";
+import { createResource, createSignal, Show, For, createMemo } from "solid-js";
+import Select from "./Select.tsx";
 
 const fetchLocations = async () => {
-  const response = await fetch('/api/locations.json');
-  if (!response.ok) throw new Error('Failed to fetch locations');
+  const response = await fetch("/api/locations.json");
+  if (!response.ok) throw new Error("Failed to fetch locations");
   return response.json();
 };
 
-const fetchPlaces = async (filter: { countyId?: number; districtId?: number; townId?: number; }) => {
+const fetchPlaces = async (filter: {
+  countyId?: number;
+  districtId?: number;
+  townId?: number;
+}) => {
   const params = new URLSearchParams();
   if (filter.townId) {
-    params.append('townId', String(filter.townId));
+    params.append("townId", String(filter.townId));
   } else if (filter.districtId) {
-    params.append('districtId', String(filter.districtId));
+    params.append("districtId", String(filter.districtId));
   } else if (filter.countyId) {
-    params.append('countyId', String(filter.countyId));
+    params.append("countyId", String(filter.countyId));
   }
   const response = await fetch(`/api/places.json?${params.toString()}`);
-  if (!response.ok) throw new Error('Failed to fetch places');
+  if (!response.ok) throw new Error("Failed to fetch places");
   return response.json();
 };
 
 const Places: Component = () => {
   const [locations] = createResource(fetchLocations);
 
-  const [selectedCountyId, setSelectedCountyId] = createSignal<number | null>(null);
-  const [selectedDistrictId, setSelectedDistrictId] = createSignal<number | null>(null);
+  const [selectedCountyId, setSelectedCountyId] = createSignal<number | null>(
+    null,
+  );
+  const [selectedDistrictId, setSelectedDistrictId] = createSignal<
+    number | null
+  >(null);
   const [selectedTownId, setSelectedTownId] = createSignal<number | null>(null);
 
   const availableDistricts = () => {
@@ -104,7 +112,9 @@ const Places: Component = () => {
         </Show>
       </div>
 
-      <Show when={places.loading}><p>Loading...</p></Show>
+      <Show when={places.loading}>
+        <p>Loading...</p>
+      </Show>
       <Show when={places.error}>
         <div class="error-message">
           <p>Error fetching data: {places.error.message}</p>
@@ -116,14 +126,19 @@ const Places: Component = () => {
         <div class="flex flex-col gap-y-4">
           <For each={places()}>
             {(place) => (
-              <div class="border rounded-2xl text-vibrant-blue p-6">
-                <h2 class="text-xl md:text-2xl mb-4">{place.placeName}</h2>
+              <div class="text-vibrant-blue rounded-2xl border p-6">
+                <h2 class="mb-4 text-xl md:text-2xl">{place.placeName}</h2>
                 <div class="mb-2" innerHTML={place.placeShortDescription} />
-                <p class="text-sm mb-6">{place.townName}</p>
+                <p class="mb-6 text-sm">{place.townName}</p>
                 <div class="flex flex-wrap gap-2">
                   <For each={place.categoryNames}>
                     {(categoryName) => (
-                      <p class="rounded-full bg-vibrant-blue text-white px-2 text-sm py-0.5">{categoryName}</p>
+                      <p
+                        class={`bg-vibrant-blue rounded-full px-2 py-0.5 text-sm
+                        text-white`}
+                      >
+                        {categoryName}
+                      </p>
                     )}
                   </For>
                 </div>

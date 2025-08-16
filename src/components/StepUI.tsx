@@ -12,7 +12,10 @@ const StepUI: Component = (props) => {
   let checkRef;
 
   const tasks = props.stepTasks ?? [];
-  const stepState = journeyStore.getStepState(props.journeyUuid, props.stepUuid);
+  const stepState = journeyStore.getStepState(
+    props.journeyUuid,
+    props.stepUuid,
+  );
 
   const [triggeredComplete, setTriggeredComplete] = createSignal(false);
   const { isVisible: isCompleteVisible, isMounted: isCompleteMounted } =
@@ -25,7 +28,8 @@ const StepUI: Component = (props) => {
 
   const handleTaskInput = (taskUuid) => (e) => {
     journeyStore.setTaskDone(
-      props.journeyUuid, props.stepUuid,
+      props.journeyUuid,
+      props.stepUuid,
       taskUuid,
       e.currentTarget.checked,
     );

@@ -26,7 +26,8 @@ const navItems = [
   },
 ];
 ---
-<footer class={`bg-frontier-gray text-shuttle-white`}>
+
+<footer class={"bg-frontier-gray text-shuttle-white"}>
   <div class="flex justify-between">
     <Logo />
     <div>
@@ -43,15 +44,21 @@ const navItems = [
   </div>
   <hr class="border-t-2" />
   <div class="flex flex-col">
-    {
-      navItems.map((navItem) => (
-      <a href={navItem.href}>{navItem.title}</a>
-      ))
-    }
+    {navItems.map((navItem) => <a href={navItem.href}>{navItem.title}</a>)}
     <a href="/vop">Podmienky používania</a>
     <a href="/gdpr">GDPR</a>
     <span>Copiright © 2024 Modrá hliadka</span>
   </div>
-  <p>Projekt je spolufinancovanaý Európskou úniou v programe Impact Lab Nadácie Pontis.</p>
-  <p>Spolufinancované Európskou úniou v rámci projektu č.101091634 – Impact Acceleration of Slovak CSOs. Vyjadrené názory a stanoviská sú názormi a stanoviskami autora/-ov a nemusia nevyhnutne odrážať názory Európskej únie alebo Európskej výkonnej agentúry pre vzdelávanie a kultúru (EACEA). Európska únia ani Európska výkonná agentúra pre vzdelávanie a kultúru za ne nezodpovedá.</p>
+  <p>
+    Projekt je spolufinancovanaý Európskou úniou v programe Impact Lab Nadácie
+    Pontis.
+  </p>
+  <p>
+    Spolufinancované Európskou úniou v rámci projektu č.101091634 – Impact
+    Acceleration of Slovak CSOs. Vyjadrené názory a stanoviská sú názormi a
+    stanoviskami autora/-ov a nemusia nevyhnutne odrážať názory Európskej únie
+    alebo Európskej výkonnej agentúry pre vzdelávanie a kultúru (EACEA).
+    Európska únia ani Európska výkonná agentúra pre vzdelávanie a kultúru za ne
+    nezodpovedá.
+  </p>
 </footer>

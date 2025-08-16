@@ -1,7 +1,7 @@
-export const prerender = false
+export const prerender = false;
 
-import type { APIRoute } from 'astro';
-import { db } from '../../db';
+import type { APIRoute } from "astro";
+import { db } from "../../db";
 import {
   address,
   category,
@@ -10,15 +10,16 @@ import {
   place,
   placeCategory,
   town,
-} from '../../db/schema';import { inArray, eq } from 'drizzle-orm';
+} from "../../db/schema";
+import { inArray, eq } from "drizzle-orm";
 
-export const GET: APIRoute = async ({request}) => {
+export const GET: APIRoute = async ({ request }) => {
   try {
     const { searchParams } = new URL(request.url);
     // Read county, district, or town IDs from the URL
-    const townIdParam = searchParams.get('townId');
-    const districtIdParam = searchParams.get('districtId');
-    const countyIdParam = searchParams.get('countyId');
+    const townIdParam = searchParams.get("townId");
+    const districtIdParam = searchParams.get("districtId");
+    const countyIdParam = searchParams.get("countyId");
 
     let placeFilter: any = undefined; // This will hold our Drizzle filter condition
 
@@ -110,7 +111,7 @@ export const GET: APIRoute = async ({request}) => {
         id: true,
         name: true,
         shortDescription: true, // Renamed from short_description to match schema
-        addressId: true,        // Renamed from address_id to match schema
+        addressId: true, // Renamed from address_id to match schema
       },
       where: placeFilter,
       limit: 10,
@@ -169,7 +170,7 @@ export const GET: APIRoute = async ({request}) => {
 
     // Create a map from address ID to its town's name
     const addressTownMap = new Map(
-      addresses.map((a) => [a.id, townMap.get(a.townId!)])
+      addresses.map((a) => [a.id, townMap.get(a.townId!)]),
     );
 
     // Create a map from place ID to a list of its category names
@@ -189,27 +190,23 @@ export const GET: APIRoute = async ({request}) => {
     const places = initialPlaces.map((p) => ({
       placeName: p.name,
       placeShortDescription: p.shortDescription,
-      townName: p.addressId ? addressTownMap.get(p.addressId) ?? null : null,
+      townName: p.addressId ? (addressTownMap.get(p.addressId) ?? null) : null,
       categoryNames: placeCategoriesMap.get(p.id) ?? [],
     }));
 
-    return new Response(
-      JSON.stringify(places), {
-        status: 200,
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      }
-    );
+    return new Response(JSON.stringify(places), {
+      status: 200,
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
   } catch (error) {
     console.error(error);
-    return new Response(
-      JSON.stringify({ error: 'Internal Server Error' }), {
-        status: 500,
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      }
-    );
+    return new Response(JSON.stringify({ error: "Internal Server Error" }), {
+      status: 500,
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
   }
 };

@@ -6,7 +6,10 @@ import Ellipsis from "lucide-solid/icons/ellipsis";
 
 const StepStatus: Component = (props) => {
   const tasks = props.stepTasks ?? [];
-  const stepState = journeyStore.getStepState(props.journeyUuid, props.stepUuid); 
+  const stepState = journeyStore.getStepState(
+    props.journeyUuid,
+    props.stepUuid,
+  );
 
   const viewBoxSize = 32;
   const strokeWidth = 4;

@@ -1,8 +1,8 @@
-export const prerender = false
+export const prerender = false;
 
-import type { APIRoute } from 'astro';
-import { db } from '../../db';
-import { county, district, town } from '../../db/schema';
+import type { APIRoute } from "astro";
+import { db } from "../../db";
+import { county, district, town } from "../../db/schema";
 
 export const GET: APIRoute = async () => {
   try {
@@ -46,13 +46,13 @@ export const GET: APIRoute = async () => {
       {
         status: 200,
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
-      }
+      },
     );
   } catch (error) {
-    console.error('Failed to fetch location data:', error);
-    return new Response(JSON.stringify({ message: 'Internal Server Error' }), {
+    console.error("Failed to fetch location data:", error);
+    return new Response(JSON.stringify({ message: "Internal Server Error" }), {
       status: 500,
     });
   }

@@ -8,7 +8,10 @@ import Item from "~/components/Item.astro";
 
 const { category } = Astro.props;
 
-const journeys = await getCollection("guidesJourneys", ({data}) => data.category === category.data.uuid);
+const journeys = await getCollection(
+  "guidesJourneys",
+  ({ data }) => data.category === category.data.uuid,
+);
 
 export const getStaticPaths = async () => {
   return (await getCollection("guidesCategories")).map((category) => ({
@@ -21,13 +24,15 @@ export const getStaticPaths = async () => {
 <BaseLayout>
   <Section heading={category.data.title}>
     <List>
-      {journeys.map( journey => (
+      {
+        journeys.map((journey) => (
           <Item
             heading={journey.data.title}
             href={`/zivotne-situacie/${journey.id}`}
             description={journey.data.description}
           />
-        ))}
+        ))
+      }
     </List>
   </Section>
 </BaseLayout>

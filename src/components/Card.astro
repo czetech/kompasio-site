@@ -5,13 +5,23 @@ const { title, href, color = "white", class: className } = Astro.props;
 
 const external = /^https?:\/\//.test(href);
 
-const Link = href ? 'a' : 'div';
+const Link = href ? "a" : "div";
 
-const colorMap = {"blue": ["bg-vibrant-blue", "text-shuttle-white"], "orange": ["bg-red-orange", "text-shuttle-white"], "white": ["text-vibrant-blue", "border-2"]};
+const colorMap = {
+  blue: ["bg-vibrant-blue", "text-shuttle-white"],
+  orange: ["bg-red-orange", "text-shuttle-white"],
+  white: ["text-vibrant-blue", "border-2"],
+};
 ---
-<Link href={href} target={external ? "_blank" : null} class="p-6 rounded-2xl" class:list={[colorMap[color], {"block": Link === "a"}, className]}>
-  <div class="flex gap-x-4 mb-4">
-    <h2 class="text-xl md:text-2xl font-semibold grow">{title}</h2>
+
+<Link
+  href={href}
+  target={external ? "_blank" : null}
+  class="rounded-2xl p-6"
+  class:list={[colorMap[color], { block: Link === "a" }, className]}
+>
+  <div class="mb-4 flex gap-x-4">
+    <h2 class="grow text-xl font-semibold md:text-2xl">{title}</h2>
     {href && <CircleArrow direction={external ? 45 : 90} />}
   </div>
   <slot />

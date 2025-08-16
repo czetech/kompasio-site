@@ -3,16 +3,16 @@ import { getEntry } from "astro:content";
 import BaseLayout from "~/layouts/BaseLayout.astro";
 import Scrollable from "~/components/Scrollable.tsx";
 import Markdown from "~/components/Markdown.astro";
-import Section from "~/components/Section.astro"
+import Section from "~/components/Section.astro";
 
 const gdpr = await getEntry("gdpr", "gdpr");
 ---
 
 <BaseLayout strictHeight>
   <Section heading={gdpr.data.title}>
-    <Scrollable client:only class="px-6 md:px-8 pt-8 pb-16" >
+    <Scrollable client:only class="px-6 pt-8 pb-16 md:px-8">
       <div class="text-sm">
-        <Markdown content={gdpr.data.body}>
+        <Markdown content={gdpr.data.body} />
       </div>
     </Scrollable>
   </Section>

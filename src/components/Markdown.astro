@@ -1,12 +1,12 @@
 ---
-import { unified } from 'unified';
-import remarkParse from 'remark-parse';
-import remarkRehype from 'remark-rehype';
-import rehypeExternalLinks from 'rehype-external-links';
-import rehypeStringify from 'rehype-stringify';
-import remarkGfm from 'remark-gfm';
-import rehypeRaw from 'rehype-raw';
-import { visit } from 'unist-util-visit';
+import { unified } from "unified";
+import remarkParse from "remark-parse";
+import remarkRehype from "remark-rehype";
+import rehypeExternalLinks from "rehype-external-links";
+import rehypeStringify from "rehype-stringify";
+import remarkGfm from "remark-gfm";
+import rehypeRaw from "rehype-raw";
+import { visit } from "unist-util-visit";
 
 interface Props {
   content: string;
@@ -15,23 +15,31 @@ interface Props {
 const { content } = Astro.props;
 
 const rehypeScrollableWrapper = () => (tree) => {
-  visit(tree, { tagName: 'table' }, (node, index, parent) => {
+  visit(tree, { tagName: "table" }, (node, index, parent) => {
     const wrapper = {
-      type: 'element',
-      tagName: 'div',
-      properties: { className: ['markdown-scrollable'] },
+      type: "element",
+      tagName: "div",
+      properties: { className: ["markdown-scrollable"] },
       children: [node],
     };
     parent.children.splice(index, 1, wrapper);
   });
-}
+};
 
-const file = await unified().use(remarkParse).use(remarkGfm).use(remarkRehype, { allowDangerousHtml: true }).use(rehypeRaw).use(rehypeScrollableWrapper).use(rehypeExternalLinks, {
-    rel: ["nofollow", 'noopener', 'noreferrer'],
-    target: '_blank'
-  }).use(rehypeStringify).process(content);
+const file = await unified()
+  .use(remarkParse)
+  .use(remarkGfm)
+  .use(remarkRehype, { allowDangerousHtml: true })
+  .use(rehypeRaw)
+  .use(rehypeScrollableWrapper)
+  .use(rehypeExternalLinks, {
+    rel: ["nofollow", "noopener", "noreferrer"],
+    target: "_blank",
+  })
+  .use(rehypeStringify)
+  .process(content);
 
 const html = String(file);
 ---
 
-<div class="markdown" set:html={html}></div>
+<div class="markdown" set:html={html} />

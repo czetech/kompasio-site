@@ -42,7 +42,8 @@ const createJourneyStore = () => {
         produce((state) => {
           state.journeys[journeyUuid].steps[stepUuid].tasks ??= {};
           state.journeys[journeyUuid].steps[stepUuid].tasks[taskUuid] ??= {};
-          state.journeys[journeyUuid].steps[stepUuid].tasks[taskUuid].isDone = isDone;
+          state.journeys[journeyUuid].steps[stepUuid].tasks[taskUuid].isDone =
+            isDone;
         }),
       );
     });

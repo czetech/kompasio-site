@@ -1,4 +1,4 @@
-import { relations } from 'drizzle-orm';
+import { relations } from "drizzle-orm";
 import {
   boolean,
   datetime,
@@ -7,14 +7,14 @@ import {
   mysqlTable,
   text,
   varchar,
-} from 'drizzle-orm/mysql-core';
+} from "drizzle-orm/mysql-core";
 
-export const address = mysqlTable('address', {
-  id: int('id').notNull(),
-  street: varchar('street', { length: 255 }).notNull(),
-  postcode: varchar('postcode', { length: 10 }).notNull(),
-  countryId: int('country_id'),
-  townId: int('town_id'),
+export const address = mysqlTable("address", {
+  id: int("id").notNull(),
+  street: varchar("street", { length: 255 }).notNull(),
+  postcode: varchar("postcode", { length: 10 }).notNull(),
+  countryId: int("country_id"),
+  townId: int("town_id"),
 });
 
 export const addressRelations = relations(address, ({ one }) => ({
@@ -28,38 +28,38 @@ export const addressRelations = relations(address, ({ one }) => ({
   }),
 }));
 
-export const category = mysqlTable('category', {
-  id: int('id').notNull(),
-  description: text('description').notNull(),
-  icon: varchar('icon', { length: 255 }).notNull(),
-  color: varchar('color', { length: 7 }).notNull(),
-  name: varchar('name', { length: 128 }).notNull(),
-  parentId: int('parent_id'),
-  alias: varchar('alias', { length: 255 }),
-  sortOrder: int('sort_order').notNull(),
-  shortAlias: varchar('short_alias', { length: 255 }),
-  htmlHeadAttributesId: int('html_head_attributes_id'),
-  active: boolean('active').notNull(),
-  hiddenForUsers: boolean('hidden_for_users').notNull(),
+export const category = mysqlTable("category", {
+  id: int("id").notNull(),
+  description: text("description").notNull(),
+  icon: varchar("icon", { length: 255 }).notNull(),
+  color: varchar("color", { length: 7 }).notNull(),
+  name: varchar("name", { length: 128 }).notNull(),
+  parentId: int("parent_id"),
+  alias: varchar("alias", { length: 255 }),
+  sortOrder: int("sort_order").notNull(),
+  shortAlias: varchar("short_alias", { length: 255 }),
+  htmlHeadAttributesId: int("html_head_attributes_id"),
+  active: boolean("active").notNull(),
+  hiddenForUsers: boolean("hidden_for_users").notNull(),
 });
 
 export const categoryRelations = relations(category, ({ one, many }) => ({
   parent: one(category, {
     fields: [category.parentId],
     references: [category.id],
-    relationName: 'parent_category',
+    relationName: "parent_category",
   }),
   children: many(category, {
-    relationName: 'parent_category',
+    relationName: "parent_category",
   }),
   placeCategories: many(placeCategory),
 }));
 
-export const country = mysqlTable('country', {
-  id: int('id').notNull(),
-  isoCode: varchar('iso_code', { length: 2 }).notNull(),
-  color: varchar('color', { length: 7 }).notNull(),
-  name: varchar('name', { length: 128 }).notNull(),
+export const country = mysqlTable("country", {
+  id: int("id").notNull(),
+  isoCode: varchar("iso_code", { length: 2 }).notNull(),
+  color: varchar("color", { length: 7 }).notNull(),
+  name: varchar("name", { length: 128 }).notNull(),
 });
 
 export const countryRelations = relations(country, ({ many }) => ({
@@ -67,12 +67,12 @@ export const countryRelations = relations(country, ({ many }) => ({
   counties: many(county),
 }));
 
-export const county = mysqlTable('county', {
-  id: int('id').notNull(),
-  countryId: int('country_id'),
-  name: varchar('name', { length: 128 }).notNull(),
-  code: varchar('code', { length: 1 }).notNull(),
-  alias: varchar('alias', { length: 128 }).notNull(),
+export const county = mysqlTable("county", {
+  id: int("id").notNull(),
+  countryId: int("country_id"),
+  name: varchar("name", { length: 128 }).notNull(),
+  code: varchar("code", { length: 1 }).notNull(),
+  alias: varchar("alias", { length: 128 }).notNull(),
 });
 
 export const countyRelations = relations(county, ({ one, many }) => ({
@@ -83,12 +83,12 @@ export const countyRelations = relations(county, ({ one, many }) => ({
   districts: many(district),
 }));
 
-export const district = mysqlTable('district', {
-  id: int('id').notNull(),
-  countyId: int('county_id'),
-  name: varchar('name', { length: 128 }).notNull(),
-  code: varchar('code', { length: 3 }),
-  alias: varchar('alias', { length: 128 }).notNull(),
+export const district = mysqlTable("district", {
+  id: int("id").notNull(),
+  countyId: int("county_id"),
+  name: varchar("name", { length: 128 }).notNull(),
+  code: varchar("code", { length: 3 }),
+  alias: varchar("alias", { length: 128 }).notNull(),
 });
 
 export const districtRelations = relations(district, ({ one, many }) => ({
@@ -99,31 +99,33 @@ export const districtRelations = relations(district, ({ one, many }) => ({
   towns: many(town),
 }));
 
-export const place = mysqlTable('place', {
-  id: int('id').notNull(),
-  alias: varchar('alias', { length: 255 }).notNull(),
-  shortDescription: text('short_description').notNull(),
-  description: text('description').notNull(),
-  icon: varchar('icon', { length: 255 }).notNull(),
-  website: varchar('website', { length: 255 }).notNull(),
-  name: varchar('name', { length: 128 }).notNull(),
-  locationLat: double('location_lat'),
-  locationLng: double('location_lng'),
-  visibleInCatalog: boolean('visible_in_catalog').notNull(),
-  visibleInMap: boolean('visible_in_map').notNull(),
-  addressId: int('address_id'),
-  createdAt: datetime('created_at').notNull(),
-  updatedAt: datetime('updated_at'),
-  bookingUrl: varchar('booking_url', { length: 255 }).notNull(),
-  publicEmail: varchar('public_email', { length: 64 }).notNull(),
-  adminEmail: varchar('admin_email', { length: 64 }).notNull(),
-  companyRegistrationNumber: varchar('company_registration_number', { length: 16 }).notNull(),
-  addressInstructions: text('address_instructions').notNull(),
-  internalNote: text('internal_note').notNull(),
-  externalReferences: text('external_references').notNull(),
-  additionalEmails: text('additional_emails').notNull(),
-  additionalWebsites: text('additional_websites').notNull(),
-  eduid: varchar('eduid', { length: 9 }).notNull(),
+export const place = mysqlTable("place", {
+  id: int("id").notNull(),
+  alias: varchar("alias", { length: 255 }).notNull(),
+  shortDescription: text("short_description").notNull(),
+  description: text("description").notNull(),
+  icon: varchar("icon", { length: 255 }).notNull(),
+  website: varchar("website", { length: 255 }).notNull(),
+  name: varchar("name", { length: 128 }).notNull(),
+  locationLat: double("location_lat"),
+  locationLng: double("location_lng"),
+  visibleInCatalog: boolean("visible_in_catalog").notNull(),
+  visibleInMap: boolean("visible_in_map").notNull(),
+  addressId: int("address_id"),
+  createdAt: datetime("created_at").notNull(),
+  updatedAt: datetime("updated_at"),
+  bookingUrl: varchar("booking_url", { length: 255 }).notNull(),
+  publicEmail: varchar("public_email", { length: 64 }).notNull(),
+  adminEmail: varchar("admin_email", { length: 64 }).notNull(),
+  companyRegistrationNumber: varchar("company_registration_number", {
+    length: 16,
+  }).notNull(),
+  addressInstructions: text("address_instructions").notNull(),
+  internalNote: text("internal_note").notNull(),
+  externalReferences: text("external_references").notNull(),
+  additionalEmails: text("additional_emails").notNull(),
+  additionalWebsites: text("additional_websites").notNull(),
+  eduid: varchar("eduid", { length: 9 }).notNull(),
 });
 
 export const placeRelations = relations(place, ({ one, many }) => ({
@@ -134,9 +136,9 @@ export const placeRelations = relations(place, ({ one, many }) => ({
   placeCategories: many(placeCategory),
 }));
 
-export const placeCategory = mysqlTable('place_category', {
-  placeId: int('place_id').notNull(),
-  categoryId: int('category_id').notNull(),
+export const placeCategory = mysqlTable("place_category", {
+  placeId: int("place_id").notNull(),
+  categoryId: int("category_id").notNull(),
 });
 
 export const placeCategoryRelations = relations(placeCategory, ({ one }) => ({
@@ -150,12 +152,12 @@ export const placeCategoryRelations = relations(placeCategory, ({ one }) => ({
   }),
 }));
 
-export const town = mysqlTable('town', {
-  id: int('id').notNull(),
-  districtId: int('district_id'),
-  name: varchar('name', { length: 128 }).notNull(),
-  code: varchar('code', { length: 9 }),
-  alias: varchar('alias', { length: 128 }).notNull(),
+export const town = mysqlTable("town", {
+  id: int("id").notNull(),
+  districtId: int("district_id"),
+  name: varchar("name", { length: 128 }).notNull(),
+  code: varchar("code", { length: 9 }),
+  alias: varchar("alias", { length: 128 }).notNull(),
 });
 
 export const townRelations = relations(town, ({ one, many }) => ({

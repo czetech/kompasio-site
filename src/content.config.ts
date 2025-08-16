@@ -55,4 +55,12 @@ const gdpr = defineCollection({
   }),
 });
 
-export const collections = { landing, guides, guidesCategories, guidesJourneys, contact, vop, gdpr };
+export const collections = {
+  landing,
+  guides,
+  guidesCategories,
+  guidesJourneys,
+  contact,
+  vop,
+  gdpr,
+};

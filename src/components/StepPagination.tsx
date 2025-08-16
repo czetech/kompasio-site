@@ -6,13 +6,20 @@ import { createEffect, createSignal, on } from "solid-js";
 import path from "pathe";
 
 const StepPagination: Component = (props) => {
-  const stepState = journeyStore.getStepState(props.journeyUuid, props.stepUuid); 
+  const stepState = journeyStore.getStepState(
+    props.journeyUuid,
+    props.stepUuid,
+  );
 
   const [triggeredComplete, setTriggeredComplete] = createSignal(false);
 
-const stepPath = (stepIndex) =>
+  const stepPath = (stepIndex) =>
     // TODO: merge with journeyStep (astro) function
-    path.join("/zivotne-situacie", props.journeySlug, stepIndex ? stepIndex.toString() : null); 
+    path.join(
+      "/zivotne-situacie",
+      props.journeySlug,
+      stepIndex ? stepIndex.toString() : null,
+    );
 
   createEffect(
     on(

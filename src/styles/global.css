@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-@import 'tailwind-scrollbar-hide/v4';
+@import "tailwind-scrollbar-hide/v4";
 
 @theme {
   --animate-draw: 1s 0.25s ease-in-out forwards draw;
@@ -80,11 +80,11 @@
   }
 
   ul {
-    @apply list-disc list-outside mb-3 md:mb-4 pl-6 md:pl-7;
+    @apply mb-3 list-outside list-disc pl-6 md:mb-4 md:pl-7;
   }
 
   ol {
-    @apply list-decimal list-outside mb-3 md:mb-4 pl-6 md:pl-8;
+    @apply mb-3 list-outside list-decimal pl-6 md:mb-4 md:pl-8;
   }
 
   li > p {
@@ -92,15 +92,16 @@
   }
 
   blockquote {
-    @apply border-l-4 border-frontier-gray pl-3 md:pl-4 italic my-4 md:my-6;
+    @apply border-frontier-gray my-4 border-l-4 pl-3 italic md:my-6 md:pl-4;
   }
 
   table {
-    @apply w-full my-4 md:my-6;
+    @apply my-4 w-full md:my-6;
   }
 
-  th, td {
-    @apply border border-frontier-gray p-2 md:p-3 text-left;
+  th,
+  td {
+    @apply border-frontier-gray border p-2 text-left md:p-3;
   }
 
   thead {
@@ -116,7 +117,7 @@
   }
 
   img {
-    @apply max-w-full h-auto my-4 md:my-6;
+    @apply my-4 h-auto max-w-full md:my-6;
   }
 }
 

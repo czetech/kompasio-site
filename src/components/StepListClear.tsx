@@ -4,7 +4,10 @@ import InlineButton from "./InlineButton";
 import { createPresence } from "@solid-primitives/presence";
 
 const StepListClear: Component = (props) => {
-  const {isVisible, isMounted} = createPresence(() => journeyStore.state.journeys?.[props.journeyUuid], {transitionDuration: 250});
+  const { isVisible, isMounted } = createPresence(
+    () => journeyStore.state.journeys?.[props.journeyUuid],
+    { transitionDuration: 250 },
+  );
 
   const handleClick = () => {
     if (window.confirm("Ste si istý, že chcete vymazať priebeh celého návodu?"))

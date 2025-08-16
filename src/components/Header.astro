@@ -23,34 +23,37 @@ const navItems = [
   },
 ];
 ---
+
 <header transition:persist>
-<nav
-  class={`text-vibrant-blue border-b-2 relative flex flex-col items-center justify-between
-    px-4 py-2 md:flex-row md:px-8 md:py-3`}
->
-  <Logo class="h-6 md:h-7" />
-  <NavToggle client:load />
-  <div
-    id="menu-content"
-    class={`grid grid-rows-[0fr] invisible duration-250
-      peer-[.is-open]:grid-rows-[1fr] peer-[.is-open]:visible md:grid-rows-none
-      md:visible peer-[.is-open]:[&>*]:opacity-100`}
+  <nav
+    class={`text-vibrant-blue border-b-2 relative flex flex-col items-center
+      justify-between px-4 py-2 md:flex-row md:px-8 md:py-3`}
   >
-    <div class="overflow-hidden opacity-0 duration-250 md:opacity-100">
-      <div class="flex flex-col items-center gap-y-2 py-2 md:flex-row md:py-0">
-        {
-          navItems.map((navItem, index) => (
-            <NavItem
-              client:load
-              pathname={Astro.url.pathname}
-              first={index === 0}
-              last={index === navItems.length - 1}
-              {...navItem}
-            />
-          ))
-        }
+    <Logo class="h-6 md:h-7" />
+    <NavToggle client:load />
+    <div
+      id="menu-content"
+      class={`grid grid-rows-[0fr] invisible duration-250
+        peer-[.is-open]:grid-rows-[1fr] peer-[.is-open]:visible
+        md:grid-rows-none md:visible peer-[.is-open]:[&>*]:opacity-100`}
+    >
+      <div class="overflow-hidden opacity-0 duration-250 md:opacity-100">
+        <div
+          class="flex flex-col items-center gap-y-2 py-2 md:flex-row md:py-0"
+        >
+          {
+            navItems.map((navItem, index) => (
+              <NavItem
+                client:load
+                pathname={Astro.url.pathname}
+                first={index === 0}
+                last={index === navItems.length - 1}
+                {...navItem}
+              />
+            ))
+          }
+        </div>
       </div>
     </div>
-  </div>
-</nav>
+  </nav>
 </header>

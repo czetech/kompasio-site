@@ -1,5 +1,12 @@
-import { createSignal, For, Show, createMemo, onCleanup, onMount } from 'solid-js';
-import type { Component } from 'solid-js';
+import {
+  createSignal,
+  For,
+  Show,
+  createMemo,
+  onCleanup,
+  onMount,
+} from "solid-js";
+import type { Component } from "solid-js";
 import ArrowDown from "lucide-solid/icons/arrow-down";
 
 interface Option {
@@ -21,7 +28,7 @@ const Select: Component<StyledSelectProps> = (props) => {
   let selectRef: HTMLDivElement | undefined;
 
   const selectedOption = createMemo(() =>
-    props.options.find((opt) => opt.id === props.value)
+    props.options.find((opt) => opt.id === props.value),
   );
 
   const handleClickOutside = (e: MouseEvent) => {
@@ -31,10 +38,10 @@ const Select: Component<StyledSelectProps> = (props) => {
   };
 
   onMount(() => {
-    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
   });
   onCleanup(() => {
-    document.removeEventListener('mousedown', handleClickOutside);
+    document.removeEventListener("mousedown", handleClickOutside);
   });
 
   const toggleDropdown = () => {
@@ -51,35 +58,40 @@ const Select: Component<StyledSelectProps> = (props) => {
   return (
     <div
       ref={selectRef}
-      class="relative w-full text-vibrant-blue"
-      classList={{ '!text-frontier-gray cursor-not-allowed': props.disabled }}
+      class="text-vibrant-blue relative w-full"
+      classList={{ "!text-frontier-gray cursor-not-allowed": props.disabled }}
     >
       <button
         type="button"
         onClick={toggleDropdown}
-        class="w-full flex items-center p-1 rounded-full border z-20 relative"
+        class="relative z-20 flex w-full items-center rounded-full border p-1"
         aria-haspopup="listbox"
         aria-expanded={isOpen()}
         disabled={props.disabled}
       >
         <ArrowDown
           class="duration-500"
-          classList={{ 'rotate-180': isOpen() }}
+          classList={{ "rotate-180": isOpen() }}
         />
 
-        <span class="grow text-lg font-semibold">{selectedOption()?.name || props.label}</span>
+        <span class="grow text-lg font-semibold">
+          {selectedOption()?.name || props.label}
+        </span>
       </button>
 
       <Show when={isOpen()}>
-        <div class="absolute z-10 w-full top-0 bg-white border overflow-hidden shadow-lg p-2 rounded-2xl pt-12">
-          <ul class="max-h-60 overflow-y-auto space-y-1 pr-2" role="listbox">
+        <div
+          class={`absolute top-0 z-10 w-full overflow-hidden rounded-2xl border
+            bg-white p-2 pt-12 shadow-lg`}
+        >
+          <ul class="max-h-60 space-y-1 overflow-y-auto pr-2" role="listbox">
             <li
               onClick={() => {
                 props.onChange(null);
                 setIsOpen(false);
               }}
               role="option"
-              class="p-1 text-lg font-semibold text-frontier-gray"
+              class="text-frontier-gray p-1 text-lg font-semibold"
             >
               {props.placeholder}
             </li>
@@ -91,11 +103,12 @@ const Select: Component<StyledSelectProps> = (props) => {
                   aria-selected={option.id === props.value}
                   class="p-1 text-xl font-semibold"
                   classList={{
-                    'bg-vibrant-blue text-white': props.value === option.id,
-                    'text-vibrant-blue': props.value !== option.id
+                    "bg-vibrant-blue text-white": props.value === option.id,
+                    "text-vibrant-blue": props.value !== option.id,
                   }}
                   style={{
-                    opacity: props.value !== option.id ? 1 - (i() + 1) * 0.1 : 1
+                    opacity:
+                      props.value !== option.id ? 1 - (i() + 1) * 0.1 : 1,
                   }}
                 >
                   {option.name}

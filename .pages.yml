@@ -1,268 +1,268 @@
 media:
-- name: images
-  label: Images
-  input: src/assets/images
-  output: /images
-  extensions:
-  - apng
-  - avif
-  - gif
-  - jpeg
-  - jpg
-  - png
-  - svg
-  - webp
+  - name: images
+    label: Images
+    input: src/assets/images
+    output: /images
+    extensions:
+      - apng
+      - avif
+      - gif
+      - jpeg
+      - jpg
+      - png
+      - svg
+      - webp
 content:
-- name: landing
-  label: Landing
-  type: file
-  path: content/landing.yaml
-  fields:
-  - name: heroTitle
-    label: Hero Title
-    description: Landing hero title.
-    type: text
-    required: true
-  - name: heroImage
-    label: Hero Image
-    description: Landing hero image. Minimal resolution 258x16px.
-    type: image
-    required: true
-    options:
-      media: images
-  - name: cards
-    label: Cards
-    description: Landing card.
-    type: object
-    list:
-      collapsible:
-        collapsed: true
-        summary: "{fields.title}"
+  - name: landing
+    label: Landing
+    type: file
+    path: content/landing.yaml
     fields:
-    - name: title
-      label: Title
-      description: Card title.
-      type: text
-      required: true
-    - name: url
-      label: URL
-      description: Card destination URL.
-      type: text
-      required: true
-    - name: color
-      label: Color
-      description: Card color.
-      type: select
-      default: white
-      options:
-        values:
-        - value: blue
-          label: Blue
-        - value: orange
-          label: Orange
-        - value: white
-          label: White
-    - name: image
-      label: Image
-      description: >-
-        Card image in original dimensions with a minimum size of 623x16px
-        (landscape).
-      type: image
-      options:
-        media: images
-    - name: description
-      label: Description
-      description: Short card description.
-      type: rich-text-lite
-      options:
-        media: false
-  format: yaml
-- name: guides
-  label: Guides
-  type: file
-  path: content/guides.yaml
-  fields:
-  - name: featured
-    label: Featured
-    description: Featured journeys.
-    type: reference
-    options:
-      collection: guides_journeys
-      multiple: true
-      search: title
-      value: "{uuid}"
-      label: "{title}"
-  format: yaml
-- name: guides_categories
-  label: Guides - Categories
-  type: collection
-  path: content/guides_categories
-  fields:
-  - name: title
-    label: Title
-    description: Category name.
-    type: text
-    required: true
-  - name: description
-    label: Description
-    description: Short category description.
-    type: rich-text-lite
-    options:
-      media: false
-  - name: uuid
-    type: uuid
-    hidden: true
-  filename: "{primary}.yaml"
-  view:
-    fields:
-    - title
-    - description
-    sort:
-    - title
-    search:
-    - title
-  format: yaml
-  subfolders: false
-- name: guides_journeys
-  label: Guides - Journeys
-  type: collection
-  path: content/guides_journeys
-  fields:
-  - name: title
-    label: Title
-    description: Journey name.
-    type: text
-    required: true
-  - name: category
-    label: Category
-    description: Journey category.
-    type: reference
-    required: true
-    options:
-      collection: guides_categories
-      search: title
-      value: "{uuid}"
-      label: "{title}"
-  - name: description
-    label: Description
-    description: Short journey description.
-    type: rich-text-lite
-    options:
-      media: false
-  - name: steps
-    label: Steps
-    description: Journey step.
-    type: object
-    list:
-      collapsible:
-        collapsed: true
-        summary: "{index} - {fields.title}"
-    required: true
-    fields:
-    - name: title
-      label: Title
-      description: Step name.
-      type: text
-      required: true
-    - name: body
-      label: Body
-      description: Step body.
-      type: rich-text-full
-      required: true
-      options:
-        media: images
-    - name: tasks
-      label: Tasks
-      description: Step task.
-      type: object
-      list:
-        collapsible:
-          collapsed: true
-          summary: "{fields.body}"
-      fields:
-      - name: body
-        label: Body
-        description: Task body.
+      - name: heroTitle
+        label: Hero Title
+        description: Landing hero title.
         type: text
         required: true
+      - name: heroImage
+        label: Hero Image
+        description: Landing hero image. Minimal resolution 258x16px.
+        type: image
+        required: true
+        options:
+          media: images
+      - name: cards
+        label: Cards
+        description: Landing card.
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{fields.title}"
+        fields:
+          - name: title
+            label: Title
+            description: Card title.
+            type: text
+            required: true
+          - name: url
+            label: URL
+            description: Card destination URL.
+            type: text
+            required: true
+          - name: color
+            label: Color
+            description: Card color.
+            type: select
+            default: white
+            options:
+              values:
+                - value: blue
+                  label: Blue
+                - value: orange
+                  label: Orange
+                - value: white
+                  label: White
+          - name: image
+            label: Image
+            description: >-
+              Card image in original dimensions with a minimum size of 623x16px
+              (landscape).
+            type: image
+            options:
+              media: images
+          - name: description
+            label: Description
+            description: Short card description.
+            type: rich-text-lite
+            options:
+              media: false
+    format: yaml
+  - name: guides
+    label: Guides
+    type: file
+    path: content/guides.yaml
+    fields:
+      - name: featured
+        label: Featured
+        description: Featured journeys.
+        type: reference
+        options:
+          collection: guides_journeys
+          multiple: true
+          search: title
+          value: "{uuid}"
+          label: "{title}"
+    format: yaml
+  - name: guides_categories
+    label: Guides - Categories
+    type: collection
+    path: content/guides_categories
+    fields:
+      - name: title
+        label: Title
+        description: Category name.
+        type: text
+        required: true
+      - name: description
+        label: Description
+        description: Short category description.
+        type: rich-text-lite
+        options:
+          media: false
       - name: uuid
         type: uuid
         hidden: true
-    - name: uuid
-      type: uuid
-      hidden: true
-  - name: uuid
-    type: uuid
-    hidden: true
-  filename: "{primary}.yaml"
-  view:
+    filename: "{primary}.yaml"
+    view:
+      fields:
+        - title
+        - description
+      sort:
+        - title
+      search:
+        - title
+    format: yaml
+    subfolders: false
+  - name: guides_journeys
+    label: Guides - Journeys
+    type: collection
+    path: content/guides_journeys
     fields:
-    - title
-    - description
-    sort:
-    - title
-    search:
-    - title
-  format: yaml
-  subfolders: false
-- name: contact
-  label: Contact
-  type: file
-  path: content/contact.yaml
-  fields:
-  - name: title
-    label: Title
-    description: Contact title.
-    type: text
-    required: true
-  - name: cardTitle
-    label: Card title
-    description: Contact card title.
-    type: text
-    required: true
-  - name: emailLabel
-    label: Email label
-    description: Contact card email label.
-    type: text
-    required: true
-  - name: emailAddress
-    label: Email address
-    description: Contact card email address.
-    type: text
-    required: true
-- name: vop
-  label: VOP
-  type: file
-  path: content/vop.yaml
-  fields:
-  - name: title
-    label: Title
-    description: VOP title.
-    type: text
-    required: true
-  - name: body
-    label: Body
-    description: VOP body.
-    type: rich-text-full
-    required: true
-    options:
-      media: images
-- name: gdpr
-  label: GDPR
-  type: file
-  path: content/gdpr.yaml
-  fields:
-  - name: title
-    label: Title
-    description: GDPR title.
-    type: text
-    required: true
-  - name: body
-    label: Body
-    description: GDPR body.
-    type: rich-text-full
-    required: true
-    options:
-      media: images
+      - name: title
+        label: Title
+        description: Journey name.
+        type: text
+        required: true
+      - name: category
+        label: Category
+        description: Journey category.
+        type: reference
+        required: true
+        options:
+          collection: guides_categories
+          search: title
+          value: "{uuid}"
+          label: "{title}"
+      - name: description
+        label: Description
+        description: Short journey description.
+        type: rich-text-lite
+        options:
+          media: false
+      - name: steps
+        label: Steps
+        description: Journey step.
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{index} - {fields.title}"
+        required: true
+        fields:
+          - name: title
+            label: Title
+            description: Step name.
+            type: text
+            required: true
+          - name: body
+            label: Body
+            description: Step body.
+            type: rich-text-full
+            required: true
+            options:
+              media: images
+          - name: tasks
+            label: Tasks
+            description: Step task.
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{fields.body}"
+            fields:
+              - name: body
+                label: Body
+                description: Task body.
+                type: text
+                required: true
+              - name: uuid
+                type: uuid
+                hidden: true
+          - name: uuid
+            type: uuid
+            hidden: true
+      - name: uuid
+        type: uuid
+        hidden: true
+    filename: "{primary}.yaml"
+    view:
+      fields:
+        - title
+        - description
+      sort:
+        - title
+      search:
+        - title
+    format: yaml
+    subfolders: false
+  - name: contact
+    label: Contact
+    type: file
+    path: content/contact.yaml
+    fields:
+      - name: title
+        label: Title
+        description: Contact title.
+        type: text
+        required: true
+      - name: cardTitle
+        label: Card title
+        description: Contact card title.
+        type: text
+        required: true
+      - name: emailLabel
+        label: Email label
+        description: Contact card email label.
+        type: text
+        required: true
+      - name: emailAddress
+        label: Email address
+        description: Contact card email address.
+        type: text
+        required: true
+  - name: vop
+    label: VOP
+    type: file
+    path: content/vop.yaml
+    fields:
+      - name: title
+        label: Title
+        description: VOP title.
+        type: text
+        required: true
+      - name: body
+        label: Body
+        description: VOP body.
+        type: rich-text-full
+        required: true
+        options:
+          media: images
+  - name: gdpr
+    label: GDPR
+    type: file
+    path: content/gdpr.yaml
+    fields:
+      - name: title
+        label: Title
+        description: GDPR title.
+        type: text
+        required: true
+      - name: body
+        label: Body
+        description: GDPR body.
+        type: rich-text-full
+        required: true
+        options:
+          media: images
 settings:
   hide: true

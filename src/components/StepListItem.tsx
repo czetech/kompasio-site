@@ -5,7 +5,11 @@ import path from "pathe";
 const StepListItem: Component = (props) => {
   const stepPath = () =>
     // TODO: merge with journeyStep (astro) function
-    path.join("/zivotne-situacie", props.journeySlug, props.stepIndex ? props.stepIndex.toString() : null);
+    path.join(
+      "/zivotne-situacie",
+      props.journeySlug,
+      props.stepIndex ? props.stepIndex.toString() : null,
+    );
 
   const [isActive, setIsActive] = createSignal(props.pathname === stepPath());
 
