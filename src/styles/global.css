@@ -1,8 +1,6 @@
 @import "tailwindcss";
 
-@plugin 'tailwind-scrollbar' {
-  nocompatible: true;
-}
+@import 'tailwind-scrollbar-hide/v4';
 
 @theme {
   --animate-draw: 1s 0.25s ease-in-out forwards draw;
@@ -120,4 +118,8 @@
   img {
     @apply max-w-full h-auto my-4 md:my-6;
   }
+}
+
+.markdown-scrollable {
+  @apply overflow-x-auto;
 }
