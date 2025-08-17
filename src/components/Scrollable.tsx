@@ -196,7 +196,7 @@ export default function Scrollable(props) {
         ref={trackRef}
         class={`text-vibrant-blue pointer-events-none absolute right-0 w-4
           flex-none rounded-full bg-white opacity-(--track-opacity)
-          transition-opacity duration-500 md:right-(--padding-right)
+          transition-opacity duration-1000 md:right-(--padding-right)
           md:opacity-100`}
         style={{
           top: paddingTopStyle(),
