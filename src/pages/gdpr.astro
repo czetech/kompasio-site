@@ -10,7 +10,7 @@ const gdpr = await getEntry("gdpr", "gdpr");
 
 <BaseLayout strictHeight>
   <Section heading={gdpr.data.title}>
-    <Scrollable client:only class="px-6 pt-8 pb-16 md:px-8">
+    <Scrollable client:load class="px-6 pt-8 pb-16 md:px-8">
       <div class="text-sm">
         <Markdown content={gdpr.data.body} />
       </div>

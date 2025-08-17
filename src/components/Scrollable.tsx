@@ -53,7 +53,6 @@ export default function Scrollable(props) {
   const thumbPositionTranslate = createMemo(
     () => `translateY(${thumbPosition()}px)`,
   );
-
   const maskStyle = createMemo(
     () => `linear-gradient(
       to bottom,

@@ -3,34 +3,12 @@ import CircleArrow from "~/components/CircleArrow.tsx";
 const { heading } = Astro.props;
 ---
 
-<section class="flex w-full max-w-5xl grow flex-col">
+<section class="flex w-full max-w-5xl grow flex-col py-8">
   <div class="mb-4 flex items-center justify-center gap-x-4 md:mb-8">
     <CircleArrow direction="180" />
     <h1 class="text-2xl font-semibold md:text-3xl">{heading}</h1>
   </div>
-  <div id="test-section" class="grow">
+  <div class="grow">
     <slot />
   </div>
 </section>
-
-<script>
-  function setHeightToBottomOfScreen(selector) {
-    const element = document.querySelector(selector);
-
-    if (element) {
-      const bodyRect = document.body.getBoundingClientRect();
-      const elementRect = element.getBoundingClientRect();
-      const distanceToBottom =
-        window.innerHeight - elementRect.top + bodyRect.top - 64;
-      element.style.height = `${distanceToBottom}px`;
-    } else {
-      console.error(`Element with selector "${selector}" not found.`);
-    }
-  }
-
-  setHeightToBottomOfScreen("#test-section");
-
-  window.addEventListener("resize", () => {
-    setHeightToBottomOfScreen("#test-section");
-  });
-</script>
