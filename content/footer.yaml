@@ -16,3 +16,12 @@ fundingText: Spolufinancované Európskou úniou v rámci projektu č.101091634 
   alebo Európskej výkonnej agentúry pre vzdelávanie a kultúru (EACEA). Európska
   únia ani Európska výkonná agentúra pre vzdelávanie a kultúru za ne
   nezodpovedá.
+partners:
+  - title: Európska únia
+    image: /images/partner_logos/eu.png
+  - title: Nadácia Pontis
+    image: /images/partner_logos/pontis.png
+  - title: Impact Lab
+    image: /images/partner_logos/impact-lab.png
+  - title: Bratislavský kraj
+    image: /images/partner_logos/bratislavsky-kraj.png
