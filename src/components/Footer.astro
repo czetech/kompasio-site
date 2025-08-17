@@ -6,6 +6,11 @@ import HeartHandshake from "lucide-solid/icons/heart-handshake";
 import ArrowRight from "lucide-solid/icons/arrow-right";
 import Button from "~/components/Button.tsx";
 import Circle from "~/components/Circle.tsx";
+import Facebook from '@lucide/astro/icons/facebook';
+import Instagram from '@lucide/astro/icons/instagram';
+import Youtube from '@lucide/astro/icons/youtube';
+import Linkedin from '@lucide/astro/icons/linkedin';
+import Earth from '@lucide/astro/icons/earth';
 
 const footer = await getEntry("footer", "footer");
 
@@ -49,19 +54,19 @@ const navItems = [
   <a href="/gdpr">GDPR</a>
 
   {footer.data.facebookUrl && <Circle>
-    
+    <Facebook />
   </Circle>}
   {footer.data.instagramUrl && <Circle>
-    
+    <Instagram />
   </Circle>}
   {footer.data.youtubeUrl && <Circle>
-    
+    <Youtube />
   </Circle>}
   {footer.data.linkedinUrl && <Circle>
-    
+    <Linkedin />
   </Circle>}
   <Circle>
-    
+    <Earth />
   </Circle>
 
   <p>Copyright © 2025</p>
