@@ -336,6 +336,7 @@ content:
         list:
           collapsible:
             collapsed: true
+            summary: "{fields.title}"
         fields:
           - name: title
             label: Title
@@ -350,7 +351,7 @@ content:
             required: true
             options:
               media: images
-              path: partner_logos
+              path: partner_logos/
           - name: url
             label: URL
             description:
