@@ -351,7 +351,6 @@ content:
             required: true
             options:
               media: images
-              path: /partner_logos
           - name: url
             label: URL
             description:

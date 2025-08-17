@@ -55,6 +55,13 @@ const gdpr = defineCollection({
   }),
 });
 
+const footer = defineCollection({
+  loader: glob({
+    pattern: ["footer", yamlExt].join("."),
+    base: collectionsBase,
+  }),
+});
+
 export const collections = {
   landing,
   guides,
@@ -63,4 +70,5 @@ export const collections = {
   contact,
   vop,
   gdpr,
+  footer,
 };

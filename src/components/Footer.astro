@@ -1,9 +1,13 @@
 ---
+import { getEntry } from "astro:content";
 import Logo from "~/components/Logo.astro";
 import Plus from "lucide-solid/icons/plus";
 import HeartHandshake from "lucide-solid/icons/heart-handshake";
 import ArrowRight from "lucide-solid/icons/arrow-right";
 import Button from "~/components/Button.tsx";
+import Circle from "~/components/Circle.tsx";
+
+const footer = await getEntry("footer", "footer");
 
 const navItems = [
   {
@@ -27,37 +31,42 @@ const navItems = [
 ---
 
 <footer class={"bg-frontier-gray text-shuttle-white"}>
-  <div class="flex justify-between">
-    <Logo />
-    <div>
-      <Button text="Pridaj nové miesto">
-        <Plus slot="icon" />
-      </Button>
-      <Button text="Ako to funguje?">
-        <ArrowRight slot="icon" />
-      </Button>
-      <Button text="Chcem podporiť">
-        <HeartHandshake slot="icon" />
-      </Button>
+  <div class="flex justify-between p-4 sm:p-8 items-center flex-col gap-y-4 gap-x-8 sm:flex-row-reverse">
+    <div class="flex flex-col gap-y-2 gap-x-4 lg:flex-row">
+      <Button icon={Plus} text={footer.data.newPointText} href={footer.data.newPointUrl} class="bg-shuttle-white text-vibrant-blue" />
+      <Button icon={ArrowRight} text={footer.data.howItWorksText} href={footer.data.howItWorksUrl} class="bg-shuttle-white text-vibrant-blue" />
+      <Button icon={HeartHandshake} text={footer.data.supportUsText} href={footer.data.supportUsUrl} class="bg-shuttle-white text-vibrant-blue" />
     </div>
+    <Logo class="h-10" />
   </div>
   <hr class="border-t-2" />
-  <div class="flex flex-col">
+  
+  <div>
     {navItems.map((navItem) => <a href={navItem.href}>{navItem.title}</a>)}
-    <a href="/vop">Podmienky používania</a>
-    <a href="/gdpr">GDPR</a>
-    <span>Copiright © 2024 Modrá hliadka</span>
   </div>
-  <p>
-    Projekt je spolufinancovanaý Európskou úniou v programe Impact Lab Nadácie
-    Pontis.
-  </p>
-  <p>
-    Spolufinancované Európskou úniou v rámci projektu č.101091634 – Impact
-    Acceleration of Slovak CSOs. Vyjadrené názory a stanoviská sú názormi a
-    stanoviskami autora/-ov a nemusia nevyhnutne odrážať názory Európskej únie
-    alebo Európskej výkonnej agentúry pre vzdelávanie a kultúru (EACEA).
-    Európska únia ani Európska výkonná agentúra pre vzdelávanie a kultúru za ne
-    nezodpovedá.
-  </p>
+  
+  <a href="/vop">Podmienky používania</a>
+  <a href="/gdpr">GDPR</a>
+
+  {footer.data.facebookUrl && <Circle>
+    
+  </Circle>}
+  {footer.data.instagramUrl && <Circle>
+    
+  </Circle>}
+  {footer.data.youtubeUrl && <Circle>
+    
+  </Circle>}
+  {footer.data.linkedinUrl && <Circle>
+    
+  </Circle>}
+  <Circle>
+    
+  </Circle>
+
+  <p>Copyright © 2025</p>
+  <p>Modrá hliadka</p>
+  
+  <p>{footer.data.fundingHeadline}</p>
+  <p>{footer.data.fundingText}</p>
 </footer>
