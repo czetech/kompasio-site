@@ -1,19 +1,19 @@
 ---
 import { getEntry } from "astro:content";
 import BaseLayout from "~/layouts/BaseLayout.astro";
-import CircleArrow from "~/components/CircleArrow.tsx";
 import Scrollable from "~/components/Scrollable.tsx";
 import Markdown from "~/components/Markdown.astro";
+import Section from "~/components/Section.astro";
 
 const vop = await getEntry("vop", "vop");
 ---
 
-<BaseLayout>
-  <div class="flex items-center justify-center gap-x-4 p-8">
-    <CircleArrow direction="180" />
-    <h1 class="text-2xl font-semibold md:text-3xl">{vop.data.title}</h1>
-  </div>
-  <Scrollable>
-    <Markdown content={vop.data.body} />
-  </Scrollable>
+<BaseLayout strictHeight>
+  <Section heading={vop.data.title}>
+    <Scrollable client:only class="px-6 pt-8 pb-16 md:px-8">
+      <div class="text-sm">
+        <Markdown content={vop.data.body} />
+      </div>
+    </Scrollable>
+  </Section>
 </BaseLayout>

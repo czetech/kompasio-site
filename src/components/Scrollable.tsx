@@ -1,160 +1,184 @@
-import {
-  createSignal,
-  onMount,
-  onCleanup,
-  createMemo,
-  mergeProps,
-  splitProps,
-} from "solid-js";
+import { createSignal, onMount, onCleanup, createMemo } from "solid-js";
 import { createPresence } from "@solid-primitives/presence";
+import { createStore, produce } from "solid-js/store";
+import { makeEventListener } from "@solid-primitives/event-listener";
+import { makeResizeObserver } from "@solid-primitives/resize-observer";
 
 export default function Scrollable(props) {
-  const [, otherProps] = splitProps(props, ["class"]);
-
-  let componentContainer;
-  let scrollableContainer;
-  let thumb;
+  let componentRef;
+  let scrollableRef;
+  let trackRef;
+  let thumbRef;
 
   const borderWidth = 2;
 
-  const [paddingTop, setPaddingTop] = createSignal(0);
-  const [paddingRight, setPaddingRight] = createSignal(0);
-  const [paddingBottom, setPaddingBottom] = createSignal(0);
-  const [paddingLeft, setPaddingLeft] = createSignal(0);
-  const [trackSize, setTrackSize] = createSignal(0);
-  const [thumbSize, setThumbSize] = createSignal(0);
-  const [thumbPosition, setThumbPosition] = createSignal(0);
+  const [scrollable, setScrollable] = createStore({
+    clientHeight: 0,
+    scrollHeight: 0,
+  });
+  const [padding, setPadding] = createStore({
+    top: 0,
+    right: 0,
+    bottom: 0,
+    left: 0,
+  });
+  const [scroll, setScroll] = createSignal(0);
 
-  const { isVisible, isMounted } = createPresence(thumbPosition, {
-    transitionDuration: 1000,
+  const trackSize = createMemo(() => {
+    return scrollable.clientHeight - padding.top - padding.bottom;
   });
 
-  const styleLength = (px) => `${px}px`;
+  const thumbSize = createMemo(() => {
+    const viewableRatio = scrollable.clientHeight / scrollable.scrollHeight;
+    return Math.max(32, viewableRatio * scrollable.clientHeight);
+  });
 
-  const paddingTopStyle = createMemo(() => styleLength(paddingTop()));
-  const paddingRightStyle = createMemo(() => styleLength(paddingRight()));
-  const paddingBottomStyle = createMemo(() => styleLength(paddingBottom()));
-  const paddingLeftStyle = createMemo(() => styleLength(paddingLeft()));
-  const trackSizeStyle = createMemo(() => styleLength(trackSize()));
-  const trackOpacityStyle = createMemo(() => +!isVisible());
-  const trackVisibilityStyle = createMemo(() =>
-    !isMounted() ? "visible" : "hidden",
+  const thumbPosition = createMemo(() => {
+    const scrollPercentage =
+      scroll() / (scrollable.scrollHeight - scrollable.clientHeight);
+    return scrollPercentage * (trackSize() - thumbSize() - borderWidth * 2);
+  });
+
+  const { isVisible } = createPresence(thumbPosition, {
+    transitionDuration: 500,
+  });
+
+  const paddingTopStyle = createMemo(() => `${padding.top}px`);
+  const paddingRightStyle = createMemo(() => `${padding.right}px`);
+  const paddingBottomStyle = createMemo(() => `${padding.bottom}px`);
+  const paddingLeftStyle = createMemo(() => `${padding.left}px`);
+  const trackSizeStyle = createMemo(() => `${trackSize()}px`);
+  const trackOpacityStyle = createMemo(() => (isVisible() ? "0.2" : "1"));
+  const thumbSizeStyle = createMemo(() => `${thumbSize()}px`);
+  const thumbPositionTranslate = createMemo(
+    () => `translateY(${thumbPosition()}px)`,
   );
 
-  const maskStyle = createMemo(() => {
-    if (!paddingTop() && !paddingBottom()) {
-      return {};
-    }
-
-    const gradient = `linear-gradient(
+  const maskStyle = createMemo(
+    () => `linear-gradient(
       to bottom,
       transparent 0,
       black ${paddingTopStyle()},
       black calc(100% - ${paddingBottomStyle()}),
       transparent 100%
-    )`;
+    )`,
+  );
 
-    return {
-      "mask-image": gradient,
-      "-webkit-mask-image": gradient,
-    };
-  });
+  const handlePointerdown = (e) => {
+    if (e.pointerType === "mouse" && e.button !== 0) return;
 
-  const setPosition = () => {
-    const { scrollTop, scrollHeight, clientHeight } = scrollableContainer;
-
-    const scrollPercentage = scrollTop / (scrollHeight - clientHeight);
-    setThumbPosition(
-      scrollPercentage * (trackSize() - thumbSize() - borderWidth * 2),
-    );
-  };
-
-  const setSize = () => {
-    const { scrollHeight, clientHeight } = scrollableContainer;
-
-    //if (scrollHeight <= clientHeight) {
-    //  setThumbSize(0);
-    //  return;
-    //}
-
-    setTrackSize(clientHeight - paddingTop() - paddingBottom());
-    setThumbSize(Math.max(32, (clientHeight / scrollHeight) * clientHeight));
-
-    setPosition();
-  };
-
-  const handleMouseDown = (e) => {
-    const thumbRect = thumb.getBoundingClientRect();
     const clientX = e.clientX;
     const clientY = e.clientY;
-
+    const trackRect = trackRef.getBoundingClientRect();
     if (
-      clientY < thumbRect.top ||
-      clientX > thumbRect.right ||
-      clientY > thumbRect.bottom ||
-      clientX < thumbRect.left
-    ) {
+      clientY < trackRect.top ||
+      clientX > trackRect.right ||
+      clientY > trackRect.bottom ||
+      clientX < trackRect.left
+    )
       return;
-    }
 
     e.preventDefault();
 
-    const startY = e.clientY;
-    const startScrollTop = scrollableContainer.scrollTop;
+    let startScroll;
+    const thumbRect = thumbRef.getBoundingClientRect();
+    if (clientY < thumbRect.top || clientY > thumbRect.bottom) {
+      const clickYOnTrack = e.clientY - trackRect.top;
+      const thumbTravelDistance = trackSize() - thumbSize() - borderWidth * 2;
+      if (thumbTravelDistance <= 0) return;
+      const targetThumbY = clickYOnTrack - thumbSize() / 2;
+      const scrollPercentage = targetThumbY / thumbTravelDistance;
+      const maxScrollTop = scrollable.scrollHeight - scrollable.clientHeight;
+      startScroll = Math.max(
+        0,
+        Math.min(scrollPercentage * maxScrollTop, maxScrollTop),
+      );
+      scrollableRef.scrollTop = startScroll;
+    } else {
+      startScroll = scroll();
+    }
 
-    const handleMouseMove = (moveEvent) => {
-      const deltaY = moveEvent.clientY - startY;
-      const { scrollHeight, clientHeight } = scrollableContainer;
+    const handleTouchmove = (moveEvent) => {
+      moveEvent.preventDefault();
+    };
 
+    const handlePointermove = (moveEvent) => {
+      const deltaY = moveEvent.clientY - clientY;
       const scrollRatio =
-        (scrollHeight - clientHeight) / (clientHeight - thumbSize());
-
-      scrollableContainer.scrollTop = startScrollTop + deltaY * scrollRatio;
+        (scrollable.scrollHeight - scrollable.clientHeight) /
+        (trackSize() - thumbSize());
+      scrollableRef.scrollTop = startScroll + deltaY * scrollRatio;
     };
 
-    const handleMouseUp = () => {
-      document.removeEventListener("mousemove", handleMouseMove);
-      document.removeEventListener("mouseup", handleMouseUp);
+    const handlePointerup = () => {
+      clearTouchmove();
+      clearPointermove();
+      clearPointerup();
     };
 
-    document.addEventListener("mousemove", handleMouseMove);
-    document.addEventListener("mouseup", handleMouseUp);
+    const clearTouchmove = makeEventListener(
+      document,
+      "touchmove",
+      handleTouchmove,
+      { passive: false },
+    );
+    const clearPointermove = makeEventListener(
+      document,
+      "pointermove",
+      handlePointermove,
+      { passive: true },
+    );
+    const clearPointerup = makeEventListener(
+      document,
+      "pointerup",
+      handlePointerup,
+      {
+        passive: true,
+      },
+    );
+  };
+
+  const handleResizeObserver = () => {
+    setScrollable(
+      produce((scrollable) => {
+        scrollable.clientHeight = scrollableRef.clientHeight;
+        scrollable.scrollHeight = scrollableRef.scrollHeight;
+      }),
+    );
+  };
+
+  const handleScroll = () => {
+    setScroll(scrollableRef.scrollTop);
   };
 
   onMount(() => {
-    const { componentClientHeight: clientHeight } = componentContainer;
-    const componentStyle = window.getComputedStyle(componentContainer);
-    setPaddingTop(parseFloat(componentStyle.paddingTop));
-    setPaddingRight(parseFloat(componentStyle.paddingRight));
-    setPaddingBottom(parseFloat(componentStyle.paddingBottom));
-    setPaddingLeft(parseFloat(componentStyle.paddingLeft));
+    setPadding(
+      produce((padding) => {
+        const componentStyle = window.getComputedStyle(componentRef);
+        padding.top = parseFloat(componentStyle.paddingTop);
+        padding.right = parseFloat(componentStyle.paddingRight);
+        padding.bottom = parseFloat(componentStyle.paddingBottom);
+        padding.left = parseFloat(componentStyle.paddingLeft);
+      }),
+    );
 
-    setSize();
-
-    window.addEventListener("resize", setSize);
-    scrollableContainer.addEventListener("scroll", setPosition);
-
-    onCleanup(() => {
-      window.removeEventListener("resize", setSize);
-      scrollableContainer.removeEventListener("scroll", setPosition);
-    });
+    makeEventListener(componentRef, "pointerdown", handlePointerdown);
+    makeResizeObserver(handleResizeObserver).observe(scrollableRef);
+    makeEventListener(scrollableRef, "scroll", handleScroll, { passive: true });
   });
 
   return (
     <div
-      ref={componentContainer}
+      ref={componentRef}
       class="relative h-full"
       classList={{ [props.class]: props.class }}
       style={{
         "--padding-right": paddingRightStyle(),
         "--track-opacity": trackOpacityStyle(),
-        "--track-visibility": trackVisibilityStyle(),
       }}
-      onMouseDown={handleMouseDown}
-      {...otherProps}
     >
       <div
-        ref={scrollableContainer}
+        ref={scrollableRef}
         class={`scrollbar-hide absolute top-0 left-0 h-full w-full
           overflow-y-auto pr-(--padding-right)
           md:pr-[calc(var(--padding-right)_+_(var(--spacing)_*_20))]`}
@@ -162,15 +186,17 @@ export default function Scrollable(props) {
           "padding-top": paddingTopStyle(),
           "padding-bottom": paddingBottomStyle(),
           "padding-left": paddingLeftStyle(),
-          ...maskStyle(),
+          "mask-image": maskStyle(),
+          "-webkit-mask-image": maskStyle(),
         }}
       >
         {props.children}
       </div>
       <div
+        ref={trackRef}
         class={`text-vibrant-blue pointer-events-none absolute right-0 w-4
           flex-none rounded-full bg-white opacity-(--track-opacity)
-          transition-opacity duration-1000 md:right-(--padding-right)
+          transition-opacity duration-500 md:right-(--padding-right)
           md:opacity-100`}
         style={{
           top: paddingTopStyle(),
@@ -179,11 +205,11 @@ export default function Scrollable(props) {
         }}
       >
         <div
-          ref={thumb}
+          ref={thumbRef}
           class="absolute w-[12px] cursor-pointer rounded-full bg-current"
           style={{
-            height: `${thumbSize()}px`,
-            top: `${thumbPosition()}px`,
+            height: thumbSizeStyle(),
+            transform: thumbPositionTranslate(),
           }}
         />
       </div>
