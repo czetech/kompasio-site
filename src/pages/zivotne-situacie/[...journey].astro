@@ -36,79 +36,77 @@ export const getStaticPaths = async () => {
       {journey.title}
     </h1>
     <div class="flex md:gap-x-8">
-      <div>
-        <article class="mb-6 md:mb-8">
-          <h2 class="mb-3 text-2xl font-semibold md:mb-4 md:text-3xl">
-            {step.title}
-          </h2>
-          <Markdown content={step.body} />
-          <StepUI
-            client:only
-            journeyUuid={journey.uuid}
-            stepUuid={step.uuid}
-            stepTasks={step.tasks}
-          />
-          <StepPagination
-            client:only
-            journeySlug={journeySlug}
-            journeyUuid={journey.uuid}
-            stepUuid={step.uuid}
-            previousStepIndex={stepIndex ? stepIndex - 1 : null}
-            previousStepTitle={journey.steps[stepIndex - 1]?.title}
-            nextStepIndex={stepIndex < journey.steps.length - 1
-              ? stepIndex + 1
-              : null}
-            nextStepTitle={journey.steps[stepIndex + 1]?.title}
-          />
-        </article>
-        <aside>
-          <StepListToggle client:load />
-          <nav
-            transition:persist
-            id="step-list-content"
-            class={`bg-shuttle-white-dark border-vibrant-blue invisible fixed
-              right-6 bottom-24 h-[calc(100dvh_-_var(--spacing)_*_32)]
-              md:max-h-[calc(100dvh_-_var(--spacing)_*_16)]
-              w-[calc(100vw_-_var(--spacing)_*_12)] max-w-xs origin-bottom-right
-              scale-90 rounded-lg border px-4 pb-8 pt-4 opacity-0 shadow-lg
-              duration-250 peer-[.is-open]:visible peer-[.is-open]:scale-none
-              peer-[.is-open]:opacity-100 md:visible md:sticky md:top-8
-              md:h-auto md:w-xs md:scale-none md:opacity-100 md:shadow-none
-              overflow-y-auto`}
+      <article class="mb-6 md:mb-8">
+        <h2 class="mb-3 text-2xl font-semibold md:mb-4 md:text-3xl">
+          {step.title}
+        </h2>
+        <Markdown content={step.body} />
+        <StepUI
+          client:only
+          journeyUuid={journey.uuid}
+          stepUuid={step.uuid}
+          stepTasks={step.tasks}
+        />
+        <StepPagination
+          client:only
+          journeySlug={journeySlug}
+          journeyUuid={journey.uuid}
+          stepUuid={step.uuid}
+          previousStepIndex={stepIndex ? stepIndex - 1 : null}
+          previousStepTitle={journey.steps[stepIndex - 1]?.title}
+          nextStepIndex={stepIndex < journey.steps.length - 1
+            ? stepIndex + 1
+            : null}
+          nextStepTitle={journey.steps[stepIndex + 1]?.title}
+        />
+      </article>
+      <aside>
+        <StepListToggle client:load />
+        <nav
+          transition:persist
+          id="step-list-content"
+          class={`bg-shuttle-white-dark border-vibrant-blue invisible fixed
+            right-6 bottom-24 h-[calc(100dvh_-_var(--spacing)_*_32)]
+            md:max-h-[calc(100dvh_-_var(--spacing)_*_16)]
+            w-[calc(100vw_-_var(--spacing)_*_12)] max-w-xs origin-bottom-right
+            scale-90 rounded-lg border px-4 pb-8 pt-4 opacity-0 shadow-lg
+            duration-250 peer-[.is-open]:visible peer-[.is-open]:scale-none
+            peer-[.is-open]:opacity-100 md:visible md:sticky md:top-8
+            md:h-auto md:w-xs md:scale-none md:opacity-100 md:shadow-none
+            overflow-y-auto`}
+        >
+          <h2 class="mb-4 text-lg md:mb-6">Zoznam krokov</h2>
+          <ol
+            start="0"
+            class={`mb-6 flex list-decimal list-none flex-col gap-y-6 md:mb-8
+              md:gap-y-8`}
           >
-            <h2 class="mb-4 text-lg md:mb-6">Zoznam krokov</h2>
-            <ol
-              start="0"
-              class={`mb-6 flex list-decimal list-none flex-col gap-y-6 md:mb-8
-                md:gap-y-8`}
-            >
-              {
-                journey.steps.map((step, index) => {
-                  return (
-                    <li class="flex items-center gap-x-3">
-                      <StepStatus
-                        client:only
-                        journeyUuid={journey.uuid}
-                        stepUuid={step.uuid}
-                        stepTasks={step.tasks}
-                        class="w-6 flex-none"
-                      />
-                      <StepListItem
-                        client:load
-                        journeySlug={journeySlug}
-                        pathname={Astro.url.pathname}
-                        stepIndex={index}
-                        title={step.title}
-                      />
-                    </li>
-                  );
-                })
-              }
-            </ol>
-            <StepListClear journeyUuid={journey.uuid} client:only />
-          </nav>
-        </aside>
-      </div>
+            {
+              journey.steps.map((step, index) => {
+                return (
+                  <li class="flex items-center gap-x-3">
+                    <StepStatus
+                      client:only
+                      journeyUuid={journey.uuid}
+                      stepUuid={step.uuid}
+                      stepTasks={step.tasks}
+                      class="w-6 flex-none"
+                    />
+                    <StepListItem
+                      client:load
+                      journeySlug={journeySlug}
+                      pathname={Astro.url.pathname}
+                      stepIndex={index}
+                      title={step.title}
+                    />
+                  </li>
+                );
+              })
+            }
+          </ol>
+          <StepListClear journeyUuid={journey.uuid} client:only />
+        </nav>
+      </aside>
     </div>
   </div>
 </BaseLayout>

@@ -264,5 +264,97 @@ content:
         required: true
         options:
           media: images
+  - name: footer
+    label: Footer
+    type: file
+    path: content/footer.yaml
+    fields:
+      - name: newPointText
+        label: New point text
+        description: New point button text.
+        type: text
+        required: true
+      - name: newPointUrl
+        label: New point URL
+        description: New point button URL.
+        type: text
+        required: true
+      - name: howItWorksText
+        label: How it works text
+        description: How it works button text.
+        type: text
+        required: true
+      - name: howItWorksUrl
+        label: How it works URL
+        description: How it works button URL.
+        type: text
+        required: true
+      - name: supportUsText
+        label: Support us text
+        description: Support us button text.
+        type: text
+        required: true
+      - name: supportUsUrl
+        label: Support us URL
+        description: Support us button URL.
+        type: text
+        required: true
+      - name: facebookUrl
+        label: Facebook URL
+        description:
+          Facebook page URL. If it is empty, the icon will not be displayed.
+        type: text
+      - name: instagramUrl
+        label: Instagram URL
+        description:
+          Instagram page URL. If it is empty, the icon will not be displayed.
+        type: text
+      - name: youtubeUrl
+        label: YouTube URL
+        description:
+          YouTube page URL. If it is empty, the icon will not be displayed.
+        type: text
+      - name: linkedinUrl
+        label: LinkedIn URL
+        description:
+          LinkedIn page URL. If it is empty, the icon will not be displayed.
+        type: text
+      - name: fundingHeadline
+        label: Funding headline
+        description: Funding disclaimer headline.
+        type: text
+      - name: fundingText
+        label: Funding text
+        description: Funding disclaimer text.
+        type: rich-text-lite
+        options:
+          media: false
+      - name: partners
+        label: Partners
+        description: List of partners.
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+        fields:
+          - name: title
+            label: Title
+            description: Partner name.
+            type: text
+            required: true
+          - name: image
+            label: Image
+            description:
+              Partner logo in original dimensions with a minimum size of TODO
+            type: image
+            required: true
+            options:
+              media: images
+              path: partner_logos
+          - name: url
+            label: URL
+            description:
+              Partner URL. If it is empty, partner image will be without link.
+            type: text
 settings:
   hide: true
