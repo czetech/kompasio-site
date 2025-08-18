@@ -1,7 +1,7 @@
 ---
 import { getEntry } from "astro:content";
 import BaseLayout from "~/layouts/BaseLayout.astro";
-import Mail from "@lucide/astro/icons/mail";
+import Mail from "lucide-solid/icons/mail";
 import CircleArrow from "~/components/CircleArrow.tsx";
 import Card from "~/components/Card.astro";
 import Button from "~/components/Button.tsx";
@@ -20,9 +20,8 @@ const contact = await getEntry("contact", "contact");
       <Button
         href={`mailto:${contact.data.emailAddress}`}
         text={contact.data.emailAddress}
-      >
-        <Mail slot="icon" />
-      </Button>
+        icon={Mail}
+          />
     </Card>
   </div>
 </BaseLayout>
