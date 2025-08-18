@@ -301,23 +301,19 @@ content:
         required: true
       - name: facebookUrl
         label: Facebook URL
-        description:
-          Facebook page URL. If it is empty, the icon will not be displayed.
+        description: Facebook page URL. If it is empty, the icon will not be displayed.
         type: text
       - name: instagramUrl
         label: Instagram URL
-        description:
-          Instagram page URL. If it is empty, the icon will not be displayed.
+        description: Instagram page URL. If it is empty, the icon will not be displayed.
         type: text
       - name: youtubeUrl
         label: YouTube URL
-        description:
-          YouTube page URL. If it is empty, the icon will not be displayed.
+        description: YouTube page URL. If it is empty, the icon will not be displayed.
         type: text
       - name: linkedinUrl
         label: LinkedIn URL
-        description:
-          LinkedIn page URL. If it is empty, the icon will not be displayed.
+        description: LinkedIn page URL. If it is empty, the icon will not be displayed.
         type: text
       - name: fundingHeadline
         label: Funding headline
@@ -345,16 +341,10 @@ content:
             required: true
           - name: image
             label: Image
-            description:
-              Partner logo in original dimensions with a minimum size of TODO
+            description: Partner logo in original dimensions with a minimum size of TODO
             type: image
             required: true
             options:
               media: images
-          - name: url
-            label: URL
-            description:
-              Partner URL. If it is empty, partner image will be without link.
-            type: text
 settings:
   hide: true

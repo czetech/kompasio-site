@@ -23,14 +23,11 @@ const landing = await getEntry("landing", "landing");
         >
           {card.image && (
             <div class="flex justify-center">
-              <ContentImage
-                path={card.image}
-                class="col-span-2 mb-3 rounded-lg"
-              />
+              <ContentImage path={card.image} class="mb-3 rounded-lg" />
             </div>
           )}
           {card.description && (
-            <div class="col-span-2 text-sm">
+            <div class="text-sm">
               <Markdown content={card.description} />
             </div>
           )}
