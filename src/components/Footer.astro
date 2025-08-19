@@ -101,16 +101,16 @@ const navItems = [
           <Circle><Earth /></Circle>
         </a>
       </div>
-      <div class="flex flex-col gap-y-2 items-start text-sm sm:row-start-1 sm:row-span-2">
+      <div class="flex flex-col gap-y-2 items-center sm:items-start text-sm sm:row-start-1 sm:row-span-2 mt-2 sm:mt-0">
         {navItems.map((navItem) => (
           <a href={navItem.href} target={navItem.target} class="hover:underline">{navItem.title}</a>
         ))}
       </div>
-      <div class="flex flex-col gap-y-2 items-start text-sm sm:row-start-1. sm:col-start-2">
+      <div class="flex flex-col gap-y-2 items-center sm:items-start text-sm sm:row-start-1. sm:col-start-2">
         <a href="/vop" class="hover:underline">Podmienky používania</a>
         <a href="/gdpr" class="hover:underline">GDPR</a>
       </div>
-      <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 lg:col-span-4 sm:col-span-2 mb-2 mt-10">
+      <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 lg:col-span-4 sm:col-span-2 mb-2 mt-6 sm:mt-10">
         {footer.data.partners.map((partner) => (
           <ContentImage
             path={partner.image}
