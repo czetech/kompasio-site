@@ -4,6 +4,7 @@ import Logo from "~/components/Logo.astro";
 import Plus from "lucide-solid/icons/plus";
 import HeartHandshake from "lucide-solid/icons/heart-handshake";
 import ArrowRight from "lucide-solid/icons/arrow-right";
+import Github from "lucide-solid/icons/github";
 import Button from "~/components/Button.tsx";
 import Circle from "~/components/Circle.tsx";
 import Facebook from "lucide-solid/icons/facebook";
@@ -14,6 +15,57 @@ import Earth from "lucide-solid/icons/earth";
 import ContentImage from "~/components/ContentImage.astro";
 
 const footer = await getEntry("footer", "footer");
+
+const buttons = [
+  {
+    icon: Plus,
+    text: footer.data.newPointText,
+    href: footer.data.newPointUrl,
+  },
+  {
+    icon: ArrowRight,
+    text: footer.data.howItWorksText,
+    href: footer.data.howItWorksUrl,
+  },
+  {
+    icon: HeartHandshake,
+    text: footer.data.supportUsText,
+    href: footer.data.supportUsUrl,
+  },
+];
+
+const socialIcons = [
+  {
+    icon: Facebook,
+    url: footer.data.facebookUrl,
+    text: "Facebook",
+  },
+  {
+    icon: Instagram,
+    url: footer.data.instagramUrl,
+    text: "Instagram",
+  },
+  {
+    icon: Youtube,
+    url: footer.data.youtubeUrl,
+    text: "YouTube",
+  },
+  {
+    icon: Linkedin,
+    url: footer.data.linkedinUrl,
+    text: "LinkedIn",
+  },
+  {
+    icon: Github,
+    url: "https://github.com/czetech/kompasio-site",
+    text: "GitHub",
+  },
+  {
+    icon: Earth,
+    url: "https://modrahliadka.sk/",
+    text: "Modrá Hliadka",
+  },
+];
 
 const navItems = [
   {
@@ -35,100 +87,108 @@ const navItems = [
     target: "_blank",
   },
 ];
+
+const secondaryNavItems = [
+  {
+    title: "Podmienky používania",
+    url: "/vop",
+  },
+  {
+    title: "GDPR",
+    url: "/gdpr",
+  },
+];
 ---
 
 <footer class="bg-frontier-gray text-shuttle-white">
   <div
-    class="flex flex-col items-center justify-between gap-x-8 gap-y-4 p-4
-      sm:flex-row-reverse sm:p-8"
+    class={`flex flex-col items-center justify-between gap-x-8 gap-y-4 p-4
+      sm:flex-row-reverse sm:p-8`}
   >
     <div class="flex flex-col gap-x-4 gap-y-2 lg:flex-row">
-      <Button
-        icon={Plus}
-        text={footer.data.newPointText}
-        href={footer.data.newPointUrl}
-        class="bg-shuttle-white text-vibrant-blue"
-      />
-      <Button
-        icon={ArrowRight}
-        text={footer.data.howItWorksText}
-        href={footer.data.howItWorksUrl}
-        class="bg-shuttle-white text-vibrant-blue"
-      />
-      <Button
-        icon={HeartHandshake}
-        text={footer.data.supportUsText}
-        href={footer.data.supportUsUrl}
-        class="bg-shuttle-white text-vibrant-blue"
-      />
+      {
+        buttons.map((button) => (
+          <Button
+            icon={button.icon}
+            text={button.text}
+            href={button.href}
+            class="bg-shuttle-white text-vibrant-blue"
+          />
+        ))
+      }
     </div>
     <Logo class="h-10" />
   </div>
   <hr class="border-t-2" />
-  <div class="p-4 sm:p-8 flex-col gap-y-8">
-    <div class="grid grid-cols-1 gap-y-2 gap-x-16 sm:grid-cols-2 lg:grid-cols-4">
-
-      <div class="flex flex-row gap-x-2 justify-center sm:justify-start">
-        {footer.data.facebookUrl && (
-          <a href={footer.data.facebookUrl} target="_blank" class="p-1" aria-label="Facebook">
-            <Circle>
-              <Facebook />
-            </Circle>
-          </a>
-        )}
-        {footer.data.instagramUrl && (
-          <a href={footer.data.instagramUrl} target="_blank" class="p-1" aria-label="Instagram">
-            <Circle>
-              <Instagram />
-            </Circle>
-          </a>
-        )}
-        {footer.data.youtubeUrl && (
-          <a href={footer.data.youtubeUrl} target="_blank" class="p-1" aria-label="Youtube">
-            <Circle>
-              <Youtube />
-            </Circle>
-          </a>
-        )}
-        {footer.data.linkedinUrl && (
-          <a href={footer.data.linkedinUrl} target="_blank" class="p-1" aria-label="LinkedIn">
-            <Circle>
-              <Linkedin />
-            </Circle>
-          </a>
-        )}
-        <a href="https://modrahliadka.sk/" target="_blank" class="p-1" aria-label="Website">
-          <Circle><Earth /></Circle>
-        </a>
+  <div class="grid grid-cols-1 gap-x-16 gap-y-8 p-4 sm:p-8 lg:grid-cols-2">
+    <div class="grid grid-cols-1 gap-x-8 gap-y-2 sm:grid-cols-2">
+      <div class="flex flex-wrap justify-center gap-x-2 sm:justify-start">
+        {
+          socialIcons.map(
+            (socialIcon) =>
+              socialIcon.url && (
+                <a
+                  href={socialIcon.url}
+                  target="_blank"
+                  class="p-1"
+                  aria-label={socialIcon.text}
+                >
+                  <Circle>
+                    <socialIcon.icon />
+                  </Circle>
+                </a>
+              ),
+          )
+        }
       </div>
-      <div class="flex flex-col gap-y-2 items-center sm:items-start text-sm sm:row-start-1 sm:row-span-2 mt-2 sm:mt-0">
-        {navItems.map((navItem) => (
-          <a href={navItem.href} target={navItem.target} class="hover:underline">{navItem.title}</a>
-        ))}
+      <div
+        class={`flex flex-col items-center gap-y-2 text-sm sm:row-span-2
+          sm:row-start-1 sm:items-start`}
+      >
+        {
+          navItems.map((navItem) => (
+            <a
+              href={navItem.href}
+              target={navItem.target}
+              class="hover:underline"
+            >
+              {navItem.title}
+            </a>
+          ))
+        }
       </div>
-      <div class="flex flex-col gap-y-2 items-center sm:items-start text-sm sm:row-start-1. sm:col-start-2">
-        <a href="/vop" class="hover:underline">Podmienky používania</a>
-        <a href="/gdpr" class="hover:underline">GDPR</a>
+      <div class="flex flex-col items-center gap-y-2 text-sm sm:items-start">
+        {
+          secondaryNavItems.map((secondaryNavItem) => (
+            <a href={secondaryNavItem.url} class="hover:underline">
+              {secondaryNavItem.title}
+            </a>
+          ))
+        }
       </div>
-      <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 lg:col-span-4 sm:col-span-2 mb-2 mt-6 sm:mt-10">
-        {footer.data.partners.map((partner) => (
+    </div>
+    <div class="flex flex-wrap items-center justify-center gap-4 lg:col-span-2">
+      {
+        footer.data.partners.map((partner) => (
           <ContentImage
             path={partner.image}
             alt={partner.name}
-            class="object-contain h-18 lg:h-18 max-w-32 lg:max-w-48"
+            class="h-18 max-w-32 object-contain lg:h-18 lg:max-w-48"
             style="filter: brightness(0) invert(1);"
           />
-        ))}
-      </div>
-      <div class="text-xs flex flex-col gap-y-2 sm:col-span-2 lg:row-start-1 lg:col-start-3 lg:row-span-2 mb-6 lg:mb-0">
-        <p>{footer.data.fundingHeadline}</p>
-        <p>{footer.data.fundingText}</p>
-      </div>
-      <div class="text-sm flex gap-x-2 lg:col-span-4 sm:col-span-2 justify-center">
-        <p>Copyright © 2025</p>
-        <span>🤍</span>
-        <a href="https://modrahliadka.sk/" target="_blank" class="hover:underline">Modrá Hliadka</a>
-      </div>
+        ))
+      }
+    </div>
+    <div class="flex flex-col gap-y-2 text-xs lg:col-start-2 lg:row-start-1">
+      <p>{footer.data.fundingHeadline}</p>
+      <p>{footer.data.fundingText}</p>
+    </div>
+    <div class="flex justify-center gap-x-2 text-sm lg:col-span-2">
+      <p>Copyright © 2025</p>
+      <span>🤍</span>
+      <a href="https://modrahliadka.sk/" target="_blank" class="hover:underline"
+        >Modrá Hliadka</a
+      >
     </div>
   </div>
 </footer>
