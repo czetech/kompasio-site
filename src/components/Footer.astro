@@ -98,6 +98,8 @@ const secondaryNavItems = [
     url: "/gdpr",
   },
 ];
+
+const currentYear = new Date().getFullYear();
 ---
 
 <footer class="bg-frontier-gray text-shuttle-white">
@@ -187,7 +189,7 @@ const secondaryNavItems = [
       <p class="text-justify">{footer.data.fundingText}</p>
     </div>
     <div class="flex justify-center gap-x-2 text-sm lg:col-span-2">
-      <p>Copyright © 2025</p>
+      <p>Copyright © {currentYear}</p>
       <span>🤍</span>
       <a href="https://modrahliadka.sk/" target="_blank" class="hover:underline"
         >Modrá Hliadka</a
