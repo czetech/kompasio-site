@@ -66,58 +66,51 @@ const navItems = [
   </div>
   <hr class="border-t-2" />
   <div class="p-4 sm:p-8 flex-col gap-y-8">
-    <div class="grid grid-cols-1 gap-y-2 gap-x-8 sm:grid-cols-2 lg:grid-cols-4">
-      <div class="flex flex-col gap-y-2 items-start">
+    <div class="grid grid-cols-1 gap-y-2 gap-x-16 sm:grid-cols-2 lg:grid-cols-4">
+
+      <div class="flex flex-row gap-x-2 justify-center sm:justify-start">
+        {footer.data.facebookUrl && (
+          <a href={footer.data.facebookUrl} target="_blank" class="p-1" aria-label="Facebook">
+            <Circle>
+              <Facebook />
+            </Circle>
+          </a>
+        )}
+        {footer.data.instagramUrl && (
+          <a href={footer.data.instagramUrl} target="_blank" class="p-1" aria-label="Instagram">
+            <Circle>
+              <Instagram />
+            </Circle>
+          </a>
+        )}
+        {footer.data.youtubeUrl && (
+          <a href={footer.data.youtubeUrl} target="_blank" class="p-1" aria-label="Youtube">
+            <Circle>
+              <Youtube />
+            </Circle>
+          </a>
+        )}
+        {footer.data.linkedinUrl && (
+          <a href={footer.data.linkedinUrl} target="_blank" class="p-1" aria-label="LinkedIn">
+            <Circle>
+              <Linkedin />
+            </Circle>
+          </a>
+        )}
+        <a href="https://modrahliadka.sk/" target="_blank" class="p-1" aria-label="Website">
+          <Circle><Earth /></Circle>
+        </a>
+      </div>
+      <div class="flex flex-col gap-y-2 items-start text-sm sm:row-start-1 sm:row-span-2">
         {navItems.map((navItem) => (
-          <a href={navItem.href} target={navItem.target} class="text-sm hover:underline">{navItem.title}</a>
+          <a href={navItem.href} target={navItem.target} class="hover:underline">{navItem.title}</a>
         ))}
       </div>
-      <div class="flex flex-col gap-y-4">
-        <div class="flex flex-col gap-y-2 items-start">
-          <a href="/vop" class="text-sm hover:underline">Podmienky používania</a>
-          <a href="/gdpr" class="text-sm hover:underline">GDPR</a>
-        </div>
-        <div class="flex flex-row items-center gap-x-2 justify-center sm:justify-start">
-          {footer.data.facebookUrl && (
-            <a href={footer.data.facebookUrl} target="_blank" class="p-1" aria-label="Facebook">
-              <Circle>
-                <Facebook />
-              </Circle>
-            </a>
-          )}
-          {footer.data.instagramUrl && (
-            <a href={footer.data.instagramUrl} target="_blank" class="p-1" aria-label="Instagram">
-              <Circle>
-                <Instagram />
-              </Circle>
-            </a>
-          )}
-          {footer.data.youtubeUrl && (
-            <a href={footer.data.youtubeUrl} target="_blank" class="p-1" aria-label="Youtube">
-              <Circle>
-                <Youtube />
-              </Circle>
-            </a>
-          )}
-          {footer.data.linkedinUrl && (
-            <a href={footer.data.linkedinUrl} target="_blank" class="p-1" aria-label="LinkedIn">
-              <Circle>
-                <Linkedin />
-              </Circle>
-            </a>
-          )}
-          <a href="https://modrahliadka.sk/" target="_blank" class="p-1" aria-label="Website">
-            <Circle><Earth /></Circle>
-          </a>
-        </div>
+      <div class="flex flex-col gap-y-2 items-start text-sm sm:row-start-1. sm:col-start-2">
+        <a href="/vop" class="hover:underline">Podmienky používania</a>
+        <a href="/gdpr" class="hover:underline">GDPR</a>
       </div>
-      <div class="text-xs sm:col-span-2 flex flex-col gap-y-2 mt-6 lg:mt-0">
-        <p>{footer.data.fundingHeadline}</p>
-        <p>{footer.data.fundingText}</p>
-      </div>
-    </div>
-    <div class="flex flex-col items-center justify-between gap-8 pt-8 lg:flex-row-reverse">
-      <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
+      <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 lg:col-span-4 sm:col-span-2 mb-2 mt-10">
         {footer.data.partners.map((partner) => (
           <ContentImage
             path={partner.image}
@@ -127,9 +120,14 @@ const navItems = [
           />
         ))}
       </div>
-      <div class="text-center text-sm lg:text-left flex flex-col gap-y-2 min-w-48">
+      <div class="text-xs flex flex-col gap-y-2 sm:col-span-2 lg:row-start-1 lg:col-start-3 lg:row-span-2 mb-6 lg:mb-0">
+        <p>{footer.data.fundingHeadline}</p>
+        <p>{footer.data.fundingText}</p>
+      </div>
+      <div class="text-sm flex gap-x-2 lg:col-span-4 sm:col-span-2 justify-center">
         <p>Copyright © 2025</p>
-        <a href="https://modrahliadka.sk/" target="_blank" class="hover:underline">💙 Modrá Hliadka</a>
+        <span>🤍</span>
+        <a href="https://modrahliadka.sk/" target="_blank" class="hover:underline">Modrá Hliadka</a>
       </div>
     </div>
   </div>
