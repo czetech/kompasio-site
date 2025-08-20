@@ -43,7 +43,7 @@ steps:
 
       ✅ŤZP= správne, spisovné, podporené legislatívou  
 
-      ❌ZŤP= neficiálne, slangové a nie je správne
+      ❌ZŤP= neoficiálne, slangové
     uuid: 97047032-d1e0-42ea-8c60-583a851a13f9
   - title: Kedy sa stávate ŤZP?
     body: >-
@@ -257,7 +257,17 @@ steps:
       *   odôvodnenie komplexného posudku
           
 
-      ❗_POZOR: ak lekársky posudok stanoví mieru funkčnej poruchy pod 50% ,
-      komplexný posudok sa sa nevypracuje._
+      🟡_Dobré vedieť:_  
+
+      _ak lekársky posudok stanoví mieru funkčnej poruchy pod 50% , komplexný
+      posudok sa sa nevypracuje._
+
+
+      ### 🚨 Spozorni
+
+
+      **Keď podávaš žiadosť o preukaz, automaticky štartuješ celý proces. Nie je
+      to len „papierovanie“, ale kľúčový krok, ktorý rozhodne, či si alebo nie
+      si ŤZP.**
     uuid: 77f9fe6e-bfa7-4649-b2c8-3d7079f9fde7
 uuid: 54dbd2f8-72c4-4c59-abb1-e140ad92d38b
