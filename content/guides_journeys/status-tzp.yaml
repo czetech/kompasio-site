@@ -101,6 +101,67 @@ steps:
       ovplyvňuje život** a fuknčne ich ovplyvňuje nad 50 % vrátane, môžu sa stať
       ŤZP.
     uuid: 536f0e21-757c-4c56-b213-9a83172d38be
+  - title: "Ako sa človek stáva ŤZP? Kto o tom rozhoduje? "
+    body: >-
+      V prvom rade, musíš mať nejaké zdravotné komlikácie, kvôli ktorým
+      navštevuješ doktora. Týmto spôsobom máš k dispozícií lekárske záznamy,
+      nálezy alebo inými slovami: dôkaz o tom, že bolesti chrbtice si
+      nevymýšľaš, ale niekto s odborným okom sa na teba pozrel a rieši to.
+
+
+      Tieto nálezy, záznamy zozbieraš od špecialistov a priložíš ich k žiadosti
+      "<u>Žiadosť o vyhotovenie preukazu fyzickej osoby s ťažkým zdravotným
+      postihnutím</u>".
+
+
+      Žiadaš síce o vyhotovenie preukazu ŤZP, avšak vyplnením daného tlačiva a
+      odovzdanie úradu **týmto krokom** spúšťaš proces posudkovej činnnosti,
+      ktoré rozhodne, či tvoj zdravotný stav je v požadovanom rozmedzí.
+
+
+      Posudkovú činnosť vykonávajú:
+
+
+      *   **posudkový lekár** príslušného úradu práce, sociálnych vecí a rodiny,
+          
+      *   sociálny pracovník príslušého úradu práce, sociálnych vecí a rodiny.
+          
+
+      **Výsledok je komplexný posudok, ktorý obsahuje:**
+
+
+      *   mieru funkčnej poruchy,
+          
+      *   vyjadrenie, že ide o fyzickú osobu s ŤZP,
+          
+      *   sociálne dôsledky ŤZP vo všetkých oblastiach kompenzácie,
+          
+      *   návrh druhu peňažného príspevku na kompenzáciu,
+          
+      *   vyjadrenie, či osoba s ŤZP je odkázaná na sprievodcu,
+          
+      *   vyjadrenie, či osoba s ŤZP je odkázaná na individuálnu prepravu
+      osobným motorovým vozidlom,
+          
+      *   termín opätovného posúdenia zdravotného stavu, ak ho určí posudkový
+      lekár a
+          
+      *   odôvodnenie komplexného posudku
+          
+
+      🟡_Dobré vedieť:_  
+
+      _ak lekársky posudok stanoví mieru funkčnej poruchy pod 50 %, komplexný
+      posudok sa sa nevypracuje._
+
+
+      ### 🚨 Spozorni
+
+
+      **Keď podávaš žiadosť o preukaz, automaticky štartuješ celý proces. Nie je
+      to len „papierovanie“, ale kľúčový krok, ktorý rozhodne, či si alebo nie
+      si ŤZP.**
+    uuid: 77f9fe6e-bfa7-4649-b2c8-3d7079f9fde7
   - title: "Vysvetlenie ŤZP na príkladoch "
     body: >-
       Prinášame Vám 3 príklady pre lepšie pochopenie, ako to môže vyzerať v
@@ -209,65 +270,4 @@ steps:
       👉 **Rovnaká diagnóza, ale rôzne závery podľa toho, ako veľmi ovplyvňuje
       každodenný život a akú mieru podpory človek potrebuje.**
     uuid: 064ca851-2966-47d0-a01d-55a9c58fccfc
-  - title: "Ako sa človek stáva ŤZP? Kto o tom rozhoduje? "
-    body: >-
-      V prvom rade, musíš mať nejaké zdravotné komlikácie, kvôli ktorým
-      navštevuješ doktora. Týmto spôsobom máš k dispozícií lekárske záznamy,
-      nálezy alebo inými slovami: dôkaz o tom, že bolesti chrbtice si
-      nevymýšľaš, ale niekto s odborným okom sa na teba pozrel a rieši to.
-
-
-      Tieto nálezy, záznamy zozbieraš od špecialistov a priložíš ich k žiadosti
-      "<u>Žiadosť o vyhotovenie preukazu fyzickej osoby s ťažkým zdravotným
-      postihnutím</u>".
-
-
-      Žiadaš síce o vyhotovenie preukazu ŤZP, avšak vyplnením daného tlačiva a
-      odovzdanie úradu **týmto krokom** spúšťaš proces posudkovej činnnosti,
-      ktoré rozhodne, či tvoj zdravotný stav je v požadovanom rozmedzí.
-
-
-      Posudkovú činnosť vykonávajú:
-
-
-      *   **posudkový lekár** príslušného úradu práce, sociálnych vecí a rodiny,
-          
-      *   sociálny pracovník príslušého úradu práce, sociálnych vecí a rodiny.
-          
-
-      **Výsledok je komplexný posudok, ktorý obsahuje:**
-
-
-      *   mieru funkčnej poruchy,
-          
-      *   vyjadrenie, že ide o fyzickú osobu s ŤZP,
-          
-      *   sociálne dôsledky ŤZP vo všetkých oblastiach kompenzácie,
-          
-      *   návrh druhu peňažného príspevku na kompenzáciu,
-          
-      *   vyjadrenie, či osoba s ŤZP je odkázaná na sprievodcu,
-          
-      *   vyjadrenie, či osoba s ŤZP je odkázaná na individuálnu prepravu
-      osobným motorovým vozidlom,
-          
-      *   termín opätovného posúdenia zdravotného stavu, ak ho určí posudkový
-      lekár a
-          
-      *   odôvodnenie komplexného posudku
-          
-
-      🟡_Dobré vedieť:_  
-
-      _ak lekársky posudok stanoví mieru funkčnej poruchy pod 50% , komplexný
-      posudok sa sa nevypracuje._
-
-
-      ### 🚨 Spozorni
-
-
-      **Keď podávaš žiadosť o preukaz, automaticky štartuješ celý proces. Nie je
-      to len „papierovanie“, ale kľúčový krok, ktorý rozhodne, či si alebo nie
-      si ŤZP.**
-    uuid: 77f9fe6e-bfa7-4649-b2c8-3d7079f9fde7
 uuid: 54dbd2f8-72c4-4c59-abb1-e140ad92d38b
