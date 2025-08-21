@@ -19,13 +19,14 @@ steps:
       ### Rozdiel?
 
 
-      *   **ZŤP** evokuje označenie osoby. Nálepka. Hotovo. Ty si murár, ty
+      ·        **ZŤP** evokuje označenie osoby. Nálepka. Hotovo. Ty si murár, ty
       učiteľ, ty prezident. A ty? ZŤPčkár. A je úplne jedno, že si zároveň
-      športovec, otec 3 detí alebo máš vlastný startup.
-          
-      *   **ŤZP** označuje **zdravotný stav**, nie spoločenskú rolu ani
+      športovec, otec troch detí alebo máš vlastný startup.
+
+
+      ·        **ŤZP** označuje **zdravotný stav**, nie spoločenskú rolu ani
       osobnosť. Je to len **jedna časť príbehu**, nie celá identita.
-          
+
 
       ### Cítite ten rozdiel?
 
@@ -45,42 +46,43 @@ steps:
     uuid: 97047032-d1e0-42ea-8c60-583a851a13f9
   - title: Kedy sa stávate ŤZP?
     body: >-
-      Keď sa zhodnotí, že Váš zdravotný stav, resp. miera vašej funkčnej poruchy
-      je najmenej 50%.
+      Keď sa zhodnotí, že tvoj zdravotný stav, resp. miera tvojej funkčnej
+      poruchy je najmenej 50%.
 
 
-      ### A teraz ľudskou rečou:
+      ### Ľudskou rečou:
 
 
       **ŤZP (ťažko zdravotne postihnutý)** je človek, ktorý má **vážnejšie
       zdravotné obmedzenie**, a to mu **komplikuje bežný život** – ako je
       chodenie, videnie, počúvanie, komunikovanie, orientácia, alebo zvládanie
-      každodenných činností: cestovanie, vybavovanie vecí, starostlivosť o seba.
+      každodenných činností: cestovanie, vybavovanie vecí, starostlivosť o seba
+      a iné.
 
 
       ### Čo znamená tých 50%?
 
 
-      Je to odborný spôsob (či už dobre nastavený alebo zle o tom môžeme
-      samozrejme polemizovať), ako si štát odpovedá na otázku: **"ako veľmi Vám
+      Je to odborný spôsob (či už dobre nastavený alebo zle, o tom môžeme
+      samozrejme polemizovať), ako si štát odpovedá na otázku: **"ako veľmi ti
       zdravotný stav sťažuje život."**  
 
       Čim vyššie percento, tým závažnejšie ťa zdravotné obmedzenia ovplyvňujú v
       každodennom žitove.
 
 
-      Predstavte si, že:
+      Predstav si, že:
 
 
       *   **Zdravý človek zvláda všetko bez pomoci,**
           
-      *   keď vám zdravie spôsobuje **výrazné ťažkosti v rôznych oblastiach
+      *   keď zdravie začne spôsobovať **výrazné ťažkosti v rôznych oblastiach
       života**, lekár to zhodnotí ako "funkčnú poruchu" – napríklad 40 %, 50 %,
       60 %, 80 % – podľa závažnosti.
           
       *   **Ak osoba dosiahne aspoň 50 %**, lekár tým vlastne potvrdil, že
-      zdravotný stav tejto osoby je taký závažný a značne komplikuje život, že
-      daná osoba sa stáva ŤZP osobou.
+      zdravotný stav tejto osoby je taký závažný a značne komplikuje bežný
+      život, že daná osoba sa stáva ŤZP osobou.
           
 
       _Nasledujúci príklad slúži len na lepšiu predstavu. Každý zdravotný stav
@@ -113,6 +115,14 @@ steps:
       Tieto nálezy, záznamy zozbieraš od špecialistov a priložíš ich k žiadosti
       "<u>Žiadosť o vyhotovenie preukazu fyzickej osoby s ťažkým zdravotným
       postihnutím</u>".
+
+
+      ### 🚨 Spozorni
+
+
+      **Keď podávaš žiadosť o preukaz, automaticky štartuješ celý proces. Nie je
+      to len „papierovanie“, ale kľúčový krok, ktorý rozhodne, či si alebo nie
+      si ŤZP.**
 
 
       Žiadaš síce o vyhotovenie preukazu ŤZP, avšak vyplnením daného tlačiva a
@@ -151,18 +161,8 @@ steps:
       *   odôvodnenie komplexného posudku
           
 
-      🟡_Dobré vedieť:_  
-
-      _ak lekársky posudok stanoví mieru funkčnej poruchy pod 50 %, komplexný
-      posudok sa sa nevypracuje._
-
-
-      ### 🚨 Spozorni
-
-
-      **Keď podávaš žiadosť o preukaz, automaticky štartuješ celý proces. Nie je
-      to len „papierovanie“, ale kľúčový krok, ktorý rozhodne, či si alebo nie
-      si ŤZP.**
+      🟡_Dobré vedieť: ak lekársky posudok stanoví mieru funkčnej poruchy pod 50
+      %, komplexný posudok sa sa nevypracuje._
     uuid: 77f9fe6e-bfa7-4649-b2c8-3d7079f9fde7
   - title: "Vysvetlenie ŤZP na príkladoch "
     body: >-
@@ -244,7 +244,7 @@ steps:
   - title: "Diagnóza ≠ ŤZP. Prečo? "
     body: >-
       Ak si sa poctivo dostal až sem (gratulujem) a zároveň prečítal
-      predchádzajúcu sekciu, dá sa s nej ľahko vyvodiť, prečo diagnóza ≠ ŤZP.
+      predchádzajúcu sekciu, dá sa z nej ľahko vyvodiť, prečo diagnóza ≠ ŤZP.
 
 
       ### ZOPAKOVANIE
@@ -278,15 +278,17 @@ steps:
       Ak by sme sa na to pozreli očami nadšencov pozitívneho myslenia, možno by
       sme si povedali: „Mám to!“  
 
-      Lenže nie je to ako získať vodičský preukaz, vyraziť s vetrom vo vlasoch
-      na cestu po Európe.
+      Lenže to nie je ako získať vodičský preukaz, vyraziť s vetrom vo vlasoch
+      na cestu po Európe. (ale áno, dostať posudok v požadovanej lehote je v
+      princípe zázrak, nepomôže ti žiadne Harry Potter zaklínadlo).
 
 
       Byť ŤZP znamená, že zdravotné obmedzenia sú natoľko vážne, že ovplyvňujú
-      každodenný život minimálne na 50 %, niekedy aj nad 80 % či viac.
+      každodenný život minimálne na 50 %, niekedy aj na 80 % či viac.
 
 
-      A to nie je niečo, čo by si niekto plánoval alebo prial.
+      A to nie je niečo, čo by si niekto plánoval alebo prial. A už vôbec nie ,
+      aby človek niekomu závidel.
 
 
       Minimálne dobrou správou je, že ak sa staneš osobou s ŤZP, štát tento fakt
@@ -313,8 +315,9 @@ steps:
 
 
       Radšej zaparkovať na najvzdialenejšom mieste parkoviska a prejsť k
-      obchodným dverám po vlastných, aj keď v úpeku, než zobrať si miesto
-      vyhradené pre ŤZP, ak ním nie som.  
+      obchodným dverám po vlastných, aj keď v úpeku, než si zobrať miesto
+      vyhradené pre ŤZP, ak ním nie som. **(Buď vďačný za to, že môžeš parkovať
+      na tom mieste, čo je najďalej, lebo ty môžeš).**  
 
       To dá rozum. 🧠
     uuid: b1bb406f-2eaf-4f49-9039-e37ff7797317
