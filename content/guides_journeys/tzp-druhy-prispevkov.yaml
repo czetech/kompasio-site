@@ -4,14 +4,14 @@ description: Základná orientácia v príspevkoch a o zľavách.
 steps:
   - title: "Druhy príspevkov "
     body: >-
-      Ako sme si uviedli v časti [ŤZP - Úvod do
-      problematiky,](https://kompasio-site-prod.apps.czetech.net/zivotne-situacie/status-tzp/5)
+      Ako sme si uviedli v časti [<u>ŤZP - Úvod do
+      problematiky,</u>](https://kompasio-site-prod.apps.czetech.net/zivotne-situacie/status-tzp/5)
       nemáš síce automatický nárok na príspevky, ale je dobré orientovať sa v
       tom, čo vlastne existuje a bádať, či ti v tvojej životnej situácií vie
       štát nejako pomôcť.
 
 
-      ### Rozdeľme si príspevky na 3 základné kategórie:
+      ### Existujú napríklad:
 
 
       *   Peňažné príspevky:
@@ -34,31 +34,45 @@ steps:
               
           *   na kompenzáciu zvýšených výdavkov,
               
-          *   na opatrovanie
+          *   na opatrovanie.
 
               
       *   Parkovací preukaz.
           
 
+      **O každý z týchto príspevkov je potrebné žiadať, ako aj o parkovací
+      preukaz, ak na ne, samozrejme, vzniká nárok.**  
+
       Aby sme nevytvárali návod pre návod, podrobnejšie informácie si viete
-      pozriesť stránku <u>Ministerstva práce, sociálnych vecí a rodiny</u>,
-      prípadne dobré spracovanie problematiky nájdete na stránkach <u>Platforma
-      rodín.</u>
+      pozrieť na stránke [<u>Ministerstva práce, sociálnych vecí a
+      rodiny</u>](Či sú tieto zľavy dostatočné? No... to je už iná kapitola.
+      Niekde máte pocit, že sa štát \(alebo prevádzka\) naozaj snaží. Inde vám
+      dajú „zľavu“, ktorú si musíte nájsť mikroskopom a pocítiť len na duši, nie
+      v peňaženke. Tak či onak – oplatí sa zisťovať, pýtať sa a sem-tam aj
+      pripomenúť, že ten preukaz nepatrí do šuflíka.), prípadne dobré
+      spracovanie problematiky nájdete na stránkach [<u>Platformy
+      rodín.</u>](https://www.platformarodin.sk/na-co-mam-narok/kompenzacie/)
 
 
       V ďalšej časi si povieme, čo sú to zľavy pre ŤZP.
     uuid: 26885a71-97ad-4263-8051-a97b1fd5aeab
   - title: "Zľavy pre ŤZP "
     body: >-
-      Ak patríš medzi **držiteľov preukazu ŤZP,** určite nezabudni preveriť, či
-      ti náhodou niekde „nesvieti“ zľava.  
+      👉Ak patríš medzi **držiteľov preukazu ŤZP,** určite nezabudni preveriť,
+      či ti náhodou niekde „nesvieti“ zľava.  
 
       Štátne inštitúcie, ale aj niektorí súkromníci totiž poskytujú rôzne výhody
       a zľavy – od vstupov do múzeí, cez cestovné, až po lístky do kina (kde
-      popcorn, žiaľ, ostáva za plnú sumu).
+      popcorn, žiaľ, ostáva za plnú sumu).  
+
+      👉Ak máš zároveň i **parkovací preukaz ŤZP**, v tom prípade vieš uháňať po
+      diaľnici zdarma. Teda... **ak si o to požiadaš**). Áno v dobe, keď zdanené
+      sa opäť zdaňuje aj toto "zadarmo jazdenie" niečo stojí - minimálne čas,
+      nervy a podpis v správnom políčku. Papieračiek – či už fyzických alebo
+      digitálnych – nie je nikdy dosť**💪**.
 
 
-      ### Prečo to robia?
+      ### 👉Prečo to robia?
 
 
       Nie každý má rovnaký štart ani rovnaké podmienky. Zľava preto nie je
@@ -67,14 +81,38 @@ steps:
       najviac.
 
 
-      ### Či sú tieto zľavy dostatočné?
+      ### 👉Či sú tieto zľavy dostatočné?
 
 
-      Niekde máte pocit, že sa štát, alebo prevádzka naozaj snaží. Inde vám dajú
-      „zľavu“, ktorú si musíte nájsť mikroskopom a pocítiť len na duši, nie v
+      Niekde máš pocit, že sa štát, alebo prevádzka naozaj snaží. Inde ti dajú
+      „zľavu“, ktorú si musíš nájsť mikroskopom a pocítiť len na duši, nie v
       peňaženke.  
 
       Tak či onak – oplatí sa zisťovať, pýtať sa a sem-tam aj pripomenúť, že ŤZP
-      nie je len zberateľským kúskom do dokladov.
+      nie je len zberateľským kúskom medzi dokladmi.
+
+
+      ### Pre tvorcov cenových politík pre ŤZP , ŤZP-S
+
+
+      Preukaz ŤZP **nie je len obyčajná zľavová karta**, ktorou si zákazník či
+      návštevník pýta 5% z ceny dole ako pri vernostnom programe.
+
+
+      ŤZP preukaz by mal byť **"kartou kartičiek"** – **lev medzi zľavami**.
+
+
+      Prečo? Lebo za týmto preukazom je realita, ktorú si väčšina ľudí ani nevie
+      predstaviť. Nie je o výhodách, ale o tom, že danému človeku a rodinu tým
+      hovoríme: "Vidím ťa".
+
+
+      Myslite na to pri nastavovaní svojich cenových politík.  
+
+      Ak dokáže Ľubovniansky hrad pustiť vstup pre ŤZP za 0,10 € – a nemá z toho
+      žiadny reálny náklad – určite **existuje spôsob**, ako to spraviť aj inde.
+
+
+      Nie pre marketing. **Pre ľudskosť.**
     uuid: 49d3945d-698f-45d4-ad2b-6221e77edf8c
 uuid: ed060835-5b89-4d16-8f6b-04aad99e5814
