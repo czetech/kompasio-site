@@ -1,6 +1,6 @@
-title: ŤZP - Druhy príspevkov
+title: ŤZP - Druhy príspevkov a zľavy
 category: 0672d6e8-1771-46a1-9520-42437b3f2026
-description: Základná orientácia v príspevkoch
+description: Základná orientácia v príspevkoch a o zľavách.
 steps:
   - title: "Druhy príspevkov "
     body: >-
@@ -38,5 +38,43 @@ steps:
 
               
       *   Parkovací preukaz.
+          
+
+      Aby sme nevytvárali návod pre návod, podrobnejšie informácie si viete
+      pozriesť stránku <u>Ministerstva práce, sociálnych vecí a rodiny</u>,
+      prípadne dobré spracovanie problematiky nájdete na stránkach <u>Platforma
+      rodín.</u>
+
+
+      V ďalšej časi si povieme, čo sú to zľavy pre ŤZP.
     uuid: 26885a71-97ad-4263-8051-a97b1fd5aeab
+  - title: "Zľavy pre ŤZP "
+    body: >-
+      Ak patríš medzi **držiteľov preukazu ŤZP,** určite nezabudni preveriť, či
+      ti náhodou niekde „nesvieti“ zľava.  
+
+      Štátne inštitúcie, ale aj niektorí súkromníci totiž poskytujú rôzne výhody
+      a zľavy – od vstupov do múzeí, cez cestovné, až po lístky do kina (kde
+      popcorn, žiaľ, ostáva za plnú sumu).
+
+
+      ### Prečo to robia?
+
+
+      Nie každý má rovnaký štart ani rovnaké podmienky. Zľava preto nie je
+      darček – má to byť **vyjadrenie rešpektu, uznania a ľudskej
+      spolupatričnosti.** A ak sú tieto hodnoty za tým... tak nech ich je čo
+      najviac.
+
+
+      ### Či sú tieto zľavy dostatočné?
+
+
+      Niekde máte pocit, že sa štát, alebo prevádzka naozaj snaží. Inde vám dajú
+      „zľavu“, ktorú si musíte nájsť mikroskopom a pocítiť len na duši, nie v
+      peňaženke.  
+
+      Tak či onak – oplatí sa zisťovať, pýtať sa a sem-tam aj pripomenúť, že ŤZP
+      nie je len zberateľským kúskom do dokladov.
+    uuid: 49d3945d-698f-45d4-ad2b-6221e77edf8c
 uuid: ed060835-5b89-4d16-8f6b-04aad99e5814
