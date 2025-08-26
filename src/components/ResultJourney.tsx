@@ -28,6 +28,9 @@ const ResultJourney: Component = (props) => {
         <div innerHTML={hitStepBody.value} />
         <span class="text-red-orange">[útržok z textu kroku]</span>
       </Show>
+      <div class="flex pt-4">
+        <p class="text-shuttle-white bg-vibrant-blue text-sm px-2 rounded-full">{props.item.category}</p>
+      </div>
     </div>
   );
 };

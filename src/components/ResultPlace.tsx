@@ -21,6 +21,13 @@ const ResultPlace: Component = (props) => {
         <div innerHTML={hitDescription.value} />
         <span class="text-red-orange">[útržok z popisu miesta]</span>
       </Show>
+      <div class="flex pt-4 gap-x-4 overflow-x-clip">
+        <For each={props.item.categories}>
+          {(category) => (
+            <p class="text-nowrap text-shuttle-white bg-vibrant-blue text-sm px-2 rounded-full">{category.name}</p>
+          )}
+        </For>
+      </div>
     </div>
     </div>
   );
