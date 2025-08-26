@@ -15,7 +15,7 @@ const Search: Component = (props) => {
         { indexName: 'guides_journeys', query: query, hitsPerPage: 10 }],
     });
 
-  const [query, setQuery] = createSignal("kroku");
+  const [query, setQuery] = createSignal();
   const [response] = createResource(query, search);
 
   const handleInput = (event => {
