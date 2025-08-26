@@ -3,7 +3,9 @@ WORKDIR /app
 COPY package-lock.json package.json ./
 RUN npm ci
 COPY . .
-RUN npm run build
+RUN --mount=type=secret,id=DATABASE_URL \
+    export DATABASE_URL=$(cat /run/secrets/DATABASE_URL) && \
+    npm run build
 
 FROM node:lts-alpine AS production
 WORKDIR /app

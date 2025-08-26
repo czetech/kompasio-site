@@ -124,3 +124,7 @@
 .markdown-scrollable {
   @apply overflow-x-auto;
 }
+
+.algolia-match {
+  @apply bg-red-orange text-shuttle-white not-italic;
+}
