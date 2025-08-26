@@ -180,7 +180,7 @@ export default function Scrollable(props) {
         ref={scrollableRef}
         class={`scrollbar-hide absolute top-0 left-0 h-full w-full
           overflow-y-auto pr-(--padding-right)
-          md:pr-[calc(var(--padding-right)_+_(var(--spacing)_*_20))]`}
+          md:pr-[calc(var(--padding-right)_+_(var(--spacing)_*_12))]`}
         style={{
           "padding-top": paddingTopStyle(),
           "padding-bottom": paddingBottomStyle(),
