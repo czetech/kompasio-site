@@ -35,7 +35,7 @@ const Search: Component = (props) => {
             <h1 class="flex justify-center text-2xl font-semibold mb-4 gap-x-1">
               <span>Miesta</span>
               <Show when={response()}>
-                <span>({response().results[0].hits.length}{response().results[0].hits.length === 100 ? "+" : ""})</span>
+                <span>({response().results[2].nbHits})</span>
               </Show>
             </h1>
             <Show when={response()}>
@@ -52,7 +52,7 @@ const Search: Component = (props) => {
             <h1 class="flex justify-center text-2xl font-semibold mb-4 gap-x-1">
               <span>Miesta</span>
               <Show when={response()}>
-                <span>({response().results[0].hits.length}{response().results[0].hits.length === 100 ? "+" : ""})</span>
+                <span>({response().results[0].nbHits})</span>
               </Show>
             </h1>
             <Show when={response()}>
@@ -69,7 +69,7 @@ const Search: Component = (props) => {
             <h1 class="flex justify-center text-2xl font-semibold mb-4 gap-x-1">
               <span>Návody</span>
               <Show when={response()}>
-                <span>({response().results[1].hits.length}{response().results[1].hits.length === 10 ? "+" : ""})</span>
+                <span>({response().results[1].nbHits})</span>
               </Show>
             </h1>
             <Show when={response()}>
