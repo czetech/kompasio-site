@@ -23,6 +23,7 @@ const Select: Component<StyledSelectProps> = (props) => {
   const handleClickOutside = (e: MouseEvent) => {
     if (componentRef && !componentRef.contains(e.target as Node)) {
       setIsOpen(false);
+      setSearch("");
     }
   };
 
@@ -54,7 +55,7 @@ const Select: Component<StyledSelectProps> = (props) => {
     }
   });
 
-  const selectedName = createMemo(() => selected() ? props.options.find(option => option.id === selected()).name : props.placeholder);
+  const selectedName = createMemo(() => selected() ? props.options.find(option => option.id === selected())?.name ?? "" : props.placeholder);
 
   return (
     <div
