@@ -31,6 +31,7 @@ const Places: Component = (props) => {
   const [isOnline, setIsOnline] = createSignal();
   const [selectedParameters, setSelectedParameters] = createStore({});
   const [categoryFacets, setCategoryFacets] = createStore({});
+  const [expandedParameters, setExpandedParameters] = createStore({});
 
   const placeSearchParams = createMemo(() => {
     const filters = [];
@@ -129,8 +130,8 @@ const Places: Component = (props) => {
   
   return (
     <div class="w-full">
-      <div class="flex gap-x-8">
-        <div class="w-64">
+      <div class="grid md:grid-cols-3 grid-cols-1 gap-4">
+        <div class="md:max-w-64 w-full">
            <Select
                 placeholder="Kategória"
                 searchPlaceholder="Vyhľadať kategóriu"
@@ -139,7 +140,7 @@ const Places: Component = (props) => {
                 onSelect={setSelectedCategory}
               />
         </div>
-        <div class="w-64 flex flex-col gap-y-2">
+        <div class="md:max-w-64 w-full flex flex-col gap-y-2">
            <Select
                 placeholder="Mesto"
                 searchPlaceholder="Vyhľadať mesto"
@@ -152,7 +153,7 @@ const Places: Component = (props) => {
               <Toggle onSet={setIsOnline} checked={isOnline()}>On-line miesta</Toggle>
             </div>
         </div>
-        <div class="w-64">
+        <div class="md:max-w-64 w-full">
           <input class="focus:outline-none px-4 text-shuttle-white bg-vibrant-blue w-full h-9 rounded-full" placeholder="Hľadať" onInput={(event) => setPlaceQuery(event.target.value)} />
         </div>
       </div>
@@ -160,7 +161,7 @@ const Places: Component = (props) => {
       <div class="border-2 border-vibrant-blue rounded-3xl py-2 px-2 mt-4">
         <Show when={selectedCategory()} fallback={<span class="ml-2">Pre filtrovanie podľa parametrov najskôr vyberte kategóriu.</span>}>
           <div class="flex justify-between gap-x-8">
-            <button class="text-vibrant-blue flex gap-x-2" onClick={() => setIsParametersOpen(!isParametersOpen())}>
+            <button class="text-vibrant-blue flex gap-x-2" onClick={() => {setIsParametersOpen(!isParametersOpen()); setExpandedParameters(reconcile({}))}}>
               <ArrowDown
                 class="duration-500 flex-none"
                 classList={{ "rotate-180": isParametersOpen() }}
@@ -189,9 +190,10 @@ const Places: Component = (props) => {
                   <p class="font-semibold mb-1">{props.parameters[parameterId].name}:</p>
                   <p class="text-sm">{props.parameters[parameterId].type === "select" ? "Len 1" : "Viac"}</p>
                   </div>
-                  <div class="flex gap-x-6 flex-wrap">
+                  <div class="flex gap-x-6 flex-wrap gap-y-2">
                     <For each={Object.entries(options)}>
-                      {([option, count]) => {
+                      
+                      {([option, count], index) => {
                         const optionId = parseInt(option);
                         const multi = props.parameters[parameterId].type !== "select";
                         const realCount = () => {
@@ -201,13 +203,16 @@ const Places: Component = (props) => {
                             return multi ? "+" : "";
                           }
                         };
-                        return <div classList={{"opacity-50": realCount() === 0}}>
+                        return <Show when={index() < 5 || expandedParameters[parameterId]}><div classList={{"opacity-50": realCount() === 0}}>
                           <Toggle onSet={(value) => handleSetParameter(parameterId, optionId, value, multi)} checked={selectedParameters[parameterId]?.includes(optionId)} note={realCount()}>
                             {props.options[optionId]?.name}
                           </Toggle>
-                        </div>
+                        </div></Show>
                       }}
                     </For>
+                    <Show when={Object.keys(options).length > 5}>
+                    <button class="text-vibrant-blue font-semibold" onClick={() => setExpandedParameters(parameterId, !expandedParameters[parameterId])}>..zobraziť {expandedParameters[parameterId] ? "menej" : "všetky"}</button>
+                    </Show>
                   </div>
                 </div>
               )
@@ -217,7 +222,7 @@ const Places: Component = (props) => {
           </Show>
         </Show>
       </div>
-      <div class="grid grid-cols-2 gap-8 max-w-xl py-8">
+      <div class="grid md:grid-cols-2 grid-cols-1 gap-8 max-w-xl py-8">
         <For each={placesResponse()?.hits}>
           {(item) => (
             <div class="flex flex-col">

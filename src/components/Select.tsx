@@ -65,7 +65,8 @@ const Select: Component<StyledSelectProps> = (props) => {
     >
       <button
         onClick={() => setIsOpen(!isOpen())}
-        class="relative z-110 flex w-full rounded-full border-2 py-1 pr-8 pl-1 items-center"
+        class="relative flex w-full rounded-full border-2 py-1 pr-8 pl-1 items-center"
+        classList={{"z-110": isOpen(), "z-10": !isOpen()}}
         disabled={props.disabled}
       >
         <ArrowDown
@@ -75,7 +76,7 @@ const Select: Component<StyledSelectProps> = (props) => {
 
         <span class="grow text-nowrap pl-2 text-ellipsis overflow-hidden" innerHTML={selectedName()} />
       </button>
-      <button class="absolute top-0 right-0.5 z-120 p-1.5" onClick={() => {setSelected(); setIsOpen(false);}}>
+      <button class="absolute top-0 right-0.5 p-1.5" onClick={() => {setSelected(); setIsOpen(false);}} classList={{"z-120": isOpen(), "z-20": !isOpen()}}>
         <X />
       </button>
       <Show when={isOpen()}>
