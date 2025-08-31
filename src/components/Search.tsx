@@ -4,6 +4,7 @@ import { algoliasearch } from "algoliasearch";
 import Scrollable from "~/components/Scrollable.tsx";
 import ResultJourney from "~/components/ResultJourney.tsx";
 import ResultPlace from "~/components/ResultPlace.tsx";
+import ResultPlaceCategory from "~/components/ResultPlaceCategory.tsx";
 
 const Search: Component = (props) => {
   const client = algoliasearch("82UVQ4A8PK", "7ae17487a91af2d6759e1ff809892bb7");
@@ -11,8 +12,9 @@ const Search: Component = (props) => {
   const search = async (query) =>
     await client.search({
       requests: [
-        { indexName: 'places', query: query, hitsPerPage: 10 },
-        { indexName: 'guides_journeys', query: query, hitsPerPage: 10 }],
+        { indexName: 'places', query: query, hitsPerPage: 100 },
+        { indexName: 'guides_journeys', query: query, hitsPerPage: 100 },
+        { indexName: "places_categories", query: query, hitsPerPage: 100}],
     });
 
   const [query, setQuery] = createSignal();
@@ -28,12 +30,29 @@ const Search: Component = (props) => {
         <input class="border-2 border-vibrant-blue rounded-full px-4" onInput={handleInput} />
       </div>
       <Show when={query()}>
-        <div class="grid grid-cols-2 gap-x-16 grow">
+        <div class="grid grid-cols-3 gap-x-16 grow">
           <div>
             <h1 class="flex justify-center text-2xl font-semibold mb-4 gap-x-1">
               <span>Miesta</span>
               <Show when={response()}>
-                <span>({response().results[0].hits.length}{response().results[0].hits.length === 10 ? "+" : ""})</span>
+                <span>({response().results[0].hits.length}{response().results[0].hits.length === 100 ? "+" : ""})</span>
+              </Show>
+            </h1>
+            <Show when={response()}>
+                <div class="flex flex-col gap-y-4">
+                  <For each={response().results[2].hits}>
+                    {(item) => (
+                      <ResultPlaceCategory item={item} />
+                    )}
+                  </For>
+                </div>
+            </Show>
+          </div>
+          <div>
+            <h1 class="flex justify-center text-2xl font-semibold mb-4 gap-x-1">
+              <span>Miesta</span>
+              <Show when={response()}>
+                <span>({response().results[0].hits.length}{response().results[0].hits.length === 100 ? "+" : ""})</span>
               </Show>
             </h1>
             <Show when={response()}>
