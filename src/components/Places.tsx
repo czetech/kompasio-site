@@ -8,6 +8,7 @@ import { createStore, produce, unwrap, reconcile } from "solid-js/store";
 import Toggle from "~/components/Toggle.tsx";
 import ArrowDown from "lucide-solid/icons/arrow-down";
 import X from "lucide-solid/icons/x";
+import Map from "~/components/Map.tsx";
 
 const Places: Component = (props) => {
   const client = algoliasearch("82UVQ4A8PK", "7ae17487a91af2d6759e1ff809892bb7");
@@ -16,7 +17,7 @@ const Places: Component = (props) => {
   const [isParametersOpen, setIsParametersOpen] = createSignal(false);
 
   const searchPlaces = async ({query, filters, hitsPerPage = 100}) => {
-    return await client.searchSingleIndex({indexName: 'places', searchParams: {attributesToRetrieve: ["categories.name"], facets: facets, filters: filters, hitsPerPage: hitsPerPage, query: query}})};
+    return await client.searchSingleIndex({indexName: 'places', searchParams: {attributesToRetrieve: ["categories.name", "_geoloc"], facets: facets, filters: filters, hitsPerPage: hitsPerPage, query: query}})};
 
   const searchCategories = async (query) => await client.searchSingleIndex({indexName: 'places_categories', searchParams: {attributesToRetrieve: ["alias", "name"], hitsPerPage: 1000, query: query}})
 
@@ -129,7 +130,8 @@ const Places: Component = (props) => {
   };
   
   return (
-    <div class="w-full">
+    <div class="w-full grid grid-cols-1 xl:grid-cols-2 gap-x-8">
+    <div class="">
       <div class="grid md:grid-cols-3 grid-cols-1 gap-4">
         <div class="md:max-w-64 w-full">
            <Select
@@ -231,6 +233,10 @@ const Places: Component = (props) => {
           )}
         </For>
       </div>
+    </div>
+    <div class="invisible xl:visible">
+    <Map locations={selectedCategory() && placesResponse()?.hits.map(hit => hit._geoloc)} />
+    </div>
     </div>
   );
 };
