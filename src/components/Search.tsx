@@ -33,7 +33,7 @@ const Search: Component = (props) => {
         <div class="grid grid-cols-3 gap-x-16 grow">
           <div>
             <h1 class="flex justify-center text-2xl font-semibold mb-4 gap-x-1">
-              <span>Miesta</span>
+              <span>Kategórie</span>
               <Show when={response()}>
                 <span>({response().results[2].nbHits})</span>
               </Show>
