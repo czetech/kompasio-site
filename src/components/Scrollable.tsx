@@ -174,13 +174,14 @@ export default function Scrollable(props) {
       style={{
         "--padding-right": paddingRightStyle(),
         "--track-opacity": trackOpacityStyle(),
+        "--padding-track": props.paddingTrack ?? 20,
       }}
     >
       <div
         ref={scrollableRef}
         class={`scrollbar-hide absolute top-0 left-0 h-full w-full
           overflow-y-auto pr-(--padding-right)
-          md:pr-[calc(var(--padding-right)_+_(var(--spacing)_*_20))]`}
+          md:pr-[calc(var(--padding-right)_+_(var(--spacing)_*_var(--padding-track)))]`}
         style={{
           "padding-top": paddingTopStyle(),
           "padding-bottom": paddingBottomStyle(),

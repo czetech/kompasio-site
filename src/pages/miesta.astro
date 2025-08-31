@@ -1,15 +1,23 @@
 ---
 import BaseLayout from "~/layouts/BaseLayout.astro";
 import Places from "~/components/Places.tsx";
-import CircleArrow from "~/components/CircleArrow.tsx";
----
+import { getCollection } from "astro:content";
 
+const placesParameters = await getCollection("placesParameters");
+const placesParametersOptions = await getCollection("placesParametersOptions");
+
+const parameters = placesParameters.reduce((acc, placeParameter) => {
+    acc[parseInt(placeParameter.id)] = placeParameter.data;
+    return acc;
+  }, {});
+
+const options = placesParametersOptions.reduce((acc, placeParameterOption) => {
+    acc[parseInt(placeParameterOption.id)] = placeParameterOption.data;
+    return acc;
+  }, {});
+---
 <BaseLayout>
-  <div class="flex items-center justify-center gap-x-4 p-8">
-    <CircleArrow direction="180" />
-    <h1 class="text-2xl font-semibold md:text-3xl">Miesta</h1>
-  </div>
-  <div class="mx-auto max-w-[1000px] p-8">
-    <Places client:only />
+  <div class="max-w-5xl w-full p-8">
+    <Places client:only parameters={parameters} options={options} />
   </div>
 </BaseLayout>

@@ -5,117 +5,105 @@ import {
   createMemo,
   onCleanup,
   onMount,
+  createEffect,
 } from "solid-js";
 import type { Component } from "solid-js";
 import ArrowDown from "lucide-solid/icons/arrow-down";
-
-interface Option {
-  id: number;
-  name: string;
-}
-
-interface StyledSelectProps {
-  options: Option[];
-  value: number | null;
-  onChange: (selectedId: number | null) => void;
-  label: string;
-  placeholder: string;
-  disabled?: boolean;
-}
+import Eraser from "lucide-solid/icons/eraser";
+import X from "lucide-solid/icons/x";
+import Scrollable from "~/components/Scrollable.tsx";
 
 const Select: Component<StyledSelectProps> = (props) => {
-  const [isOpen, setIsOpen] = createSignal(false);
-  let selectRef: HTMLDivElement | undefined;
+  let componentRef;
 
-  const selectedOption = createMemo(() =>
-    props.options.find((opt) => opt.id === props.value),
-  );
+  const [isOpen, setIsOpen] = createSignal();
+  const [selected, setSelected] = createSignal();
+  const [search, setSearch] = createSignal("");
 
   const handleClickOutside = (e: MouseEvent) => {
-    if (selectRef && !selectRef.contains(e.target as Node)) {
+    if (componentRef && !componentRef.contains(e.target as Node)) {
       setIsOpen(false);
     }
   };
 
+  const handleSelect = (value) => {
+    setSelected(value);
+    setIsOpen(false);
+    setSearch("");
+  };
+
   onMount(() => {
     document.addEventListener("mousedown", handleClickOutside);
-  });
-  onCleanup(() => {
-    document.removeEventListener("mousedown", handleClickOutside);
+
+    onCleanup(() => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    });
   });
 
-  const toggleDropdown = () => {
-    if (!props.disabled) {
-      setIsOpen(!isOpen());
+  createEffect(() => {
+    props.onSearch(search());
+  });
+
+  createEffect(() => {
+    props.onSelect(selected());
+  });
+
+  createEffect(() => {
+    if (props.disabled) {
+      setSelected();
     }
-  };
+  });
 
-  const handleSelect = (option: Option) => {
-    props.onChange(option.id);
-    setIsOpen(false);
-  };
+  const selectedName = createMemo(() => selected() ? props.options.find(option => option.id === selected()).name : props.placeholder);
 
   return (
     <div
-      ref={selectRef}
-      class="text-vibrant-blue relative w-full"
-      classList={{ "!text-frontier-gray cursor-not-allowed": props.disabled }}
+      ref={componentRef}
+      class="text-vibrant-blue relative"
+      classList={{"!text-frontier-gray": props.disabled}}
     >
       <button
-        type="button"
-        onClick={toggleDropdown}
-        class="relative z-20 flex w-full items-center rounded-full border p-1"
-        aria-haspopup="listbox"
-        aria-expanded={isOpen()}
+        onClick={() => setIsOpen(!isOpen())}
+        class="relative z-110 flex w-full rounded-full border-2 py-1 pr-8 pl-1 items-center"
         disabled={props.disabled}
       >
         <ArrowDown
-          class="duration-500"
+          class="duration-500 flex-none"
           classList={{ "rotate-180": isOpen() }}
         />
 
-        <span class="grow text-lg font-semibold">
-          {selectedOption()?.name || props.label}
-        </span>
+        <span class="grow text-nowrap pl-2 text-ellipsis overflow-hidden" innerHTML={selectedName()} />
       </button>
-
+      <button class="absolute top-0 right-0.5 z-120 p-1.5" onClick={() => {setSelected(); setIsOpen(false);}}>
+        <X />
+      </button>
       <Show when={isOpen()}>
         <div
-          class={`absolute top-0 z-10 w-full overflow-hidden rounded-2xl border
-            bg-white p-2 pt-12 shadow-lg`}
+          class={`absolute top-0 z-100 w-full overflow-hidden rounded-2xl border-x-2 border-b-2
+            bg-white pt-12 shadow-lg h-90 text-sm`}
         >
-          <ul class="max-h-60 space-y-1 overflow-y-auto pr-2" role="listbox">
-            <li
-              onClick={() => {
-                props.onChange(null);
-                setIsOpen(false);
-              }}
-              role="option"
-              class="text-frontier-gray p-1 text-lg font-semibold"
-            >
-              {props.placeholder}
-            </li>
+          <div class="flex gap-x-2 border-b-2 mx-3">
+            <input class="text-base placeholder:text-sm w-full font-semibold placeholder:text-frontier-gray focus:outline-none" placeholder={props.searchPlaceholder} onInput={(event) => setSearch(event.target.value)} value={search()} />
+            <button class="h-full px-2" onClick={() => setSearch("")}>
+              <Eraser class="relative bottom-[calc(var(--spacing)_*_-1)]" />
+            </button>
+          </div>
+          <Scrollable paddingTrack={8} class="pb-16 pt-3 px-2">
+          <ul class="space-y-1 pr-2" role="listbox">
             <For each={props.options}>
-              {(option, i) => (
+              {(option) => (
                 <li
-                  onClick={() => handleSelect(option)}
-                  role="option"
-                  aria-selected={option.id === props.value}
-                  class="p-1 text-xl font-semibold"
+                  class="p-1 pl-[calc(var(--spacing)_*_var(--indent)_*_3)]"
                   classList={{
-                    "bg-vibrant-blue text-white": props.value === option.id,
-                    "text-vibrant-blue": props.value !== option.id,
+                    "bg-vibrant-blue text-white rounded-full pl-6 duration-200": selected() === option.id,
                   }}
-                  style={{
-                    opacity:
-                      props.value !== option.id ? 1 - (i() + 1) * 0.1 : 1,
-                  }}
-                >
-                  {option.name}
-                </li>
+                  style={{"--indent": option.indent}}
+                  onClick={() => handleSelect(option.id)}
+                  innerHTML={option.name} />
               )}
             </For>
           </ul>
+          </Scrollable>
         </div>
       </Show>
     </div>

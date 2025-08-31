@@ -1,153 +1,232 @@
 import type { Component } from "solid-js";
-import { createResource, createSignal, Show, For, createMemo } from "solid-js";
+import { createResource, createSignal, Show, For, createMemo, createEffect } from "solid-js";
 import Select from "./Select.tsx";
+import { algoliasearch } from "algoliasearch";
+import Scrollable from "~/components/Scrollable.tsx";
+import ResultPlace from "~/components/ResultPlace.tsx";
+import { createStore, produce, unwrap, reconcile } from "solid-js/store";
+import Toggle from "~/components/Toggle.tsx";
+import ArrowDown from "lucide-solid/icons/arrow-down";
+import X from "lucide-solid/icons/x";
 
-const fetchLocations = async () => {
-  const response = await fetch("/api/locations.json");
-  if (!response.ok) throw new Error("Failed to fetch locations");
-  return response.json();
-};
+const Places: Component = (props) => {
+  const client = algoliasearch("82UVQ4A8PK", "7ae17487a91af2d6759e1ff809892bb7");
+  const facets = Object.keys(props.parameters).map(parameterId => `parameters.${parameterId}`);
 
-const fetchPlaces = async (filter: {
-  countyId?: number;
-  districtId?: number;
-  townId?: number;
-}) => {
-  const params = new URLSearchParams();
-  if (filter.townId) {
-    params.append("townId", String(filter.townId));
-  } else if (filter.districtId) {
-    params.append("districtId", String(filter.districtId));
-  } else if (filter.countyId) {
-    params.append("countyId", String(filter.countyId));
-  }
-  const response = await fetch(`/api/places.json?${params.toString()}`);
-  if (!response.ok) throw new Error("Failed to fetch places");
-  return response.json();
-};
+  const [isParametersOpen, setIsParametersOpen] = createSignal(false);
 
-const Places: Component = () => {
-  const [locations] = createResource(fetchLocations);
+  const searchPlaces = async ({query, filters, hitsPerPage = 100}) => {
+    return await client.searchSingleIndex({indexName: 'places', searchParams: {attributesToRetrieve: ["categories.name"], facets: facets, filters: filters, hitsPerPage: hitsPerPage, query: query}})};
 
-  const [selectedCountyId, setSelectedCountyId] = createSignal<number | null>(
-    null,
-  );
-  const [selectedDistrictId, setSelectedDistrictId] = createSignal<
-    number | null
-  >(null);
-  const [selectedTownId, setSelectedTownId] = createSignal<number | null>(null);
+  const searchCategories = async (query) => await client.searchSingleIndex({indexName: 'places_categories', searchParams: {attributesToRetrieve: ["alias", "name"], hitsPerPage: 1000, query: query}})
 
-  const availableDistricts = () => {
-    const countyId = selectedCountyId();
-    if (!countyId || !locations()) return [];
-    return locations()!.districts.filter((d) => d.countyId === countyId);
-  };
+  const searchLocations = async (query) => await client.searchSingleIndex({indexName: 'locations', searchParams: {attributesToRetrieve: ["code", "name", "type"], hitsPerPage: 1000, query: query}})
 
-  const availableTowns = () => {
-    const districtId = selectedDistrictId();
-    if (!districtId || !locations()) return [];
-    return locations()!.towns.filter((t) => t.districtId === districtId);
-  };
+  const [placeQuery, setPlaceQuery] = createSignal();
+  const [categoryQuery, setCategoryQuery] = createSignal("");
+  const [locationQuery, setLocationQuery] = createSignal("");
 
-  const handleCountyChange = (id: number | null) => {
-    setSelectedCountyId(id);
-    setSelectedDistrictId(null);
-    setSelectedTownId(null);
-  };
+  const [selectedCategory, setSelectedCategory] = createSignal();
+  const [selectedLocation, setSelectedLocation] = createSignal();
+  const [isOnline, setIsOnline] = createSignal();
+  const [selectedParameters, setSelectedParameters] = createStore({});
+  const [categoryFacets, setCategoryFacets] = createStore({});
 
-  const handleDistrictChange = (id: number | null) => {
-    setSelectedDistrictId(id);
-    setSelectedTownId(null);
-  };
+  const placeSearchParams = createMemo(() => {
+    const filters = [];
+    if (selectedCategory()) {
+      filters.push(`categories.alias:${selectedCategory()}`);
+    }
+    if (selectedLocation()) {
+      const code = selectedLocation();
+      if (code.length === 1) {
+        filters.push(`county.code:${code}`);
+      }
+      if (code.length === 3) {
+        filters.push(`district.code:${code}`);
+      }
+      if (code.length === 6) {
+        filters.push(`town.code:${code}`);
+      }
+    }
+    if (isOnline()) {
+      filters.push("county.name:ON-LINE");
+    }
 
-  const handleTownChange = (id: number | null) => {
-    setSelectedTownId(id);
-  };
+    Object.keys(selectedParameters).sort().forEach((parameterId) => {
+      const optionsIds = selectedParameters[parameterId];
+      if (optionsIds?.length) {
+        const optionsFilters = optionsIds.map(optionId => `parameters.${parameterId}:${optionId}`).join(" OR ");
+        filters.push(`(${optionsFilters})`);
+      }
+    });
 
-  const activeFilter = createMemo(() => {
-    const town = selectedTownId();
-    if (town) return { townId: town };
-
-    const district = selectedDistrictId();
-    if (district) return { districtId: district };
-
-    const county = selectedCountyId();
-    if (county) return { countyId: county };
-
-    return {}; // An empty object for no filter
+    return {query: placeQuery(), filters: filters.join(" AND ")};
   });
 
-  const [places, { refetch }] = createResource(activeFilter, fetchPlaces);
+  const categoryFilter = createMemo(() => {
+    setIsParametersOpen(false);
+    if (selectedCategory()) {
+      return `categories.alias:${selectedCategory()}`;
+    } else {
+      return null;
+    }
+  });
 
+  const [placesResponse] = createResource(placeSearchParams, searchPlaces);
+  const [categoriesResponse] = createResource(categoryQuery, searchCategories);
+  const [locationsResponse] = createResource(locationQuery, searchLocations);
+  const [categoryPlacesResponse, {mutate: categoryPlacesMutate}] = createResource(() => {
+    if (categoryFilter() !== null) {
+      return {filters: categoryFilter(), hitsPerPage: 0};
+    } else {
+      return null;
+    }
+  }, searchPlaces);
+
+  createEffect(() => {
+    if (!selectedCategory()) {
+      categoryPlacesMutate(undefined);
+    }
+  });
+
+  const categories = createMemo(() => {
+    return categoriesResponse() !== undefined ? categoriesResponse().hits.map((category) => ({id: category.alias, name: category._highlightResult.name.value})) : [];
+  });
+
+  const locations = createMemo(() => {
+    return locationsResponse() !== undefined ? locationsResponse().hits.map((location) => ({id: location.code, name: location._highlightResult.name.value, indent: {county: 0, district: 1, town: 2}[location.type]})) : [];
+  });
+
+  createEffect(() => {
+    selectedCategory();
+    setSelectedParameters(reconcile({}));
+    setCategoryFacets(reconcile({}));
+  });
+
+  const handleSetParameter = (parameterId, optionId, value, multi) => {
+    setSelectedParameters(
+      produce(selectedParameters => {
+        selectedParameters[parameterId] ??= [];
+        if (value) {
+          if (!selectedParameters[parameterId].includes(optionId)) {
+            if (multi) {
+              selectedParameters[parameterId].push(optionId);
+            } else {
+              selectedParameters[parameterId] = [optionId];
+            }
+          }
+        }
+        else {
+          selectedParameters[parameterId] = selectedParameters[parameterId].filter(parameterOptionId => parameterOptionId !== optionId);
+        }
+        if (selectedParameters[parameterId].length === 0) {
+          selectedParameters[parameterId] = undefined;
+        }
+      }),
+    );
+  };
+  
   return (
-    <>
-      <div class="p-8">
-        <Show when={!locations.loading} fallback={<p>Loading locations...</p>}>
-          <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
-            <Select
-              label="Kraj"
-              placeholder="Všetky kraje"
-              options={locations()?.counties || []}
-              value={selectedCountyId()}
-              onChange={handleCountyChange}
-              disabled={locations.loading}
-            />
-            <Select
-              label="Okres"
-              placeholder="Všetky okresy"
-              options={availableDistricts()}
-              value={selectedDistrictId()}
-              onChange={handleDistrictChange}
-              disabled={!selectedCountyId()}
-            />
-            <Select
-              label="Obec"
-              placeholder="Všetky obce"
-              options={availableTowns()}
-              value={selectedTownId()}
-              onChange={handleTownChange}
-              disabled={!selectedDistrictId()}
-            />
+    <div class="w-full">
+      <div class="flex gap-x-8">
+        <div class="w-64">
+           <Select
+                placeholder="Kategória"
+                searchPlaceholder="Vyhľadať kategóriu"
+                options={categories()}
+                onSearch={setCategoryQuery}
+                onSelect={setSelectedCategory}
+              />
+        </div>
+        <div class="w-64 flex flex-col gap-y-2">
+           <Select
+                placeholder="Mesto"
+                searchPlaceholder="Vyhľadať mesto"
+                options={locations()}
+                onSearch={setLocationQuery}
+                onSelect={setSelectedLocation}
+                disabled={isOnline()}
+              />
+            <div class="flex gap-x-2 items-center">
+              <Toggle onSet={setIsOnline} checked={isOnline()}>On-line miesta</Toggle>
+            </div>
+        </div>
+        <div class="w-64">
+          <input class="focus:outline-none px-4 text-shuttle-white bg-vibrant-blue w-full h-9 rounded-full" placeholder="Hľadať" onInput={(event) => setPlaceQuery(event.target.value)} />
+        </div>
+      </div>
+      <div class="font-semibold mt-4">Nájdených {placesResponse()?.nbHits} výsledkov</div>
+      <div class="border-2 border-vibrant-blue rounded-3xl py-2 px-2 mt-4">
+        <Show when={selectedCategory()} fallback={<span class="ml-2">Pre filtrovanie podľa parametrov najskôr vyberte kategóriu.</span>}>
+          <div class="flex justify-between gap-x-8">
+            <button class="text-vibrant-blue flex gap-x-2" onClick={() => setIsParametersOpen(!isParametersOpen())}>
+              <ArrowDown
+                class="duration-500 flex-none"
+                classList={{ "rotate-180": isParametersOpen() }}
+              />
+              <Show when={!isParametersOpen()} fallback={<p>Skryť filter</p>}>
+                <Show when={Object.keys(selectedParameters).length} fallback={<p>Zobraziť filter</p>}>
+                  <p class="font-semibold">Zobraziť aktívne filtre</p>
+                </Show>
+              </Show>
+            </button>
+            <Show when={Object.keys(selectedParameters).length}>
+            <button class="text-vibrant-blue flex gap-x-2" onClick={() => setSelectedParameters(reconcile({}))}>
+              <X />
+              <p>Zrušiť filter</p>
+            </button>
+            </Show>
           </div>
+          <Show when={isParametersOpen()}>
+          <div class="flex flex-col gap-y-4 mt-4">
+          <For each={categoryPlacesResponse()?.hits && Object.entries(categoryPlacesResponse().facets)}>
+            {([facet, options]) => {
+              const parameterId = parseInt(facet.split(".")[1]);
+              return (
+                <div>
+                  <div class="flex gap-x-2">
+                  <p class="font-semibold mb-1">{props.parameters[parameterId].name}:</p>
+                  <p class="text-sm">{props.parameters[parameterId].type === "select" ? "Len 1" : "Viac"}</p>
+                  </div>
+                  <div class="flex gap-x-6 flex-wrap">
+                    <For each={Object.entries(options)}>
+                      {([option, count]) => {
+                        const optionId = parseInt(option);
+                        const multi = props.parameters[parameterId].type !== "select";
+                        const realCount = () => {
+                          if (!selectedParameters[parameterId]?.length) {
+                            return placesResponse().facets[facet]?.[option] ?? 0;
+                          } else {
+                            return multi ? "+" : "";
+                          }
+                        };
+                        return <div classList={{"opacity-50": realCount() === 0}}>
+                          <Toggle onSet={(value) => handleSetParameter(parameterId, optionId, value, multi)} checked={selectedParameters[parameterId]?.includes(optionId)} note={realCount()}>
+                            {props.options[optionId]?.name}
+                          </Toggle>
+                        </div>
+                      }}
+                    </For>
+                  </div>
+                </div>
+              )
+            }}
+          </For>
+          </div>
+          </Show>
         </Show>
       </div>
-
-      <Show when={places.loading}>
-        <p>Loading...</p>
-      </Show>
-      <Show when={places.error}>
-        <div class="error-message">
-          <p>Error fetching data: {places.error.message}</p>
-          <button onClick={() => refetch()}>Retry</button>
-        </div>
-      </Show>
-
-      <Show when={places()}>
-        <div class="flex flex-col gap-y-4">
-          <For each={places()}>
-            {(place) => (
-              <div class="text-vibrant-blue rounded-2xl border p-6">
-                <h2 class="mb-4 text-xl md:text-2xl">{place.placeName}</h2>
-                <div class="mb-2" innerHTML={place.placeShortDescription} />
-                <p class="mb-6 text-sm">{place.townName}</p>
-                <div class="flex flex-wrap gap-2">
-                  <For each={place.categoryNames}>
-                    {(categoryName) => (
-                      <p
-                        class={`bg-vibrant-blue rounded-full px-2 py-0.5 text-sm
-                        text-white`}
-                      >
-                        {categoryName}
-                      </p>
-                    )}
-                  </For>
-                </div>
-              </div>
-            )}
-          </For>
-        </div>
-      </Show>
-    </>
+      <div class="grid grid-cols-2 gap-8 max-w-xl py-8">
+        <For each={placesResponse()?.hits}>
+          {(item) => (
+            <div class="flex flex-col">
+              <ResultPlace item={item} />
+            </div>
+          )}
+        </For>
+      </div>
+    </div>
   );
 };
 

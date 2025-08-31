@@ -1,6 +1,7 @@
 import { defineCollection } from "astro:content";
 import { glob } from "astro/loaders";
 import path from "pathe";
+import { db } from "~/db/index.ts";
 
 const yamlExt = "yaml";
 const yamlGlob = ["*", yamlExt].join(".");
@@ -62,6 +63,28 @@ const footer = defineCollection({
   }),
 });
 
+const placesParameters = defineCollection({
+  loader: async () => {
+    const parameters = await db.query.parameter.findMany();
+    return parameters.map(parameter => ({
+      id: parameter.id.toString(),
+      type: parameter.type,
+      description: parameter.description,
+      name: parameter.name,
+    }));
+  },
+});
+
+const placesParametersOptions = defineCollection({
+  loader: async () => {
+    const parametersOptions = await db.query.parameterOption.findMany();
+    return parametersOptions.map(parameterOption => ({
+      id: parameterOption.id.toString(),
+      name: parameterOption.name,
+    }));
+  },
+});
+
 export const collections = {
   landing,
   guides,
@@ -71,4 +94,6 @@ export const collections = {
   vop,
   gdpr,
   footer,
+  placesParameters,
+  placesParametersOptions,
 };
