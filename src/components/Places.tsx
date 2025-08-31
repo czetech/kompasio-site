@@ -234,7 +234,7 @@ const Places: Component = (props) => {
         </For>
       </div>
     </div>
-    <div class="invisible xl:visible">
+    <div class="invisible xl:visible" classList={{"opacity-33": isOnline()}}>
     <Map locations={selectedCategory() && placesResponse()?.hits.map(hit => hit._geoloc)} />
     </div>
     </div>
