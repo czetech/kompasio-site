@@ -130,8 +130,8 @@ const Places: Component = (props) => {
   };
   
   return (
-    <div class="w-full grid grid-cols-1 xl:grid-cols-2 gap-x-8">
-    <div class="">
+    <div class="w-full grid grid-cols-2 xl:grid-cols-2 grow">
+    <Scrollable client:only class="px-8 pt-8 pb-16" paddingTrack={12}>
       <div class="grid md:grid-cols-3 grid-cols-1 gap-4">
         <div class="md:max-w-64 w-full">
            <Select
@@ -233,9 +233,9 @@ const Places: Component = (props) => {
           )}
         </For>
       </div>
-    </div>
-    <div class="invisible xl:visible" classList={{"opacity-33": isOnline()}}>
-    <Map locations={selectedCategory() && placesResponse()?.hits.map(hit => hit._geoloc)} />
+    </Scrollable>
+    <div class=".invisible xl:visible" classList={{"opacity-33": isOnline()}}>
+    <Map locations={placesResponse()?.hits.filter(hit => hit._geoloc)} />
     </div>
     </div>
   );

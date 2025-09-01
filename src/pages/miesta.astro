@@ -16,8 +16,6 @@ const options = placesParametersOptions.reduce((acc, placeParameterOption) => {
     return acc;
   }, {});
 ---
-<BaseLayout>
-  <div class="max-w-[1800px] w-full p-8">
-    <Places client:only parameters={parameters} options={options} />
-  </div>
+<BaseLayout strictHeight>
+  <Places client:only parameters={parameters} options={options} />
 </BaseLayout>

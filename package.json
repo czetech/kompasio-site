@@ -13,6 +13,8 @@
     "@astrojs/node": "^9.3.3",
     "@astrojs/solid-js": "^5.0.8",
     "@fontsource/poppins": "^5.2.5",
+    "@googlemaps/js-api-loader": "^1.16.10",
+    "@googlemaps/markerclusterer": "^2.6.2",
     "@solid-primitives/event-listener": "^2.4.3",
     "@solid-primitives/presence": "^0.1.0",
     "@solid-primitives/resize-observer": "^2.1.3",

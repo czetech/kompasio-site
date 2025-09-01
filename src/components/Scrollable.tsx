@@ -7,6 +7,7 @@ import { makeResizeObserver } from "@solid-primitives/resize-observer";
 export default function Scrollable(props) {
   let componentRef;
   let scrollableRef;
+  let contentRef;
   let trackRef;
   let thumbRef;
 
@@ -146,6 +147,15 @@ export default function Scrollable(props) {
     );
   };
 
+  const handleContentResizeObserver = () => {
+    setScrollable(
+      produce((scrollable) => {
+        scrollable.clientHeight = scrollableRef.clientHeight;
+        scrollable.scrollHeight = scrollableRef.scrollHeight;
+      }),
+    );
+  };
+
   const handleScroll = () => {
     setScroll(scrollableRef.scrollTop);
   };
@@ -163,6 +173,7 @@ export default function Scrollable(props) {
 
     makeEventListener(componentRef, "pointerdown", handlePointerdown);
     makeResizeObserver(handleResizeObserver).observe(scrollableRef);
+    makeResizeObserver(handleContentResizeObserver).observe(contentRef);
     makeEventListener(scrollableRef, "scroll", handleScroll, { passive: true });
   });
 
@@ -190,7 +201,7 @@ export default function Scrollable(props) {
           "-webkit-mask-image": maskStyle(),
         }}
       >
-        {props.children}
+        <div ref={contentRef}>{props.children}</div>
       </div>
       <div
         ref={trackRef}
