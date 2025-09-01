@@ -75,7 +75,7 @@ steps:
           
           *   Po potvrdení registrácie z e-mailu vyplňte svoje údaje (meno, priezvisko, rodné číslo).
               
-          *   Kliknite na _Pokračovať_.
+          *   Kliknite na **_Pokračovať._**
 
               
       2.  Výber karty
@@ -105,9 +105,9 @@ steps:
               
       5.  Súhlasy a prehlásenie
           
-          *   Zaškrtnite požadované súhlasy so spracovaním osobných údajov.
+          *   **Zaškrtnite požadované súhlasy so spracovaním osobných údajov.**
               
-          *   Potvrďte, že všetky uvedené údaje sú pravdivé.
+          *   **Potvrďte, že všetky uvedené údaje sú pravdivé.**
 
               
 
@@ -117,7 +117,7 @@ steps:
       *   Nahrajte všetky povinné prílohy, ktoré ste si pripravili v prvom
       kroku.
           
-      *   Kliknite na _Dokončiť_.
+      *   Kliknite na **Dokončiť.**
     tasks:
       - body: Dokumenty nahrané
         uuid: a6fc0431-caf0-42f4-b47a-b49b68b2419f
@@ -126,8 +126,8 @@ steps:
     body: |-
       Žiadosť a doklady sa odoslali na schovaľovanie.
 
-      Schválenie žiadosti Vám príde emailom spolu s pokynmi na úhradu.
+      Schválenie žiadosti Vám príde **emailom** spolu **s pokynmi na úhradu**.
 
-      Po zaplatení bude Vaša karta aktívna.
+      **Po zaplatení bude Vaša karta aktívna.**
     uuid: 79266f8e-80cc-496f-af17-539b17ca6f92
 uuid: ebbd7580-051f-4e94-b8bd-7ced2ba03970
