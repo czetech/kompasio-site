@@ -9,7 +9,7 @@ const AUTH_USER = "kompas";
 const AUTH_PASS = "kompas";
 
 const slug = Astro.params.slug || "";
-const targetUrl = `${LEGACY_PHP_APP_URL}/zoznam/${slug}`;
+const targetUrl = `${LEGACY_PHP_APP_URL}/zoznam/${slug}${Astro.url.search}`;
 
 const authHeader = `Basic ${Buffer.from(`${AUTH_USER}:${AUTH_PASS}`).toString("base64")}`;
 
