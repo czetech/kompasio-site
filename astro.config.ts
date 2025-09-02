@@ -7,7 +7,7 @@ export default defineConfig({
   adapter: node({
     mode: "standalone",
   }),
-  trailingSlash: "never",
+  //trailingSlash: "never",
   integrations: [solidJs()],
   vite: {
     plugins: [tailwindcss()],
