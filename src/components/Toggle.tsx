@@ -1,4 +1,4 @@
-import { createSignal, createEffect } from 'solid-js';
+import { createSignal, createEffect } from "solid-js";
 
 const Toggle = (props) => {
   const handleClick = () => {
@@ -6,19 +6,35 @@ const Toggle = (props) => {
   };
 
   return (
-    <button onClick={handleClick} class="text-vibrant-blue flex items-center gap-x-2">
-      <div class="relative pr-1 h-5 border-2 rounded-full duration-200 focus:outline-none flex items-center flex-none" classList={{"bg-current": props.checked, "w-13": props.note != null, "w-9": props.note == null}}>
+    <button
+      onClick={handleClick}
+      class="text-vibrant-blue flex items-center gap-x-2"
+    >
+      <div
+        class={`relative flex h-5 flex-none items-center rounded-full border-2
+          pr-1 duration-200 focus:outline-none`}
+        classList={{
+          "bg-current": props.checked,
+          "w-13": props.note != null,
+          "w-9": props.note == null,
+        }}
+      >
         <div
-          class="h-5 w-5 relative left-[-2px] rounded-full duration-200 border-2 flex-none"
-          classList={{"bg-shuttle-white": props.checked, "translate-x-8": props.checked && props.note != null, "translate-x-4": props.checked && props.note == null}}
+          class={`relative left-[-2px] h-5 w-5 flex-none rounded-full border-2
+            duration-200`}
+          classList={{
+            "bg-shuttle-white": props.checked,
+            "translate-x-8": props.checked && props.note != null,
+            "translate-x-4": props.checked && props.note == null,
+          }}
         />
         <Show when={props.note != null && !props.checked}>
-          <div class="flex-grow flex justify-center items-center text-sm">{props.note}</div>
+          <div class="flex flex-grow items-center justify-center text-sm">
+            {props.note}
+          </div>
         </Show>
       </div>
-      <div class="text-left">
-        {props.children}
-      </div>
+      <div class="text-left">{props.children}</div>
     </button>
   );
 };

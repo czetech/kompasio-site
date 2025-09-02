@@ -7,15 +7,16 @@ const placesParameters = await getCollection("placesParameters");
 const placesParametersOptions = await getCollection("placesParametersOptions");
 
 const parameters = placesParameters.reduce((acc, placeParameter) => {
-    acc[parseInt(placeParameter.id)] = placeParameter.data;
-    return acc;
-  }, {});
+  acc[parseInt(placeParameter.id)] = placeParameter.data;
+  return acc;
+}, {});
 
 const options = placesParametersOptions.reduce((acc, placeParameterOption) => {
-    acc[parseInt(placeParameterOption.id)] = placeParameterOption.data;
-    return acc;
-  }, {});
+  acc[parseInt(placeParameterOption.id)] = placeParameterOption.data;
+  return acc;
+}, {});
 ---
+
 <BaseLayout strictHeight>
   <Places client:only parameters={parameters} options={options} />
 </BaseLayout>

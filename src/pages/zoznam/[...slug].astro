@@ -1,5 +1,5 @@
 ---
-export const prerender = false
+export const prerender = false;
 
 import BaseLayout from "~/layouts/BaseLayout.astro";
 import * as cheerio from "cheerio";
@@ -15,8 +15,8 @@ const authHeader = `Basic ${Buffer.from(`${AUTH_USER}:${AUTH_PASS}`).toString("b
 
 const fetchOptions = {
   headers: {
-    'Authorization': authHeader
-  }
+    Authorization: authHeader,
+  },
 };
 
 const response = await fetch(targetUrl, fetchOptions);
@@ -31,18 +31,18 @@ const $ = cheerio.load(rawPhpHtml);
 
 $("meta, title, noscript").remove();
 $('script[data-cookiecategory="analytics"]').remove();
-$('#main header, #main footer').remove();
+$("#main header, #main footer").remove();
 $("#cc--main").remove();
 
 $("#main").css("top", "auto");
 $("#main").css("position", "relative");
-$('#wrapper').css('padding-top', '0');
+$("#wrapper").css("padding-top", "0");
 
 let scriptsToLoad: { src?: string; content?: string }[] = [];
 let scripts = [];
 
-$('script').each((i, el) => {
-  const src = $(el).attr('src');
+$("script").each((i, el) => {
+  const src = $(el).attr("src");
   const content = $(el).html();
   if (src) {
     scriptsToLoad.push({ src });
@@ -50,22 +50,22 @@ $('script').each((i, el) => {
     scriptsToLoad.push({ content });
   }
   scripts.push(el);
-  });
+});
 
-$('script').remove();
+$("script").remove();
 
 const headContents = $("head").html() || "";
 const bodyContents = $("body").html() || "";
-
 ---
+
 <BaseLayout>
   <div id="legacy-content-host">
-  <template shadowrootmode="open">
-    <Fragment set:html={headContents} />
-    <div id="body">
-      <Fragment set:html={bodyContents} />
-    </div>
-  </template>
+    <template shadowrootmode="open">
+      <Fragment set:html={headContents} />
+      <div id="body">
+        <Fragment set:html={bodyContents} />
+      </div>
+    </template>
   </div>
 </BaseLayout>
 
@@ -75,7 +75,7 @@ const bodyContents = $("body").html() || "";
   // DSD Polyfill to ensure it works on all browsers
   if (!HTMLTemplateElement.prototype.hasOwnProperty("shadowRootMode")) {
     (function polyfillDSD(root) {
-      root.querySelectorAll("template[shadowrootmode]").forEach(template => {
+      root.querySelectorAll("template[shadowrootmode]").forEach((template) => {
         const mode = template.getAttribute("shadowrootmode");
         const shadowRoot = template.parentElement.attachShadow({ mode });
         shadowRoot.appendChild(template.content);
@@ -85,7 +85,7 @@ const bodyContents = $("body").html() || "";
     })(document);
   }
 
-  const host = document.getElementById('legacy-content-host');
+  const host = document.getElementById("legacy-content-host");
   const shadowRoot = host?.shadowRoot;
 
   if (shadowRoot) {
@@ -99,27 +99,33 @@ const bodyContents = $("body").html() || "";
 
     // 1. Redirect standard DOM queries to the Shadow DOM
     const originalGetElementById = document.getElementById;
-    document.getElementById = (id) => shadowRoot.getElementById(id) || originalGetElementById.call(document, id);
+    document.getElementById = (id) =>
+      shadowRoot.getElementById(id) ||
+      originalGetElementById.call(document, id);
 
     const originalQuerySelector = document.querySelector;
-    document.querySelector = (selector) => shadowRoot.querySelector(selector) || originalQuerySelector.call(document, selector);
+    document.querySelector = (selector) =>
+      shadowRoot.querySelector(selector) ||
+      originalQuerySelector.call(document, selector);
 
     const originalQuerySelectorAll = document.querySelectorAll;
     document.querySelectorAll = (selector) => {
       const shadowResults = shadowRoot.querySelectorAll(selector);
-      return shadowResults.length ? shadowResults : originalQuerySelectorAll.call(document, selector);
+      return shadowResults.length
+        ? shadowResults
+        : originalQuerySelectorAll.call(document, selector);
     };
 
     // 2. Make the `document.body` property point to our shadowed body
-    Object.defineProperty(document, 'body', {
-      get: () => shadowRoot.querySelector('#body') || document.body,
+    Object.defineProperty(document, "body", {
+      get: () => shadowRoot.querySelector("#body") || document.body,
       configurable: true,
     });
 
     // --- SCRIPT LOADER SECTION ---
     // Now we load the scripts into the prepared environment.
-    scriptsToLoad.forEach(scriptInfo => {
-      const script = document.createElement('script');
+    scriptsToLoad.forEach((scriptInfo) => {
+      const script = document.createElement("script");
       if (scriptInfo.src) {
         script.src = scriptInfo.src;
         script.async = false; // Important for scripts that depend on each other (like jQuery plugins)
