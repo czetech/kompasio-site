@@ -22,6 +22,7 @@
     "@tailwindcss/vite": "^4.0.15",
     "algoliasearch": "^5.35.0",
     "astro": "^5.12.9",
+    "cheerio": "^1.1.2",
     "drizzle-orm": "^0.44.4",
     "glob": "^11.0.3",
     "html-to-text": "^9.0.5",

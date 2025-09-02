@@ -2,16 +2,16 @@ import type { Component } from "solid-js";
 
 const ResultPlace: Component = (props) => {
 
-  const hitDescription = props.item._highlightResult.descriptionHtml?.find(item => item.matchLevel !== "none");
-  const hitShortDescription = props.item._highlightResult.shortDescriptionHtml?.find(item => item.matchLevel !== "none");
+  const hitDescription = props.item._highlightResult?.descriptionHtml?.find(item => item.matchLevel !== "none");
+  const hitShortDescription = props.item._highlightResult?.shortDescriptionHtml?.find(item => item.matchLevel !== "none");
 
   return (
-    <div class="bg-vibrant-blue rounded-3xl pt-32 relative">
+    <div class="bg-vibrant-blue rounded-3xl pt-16 relative">
     <div class="text-vibrant-blue rounded-3xl border p-6 bg-shuttle-white">
-      <h2 class="text-xl font-semibold" innerHTML={props.item._highlightResult?.name.value} />
-      <p class="mb-4" innerHTML={props.item._highlightResult.town?.name.value} />
+      <h2 class="text-xl font-semibold" innerHTML={(props.item._highlightResult?.name?.value || props.item.name) ?? null} />
+      <p class="mb-4" innerHTML={(props.item._highlightResult?.town?.name?.value || props.item.town) ?? null} />
       <div class="mb-8">
-        <For each={props.item._highlightResult.shortDescriptionHtml}>
+        <For each={props.item._highlightResult?.shortDescriptionHtml || props.item.shortDescriptionHtml}>
           {(paragraph) => (
             <div innerHTML={paragraph.value} />
           )}

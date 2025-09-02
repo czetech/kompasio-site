@@ -1,0 +1,114 @@
+---
+export const prerender = false
+
+import BaseLayout from "~/layouts/BaseLayout.astro";
+import * as cheerio from "cheerio";
+
+// --- CONFIGURATION ---
+// IMPORTANT: Replace this with the base URL of your legacy PHP application.
+// This should be the URL that the Astro server can access.
+const LEGACY_PHP_APP_URL = "https://kompas.cassiopea.sk";
+const AUTH_USER = "kompas";
+const AUTH_PASS = "kompas";
+
+// --- SERVER-SIDE LOGIC (Runs on request) ---
+
+// Get the path from the URL, e.g., "products/shoes" from "/zoznam/products/shoes"
+const slug = Astro.params.slug || "";
+const targetUrl = `${LEGACY_PHP_APP_URL}/zoznam/${slug}`;
+
+let injectedContent = "";
+
+// 1. Create the HTTP Basic Auth header
+// This encodes "username:password" to Base64, which is the standard.
+const authHeader = `Basic ${Buffer.from(`${AUTH_USER}:${AUTH_PASS}`).toString("base64")}`;
+
+// 2. Prepare the options for the fetch request
+const fetchOptions = {
+  headers: {
+    'Authorization': authHeader
+  }
+};
+
+try {
+  // 1. Fetch the full HTML page from the legacy PHP application
+  const response = await fetch(targetUrl, fetchOptions);
+
+  if (!response.ok) {
+    throw new Error(`Failed to fetch: ${response.status} ${response.statusText}`);
+  }
+
+  const rawPhpHtml = await response.text();
+
+  // 2. Parse the fetched HTML to safely extract its contents
+  // This prevents broken layouts and ensures we only get what we need.
+  const $ = cheerio.load(rawPhpHtml);
+
+  $('#main header, #main footer').remove();
+  $('#wrapper').css('padding-top', '0');
+
+  // 3. Extract all content from the <head> and <body> of the PHP page.
+  // This includes <link>, <style>, <script>, and all visible HTML tags.
+  // These will be placed INSIDE the Shadow DOM.
+  const headContents = $("head").html() || "";
+  const bodyContents = $("body").html() || "";
+
+  // 4. Combine head and body content to be injected into the DSD template.
+  // This ensures your legacy CSS and JS are scoped to the legacy content.
+  injectedContent = headContents + bodyContents;
+
+} catch (error) {
+  console.error(`Error fetching legacy content from ${targetUrl}:`, error);
+  injectedContent = `
+    <div style="padding: 2rem; text-align: center; border: 1px solid red; color: red;">
+      <h2>Error Loading Content</h2>
+      <p>Could not load the page from the legacy application.</p>
+    </div>
+  `;
+}
+---
+
+<BaseLayout>
+  <main>
+    <!--
+      This is the host element for our Declarative Shadow DOM.
+      The PHP content will be rendered inside this div, but it will be
+      completely isolated from the rest of the Astro page.
+    -->
+    <div id="legacy-content-host">
+      <template shadowrootmode="open">
+        <!--
+          The `set:html` directive injects the combined HTML, CSS, and JS
+          from the PHP page directly into the Shadow DOM.
+          Because it's inside the template, all styles (<link> or <style>)
+          and scripts are automatically scoped and will not affect your
+          Astro layout.
+        -->
+        <Fragment set:html={injectedContent} />
+      </template>
+    </div>
+  </main>
+</BaseLayout>
+
+<!--
+  This small script is a polyfill for Declarative Shadow DOM.
+  It ensures this feature works on older browsers that don't support it
+  natively. It is safe and has no effect on modern browsers.
+-->
+<script>
+  function polyfillDSD(root: Document | ShadowRoot) {
+    root.querySelectorAll("template[shadowrootmode]").forEach((template: HTMLTemplateElement) => {
+      const mode = template.getAttribute("shadowrootmode") as ShadowRootMode;
+      const shadowRoot = template.parentElement?.attachShadow({ mode });
+      if (shadowRoot) {
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        polyfillDSD(shadowRoot);
+      }
+    });
+  }
+
+  if (!HTMLTemplateElement.prototype.hasOwnProperty("shadowRootMode")) {
+    polyfillDSD(document);
+  }
+</script>

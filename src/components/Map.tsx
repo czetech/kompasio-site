@@ -1,9 +1,10 @@
-import { onMount, createEffect, onCleanup, on, createSignal, createRoot } from 'solid-js';
+import { onMount, createEffect, onCleanup, on, createSignal, createResource, createRoot } from 'solid-js';
 // 1. Import the MarkerClusterer library
 import { MarkerClusterer } from '@googlemaps/markerclusterer';
 import { Loader } from '@googlemaps/js-api-loader';
 import MapMarker from "~/components/MapMarker.tsx";
 import { render } from "solid-js/web";
+import { algoliasearch } from "algoliasearch";
 
 function Map(props) {
   let mapDiv;
@@ -66,13 +67,12 @@ function Map(props) {
     }
   });
 
-  createEffect(on([() => props.locations, isMapReady], ([locations, ready]) => {
+  createEffect(on([() => props.places, isMapReady], ([locations, ready]) => {
     // This guard is now also important to wait for AdvancedMarkerElement to be loaded.
     if (!ready || !map || !AdvancedMarkerElement) {
       console.log("map not ready");
       return;
     }
-    console.log("creating markers");
 
     if (!markerClusterer) {
       // The MarkerClusterer library is compatible with AdvancedMarkerElement out of the box.
@@ -88,7 +88,7 @@ function Map(props) {
     }
 
     const bounds = new google.maps.LatLngBounds();
-    const markers = locations.map((location) => {
+    const markers = locations.filter(hit => hit._geoloc).map((location) => {
       bounds.extend({lat: location._geoloc.lat, lng: location._geoloc.lng});
 
       // 3a. Instantiate AdvancedMarkerElement instead of Marker

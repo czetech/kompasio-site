@@ -1,5 +1,5 @@
 import type { Component } from "solid-js";
-import { createResource, createSignal, Show, For, createMemo, createEffect } from "solid-js";
+import { createResource, createSignal, Show, For, on, createMemo, createEffect } from "solid-js";
 import Select from "./Select.tsx";
 import { algoliasearch } from "algoliasearch";
 import Scrollable from "~/components/Scrollable.tsx";
@@ -11,28 +11,31 @@ import X from "lucide-solid/icons/x";
 import Map from "~/components/Map.tsx";
 
 const Places: Component = (props) => {
-  const client = algoliasearch("82UVQ4A8PK", "7ae17487a91af2d6759e1ff809892bb7");
+ const client = algoliasearch("82UVQ4A8PK", "37acde64117de3642969c17f1b3380cb");
   const facets = Object.keys(props.parameters).map(parameterId => `parameters.${parameterId}`);
 
-  const [isParametersOpen, setIsParametersOpen] = createSignal(false);
+  const browsePlaces = async (cursor) => await client.browse({indexName: 'places', browseParams: {attributesToRetrieve: ["name", "shortDescriptionHtml", "_geoloc"], cursor: cursor,}});
 
-  const searchPlaces = async ({query, filters, hitsPerPage = 100}) => {
+  const searchPlaces = async ({query, filters, hitsPerPage = 1000}) => {
     return await client.searchSingleIndex({indexName: 'places', searchParams: {attributesToRetrieve: ["categories.name", "_geoloc"], facets: facets, filters: filters, hitsPerPage: hitsPerPage, query: query}})};
 
   const searchCategories = async (query) => await client.searchSingleIndex({indexName: 'places_categories', searchParams: {attributesToRetrieve: ["alias", "name"], hitsPerPage: 1000, query: query}})
 
   const searchLocations = async (query) => await client.searchSingleIndex({indexName: 'locations', searchParams: {attributesToRetrieve: ["code", "name", "type"], hitsPerPage: 1000, query: query}})
 
+  const [browsePlacesCursor, setBrowsePlacesCursor] = createSignal("");
   const [placeQuery, setPlaceQuery] = createSignal();
   const [categoryQuery, setCategoryQuery] = createSignal("");
   const [locationQuery, setLocationQuery] = createSignal("");
-
   const [selectedCategory, setSelectedCategory] = createSignal();
   const [selectedLocation, setSelectedLocation] = createSignal();
   const [isOnline, setIsOnline] = createSignal();
   const [selectedParameters, setSelectedParameters] = createStore({});
   const [categoryFacets, setCategoryFacets] = createStore({});
+  const [isParametersOpen, setIsParametersOpen] = createSignal(false);
   const [expandedParameters, setExpandedParameters] = createStore({});
+  const [allPlaces, setAllPlaces] = createStore([]);
+  const [places, setPlaces] = createStore([]);
 
   const placeSearchParams = createMemo(() => {
     const filters = [];
@@ -75,6 +78,7 @@ const Places: Component = (props) => {
     }
   });
 
+  const [browsePlacesResponse] = createResource(browsePlacesCursor, browsePlaces)
   const [placesResponse] = createResource(placeSearchParams, searchPlaces);
   const [categoriesResponse] = createResource(categoryQuery, searchCategories);
   const [locationsResponse] = createResource(locationQuery, searchLocations);
@@ -91,6 +95,19 @@ const Places: Component = (props) => {
       categoryPlacesMutate(undefined);
     }
   });
+
+  createEffect(on(browsePlacesResponse, (response) => {
+    setAllPlaces((allPlaces) => [...allPlaces, ...response.hits]);
+    setBrowsePlacesCursor(browsePlacesResponse().cursor);
+  }, { defer: true }));
+
+  createEffect(on(placesResponse, (response) => {
+    if (placeSearchParams().query || placeSearchParams().filters) {
+      setPlaces(placesResponse().hits);
+    } else {
+      setPlaces(allPlaces);
+    }
+  }, { defer: true }));
 
   const categories = createMemo(() => {
     return categoriesResponse() !== undefined ? categoriesResponse().hits.map((category) => ({id: category.alias, name: category._highlightResult.name.value})) : [];
@@ -183,7 +200,7 @@ const Places: Component = (props) => {
           </div>
           <Show when={isParametersOpen()}>
           <div class="flex flex-col gap-y-4 mt-4">
-          <For each={categoryPlacesResponse()?.hits && Object.entries(categoryPlacesResponse().facets)}>
+          <For each={places && Object.entries(categoryPlacesResponse().facets)}>
             {([facet, options]) => {
               const parameterId = parseInt(facet.split(".")[1]);
               return (
@@ -225,7 +242,7 @@ const Places: Component = (props) => {
         </Show>
       </div>
       <div class="grid md:grid-cols-2 grid-cols-1 gap-8 max-w-xl py-8">
-        <For each={placesResponse()?.hits}>
+        <For each={places}>
           {(item) => (
             <div class="flex flex-col">
               <ResultPlace item={item} />
@@ -235,7 +252,7 @@ const Places: Component = (props) => {
       </div>
     </Scrollable>
     <div class=".invisible xl:visible" classList={{"opacity-33": isOnline()}}>
-    <Map locations={placesResponse()?.hits.filter(hit => hit._geoloc)} />
+    <Map places={places.filter(hit => hit._geoloc)} />
     </div>
     </div>
   );
