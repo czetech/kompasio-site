@@ -66,5 +66,5 @@ const landing = await getEntry("landing", "landing");
 
   initMasonry();
 
-  document.addEventListener("astro:after-swap", initMasonry);
+  document.addEventListener("astro:page-load", initMasonry);
 </script>
