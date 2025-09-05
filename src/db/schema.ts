@@ -156,6 +156,7 @@ export const place = mysqlTable("place", {
   additionalEmails: text("additional_emails").notNull(),
   additionalWebsites: text("additional_websites").notNull(),
   eduid: varchar("eduid", { length: 9 }).notNull(),
+  active: int("active").notNull(),
 });
 
 // checked
