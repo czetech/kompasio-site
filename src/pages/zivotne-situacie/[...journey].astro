@@ -10,6 +10,8 @@ import StepListToggle from "~/components/StepListToggle.tsx";
 import StepListClear from "~/components/StepListClear.tsx";
 import StepListItem from "~/components/StepListItem.tsx";
 import Markdown from "~/components/Markdown.astro";
+import LibraryBig from "lucide-solid/icons/library-big";
+import Footprints from "lucide-solid/icons/footprints";
 
 const { journeySlug, stepIndex, journey } = Astro.props;
 const step = journey.steps[stepIndex];
@@ -32,8 +34,13 @@ export const getStaticPaths = async () => {
 
 <BaseLayout>
   <div class="w-full max-w-6xl p-4 md:p-8">
-    <h1 class="mb-6 text-xl md:mb-8 md:text-2xl">
-      {journey.title}
+    <h1 class="mb-6 text-xl md:mb-8 md:text-2xl flex gap-x-2">
+        {journey.type === "journey" ? (
+    <Footprints slot="icon" />
+  ) : (
+    <LibraryBig slot="icon" />
+  )}
+      <span>{journey.title}</span>
     </h1>
     <div class="flex md:gap-x-8">
       <article class="mb-6 md:mb-8">
@@ -41,12 +48,12 @@ export const getStaticPaths = async () => {
           {step.title}
         </h2>
         <Markdown content={step.body} />
-        <StepUI
+        {journey.type === "journey" && <StepUI
           client:only
           journeyUuid={journey.uuid}
           stepUuid={step.uuid}
           stepTasks={step.tasks}
-        />
+          />}
         <StepPagination
           client:only
           journeySlug={journeySlug}
@@ -58,6 +65,7 @@ export const getStaticPaths = async () => {
             ? stepIndex + 1
             : null}
           nextStepTitle={journey.steps[stepIndex + 1]?.title}
+          type={journey.type}
         />
       </article>
       <aside>
@@ -74,7 +82,7 @@ export const getStaticPaths = async () => {
             peer-[.is-open]:opacity-100 md:visible md:sticky md:top-8 md:h-auto
             md:w-xs md:scale-none md:opacity-100 md:shadow-none overflow-y-auto`}
         >
-          <h2 class="mb-4 text-lg md:mb-6">Zoznam krokov</h2>
+        <h2 class="mb-4 text-lg md:mb-6">{journey.type === "journey" ? "Zoznam krokov" : "Zoznam kapitol"}</h2>
           <ol
             start="0"
             class={`mb-6 flex list-decimal list-none flex-col gap-y-6 md:mb-8
@@ -84,13 +92,13 @@ export const getStaticPaths = async () => {
               journey.steps.map((step, index) => {
                 return (
                   <li class="flex items-center gap-x-3">
-                    <StepStatus
+                    {journey.type === "journey" && <StepStatus
                       client:only
                       journeyUuid={journey.uuid}
                       stepUuid={step.uuid}
                       stepTasks={step.tasks}
                       class="w-6 flex-none"
-                    />
+                      />}
                     <StepListItem
                       client:load
                       journeySlug={journeySlug}

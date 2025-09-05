@@ -143,6 +143,17 @@ content:
           search: title
           value: "{uuid}"
           label: "{title}"
+      - name: type
+        label: Type
+        description: Knowledge or journey.
+        type: select
+        required: true
+        options:
+          values:
+          - value: knowledge
+            label: Knowledge
+          - value: journey
+            label: Journey
       - name: description
         label: Description
         description: Short journey description.

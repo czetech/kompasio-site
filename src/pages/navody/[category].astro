@@ -5,6 +5,8 @@ import BaseLayout from "~/layouts/BaseLayout.astro";
 import Section from "~/components/Section.astro";
 import List from "~/components/List.astro";
 import Item from "~/components/Item.astro";
+import LibraryBig from "lucide-solid/icons/library-big";
+import Footprints from "lucide-solid/icons/footprints";
 
 const { category } = Astro.props;
 
@@ -30,7 +32,13 @@ export const getStaticPaths = async () => {
             heading={journey.data.title}
             href={`/zivotne-situacie/${journey.id}`}
             description={journey.data.description}
-          />
+            >
+  {journey.data.type === "journey" ? (
+    <Footprints slot="icon" />
+  ) : (
+    <LibraryBig slot="icon" />
+  )}
+          </Item>
         ))
       }
     </List>
