@@ -4,12 +4,37 @@ import { ClientRouter } from "astro:transitions";
 import "@fontsource/poppins/400.css";
 import "@fontsource/poppins/500.css";
 import "@fontsource/poppins/600.css";
-
+import Logo from "~/components/Logo.astro";
+import Nav from "~/components/Nav.tsx";
 import "~/styles/global.css";
-import Header from "~/components/Header.astro";
 import Footer from "~/components/Footer.astro";
 
 const { strictHeight = false } = Astro.props;
+
+const navItems = [
+  {
+    title: "Zoznam",
+    href: "/zoznam/",
+  },
+  {
+    title: "Miesta",
+    href: "/miesta",
+  },
+  {
+    title: "Návody",
+    href: "/navody",
+    test: "^\/(?:navody|zivotne-situacie)(?:\/.*)?$",
+  },
+  {
+    title: "Kontakt",
+    href: "/kontakt",
+  },
+  {
+    title: "Chcem podporiť",
+    href: "https://www.modrahliadka.sk/podpora/",
+    target: "_blank",
+  },
+];
 ---
 
 <html lang="en">
@@ -35,11 +60,15 @@ const { strictHeight = false } = Astro.props;
       class="flex min-h-dvh flex-col"
       class:list={{ "min-h-dvh": !strictHeight, "h-dvh": strictHeight }}
     >
-      <Header />
+      <header transition:persist class="text-vibrant-blue border-b-2">
+        <Nav client:load navItems={navItems} pathname={Astro.url.pathname}>
+          <Logo />
+        </Nav>
+      </header>
       <main class="flex grow flex-col items-center">
         <slot />
       </main>
     </div>
-    <Footer />
+    <Footer navItems={navItems} />
   </body>
 </html>

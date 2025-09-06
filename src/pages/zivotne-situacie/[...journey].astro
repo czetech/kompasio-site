@@ -10,7 +10,7 @@ import StepListToggle from "~/components/StepListToggle.tsx";
 import StepListClear from "~/components/StepListClear.tsx";
 import StepListItem from "~/components/StepListItem.tsx";
 import Markdown from "~/components/Markdown.astro";
-import LibraryBig from "lucide-solid/icons/library-big";
+import Library from "lucide-solid/icons/library";
 import Footprints from "lucide-solid/icons/footprints";
 
 const { journeySlug, stepIndex, journey } = Astro.props;
@@ -34,11 +34,11 @@ export const getStaticPaths = async () => {
 
 <BaseLayout>
   <div class="w-full max-w-6xl p-4 md:p-8">
-    <h1 class="mb-6 text-xl md:mb-8 md:text-2xl flex gap-x-2">
+    <h1 class="mb-6 text-xl md:mb-8 md:text-2xl flex gap-x-2 items-center">
         {journey.type === "journey" ? (
     <Footprints slot="icon" />
   ) : (
-    <LibraryBig slot="icon" />
+    <Library slot="icon" />
   )}
       <span>{journey.title}</span>
     </h1>

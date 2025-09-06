@@ -14,6 +14,8 @@ import Linkedin from "lucide-solid/icons/linkedin";
 import Earth from "lucide-solid/icons/earth";
 import ContentImage from "~/components/ContentImage.astro";
 
+const { navItems } = Astro.props;
+
 const footer = await getEntry("footer", "footer");
 
 const buttons = [
@@ -67,31 +69,6 @@ const socialIcons = [
   },
 ];
 
-const navItems = [
-  {
-    title: "Zoznam",
-    href: "/zoznam/",
-  },
-  {
-    title: "Miesta",
-    href: "/miesta",
-  },
-  {
-    title: "Návody",
-    href: "/navody",
-    test: "^\/(?:navody|zivotne-situacie)(?:\/.*)?$",
-  },
-  {
-    title: "Kontakt",
-    href: "/kontakt",
-  },
-  {
-    title: "Chcem podporiť",
-    href: "https://www.modrahliadka.sk/podpora/",
-    target: "_blank",
-  },
-];
-
 const secondaryNavItems = [
   {
     title: "Podmienky používania",
@@ -106,7 +83,7 @@ const secondaryNavItems = [
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="bg-frontier-gray text-shuttle-white">
+<footer transition:persist class="bg-frontier-gray text-shuttle-white">
   <div
     class={`flex flex-col items-center justify-between gap-x-8 gap-y-4 p-4
       sm:flex-row-reverse sm:p-8`}
