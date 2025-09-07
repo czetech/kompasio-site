@@ -5,40 +5,57 @@ import {
   createEffect,
   onCleanup,
   createMemo,
+  on,
 } from "solid-js";
 import Circle from "./Circle.tsx";
 import Search from "lucide-solid/icons/search";
 import X from "lucide-solid/icons/x";
 import { makeEventListener } from "@solid-primitives/event-listener";
 import { createPresence } from "@solid-primitives/presence";
+import { navigate } from "astro:transitions/client";
 
 const Nav: Component = (props) => {
-  let navRef;
+  let searchInputRef;
+
+  const searchPathname = "/search";
 
   const [pathname, setPathname] = createSignal(props.pathname);
   const [isTransitioning, setIsTransitioning] = createSignal(false);
   const [isMenuOpen, setIsMenuOpen] = createSignal(false);
   const [isSearchOpen, setIsSearchOpen] = createSignal(false);
+  const [searchQuery, setSearchQuery] = createSignal("");
 
-  const { isMounted: isTransitioningDelayed } = createPresence(
-    isTransitioning,
-    { transitionDuration: 100 },
-  );
+  const { isMounted: isTransitioningAfter } = createPresence(isTransitioning, {
+    transitionDuration: 100,
+  });
 
   const { isVisible: isLogoInvisible, isMounted: isLogoBackground } =
     createPresence(isSearchOpen, { transitionDuration: 250 });
 
-  const handleAstroAfterSwap = () => {
-    setIsTransitioning(false);
-    setPathname(window.location.pathname);
+  const isSearchPathname = () => window.location.pathname === searchPathname;
+
+  const initSearch = () => {
+    if (isSearchPathname()) {
+      const params = new URLSearchParams(window.location.search);
+      setSearchQuery(params.get("q") ?? "");
+      setIsSearchOpen(true);
+    }
   };
 
   const handleAstroBeforeSwap = () => {
     setIsTransitioning(true);
   };
 
+  const handleAstroAfterSwap = () => {
+    setIsTransitioning(false);
+    setPathname(window.location.pathname);
+    initSearch();
+  };
+
   const handleKeydown = (event) => {
-    if (event.key === "Escape") setIsMenuOpen(false);
+    if (event.key === "Escape") {
+      setIsMenuOpen(false);
+    }
   };
 
   const handleMenuClick = () => {
@@ -46,24 +63,62 @@ const Nav: Component = (props) => {
   };
 
   const handleSearchClick = () => {
-    setIsSearchOpen(!isSearchOpen());
+    setIsSearchOpen(true);
+    searchInputRef.focus();
+  };
+
+  const handleSearchClearClick = (e) => {
+    setSearchQuery("");
+    searchInputRef.focus();
+    event.stopPropagation();
+  };
+
+  const handleSearchInput = (e) => {
+    setSearchQuery(e.currentTarget.value);
   };
 
   createEffect(() => {
-    if (!isTransitioningDelayed()) setIsMenuOpen(false);
+    if (!isTransitioningAfter()) {
+      setIsMenuOpen(false);
+      if (!isSearchPathname()) setIsSearchOpen(false);
+    }
   });
 
+  createEffect(() => {
+    if (isSearchOpen()) {
+      searchInputRef.focus();
+      if (!isSearchPathname()) navigate(searchPathname);
+    } else {
+      setSearchQuery("");
+    }
+  });
+
+  createEffect(
+    on(
+      searchQuery,
+      (searchQuery) => {
+        if (isSearchOpen()) {
+          const url = new URL(searchPathname, window.location.href);
+          if (searchQuery) url.searchParams.set("q", searchQuery);
+          navigate(url, { history: "replace" });
+        }
+      },
+      { defer: true },
+    ),
+  );
+
   onMount(() => {
-    makeEventListener(document, "astro:after-swap", handleAstroAfterSwap);
     makeEventListener(document, "astro:before-swap", handleAstroBeforeSwap);
+    makeEventListener(document, "astro:after-swap", handleAstroAfterSwap);
     makeEventListener(document, "keydown", handleKeydown);
+    initSearch();
   });
 
   return (
     <nav class="relative flex flex-col items-center">
       <div class="flex h-8 w-full items-center justify-center md:justify-start">
         <div
-          class="h-7 duration-250 md:h-8 md:z-10 md:opacity-100"
+          class="h-7 duration-250 md:z-10 md:h-8 md:opacity-100"
           classList={{
             "z-10": !isLogoBackground(),
             "opacity-0": isLogoInvisible(),
@@ -79,16 +134,29 @@ const Nav: Component = (props) => {
         <div
           onClick={handleSearchClick}
           class={`bg-shuttle-white flex w-full items-center gap-x-2 rounded-full
-            border-2 p-1 duration-250 md:justify-self-center`}
+            border-2 duration-250 md:justify-self-center md:px-1`}
           classList={{
             "max-w-8 md:max-w-64": !isSearchOpen(),
-            "max-w-full md:max-w-5xl": isSearchOpen(),
+            "max-w-full md:max-w-5xl px-1": isSearchOpen(),
           }}
         >
-          <Search class="h-5 w-5 flex-none" />
-          <Show when={false}>
-            <input class="w-full" />
-            <X class="h-5 w-5 flex-none" />
+          <div class="p-1">
+            <Search class="h-5 w-5" />
+          </div>
+          <Show when={isSearchOpen()}>
+            <input
+              ref={searchInputRef}
+              value={searchQuery()}
+              onInput={handleSearchInput}
+              class="w-full focus:outline-none"
+            />
+            <button
+              onClick={handleSearchClearClick}
+              class="p-1 duration-250"
+              classList={{ "opacity-0": !searchQuery() }}
+            >
+              <X class="h-5 w-5" />
+            </button>
           </Show>
         </div>
         <div class="flex justify-end md:w-48">
@@ -123,7 +191,9 @@ const Nav: Component = (props) => {
           classList={{ "opacity-0": !isMenuOpen() }}
         >
           <div
-            class={"flex flex-col items-center gap-y-2 pt-2 md:flex-row md:pt-4"}
+            class={
+              "flex flex-col items-center gap-y-2 pt-2 md:flex-row md:pt-4"
+            }
           >
             <For each={props.navItems}>
               {(navItem, index) => {

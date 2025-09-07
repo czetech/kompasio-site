@@ -22,7 +22,7 @@
     "@solid-primitives/storage": "^4.3.2",
     "@tailwindcss/vite": "^4.0.15",
     "algoliasearch": "^5.35.0",
-    "astro": "^5.12.9",
+    "astro": "^5.13.5",
     "cheerio": "^1.1.2",
     "drizzle-orm": "^0.44.4",
     "glob": "^11.0.3",

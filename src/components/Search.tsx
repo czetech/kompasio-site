@@ -1,10 +1,12 @@
 import type { Component } from "solid-js";
-import { createResource, createSignal } from "solid-js";
+import { createResource, createSignal, onMount } from "solid-js";
 import { algoliasearch } from "algoliasearch";
 import Scrollable from "~/components/Scrollable.tsx";
 import ResultJourney from "~/components/ResultJourney.tsx";
 import ResultPlace from "~/components/ResultPlace.tsx";
 import ResultPlaceCategory from "~/components/ResultPlaceCategory.tsx";
+import { makeEventListener } from "@solid-primitives/event-listener";
+import { navigate } from "astro:transitions/client";
 
 const Search: Component = (props) => {
   const client = algoliasearch(
@@ -24,18 +26,47 @@ const Search: Component = (props) => {
   const [query, setQuery] = createSignal();
   const [response] = createResource(query, search);
 
+  const isQueryNavigation = (e) => {
+    const fromUrl = new URL(e.from);
+    const toUrl = new URL(e.to);
+    fromUrl.searchParams.delete("q");
+    toUrl.searchParams.delete("q");
+    return fromUrl.href === toUrl.href;
+  };
+
+  const setQueryUrl = (url) => {
+    setQuery(url.searchParams.get("q"));
+  };
+
   const handleInput = (event) => {
     setQuery(event.currentTarget.value);
   };
 
+  const handleAstroBeforePreparation = (e) => {
+    if (isQueryNavigation(e)) e.loader = async () => {};
+  };
+
+  const handleAstroBeforeSwap = (e) => {
+    if (isQueryNavigation(e)) {
+      e.swap = () => {};
+      e.viewTransition.skipTransition();
+      setQueryUrl(e.to);
+    }
+  };
+
+  onMount(() => {
+    makeEventListener(
+      document,
+      "astro:before-preparation",
+      handleAstroBeforePreparation,
+    );
+    makeEventListener(document, "astro:before-swap", handleAstroBeforeSwap);
+
+    setQueryUrl(new URL(window.location.href));
+  });
+
   return (
     <div class="flex w-full max-w-5xl grow flex-col gap-y-8 p-8">
-      <div class="flex justify-center">
-        <input
-          class="border-vibrant-blue rounded-full border-2 px-4"
-          onInput={handleInput}
-        />
-      </div>
       <Show when={query()}>
         <div class="grid grow grid-cols-3 gap-x-16">
           <div>
