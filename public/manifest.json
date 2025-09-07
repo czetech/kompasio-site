@@ -1,23 +1,23 @@
 {
-	"name": "Kompasio",
-	"short_name": "Kompasio",
-	"start_url": "/",
-	"scope": "/",
-	"display": "standalone",
-	"icons": [
-		{
-			"src": "/favicon.svg",
-			"sizes": "144x144",
-			"type": "image/svg+xml",
-			"purpose": "any"
-		},
-		{
-			"src": "/favicon.svg",
-			"sizes": "72x72",
-			"type": "image/svg+xml",
-			"purpose": "any"
-		}
-	],
-	"background_color": "#fff",
-	"theme_color": "#fff"
+  "name": "Kompasio",
+  "short_name": "Kompasio",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "144x144",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "72x72",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "background_color": "#fff",
+  "theme_color": "#fff"
 }

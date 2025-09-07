@@ -150,10 +150,10 @@ content:
         required: true
         options:
           values:
-          - value: knowledge
-            label: Knowledge
-          - value: journey
-            label: Journey
+            - value: knowledge
+              label: Knowledge
+            - value: journey
+              label: Journey
       - name: description
         label: Description
         description: Short journey description.

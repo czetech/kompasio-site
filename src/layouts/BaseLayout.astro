@@ -1,5 +1,5 @@
 ---
-import { pwaInfo } from 'virtual:pwa-info';
+import { pwaInfo } from "virtual:pwa-info";
 import { ClientRouter } from "astro:transitions";
 import "@fontsource/poppins/400.css";
 import "@fontsource/poppins/500.css";
@@ -53,14 +53,17 @@ const navItems = [
     <link rel="manifest" href="/manifest.json" />
     <title>Kompasio</title>
     <ClientRouter />
-    { pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} /> }
+    {pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} />}
   </head>
   <body class="text-space-blue bg-shuttle-white">
     <div
       class="flex min-h-dvh flex-col"
       class:list={{ "min-h-dvh": !strictHeight, "h-dvh": strictHeight }}
     >
-      <header transition:persist class="text-vibrant-blue border-b-2">
+      <header
+        transition:persist
+        class="text-vibrant-blue border-b-2 p-2 md:p-3"
+      >
         <Nav client:load navItems={navItems} pathname={Astro.url.pathname}>
           <Logo />
         </Nav>

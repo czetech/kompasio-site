@@ -34,12 +34,14 @@ export const getStaticPaths = async () => {
 
 <BaseLayout>
   <div class="w-full max-w-6xl p-4 md:p-8">
-    <h1 class="mb-6 text-xl md:mb-8 md:text-2xl flex gap-x-2 items-center">
-        {journey.type === "journey" ? (
-    <Footprints slot="icon" />
-  ) : (
-    <Library slot="icon" />
-  )}
+    <h1 class="mb-6 flex items-center gap-x-2 text-xl md:mb-8 md:text-2xl">
+      {
+        journey.type === "journey" ? (
+          <Footprints slot="icon" />
+        ) : (
+          <Library slot="icon" />
+        )
+      }
       <span>{journey.title}</span>
     </h1>
     <div class="flex md:gap-x-8">
@@ -48,12 +50,16 @@ export const getStaticPaths = async () => {
           {step.title}
         </h2>
         <Markdown content={step.body} />
-        {journey.type === "journey" && <StepUI
-          client:only
-          journeyUuid={journey.uuid}
-          stepUuid={step.uuid}
-          stepTasks={step.tasks}
-          />}
+        {
+          journey.type === "journey" && (
+            <StepUI
+              client:only
+              journeyUuid={journey.uuid}
+              stepUuid={step.uuid}
+              stepTasks={step.tasks}
+            />
+          )
+        }
         <StepPagination
           client:only
           journeySlug={journeySlug}
@@ -82,7 +88,9 @@ export const getStaticPaths = async () => {
             peer-[.is-open]:opacity-100 md:visible md:sticky md:top-8 md:h-auto
             md:w-xs md:scale-none md:opacity-100 md:shadow-none overflow-y-auto`}
         >
-        <h2 class="mb-4 text-lg md:mb-6">{journey.type === "journey" ? "Zoznam krokov" : "Zoznam kapitol"}</h2>
+          <h2 class="mb-4 text-lg md:mb-6">
+            {journey.type === "journey" ? "Zoznam krokov" : "Zoznam kapitol"}
+          </h2>
           <ol
             start="0"
             class={`mb-6 flex list-decimal list-none flex-col gap-y-6 md:mb-8
@@ -92,13 +100,15 @@ export const getStaticPaths = async () => {
               journey.steps.map((step, index) => {
                 return (
                   <li class="flex items-center gap-x-3">
-                    {journey.type === "journey" && <StepStatus
-                      client:only
-                      journeyUuid={journey.uuid}
-                      stepUuid={step.uuid}
-                      stepTasks={step.tasks}
-                      class="w-6 flex-none"
-                      />}
+                    {journey.type === "journey" && (
+                      <StepStatus
+                        client:only
+                        journeyUuid={journey.uuid}
+                        stepUuid={step.uuid}
+                        stepTasks={step.tasks}
+                        class="w-6 flex-none"
+                      />
+                    )}
                     <StepListItem
                       client:load
                       journeySlug={journeySlug}

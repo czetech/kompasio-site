@@ -41,11 +41,11 @@ const featuredJourneys = await getCollection("guidesJourneys", ({ data }) =>
             href={path.join("/zivotne-situacie", journey.id)}
             description={journey.data.description}
           >
-  {journey.data.type === "journey" ? (
-    <Footprints slot="icon" />
-  ) : (
-    <Library slot="icon" />
-  )}
+            {journey.data.type === "journey" ? (
+              <Footprints slot="icon" />
+            ) : (
+              <Library slot="icon" />
+            )}
           </Item>
         ))
       }

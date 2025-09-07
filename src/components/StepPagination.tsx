@@ -47,7 +47,9 @@ const StepPagination: Component = (props) => {
         >
           <ChevronLeft />
           <div>
-            <span>{props.type === "journey" ? "Predchádzajúci krok" : "Naspäť"}</span>
+            <span>
+              {props.type === "journey" ? "Predchádzajúci krok" : "Naspäť"}
+            </span>
             <span>{props.previousStepTitle}</span>
           </div>
         </Button>
@@ -63,7 +65,9 @@ const StepPagination: Component = (props) => {
           href={stepPath(props.nextStepIndex)}
         >
           <div>
-            <span>{props.type === "journey" ? "Nasledujúci krok" : "Čítať ďalej"}</span>
+            <span>
+              {props.type === "journey" ? "Nasledujúci krok" : "Čítať ďalej"}
+            </span>
             <span>{props.nextStepTitle}</span>
           </div>
           <ChevronRight />

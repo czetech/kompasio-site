@@ -3,23 +3,23 @@ import BaseLayout from "~/layouts/BaseLayout.astro";
 ---
 
 <BaseLayout>
-  <div class="flex flex-col w-full h-full grow">
-  <style is:global>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      overflow: hidden;
-    }
-  </style>
-  <iframe
-    src="https://kompasio-iframe-prod.apps.czetech.net/zoznam/"
-    width="100%"
-    style="border:0;"
-    allowfullscreen=""
-    loading="lazy"
-    referrerpolicy="no-referrer-when-downgrade"
-    class="grow"
-    ></iframe>
+  <div class="flex h-full w-full grow flex-col">
+    <style is:global>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden;
+      }
+    </style>
+    <iframe
+      src="https://kompasio-iframe-prod.apps.czetech.net/zoznam/"
+      width="100%"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      class="grow"></iframe>
   </div>
 </BaseLayout>

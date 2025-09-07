@@ -32,12 +32,12 @@ export const getStaticPaths = async () => {
             heading={journey.data.title}
             href={`/zivotne-situacie/${journey.id}`}
             description={journey.data.description}
-            >
-  {journey.data.type === "journey" ? (
-    <Footprints slot="icon" />
-  ) : (
-    <Library slot="icon" />
-  )}
+          >
+            {journey.data.type === "journey" ? (
+              <Footprints slot="icon" />
+            ) : (
+              <Library slot="icon" />
+            )}
           </Item>
         ))
       }

@@ -8,10 +8,11 @@ const { heading, href, description, icon } = Astro.props;
   <hr class="border-red-orange" />
   <a
     href={href}
-    class={"text-vibrant-blue text-xl font-semibold hover:underline md:text-2xl flex gap-x-2 items-center"}
-      >
-  <slot name="icon" />
-  <span>{heading}</span>
+    class={`text-vibrant-blue text-xl font-semibold hover:underline md:text-2xl
+      flex gap-x-2 items-center`}
+  >
+    <slot name="icon" />
+    <span>{heading}</span>
   </a>
   <Markdown content={description} />
 </div>
