@@ -63,7 +63,7 @@ const Nav: Component = (props) => {
     <nav class="relative flex flex-col items-center">
       <div class="flex h-8 w-full items-center justify-center md:justify-start">
         <div
-          class="h-7 duration-250 md:h-8"
+          class="h-7 duration-250 md:h-8 md:z-10 md:opacity-100"
           classList={{
             "z-10": !isLogoBackground(),
             "opacity-0": isLogoInvisible(),
