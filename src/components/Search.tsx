@@ -57,7 +57,14 @@ const Search: Component = (props) => {
   };
 
   const handleClose = () => {
-    history.back();
+    const previousUrl = document.referrer;
+    const hasHistory = window.history.length > 1;
+    const isSameOrigin = previousUrl.startsWith(window.location.origin);
+    if (hasHistory && isSameOrigin) {
+      history.back();
+    } else {
+      navigate("/");
+    }
   };
 
   const resultsCount = createMemo(() => response()?.results[0]?.nbHits + response()?.results[1]?.nbHits);
