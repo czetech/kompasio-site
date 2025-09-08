@@ -1,5 +1,5 @@
 import type { Component } from "solid-js";
-import { createResource, createSignal, onMount } from "solid-js";
+import { createResource, createSignal, onMount, createMemo } from "solid-js";
 import { algoliasearch } from "algoliasearch";
 import Scrollable from "~/components/Scrollable.tsx";
 import ResultJourney from "~/components/ResultJourney.tsx";
@@ -7,6 +7,9 @@ import ResultPlace from "~/components/ResultPlace.tsx";
 import ResultPlaceCategory from "~/components/ResultPlaceCategory.tsx";
 import { makeEventListener } from "@solid-primitives/event-listener";
 import { navigate } from "astro:transitions/client";
+import SearchIcon from "lucide-solid/icons/search";
+import ArrowUp from "lucide-solid/icons/arrow-up";
+import X from "lucide-solid/icons/x";
 
 const Search: Component = (props) => {
   const client = algoliasearch(
@@ -19,7 +22,6 @@ const Search: Component = (props) => {
       requests: [
         { indexName: "places", query: query, hitsPerPage: 100 },
         { indexName: "guides_journeys", query: query, hitsPerPage: 100 },
-        { indexName: "places_categories", query: query, hitsPerPage: 100 },
       ],
     });
 
@@ -54,6 +56,12 @@ const Search: Component = (props) => {
     }
   };
 
+  const handleClose = () => {
+    history.back();
+  };
+
+  const resultsCount = createMemo(() => response()?.results[0]?.nbHits + response()?.results[1]?.nbHits);
+
   onMount(() => {
     makeEventListener(
       document,
@@ -66,56 +74,48 @@ const Search: Component = (props) => {
   });
 
   return (
-    <div class="flex w-full max-w-5xl grow flex-col gap-y-8 p-8">
-      <Show when={query()}>
-        <div class="grid grow grid-cols-3 gap-x-16">
-          <div>
-            <h1 class="mb-4 flex justify-center gap-x-1 text-2xl font-semibold">
-              <span>Kategórie</span>
-              <Show when={response()}>
-                <span>({response().results[2].nbHits})</span>
-              </Show>
-            </h1>
-            <Show when={response()}>
-              <div class="flex flex-col gap-y-4">
-                <For each={response().results[2].hits}>
-                  {(item) => <ResultPlaceCategory item={item} />}
-                </For>
-              </div>
-            </Show>
-          </div>
-          <div>
-            <h1 class="mb-4 flex justify-center gap-x-1 text-2xl font-semibold">
-              <span>Miesta</span>
-              <Show when={response()}>
-                <span>({response().results[0].nbHits})</span>
-              </Show>
-            </h1>
-            <Show when={response()}>
-              <div class="flex flex-col gap-y-4">
-                <For each={response().results[0].hits}>
-                  {(item) => <ResultPlace item={item} />}
-                </For>
-              </div>
-            </Show>
-          </div>
-          <div>
-            <h1 class="mb-4 flex justify-center gap-x-1 text-2xl font-semibold">
-              <span>Návody</span>
-              <Show when={response()}>
-                <span>({response().results[1].nbHits})</span>
-              </Show>
-            </h1>
-            <Show when={response()}>
-              <div class="flex flex-col gap-y-4">
-                <For each={response().results[1].hits}>
-                  {(item) => <ResultJourney item={item} />}
-                </For>
-              </div>
-            </Show>
+    <div class="flex flex-col p-4 w-full gap-y-4 grow max-w-5xl">
+      <div class="flex gap-x-4 justify-between">
+        <div class="flex flex-col gap-y-4">
+          <p class="flex gap-x-2 items-center">
+            <SearchIcon class="w-5 h-5" />
+            <span>
+              <Switch fallback="Zadajte hľadaný výraz">
+                <Match when={query() && !resultsCount()}>Nenašli sa žiadne výsledky</Match>
+                <Match when={query() && resultsCount() === 1}>
+                  <span>Nájdený {resultsCount()} výsledok</span>
+                </Match>
+                <Match when={query() && resultsCount() > 1 && resultsCount() < 5}>
+                  <span>Nájdené {resultsCount()} výsledky</span>
+                </Match>
+                <Match when={query() && resultsCount() >= 5}>
+                  <span>Nájdených {resultsCount()} výsledkov</span>
+                </Match>
+              </Switch>
+            </span>
+          </p>
+          <div class="font-semibold text-vibrant-blue flex flex-col gap-y-2">
+            <div class="flex gap-x-2 items-center">
+              <ArrowUp class="rounded-full bg-vibrant-blue text-shuttle-white w-4 h-4" style={{ transform: `rotate(${90}deg)` }} />
+              <p class="">Miesta ({response()?.results[0]?.nbHits ?? 0})</p>
+            </div>
+            <div class="flex gap-x-2 items-center">
+              <ArrowUp class="rounded-full bg-vibrant-blue text-shuttle-white w-4 h-4" style={{ transform: `rotate(${90}deg)` }} />
+              <p>Návody ({response()?.results[1]?.nbHits ?? 0})</p>
+            </div>
           </div>
         </div>
-      </Show>
+        <button class="rounded-full text-vibrant-blue border-2 h-8 w-8 p-1 flex items-center relative right-[-8px]" onClick={handleClose}>
+          <X class="" />
+        </button>
+      </div>
+      <Scrollable class="px-6 pt-4 pb-8 md:px-8">
+        <div class="flex flex-col gap-y-4">
+          <For each={response()?.results[0]?.hits}>
+            {(item) => <ResultPlace item={item} />}
+          </For>
+        </div>
+      </Scrollable>
     </div>
   );
 };
