@@ -15,7 +15,7 @@ const Button: Component = (props) => {
       <Circle>
         <Dynamic component={props.icon} />
       </Circle>
-      <span class="pr-6 pl-4">{props.text}</span>
+      <span class="pr-6 pl-4" classList={{"text-sm": props.small}}>{props.text}</span>
     </a>
   );
 };
