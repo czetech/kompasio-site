@@ -27,19 +27,20 @@ const navItems = [
   },
 ];
 ---
+
 <header
-    id="header"
-        transition:persist
-        class="text-vibrant-blue border-b-2 p-2 md:p-3"
-      >
-        <Nav client:load navItems={navItems} pathname={Astro.url.pathname}>
-          <Logo />
-        </Nav>
+  id="header"
+  transition:persist
+  class="text-vibrant-blue border-b-2 p-2 md:p-3"
+>
+  <Nav client:load navItems={navItems} pathname={Astro.url.pathname}>
+    <Logo />
+  </Nav>
 </header>
 
 <script>
-  document.addEventListener('astro:before-swap', (e) => {
-    const header = document.getElementById('header');
+  document.addEventListener("astro:before-swap", (e) => {
+    const header = document.getElementById("header");
     if (header && e.from.pathname !== e.to.pathname) {
       header.dataset.previous = e.from.pathname;
     }

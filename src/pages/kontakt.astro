@@ -6,27 +6,32 @@ import CircleArrow from "~/components/CircleArrow.tsx";
 import Card from "~/components/Card.astro";
 import Button from "~/components/Button.tsx";
 import Markdown from "~/components/Markdown.astro";
+import Section from "~/components/Section.astro";
 
 const contact = await getEntry("contact", "contact");
 ---
 
 <BaseLayout>
-  <div class="flex items-center justify-center gap-x-4 p-8">
-    <CircleArrow direction="180" />
-    <h1 class="text-2xl font-semibold md:text-3xl">{contact.data.title}</h1>
-  </div>
-  <div class="grid">
-    <Markdown content={contact.data.body} />
-    <div class="flex w-full grow flex-col items-center justify-center p-8">
-      <Card title={contact.data.cardTitle} color="blue" class="w-full max-w-120">
-        <p class="mt-16 mb-3">{contact.data.emailLabel}</p>
-        <Button
-          href={`mailto:${contact.data.emailAddress}`}
-          text={contact.data.emailAddress}
-          icon={Mail}
-          small={true}
-        />
-      </Card>
+  <Section heading={contact.data.title}>
+    <div class="grid lg:grid-cols-2 gap-y-16 gap-x-32 px-8 pt-4 max-w-7xl">
+      <div>
+        <Markdown content={contact.data.body} />
+      </div>
+      <div class="flex w-full flex-col items-center justify-center max-h-[calc(100dvh_-_40_*_var(--spacing))]">
+        <Card
+          title={contact.data.cardTitle}
+          color="blue"
+          class="w-full max-w-120"
+        >
+          <p class="mt-16 mb-3">{contact.data.emailLabel}</p>
+          <Button
+            href={`mailto:${contact.data.emailAddress}`}
+            text={contact.data.emailAddress}
+            icon={Mail}
+            small={true}
+          />
+        </Card>
+      </div>
     </div>
-  </div>
+  </Section>
 </BaseLayout>

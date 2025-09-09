@@ -54,11 +54,13 @@ const Search: Component = (props) => {
   };
 
   const handleClose = () => {
-    const header = document.getElementById('header');
+    const header = document.getElementById("header");
     navigate(header.dataset.previous ?? "/");
   };
 
-  const resultsCount = createMemo(() => response()?.results[0]?.nbHits + response()?.results[1]?.nbHits);
+  const resultsCount = createMemo(
+    () => response()?.results[0]?.nbHits + response()?.results[1]?.nbHits,
+  );
 
   onMount(() => {
     makeEventListener(
@@ -72,18 +74,22 @@ const Search: Component = (props) => {
   });
 
   return (
-    <div class="flex flex-col p-4 w-full gap-y-4 grow max-w-5xl">
-      <div class="flex gap-x-4 justify-between">
+    <div class="flex w-full max-w-5xl grow flex-col gap-y-4 p-4">
+      <div class="flex justify-between gap-x-4">
         <div class="flex flex-col gap-y-4">
-          <p class="flex gap-x-2 items-center">
-            <SearchIcon class="w-5 h-5" />
+          <p class="flex items-center gap-x-2">
+            <SearchIcon class="h-5 w-5" />
             <span>
               <Switch fallback="Zadajte hľadaný výraz">
-                <Match when={query() && !resultsCount()}>Nenašli sa žiadne výsledky</Match>
+                <Match when={query() && !resultsCount()}>
+                  Nenašli sa žiadne výsledky
+                </Match>
                 <Match when={query() && resultsCount() === 1}>
                   <span>Nájdený {resultsCount()} výsledok</span>
                 </Match>
-                <Match when={query() && resultsCount() > 1 && resultsCount() < 5}>
+                <Match
+                  when={query() && resultsCount() > 1 && resultsCount() < 5}
+                >
                   <span>Nájdené {resultsCount()} výsledky</span>
                 </Match>
                 <Match when={query() && resultsCount() >= 5}>
@@ -92,18 +98,28 @@ const Search: Component = (props) => {
               </Switch>
             </span>
           </p>
-          <div class="font-semibold text-vibrant-blue flex flex-col gap-y-2">
-            <div class="flex gap-x-2 items-center">
-              <ArrowUp class="rounded-full bg-vibrant-blue text-shuttle-white w-4 h-4" style={{ transform: `rotate(${90}deg)` }} />
+          <div class="text-vibrant-blue flex flex-col gap-y-2 font-semibold">
+            <div class="flex items-center gap-x-2">
+              <ArrowUp
+                class="bg-vibrant-blue text-shuttle-white h-4 w-4 rounded-full"
+                style={{ transform: `rotate(${90}deg)` }}
+              />
               <p class="">Miesta ({response()?.results[0]?.nbHits ?? 0})</p>
             </div>
-            <div class="flex gap-x-2 items-center">
-              <ArrowUp class="rounded-full bg-vibrant-blue text-shuttle-white w-4 h-4" style={{ transform: `rotate(${90}deg)` }} />
+            <div class="flex items-center gap-x-2">
+              <ArrowUp
+                class="bg-vibrant-blue text-shuttle-white h-4 w-4 rounded-full"
+                style={{ transform: `rotate(${90}deg)` }}
+              />
               <p>Návody ({response()?.results[1]?.nbHits ?? 0})</p>
             </div>
           </div>
         </div>
-        <button class="rounded-full text-vibrant-blue border-2 h-8 w-8 p-1 flex items-center relative right-[-8px]" onClick={handleClose}>
+        <button
+          class={`text-vibrant-blue relative right-[-8px] flex h-8 w-8
+            items-center rounded-full border-2 p-1`}
+          onClick={handleClose}
+        >
           <X class="" />
         </button>
       </div>
