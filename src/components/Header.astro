@@ -1,0 +1,47 @@
+---
+import Logo from "~/components/Logo.astro";
+import Nav from "~/components/Nav.tsx";
+
+const navItems = [
+  {
+    title: "Zoznam",
+    href: "/zoznam/",
+  },
+  {
+    title: "Miesta",
+    href: "/miesta",
+  },
+  {
+    title: "Návody",
+    href: "/navody",
+    test: "^\/(?:navody|zivotne-situacie)(?:\/.*)?$",
+  },
+  {
+    title: "Kontakt",
+    href: "/kontakt",
+  },
+  {
+    title: "Chcem podporiť",
+    href: "https://www.modrahliadka.sk/podpora/",
+    target: "_blank",
+  },
+];
+---
+<header
+    id="header"
+        transition:persist
+        class="text-vibrant-blue border-b-2 p-2 md:p-3"
+      >
+        <Nav client:load navItems={navItems} pathname={Astro.url.pathname}>
+          <Logo />
+        </Nav>
+</header>
+
+<script>
+  document.addEventListener('astro:before-swap', (e) => {
+    const header = document.getElementById('header');
+    if (header && e.from.pathname !== e.to.pathname) {
+      header.dataset.previous = e.from.pathname;
+    }
+  });
+</script>

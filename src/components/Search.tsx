@@ -25,7 +25,8 @@ const Search: Component = (props) => {
       ],
     });
 
-  const [query, setQuery] = createSignal();
+  const [referrer, setReferrer] = createSignal("");
+  const [query, setQuery] = createSignal("");
   const [response] = createResource(query, search);
 
   const isQueryNavigation = (e) => {
@@ -38,10 +39,6 @@ const Search: Component = (props) => {
 
   const setQueryUrl = (url) => {
     setQuery(url.searchParams.get("q"));
-  };
-
-  const handleInput = (event) => {
-    setQuery(event.currentTarget.value);
   };
 
   const handleAstroBeforePreparation = (e) => {
@@ -57,14 +54,8 @@ const Search: Component = (props) => {
   };
 
   const handleClose = () => {
-    const previousUrl = document.referrer;
-    const hasHistory = window.history.length > 1;
-    const isSameOrigin = previousUrl.startsWith(window.location.origin);
-    if (hasHistory && isSameOrigin) {
-      history.back();
-    } else {
-      navigate("/");
-    }
+    const header = document.getElementById('header');
+    navigate(header.dataset.previous ?? "/");
   };
 
   const resultsCount = createMemo(() => response()?.results[0]?.nbHits + response()?.results[1]?.nbHits);

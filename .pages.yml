@@ -226,6 +226,13 @@ content:
         description: Contact title.
         type: text
         required: true
+      - name: body
+        label: Body
+        description: Contact body.
+        type: rich-text-full
+        required: true
+        options:
+          media: images
       - name: cardTitle
         label: Card title
         description: Contact card title.

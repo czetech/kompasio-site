@@ -4,10 +4,9 @@ import { ClientRouter } from "astro:transitions";
 import "@fontsource/poppins/400.css";
 import "@fontsource/poppins/500.css";
 import "@fontsource/poppins/600.css";
-import Logo from "~/components/Logo.astro";
-import Nav from "~/components/Nav.tsx";
 import "~/styles/global.css";
 import Footer from "~/components/Footer.astro";
+import Header from "~/components/Header.astro";
 
 const { strictHeight = false } = Astro.props;
 
@@ -60,14 +59,7 @@ const navItems = [
       class="flex min-h-dvh flex-col"
       class:list={{ "min-h-dvh": !strictHeight, "h-dvh": strictHeight }}
     >
-      <header
-        transition:persist
-        class="text-vibrant-blue border-b-2 p-2 md:p-3"
-      >
-        <Nav client:load navItems={navItems} pathname={Astro.url.pathname}>
-          <Logo />
-        </Nav>
-      </header>
+      <Header />
       <main class="flex grow flex-col items-center">
         <slot />
       </main>
