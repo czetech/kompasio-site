@@ -25,7 +25,7 @@ content:
         required: true
       - name: heroImage
         label: Hero Image
-        description: Landing hero image. Minimal resolution 258x16px.
+        description: Landing hero image in original dimensions with a minimum size of 258x16px.
         type: image
         required: true
         options:
@@ -65,7 +65,7 @@ content:
           - name: image
             label: Image
             description: >-
-              Card image in original dimensions with a minimum size of 623x16px
+              Card image in original dimensions with a minimum size of 623x16px.
               (landscape).
             type: image
             options:
@@ -359,7 +359,7 @@ content:
             required: true
           - name: image
             label: Image
-            description: Partner logo in original dimensions with a minimum size of TODO
+            description: Partner logo in original dimensions with a minimum size of 192x72px.
             type: image
             required: true
             options:
