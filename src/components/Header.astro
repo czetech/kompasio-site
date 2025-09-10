@@ -30,6 +30,7 @@ const navItems = [
 <header
   id="header"
   transition:persist
+  transition:name="header"
   class="text-vibrant-blue border-b-2 p-2 md:p-3"
 >
   <Nav client:load navItems={navItems} pathname={Astro.url.pathname}>
