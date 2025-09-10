@@ -15,8 +15,9 @@ const donate = await getEntry("donate", "donate");
     >
       <Markdown content={donate.data.body} />
       <stripe-buy-button
-        buy-button-id="buy_btn_1S5jDDAepvDyWZp7BGkaCCE4"
-        publishable-key="pk_live_51LwCfXAepvDyWZp7qIKiAR3xgsTQqe2XGH8ZHj3jIXKBcoZ8obXsdnLf7rBWG9AzrbfS3kmdGZY28dXp0hJI7WjN00z9V82Teo"
+        class="self-start justify-self-center"
+        buy-button-id={donate.data.stripePayButtonId}
+        publishable-key={donate.data.stripePublishableKey}
       >
       </stripe-buy-button>
     </div>

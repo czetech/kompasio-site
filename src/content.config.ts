@@ -42,6 +42,13 @@ const contact = defineCollection({
   }),
 });
 
+const donate = defineCollection({
+  loader: glob({
+    pattern: ["donate", yamlExt].join("."),
+    base: collectionsBase,
+  }),
+});
+
 const vop = defineCollection({
   loader: glob({
     pattern: ["vop", yamlExt].join("."),
@@ -91,6 +98,7 @@ export const collections = {
   guidesCategories,
   guidesJourneys,
   contact,
+  donate,
   vop,
   gdpr,
   footer,
