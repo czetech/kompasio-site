@@ -1,0 +1,26 @@
+---
+import { getEntry } from "astro:content";
+import BaseLayout from "~/layouts/BaseLayout.astro";
+import Markdown from "~/components/Markdown.astro";
+import Section from "~/components/Section.astro";
+
+const donate = await getEntry("donate", "donate");
+---
+
+<BaseLayout>
+  <Section heading={donate.data.title}>
+    <div
+      class={`grid max-w-7xl gap-x-32 gap-y-8 px-8 pt-4 md:gap-y-16
+        lg:grid-cols-2`}
+    >
+      <Markdown content={donate.data.body} />
+      <stripe-buy-button
+        buy-button-id="buy_btn_1S5jDDAepvDyWZp7BGkaCCE4"
+        publishable-key="pk_live_51LwCfXAepvDyWZp7qIKiAR3xgsTQqe2XGH8ZHj3jIXKBcoZ8obXsdnLf7rBWG9AzrbfS3kmdGZY28dXp0hJI7WjN00z9V82Teo"
+      >
+      </stripe-buy-button>
+    </div>
+  </Section>
+</BaseLayout>
+
+<script async src="https://js.stripe.com/v3/buy-button.js" />

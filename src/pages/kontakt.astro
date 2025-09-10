@@ -12,25 +12,24 @@ const contact = await getEntry("contact", "contact");
 
 <BaseLayout>
   <Section heading={contact.data.title}>
-    <div class="grid lg:grid-cols-2 gap-y-16 gap-x-32 px-8 pt-4 max-w-7xl">
-      <div>
-        <Markdown content={contact.data.body} />
-      </div>
-      <div class="flex w-full flex-col items-center justify-center max-h-[calc(100dvh_-_40_*_var(--spacing))]">
-        <Card
-          title={contact.data.cardTitle}
-          color="blue"
-          class="w-full max-w-120"
-        >
-          <p class="mt-16 mb-3">{contact.data.emailLabel}</p>
-          <Button
-            href={`mailto:${contact.data.emailAddress}`}
-            text={contact.data.emailAddress}
-            icon={Mail}
-            small={true}
-          />
-        </Card>
-      </div>
+    <div
+      class={`grid max-w-7xl gap-x-32 gap-y-8 px-8 pt-4 md:gap-y-16
+        lg:grid-cols-2`}
+    >
+      <Markdown content={contact.data.body} />
+      <Card
+        title={contact.data.cardTitle}
+        color="blue"
+        class="w-full max-w-120 self-start justify-self-center"
+      >
+        <p class="mt-16 mb-3">{contact.data.emailLabel}</p>
+        <Button
+          href={`mailto:${contact.data.emailAddress}`}
+          text={contact.data.emailAddress}
+          icon={Mail}
+          compact
+        />
+      </Card>
     </div>
   </Section>
 </BaseLayout>

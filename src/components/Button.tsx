@@ -15,7 +15,12 @@ const Button: Component = (props) => {
       <Circle>
         <Dynamic component={props.icon} />
       </Circle>
-      <span class="pr-6 pl-4" classList={{ "text-sm": props.small }}>
+      <span
+        classList={{
+          "pr-6 pl-4": !props.compact,
+          "text-sm pr-4 pl-3": props.compact,
+        }}
+      >
         {props.text}
       </span>
     </a>

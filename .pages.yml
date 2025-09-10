@@ -248,6 +248,33 @@ content:
         description: Contact card email address.
         type: text
         required: true
+  - name: donate
+    label: Donate
+    type: file
+    path: content/donate.yaml
+    fields:
+      - name: title
+        label: Title
+        description: Donate title.
+        type: text
+        required: true
+      - name: body
+        label: Body
+        description: Donate body.
+        type: rich-text-full
+        required: true
+        options:
+          media: images
+      - name: stripePayButtonId
+        label: Stripe Pay Button ID
+        description: Stripe Pay Button ID.
+        type: text
+        required: true
+      - name: stripePublishableKey
+        label: Stripe Publishable Key
+        description: Stripe Publishable Key.
+        type: text
+        required: true
   - name: vop
     label: VOP
     type: file
