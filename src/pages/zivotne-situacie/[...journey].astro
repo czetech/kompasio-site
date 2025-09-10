@@ -12,6 +12,7 @@ import StepListItem from "~/components/StepListItem.tsx";
 import Markdown from "~/components/Markdown.astro";
 import Library from "lucide-solid/icons/library";
 import Footprints from "lucide-solid/icons/footprints";
+import ChevronRight from "lucide-solid/icons/chevron-right";
 
 const { journeySlug, stepIndex, journey } = Astro.props;
 const step = journey.steps[stepIndex];
@@ -30,16 +31,46 @@ export const getStaticPaths = async () => {
     })),
   );
 };
+
+const category = (
+  await getCollection(
+    "guidesCategories",
+    ({ data }) => data.uuid === journey.category,
+  )
+)[0];
+
+const breadcrumbItems = [
+  {
+    name: "Návody",
+    href: "/navody",
+  },
+  {
+    name: category.data.title,
+    href: `/navody/${category.id}`,
+  },
+];
 ---
 
 <BaseLayout>
   <div class="w-full max-w-6xl p-4 md:p-8">
+    <nav aria-label="Breadcrumb" class="mb-2" transition:persist>
+      <ol class="flex gap-x-2 flex-wrap gap-y-1">
+        {
+          breadcrumbItems.map(({ name, href }) => (
+            <li class="flex gap-x-[inherit] items-center">
+              <a href={href} class="text-vibrant-blue">{name}</a>
+              <ChevronRight class="w-5 h-5 flex-none" aria-hidden="true" />
+            </li>
+          ))
+        }
+      </ol>
+    </nav>
     <h1 class="mb-6 flex items-center gap-x-2 text-xl md:mb-8 md:text-2xl">
       {
         journey.type === "journey" ? (
-          <Footprints slot="icon" />
+          <Footprints class="flex-none" />
         ) : (
-          <Library slot="icon" />
+          <Library class="flex-none" />
         )
       }
       <span>{journey.title}</span>
@@ -97,28 +128,26 @@ export const getStaticPaths = async () => {
               md:gap-y-8`}
           >
             {
-              journey.steps.map((step, index) => {
-                return (
-                  <li class="flex items-center gap-x-3">
-                    {journey.type === "journey" && (
-                      <StepStatus
-                        client:only
-                        journeyUuid={journey.uuid}
-                        stepUuid={step.uuid}
-                        stepTasks={step.tasks}
-                        class="w-6 flex-none"
-                      />
-                    )}
-                    <StepListItem
-                      client:load
-                      journeySlug={journeySlug}
-                      pathname={Astro.url.pathname}
-                      stepIndex={index}
-                      title={step.title}
+              journey.steps.map((step, index) => (
+                <li class="flex items-center gap-x-3">
+                  {journey.type === "journey" && (
+                    <StepStatus
+                      client:only
+                      journeyUuid={journey.uuid}
+                      stepUuid={step.uuid}
+                      stepTasks={step.tasks}
+                      class="w-6 flex-none"
                     />
-                  </li>
-                );
-              })
+                  )}
+                  <StepListItem
+                    client:load
+                    journeySlug={journeySlug}
+                    pathname={Astro.url.pathname}
+                    stepIndex={index}
+                    title={step.title}
+                  />
+                </li>
+              ))
             }
           </ol>
           <StepListClear journeyUuid={journey.uuid} client:only />
