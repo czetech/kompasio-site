@@ -13,6 +13,7 @@ import Markdown from "~/components/Markdown.astro";
 import Library from "lucide-solid/icons/library";
 import Footprints from "lucide-solid/icons/footprints";
 import ChevronRight from "lucide-solid/icons/chevron-right";
+import Shrinkwrap from "~/components/Shrinkwrap.tsx";
 
 const { journeySlug, stepIndex, journey } = Astro.props;
 const step = journey.steps[stepIndex];
@@ -53,13 +54,15 @@ const breadcrumbItems = [
 
 <BaseLayout>
   <div class="w-full max-w-6xl p-4 md:p-8">
-    <nav aria-label="Breadcrumb" class="mb-2" transition:persist>
+    <nav aria-label="Breadcrumb" class="mb-2">
       <ol class="flex gap-x-2 flex-wrap gap-y-1">
         {
           breadcrumbItems.map(({ name, href }) => (
-            <li class="flex gap-x-[inherit] items-center">
-              <a href={href} class="text-vibrant-blue">{name}</a>
-              <ChevronRight class="w-5 h-5 flex-none" aria-hidden="true" />
+            <li>
+              <Shrinkwrap client:load class="items-center gap-x-2">
+                <a href={href} class="text-vibrant-blue">{name}</a>
+                <ChevronRight class="w-5 h-5 flex-none" aria-hidden="true" slot="after" />
+              </Shrinkwrap>
             </li>
           ))
         }
