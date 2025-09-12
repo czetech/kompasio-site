@@ -28,11 +28,11 @@ const StepListItem: Component = (props) => {
   return (
     <a
       href={stepPath()}
-      class="flex gap-x-1 hover:underline"
+      class="hover:underline text-vibrant-blue"
       classList={{ "font-semibold": isActive() }}
     >
-      <Show when={props.stepIndex}>
-        <span>{props.stepIndex}.</span>
+      <Show when={props.numbering && props.stepIndex}>
+        <span>{props.stepIndex}. </span>
       </Show>
       <span>{props.title}</span>
     </a>

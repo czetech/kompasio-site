@@ -80,7 +80,7 @@ const Select: Component<StyledSelectProps> = (props) => {
         />
 
         <span
-          class="grow overflow-hidden pl-2 text-nowrap text-ellipsis"
+          class="grow truncate pl-2"
           innerHTML={selectedName()}
         />
       </button>

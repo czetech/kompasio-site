@@ -60,7 +60,7 @@ const breadcrumbItems = [
           breadcrumbItems.map(({ name, href }) => (
             <li>
               <Shrinkwrap client:load class="items-center gap-x-2">
-                <a href={href} class="text-vibrant-blue">{name}</a>
+                <a href={href} class="text-vibrant-blue hover:underline">{name}</a>
                 <ChevronRight class="w-5 h-5 flex-none" aria-hidden="true" slot="after" />
               </Shrinkwrap>
             </li>
@@ -79,11 +79,13 @@ const breadcrumbItems = [
       <span>{journey.title}</span>
     </h1>
     <div class="flex md:gap-x-8">
-      <article class="mb-6 md:mb-8">
-        <h2 class="mb-3 text-2xl font-semibold md:mb-4 md:text-3xl">
-          {step.title}
-        </h2>
-        <Markdown content={step.body} />
+      <div class="min-w-0">
+        <article class="mb-6 md:mb-8">
+          <h2 class="mb-3 text-2xl font-semibold md:mb-4 md:text-3xl">
+            {step.title}
+          </h2>
+          <Markdown content={step.body} />
+        </article>
         {
           journey.type === "journey" && (
             <StepUI
@@ -106,8 +108,8 @@ const breadcrumbItems = [
             : null}
           nextStepTitle={journey.steps[stepIndex + 1]?.title}
           type={journey.type}
-        />
-      </article>
+            />
+      </div>
       <aside>
         <StepListToggle client:load />
         <nav
@@ -117,7 +119,7 @@ const breadcrumbItems = [
             right-6 bottom-24 h-[calc(100dvh_-_var(--spacing)_*_32)]
             md:max-h-[calc(100dvh_-_var(--spacing)_*_16)]
             w-[calc(100vw_-_var(--spacing)_*_12)] max-w-xs origin-bottom-right
-            scale-90 rounded-lg border px-4 pb-8 pt-4 opacity-0 shadow-lg
+            scale-90 rounded-2xl border-2 px-4 pb-8 pt-4 opacity-0 shadow-lg
             duration-250 peer-[.is-open]:visible peer-[.is-open]:scale-none
             peer-[.is-open]:opacity-100 md:visible md:sticky md:top-8 md:h-auto
             md:w-xs md:scale-none md:opacity-100 md:shadow-none overflow-y-auto`}
@@ -148,6 +150,7 @@ const breadcrumbItems = [
                     pathname={Astro.url.pathname}
                     stepIndex={index}
                     title={step.title}
+                    numbering={journey.type === "journey"}
                   />
                 </li>
               ))

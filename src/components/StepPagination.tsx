@@ -33,27 +33,10 @@ const StepPagination: Component = (props) => {
 
   return (
     <div
-      class={`flex flex-col-reverse justify-between gap-x-8 gap-y-4 md:flex-row
-        md:items-center [&_a]:flex [&_a]:items-center [&_a]:gap-x-1 [&_a]:!py-2
-        md:[&_a]:gap-x-2 [&_a>div]:flex [&_a>div]:flex-col [&_a>div]:items-start
-        [&_a>div>span:nth-child(2)]:text-xs [&_svg]:flex-none`}
+      class={`flex flex-col justify-between gap-x-8 gap-y-4 lg:flex-row-reverse
+        lg:items-center`}
       classList={{ "!justify-end": props.previousStepIndex === null }}
     >
-      <Show when={props.previousStepIndex !== null}>
-        <Button
-          secondary
-          class="self-start pl-1 md:self-auto md:pl-2"
-          href={stepPath(props.previousStepIndex)}
-        >
-          <ChevronLeft />
-          <div>
-            <span>
-              {props.type === "journey" ? "Predchádzajúci krok" : "Naspäť"}
-            </span>
-            <span>{props.previousStepTitle}</span>
-          </div>
-        </Button>
-      </Show>
       <Show when={props.nextStepIndex}>
         <Button
           secondary={!stepState()?.isCompleted}
@@ -61,16 +44,31 @@ const StepPagination: Component = (props) => {
             "motion-safe:animate-spring": triggeredComplete(),
           }}
           style="--spring-shift: -1rem;"
-          class="self-end pr-1 duration-250 md:self-auto md:pr-2"
+          class="self-end pr-1 duration-250 lg:self-auto lg:pr-2 flex items-center gap-x-2 max-w-full min-w-0"
           href={stepPath(props.nextStepIndex)}
         >
-          <div>
-            <span>
+          <div class="flex flex-col min-w-0">
+            <div>
               {props.type === "journey" ? "Nasledujúci krok" : "Čítať ďalej"}
-            </span>
-            <span>{props.nextStepTitle}</span>
+            </div>
+            <div class="truncate text-xs">{props.nextStepTitle}</div>
           </div>
-          <ChevronRight />
+          <ChevronRight class="flex-none" />
+        </Button>
+      </Show>
+      <Show when={props.previousStepIndex !== null}>
+        <Button
+          secondary
+          class="self-start pl-1 lg:self-auto lg:pl-2 flex items-center gap-x-2 max-w-full min-w-0"
+          href={stepPath(props.previousStepIndex)}
+        >
+          <ChevronLeft class="flex-none" />
+          <div class="flex flex-col min-w-0">
+            <div>
+              {props.type === "journey" ? "Predchádzajúci krok" : "Naspäť"}
+            </div>
+            <div class="truncate text-xs">{props.previousStepTitle}</div>
+          </div>
         </Button>
       </Show>
     </div>
