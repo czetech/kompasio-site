@@ -17,7 +17,7 @@ import { navigate } from "astro:transitions/client";
 const Nav: Component = (props) => {
   let searchInputRef;
 
-  const searchPathname = "/search";
+  const searchPathname = "/vyhladavanie";
 
   const [pathname, setPathname] = createSignal(props.pathname);
   const [isTransitioning, setIsTransitioning] = createSignal(false);
@@ -143,13 +143,16 @@ const Nav: Component = (props) => {
           <div class="p-1">
             <Search class="h-5 w-5" />
           </div>
+          <input
+            ref={searchInputRef}
+            value={searchQuery()}
+            onInput={handleSearchInput}
+            placeholder={props.searchPlaceholder}
+            class="md:w-full focus:outline-none"
+            classList={{"w-0 pointer-events-none": !isSearchOpen(), "w-full": isSearchOpen()}}
+            disabled={!isSearchOpen()}
+          />
           <Show when={isSearchOpen()}>
-            <input
-              ref={searchInputRef}
-              value={searchQuery()}
-              onInput={handleSearchInput}
-              class="w-full focus:outline-none"
-            />
             <button
               onClick={handleSearchClearClick}
               class="p-1 duration-250"
