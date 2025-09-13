@@ -20,32 +20,32 @@ content:
     fields:
       - name: navItemPlaces
         label: Nav Item Places
-        description: Places text in main navigation.
+        description: Places text in primary navigation.
         type: text
         required: true
       - name: navItemGuides
         label: Nav Item Guides
-        description: Guides text in main navigation.
+        description: Guides text in primary navigation.
         type: text
         required: true
       - name: navItemContact
         label: Nav Item Contact
-        description: Contact text in main navigation.
+        description: Contact text in primary navigation.
         type: text
         required: true
       - name: navItemDonate
         label: Nav Item Donate
-        description: Donate text in main navigation.
+        description: Donate text in primary navigation.
         type: text
         required: true
       - name: navItemTerms
         label: Nav Item Terms
-        description: Terms text in main navigation.
+        description: Terms text in secondary navigation.
         type: text
         required: true
       - name: navItemGdpr
         label: Nav Item GDPR
-        description: GDPR text in main navigation.
+        description: GDPR text in secondary navigation.
         type: text
         required: true
   - name: landing
