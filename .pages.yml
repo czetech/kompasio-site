@@ -13,6 +13,41 @@ media:
       - svg
       - webp
 content:
+  - name: global
+    label: Global
+    type: file
+    path: content/global.yaml
+    fields:
+      - name: navItemPlaces
+        label: Nav Item Places
+        description: Places text in main navigation.
+        type: text
+        required: true
+      - name: navItemGuides
+        label: Nav Item Guides
+        description: Guides text in main navigation.
+        type: text
+        required: true
+      - name: navItemContact
+        label: Nav Item Contact
+        description: Contact text in main navigation.
+        type: text
+        required: true
+      - name: navItemDonate
+        label: Nav Item Donate
+        description: Donate text in main navigation.
+        type: text
+        required: true
+      - name: navItemTerms
+        label: Nav Item Terms
+        description: Terms text in main navigation.
+        type: text
+        required: true
+      - name: navItemGdpr
+        label: Nav Item GDPR
+        description: GDPR text in main navigation.
+        type: text
+        required: true
   - name: landing
     label: Landing
     type: file
@@ -359,6 +394,14 @@ content:
       - name: linkedinUrl
         label: LinkedIn URL
         description: LinkedIn page URL. If it is empty, the icon will not be displayed.
+        type: text
+      - name: githubUrl
+        label: GitHub URL
+        description: GitHub page URL. If it is empty, the icon will not be displayed.
+        type: text
+      - name: earthUrl
+        label: Modrá Hliadka URL
+        description: Modrá Hliadka page URL. If it is empty, the icon will not be displayed.
         type: text
       - name: fundingHeadline
         label: Funding headline

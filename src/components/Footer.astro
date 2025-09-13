@@ -13,6 +13,7 @@ import Youtube from "lucide-solid/icons/youtube";
 import Linkedin from "lucide-solid/icons/linkedin";
 import Earth from "lucide-solid/icons/earth";
 import ContentImage from "~/components/ContentImage.astro";
+import {navItemsPrimary, navItemsSecondary } from "~/lib/navigation.ts";
 
 const { navItems } = Astro.props;
 
@@ -59,24 +60,13 @@ const socialIcons = [
   },
   {
     icon: Github,
-    url: "https://github.com/czetech/kompasio-site",
+    url: footer.data.githubUrl,
     text: "GitHub",
   },
   {
     icon: Earth,
-    url: "https://modrahliadka.sk/",
+    url: footer.data.mhUrl,
     text: "Modrá Hliadka",
-  },
-];
-
-const secondaryNavItems = [
-  {
-    title: "Podmienky používania",
-    url: "/vop",
-  },
-  {
-    title: "GDPR",
-    url: "/gdpr",
   },
 ];
 
@@ -129,7 +119,7 @@ const currentYear = new Date().getFullYear();
           sm:row-start-1 sm:items-start`}
       >
         {
-          navItems.map((navItem) => (
+          navItemsPrimary.map((navItem) => (
             <a
               href={navItem.href}
               target={navItem.target}
@@ -142,7 +132,7 @@ const currentYear = new Date().getFullYear();
       </div>
       <div class="flex flex-col items-center gap-y-2 text-sm sm:items-start">
         {
-          secondaryNavItems.map((secondaryNavItem) => (
+          navItemsSecondary.map((secondaryNavItem) => (
             <a href={secondaryNavItem.url} class="hover:underline">
               {secondaryNavItem.title}
             </a>

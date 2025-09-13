@@ -7,6 +7,13 @@ const yamlExt = "yaml";
 const yamlGlob = ["*", yamlExt].join(".");
 const collectionsBase = "content";
 
+const global = defineCollection({
+  loader: glob({
+    pattern: ["global", yamlExt].join("."),
+    base: collectionsBase,
+  }),
+});
+
 const landing = defineCollection({
   loader: glob({
     pattern: ["landing", yamlExt].join("."),
@@ -93,6 +100,7 @@ const placesParametersOptions = defineCollection({
 });
 
 export const collections = {
+  global,
   landing,
   guides,
   guidesCategories,
