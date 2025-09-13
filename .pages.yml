@@ -48,6 +48,11 @@ content:
         description: GDPR text in secondary navigation.
         type: text
         required: true
+      - name: searchPlaceholder
+        label: Search Placeholder
+        description: Search placeholder text.
+        type: text
+        required: true
   - name: landing
     label: Landing
     type: file
