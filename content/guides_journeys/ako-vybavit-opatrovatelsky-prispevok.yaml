@@ -42,7 +42,7 @@ steps:
       podľa toho príjem alebo zvážiť osobu, ktorá o príspevok požiada.
 
 
-      **\* Dôležité:** Príjmom zo zamestnania sa na účely toho posúdenia okrem
+      **\* Dôležité:** Príjmom zo zamestnania sa na účely tohto posúdenia okrem
       zamestnania rozumie napr. aj (štátny zamestnanecký pomer, výkon verejnej
       funkcie, čí príjem zo živnosti alebo slobodného povolania).
 
@@ -122,7 +122,7 @@ steps:
 
 
       Pri podaji papierovej žiadosti, nemusí tento postup fungovať správne,
-      papierové workflow (papierovú podanie žiadosti) netestujeme.
+      papierové workflow (papierové podanie žiadosti) netestujeme.
 
 
       K vyplneniu žiadosti potrebujete najmä osobné údaje žiadateľa a
@@ -138,10 +138,10 @@ steps:
 
       **Dôležité: počas vypĺňania žiadosti môžete naraziť na problém, alebo
       potrebujete tento proces prerušiť. V takom prípade uložte rozpracovanú
-      žiadosť tlačidlomo v dolnej časti: ULOŽIŤ DO ROZPRACOVANÝCH**
+      žiadosť tlačidlom v dolnej časti: ULOŽIŤ DO ROZPRACOVANÝCH**
 
 
-      **Uloženú žiadosť nájde potom v svojej schránke v časti rozpracované.**
+      **Uloženú žiadosť nájdete potom v svojej schránke v časti rozpracované.**
 
 
       **Vyplnené jednotlivé kroky žiadosti nájdete TU.**
@@ -151,12 +151,12 @@ steps:
 
 
       Vzhľadom na úplnú odkázanosť môjho dieťaťa na opateru inej osoby, žiadam o
-      pridelenie finančného príspevku na opatrovanie s súlade s §40 zákona
+      pridelenie finančného príspevku na opatrovanie v súlade s §40 zákona
       447/2008 Z.z.
 
 
       Pred podpisom žiadosti použite tlačidlo SKONTROLOVAŤ - systém overí, či sú
-      všetky ptrebné polia vyplnené.
+      všetky potrebné polia vyplnené.
     tasks:
       - body: Žiadosť vyplnená a skontrolovaná
         uuid: 3dd537b8-5865-4bab-b1cf-3cec09af9b8f
