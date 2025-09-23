@@ -40,14 +40,14 @@ steps:
       **Nájomná zmluva**  
 
       Ak máte auto prenajaté (napr. z požičovne, operatívny leasing, od firmy,
-      od kamaráta, od rodičov, alebo aj od otcovho koňa brata) bude nutné
+      od kamaráta, od rodičov, alebo aj od otcovho koňa sestry brata) bude nutné
       doložiť písomnú nájomnú zmluvu.
 
 
       Pozor, magistrát poskytuje zľavu iba tým, kotrí majú auto prenajaté "za
       komerčných podmienok".  
 
-      Vzor nájomnej zmluvy nájdte napr aj TU.
+      Vzor nájomnej zmluvy nájdete napr aj TU.
     tasks:
       - body: Doklady pripravené
         uuid: ca5bd259-8578-46c1-b37c-a47c82719298
@@ -102,8 +102,6 @@ steps:
       4.  Informácie o bydlisku
           
           *   Vyplňte svoju adresu trvalého bydliska
-
-              
       5.  Súhlasy a prehlásenie
           
           *   **Zaškrtnite požadované súhlasy so spracovaním osobných údajov.**
