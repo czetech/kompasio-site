@@ -153,6 +153,41 @@ steps:
           
       *   odporúčania: intervencie, školské zaradenie, ďalší odborníci.
     uuid: 26238c0d-1988-4787-a4d8-750761f85542
+  - title: "Od diagnostiky k psychiatrovi "
+    body: >-
+      Ak vyšlo z testov, že dieťa je na autistickom spektre podľa zvolenej
+      diagnostickej metódy, psychológovia Vám:
+
+
+      1.  Ak je dieťa primladé ( napr. do 3 rokov), zväčša chcú opakovať
+      diagnostické testy o rok. Za rok sa v tomto veku vie veľa zmeniť, avšak ak
+      už teraz vyšlo z testov predpoklad autizmu, psychológovia na to
+      upozorňujú.
+          
+      2.  na čo však apelujú je, aby ste s dieťaťom začali pracovať - našli
+      rôzne druhy terapií, intervencií - niečo, čo by vedelo dieťaťu pomôcť.
+          
+
+      Ak ste išli na diagnostiku skôr, keď bolo Vaše dieťa do 3 rokov, je úplne
+      jedno, či sa to časom potvrdí, alebo nepotvrdí.  
+        
+      Dôležité je, aby ste s dieťaťom pracovali. Za ten čas, ktorý máte, viete s
+      dieťaťom systematicky pracovať a zlepšovať ho v oblastiach, ktoré sú
+      oslabené - najlepšie formou hry, alebo prostredníctvom jeho záujmov.
+      Odborníci prostrednícvom terapií a intervencií vedia dieťaťu pomôcť a
+      rozvíjať ho tak, ako to my - rodičia- doma bez ich pomoci nevieme.
+
+
+      Väčšina odborníkov však spolupracuje s rodičmi a pomáha im nastavovať nové
+      výchovné stratégie, ktorými rodičov nasmerujú a pomáhajú im pochopiť
+      súvislosti. Rodičov tak zároveň učia - jednoduchými a rýchlo
+      aplikovateľnými nástrojmi - ako vedieť dieťaťu pomôcť aj v domácom
+      prostredí.
+
+
+      Zároveň sa však na terapiách zameriavajú na ďalšie veci, ktoré dieťa
+      potrebuje a ktoré vedia oni systematicky podporiť.
+    uuid: ba9b8320-7866-4e4e-9754-02db17373a69
   - title: "2. krok Návšteva psychiatra & pedopsychiatra "
     body: >-
       Ako sme spomínali v kroku [Dva pojmy: Diagnostika a Potvrdenie
@@ -258,39 +293,4 @@ steps:
 
       **Diagnostika nie je koniec. Je to začiatok cesty.**
     uuid: cdf15479-74ae-43cb-84de-020897557615
-  - title: "Od diagnostiky k psychiatrovi "
-    body: >-
-      Ak vyšlo z testov, že dieťa je na autistickom spektre podľa diagnostickej
-      metódy, psychológovia Vám:
-
-
-      1.  Ak je dieťa primladé ( napr. do 3 rokov), zväčša chcú opakovať
-      diagnostické testy o rok. Za rok sa v tomto veku vie veľa zmeniť, avšak ak
-      už teraz vyšlo z testov predpoklad autizmu, psychológovia na to
-      upozorňujú.
-          
-      2.  na čo však apelujú je, aby ste s dieťaťom začali pracovať - našli
-      rôzne druhy terapií, intervencií - niečo, čo by vedelo dieťaťu pomôcť.
-          
-
-      Ak ste išli na diagnostiku skôr, keď bolo Vaše dieťa do 3 rokov, je úplne
-      jedno, či sa to časom potvrdí, alebo nepotvrdí.  
-        
-      Dôležité je, aby ste s dieťaťom pracovali. Za ten čas, ktorý máte, viete s
-      dieťaťom systematicky pracovať a zlepšovať ho v oblastiach, ktoré sú
-      oslabené - najlepšie formou hry, alebo prostredníctvom jeho záujmov.
-      Odborníci prostrednícvom terapií a intervencií vedia dieťaťu pomôcť a
-      rozvíjať ho tak, ako to my - rodičia- doma bez ich pomoci nevieme.
-
-
-      Väčšina odborníkov však spolupracuje s rodičmi a pomáha im nastavovať nové
-      výchovné stratégie, ktorými rodičov nasmerujú a pomáhajú im pochopiť
-      súvislosti. Rodičov tak zároveň učia - jednoduchými a rýchlo
-      aplikovateľnými nástrojmi - ako vedieť dieťaťu pomôcť aj v domácom
-      prostredí.
-
-
-      Zároveň sa však na terapiách zameriavajú na ďalšie veci, ktoré dieťa
-      potrebuje a ktoré vedia oni systematicky podporiť.
-    uuid: ba9b8320-7866-4e4e-9754-02db17373a69
 uuid: 9eb9b2fd-0b95-4436-9028-856bade90680
