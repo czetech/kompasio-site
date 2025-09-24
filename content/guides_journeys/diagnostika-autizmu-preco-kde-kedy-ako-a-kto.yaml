@@ -153,41 +153,6 @@ steps:
           
       *   odporúčania: intervencie, školské zaradenie, ďalší odborníci.
     uuid: 26238c0d-1988-4787-a4d8-750761f85542
-  - title: "Od diagnostiky k psychiatrovi "
-    body: >-
-      Ak vyšlo z testov, že dieťa je na autistickom spektre podľa zvolenej
-      diagnostickej metódy, psychológovia:
-
-
-      1.  Ak je dieťa primladé (napr. do 3 rokov), zväčša chcú opakovať
-      diagnostické testy o rok. Za rok sa v tomto veku vie veľa zmeniť, avšak ak
-      už teraz vyšlo z testov predpoklad autizmu, psychológovia na to
-      upozorňujú.
-          
-      2.  na čo však apelujú je, aby ste s dieťaťom začali pracovať - našli
-      rôzne druhy terapií, intervencií - niečo, čo by vedelo dieťaťu pomôcť.
-          
-
-      Ak ste išli na diagnostiku skôr, keď bolo Vaše dieťa do 3 rokov, je úplne
-      jedno, či sa to časom potvrdí, alebo nepotvrdí.  
-        
-      Dôležité je, aby ste s dieťaťom pracovali. Za ten čas, ktorý máte, viete s
-      dieťaťom systematicky pracovať a zlepšovať ho v oblastiach, ktoré sú
-      oslabené - najlepšie formou hry, alebo prostredníctvom jeho záujmov.
-      Odborníci prostrednícvom terapií a intervencií vedia dieťaťu pomôcť a
-      rozvíjať ho tak, ako to my - rodičia- doma bez ich pomoci nevieme.
-
-
-      Väčšina odborníkov však spolupracuje s rodičmi a pomáha im nastavovať nové
-      výchovné stratégie, ktorými rodičov nasmerujú a pomáhajú im pochopiť
-      súvislosti. Rodičov tak zároveň učia - jednoduchými a rýchlo
-      aplikovateľnými nástrojmi - ako vedieť dieťaťu pomôcť aj v domácom
-      prostredí.
-
-
-      Zároveň sa však na terapiách zameriavajú na ďalšie veci, ktoré dieťa
-      potrebuje a ktoré vedia oni systematicky podporiť.
-    uuid: ba9b8320-7866-4e4e-9754-02db17373a69
   - title: "2. krok Návšteva psychiatra & pedopsychiatra "
     body: >-
       Ako sme spomínali v kroku [Dva pojmy: Diagnostika a Potvrdenie
@@ -240,6 +205,41 @@ steps:
           
           1.  Na termín u psychiatra sa musíte tiež objednať a termíny sa líši.
     uuid: 91961219-cea1-440f-8793-0568d4356f22
+  - title: "Od diagnostiky k psychiatrovi "
+    body: >-
+      Ak vyšlo z testov, že dieťa je na autistickom spektre podľa zvolenej
+      diagnostickej metódy:
+
+
+      1.  Ak je dieťa primladé (napr. do 3 rokov), psychológovia chcú zväčša
+      opakovať diagnostické testy o rok. Za rok sa v tomto veku vie veľa zmeniť,
+      avšak ak už teraz vyšlo z testov predpoklad autizmu, psychológovia na to
+      upozorňujú a zároveň
+          
+      2.  **apelujú,** aby ste s dieťaťom začali pracovať - našli rôzne druhy
+      terapií, intervencií - niečo, čo by vedelo dieťaťu pomôcť.
+          
+
+      Ak ste išli na diagnostiku skôr, keď bolo Vaše dieťa do 3 rokov, je úplne
+      jedno, či sa to časom potvrdí, alebo nepotvrdí.  
+        
+      Dôležité je, aby ste s dieťaťom pracovali. Za ten čas, ktorý máte, viete s
+      dieťaťom systematicky pracovať a zlepšovať ho v oblastiach, ktoré sú
+      oslabené - najlepšie formou hry, alebo prostredníctvom jeho záujmov.
+      Odborníci prostrednícvom terapií a intervencií vedia dieťaťu pomôcť a
+      rozvíjať ho tak, ako to my - rodičia- doma bez ich pomoci nevieme.
+
+
+      Väčšina odborníkov však spolupracuje s rodičmi a pomáha im nastavovať nové
+      výchovné stratégie, ktorými rodičov nasmerujú a pomáhajú im pochopiť
+      súvislosti. Rodičov tak zároveň učia - jednoduchými a rýchlo
+      aplikovateľnými nástrojmi - ako vedieť dieťaťu pomôcť aj v domácom
+      prostredí.
+
+
+      Zároveň sa však na terapiách zameriavajú na ďalšie veci, ktoré dieťa
+      potrebuje a ktoré vedia oni systematicky podporiť.
+    uuid: ba9b8320-7866-4e4e-9754-02db17373a69
   - title: Záver - Diagnóza nie je nálepka - je to odpoveď
     body: >-
       Diagnostika autizmu a potvrdenie diagnózy psychiatrom môže byť náročný a
@@ -279,7 +279,7 @@ steps:
       **sebalásku a sebaprijatie**.  
 
       Keď sa v ich prostredí – doma, v škole, v práci – zavedú **opatrenia,
-      ktoré im reálne pomáhajú**, často si prvýkrát uvedomia:
+      ktoré im reálne pomáhajú**, často si práve vtedy prvýkrát uvedomia:
 
 
       > „Môže mi byť dobre. Nepotrebujem sa meniť. Ak okolie chápe, čo mi
