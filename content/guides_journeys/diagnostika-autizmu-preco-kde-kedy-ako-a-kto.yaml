@@ -141,10 +141,12 @@ steps:
     body: >-
       Po diagnostike si Vás zväčša odborník zavolá na stretnutie, kde vám
       poskytne dokumentáciu a odporúčania. Stretnutie sa nesie v duchu
-      rozhovoru:
+      rozhovoru.  
+
+      Poskytne vám:
 
 
-      *   **Písomná správa s predpokladom na diagnózu (ak diagnostiku vykonával
+      *   **písomnú správu s predpokladom na diagnózu (ak diagnostiku vykonával
       psychológ),**
           
       *   popis pozorovania, výsledky testov,
