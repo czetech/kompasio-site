@@ -84,53 +84,50 @@ steps:
     uuid: 5ceb75d3-cd73-4b92-9540-6970e3717d1e
   - title: "Aké údaje sa nachádzajú na preukaze PAS? "
     body: >-
-      📸 Fotografia a identifikačné údaje držiteľa PAS preukazu:
-
-
-      *   🧍 meno, priezvisko, dátum narodenia a bydlisko
-
-
-      📞 Kontaktné tel. číslo:
-
-
-      *   📱 na blízku osobu
+      1.  Identifikačné údaje držiteľa PAS preukazu 👤🆔:
           
-      *   🩺 všeobecného lekára
-          
-      *   🧠 ošetrujúceho psychiatra alebo detského psychiatra
-          
+          1.  🧍 meno, priezvisko, dátum narodenia a bydlisko
+              
+          2.  📸 Fotografia
 
-      🧾 Základné údaje o prejavoch PAS a iných dôležitých okolnostiach
+              
+      2.  Kontaktné tel. číslo 📞:
+          
+          1.  📱 na blízku osobu,
+              
+          2.  🩺 všeobecného lekára,
+              
+          3.  🧠 ošetrujúceho psychiatra alebo detského psychiatra.
+
+              
+      3.  Základné údaje o prejavoch PAS a iných dôležitých okolnostiach
       súvisiacich so zdravotným stavom:
-
-
-      *   porozumenie hovorenému slovu,
           
-      *   užívanie liekov,
-          
-      *   stravovacie obmedzenia,
-          
-      *   hypersenzitívna reaktivita,
-          
-      *   behaviorálne prejavy v stresových situáciách,
-          
-      *   okolnosti podnecujúce impulzívne konanie.
-          
+          1.  porozumenie hovorenému slovu,
+              
+          2.  užívanie liekov,
+              
+          3.  stravovacie obmedzenia,
+              
+          4.  hypersenzitívna reaktivita,
+              
+          5.  behaviorálne prejavy v stresových situáciách,
+              
+          6.  okolnosti podnecujúce impulzívne konanie.
 
-      🗣️ Komunikačný profil:
-
-
-      *   u **verbálnych osôb** – špecifiká reči
+              
+      4.  Komunikačný profil 🗣️:
           
-      *   u **neverbálnych osôb** – spôsob komunikácie (alternatívna
-      komunikácia, pomôcky)
+          1.  u **verbálnych osôb** – špecifiká reči
+              
+          2.  u **neverbálnych osôb** – spôsob komunikácie (alternatívna komunikácia, pomôcky)
+
+              
+      5.  Poučenie pre verejnosť o poruche PAS 📖
           
-
-      📖 Poučenie pre verejnosť o poruche PAS  
-
-      📅 Dátum vydania PAS  
-
-      🖋️ Pečiatka poskytovateľa a podpis určeného lekára
+      6.  Dátum vydania PAS 📅
+          
+      7.  Pečiatka poskytovateľa a podpis určeného lekára. 🖋️
     uuid: 22039d68-9739-45d7-a0b0-731cbe8d270a
   - title: |
       Často kladené otázky
