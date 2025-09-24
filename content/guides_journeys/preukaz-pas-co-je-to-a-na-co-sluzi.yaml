@@ -129,10 +129,13 @@ steps:
           
       7.  Pečiatka poskytovateľa a podpis určeného lekára. 🖋️
     uuid: 22039d68-9739-45d7-a0b0-731cbe8d270a
+  - title: Vzor dokladu
+    body: "![](/images/infobaza/preukaz%20PAS.jpg)"
+    uuid: 1a208831-62d4-47d6-b91b-b52497e1311e
   - title: |
       Často kladené otázky
     body: >-
-      ### **💵 JE PREUKAZ PAS SPOPLATNENÝ?**
+      ### **JE PREUKAZ PAS SPOPLATNENÝ?** 💰
 
 
       **Nemal by byť.**
@@ -149,7 +152,7 @@ steps:
       SR.</u>_](https://www.health.gov.sk/?vestniky-mz-sr)
 
 
-      ### **❓POZNAJÚ INŠTITÚCIE PREUKAZ PAS?**
+      ### **POZNAJÚ INŠTITÚCIE PREUKAZ PAS?**
 
 
       **Preukaz PAS bol na Slovensku zavedený v roku 2020**.
@@ -160,16 +163,18 @@ steps:
 
 
       Každý držiteľ PAS preukazu však **pomáha šíriť povedomie** tým, že ho
-      používa. Tým vzdeláva spoločnosť o jeho **existencii, význame a funkcii**.
+      používa.  
+
+      Tým vzdeláva spoločnosť o jeho **existencii, význame a funkcii**.
 
 
-      ### **🔄 Je  PAS PREUKAZ TO ISTÉ AKO  ŤZP PREUKAZ?**
+      ### **Je  PAS PREUKAZ TO ISTÉ AKO  ŤZP PREUKAZ?**
 
 
       Nie, PAS preukaz nie je to isté ako ŤZP preukaz.
 
 
-      **🧠 PAS PREUKAZ:**
+      **PAS PREUKAZ:**
 
 
       *   📌Vydáva: psychiater / detský psychiater
@@ -185,7 +190,7 @@ steps:
       náročné a stresujúce**
           
 
-      * * *
+      \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 
       **♿ ŤZP PREUKAZ:**
@@ -215,32 +220,26 @@ steps:
       | <p style="text-align: center">🔹</p> | <p style="text-align: center">PAS
       PREUKAZ</p> | <p style="text-align: center">ŤZP PREUKAZ</p> |
 
-      | <p style="text-align: center">🎯 Účel</p> | <p style="text-align:
-      center">Rýchla identifikácia osoby s autizmom</p> | <p style="text-align:
-      center">Preukázanie zdrav. znevýhodnenia</p> |
+      | <p style="text-align: center">🎯<br>Účel</p> | Rýchla identifikácia
+      osoby s autizmom | Preukázanie zdrav. znevýhodnenia |
 
-      | <p style="text-align: center">🏛️ Jurisdikcia</p> | <p
-      style="text-align: center">Ministerstvo zdravotníctva (MZ SR)</p> | <p
-      style="text-align: center">Ministerstvo práce (MPSVaR)</p> |
+      | <p style="text-align: center">🏛️ Jurisdikcia</p> | Ministerstvo
+      zdravotníctva (MZ SR) | Ministerstvo práce (MPSVaR) |
 
-      | <p style="text-align: center">👨‍⚕️ Kto vydáva</p> | <p
-      style="text-align: center">Psychiater</p> | <p style="text-align:
-      center">Úrad práce, na základe posudku</p> |
+      | <p style="text-align: center">👨‍⚕️<br>Kto vydáva</p> | Psychiater |
+      Úrad práce, na základe posudku |
 
-      | <p style="text-align: center">💊 Diagnóza</p> | <p style="text-align:
-      center">Výlučne PAS (autizmus)</p> | <p style="text-align: center">Rôzne
-      postihnutia</p> |
+      | <p style="text-align: center">💊<br>Diagnóza</p> | Výlučne PAS
+      (autizmus) | Rôzne postihnutia |
 
-      | <p style="text-align: center">🏷️ Výhoda</p> | <p style="text-align:
-      center">Údaje o komunikácii, správaní, citlivosti atď.</p> | <p
-      style="text-align: center">Zľavy, výhody, sprievodca</p> |
+      | <p style="text-align: center">🏷️<br>Výhoda</p> | Údaje o komunikácii,
+      správaní, citlivosti atď. | Zľavy, výhody, sprievodca |
 
-      | <p style="text-align: center">🧾Vydanie</p> | <p style="text-align:
-      center">Bezodplatné</p> | <p style="text-align: center">Na základe posudku
-      posudkového lekára</p> |
+      | <p style="text-align: center">🧾<br>Vydanie</p> | Bezodplatne (malo by
+      byť) | Na základe posudku posudkového lekára, bezodplatne |
 
 
       **Oba preukazy slúžia na zlepšenie prístupu k službám a zníženie bariér
-      pre osoby so zdravotným postihnutím.**
+      pre osoby so zdravotným znevýhodnením.**
     uuid: 33f6b66f-148a-457a-a01e-4dbdda10841d
 uuid: 60faa192-7fa0-49a9-9f48-8186785c0d43
