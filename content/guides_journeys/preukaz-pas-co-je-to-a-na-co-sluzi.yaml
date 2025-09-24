@@ -5,22 +5,17 @@ description: Základné informácie o preukaze PAS
 steps:
   - title: Čo je preukaz PAS a načo slúži?
     body: >-
-      📄 Je to osobitná forma výpisu zo zdravotnej dokumentácie,
-
-
-      👤 **slúži na identifikáciu pacienta s poruchou autistického spektra**
+      *   📄 Je to osobitná forma výpisu zo zdravotnej dokumentácie,
+          
+      *   👤 **slúži na identifikáciu pacienta s poruchou autistického spektra**
       (ďalej len „PAS“)
+          
+      *   📋 obsahuje údaje potrebné na ďalšie poskytovanie zdravotnej
+      starostlivosti (ďalej len “ZS”), slúžiace najmä na zabezpečenie potrebného
+      individuálneho prístupu k pacientovi.
+          
 
-
-      📋 obsahuje údaje potrebné na ďalšie poskytovanie zdravotnej
-      starostlivosti (ďalej len “ZS”),
-
-
-      🎯 slúžiace najmä na zabezpečenie potrebného individuálneho prístupu k
-      pacientovi.  
-        
-
-      Individuálny prístup k pacientovi môže zahŕňať:
+      ### Individuálny prístup k pacientovi môže zahŕňať:
 
 
       *   🗣️ osobitné komunikačné stratégie,
@@ -30,10 +25,12 @@ steps:
       *   💊 vybrané farmakologické postupy,
           
       *   ℹ️ informovanie pacienta alebo sprevádzajúcej či opatrujúcej osoby o
-      potrebných postupoch
+      potrebných postupoch,
           
-      *   ➡️ cieľ: zabezpečenie optimálnej primárnej až kvartérnej zdravotnej
-      prevencie.
+
+      Cieľom je zabezpečiť optimálnu zdravotnú prevenciu (od predchádzania
+      problémom až po zabránenie zbytočným zásahom – tzv. primárna až kvartérna
+      prevencia).
     uuid: b44ae805-28e7-4030-a65d-a83bb8eabe17
   - title: "Aký je účel preukazu PAS? "
     body: >-
