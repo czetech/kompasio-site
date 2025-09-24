@@ -78,9 +78,9 @@ steps:
   - title: |
       Kto si môže žiadať o preukaz PAS? 
     body: |-
-      *   ✅ Fyzická osoba s potvrdenou diagnózou PAS,
+      *   👤 Fyzická osoba s potvrdenou diagnózou PAS,
           
-      *   👨‍👩‍👦 Alebo jej zákonný zástupca.
+      *   👨‍👩‍👦 alebo jej zákonný zástupca.
     uuid: 5ceb75d3-cd73-4b92-9540-6970e3717d1e
   - title: "Aké údaje sa nachádzajú na preukaze PAS? "
     body: >-
