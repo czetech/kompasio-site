@@ -68,12 +68,11 @@ steps:
     uuid: d93c78b3-04e2-48d9-b8b6-4c462e2cc739
   - title: Kto vydáva preukaz PAS? Kde žiadať o preukaz PAS?
     body: >-
-      👨‍⚕️ Preukaz PAS vydáva **poskytovateľ zdravotnej starostlivosti v
+      *   👨‍⚕️ Preukaz PAS vydáva **poskytovateľ zdravotnej starostlivosti v
       špecializačnom odbore psychiatria alebo detská psychiatria.**
-
-
-      📞 Ak máte záujem o PAS preukaz pre seba alebo pre dieťa, **kontaktujte
-      psychiatra alebo detského psychiatra.**
+          
+      *   📞 Ak máte záujem o PAS preukaz pre seba alebo pre dieťa,
+      **kontaktujte psychiatra alebo detského psychiatra.**
     uuid: 16e8703d-2784-4ea8-801e-efc196f7b46a
   - title: |
       Kto si môže žiadať o preukaz PAS? 
