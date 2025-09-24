@@ -153,24 +153,57 @@ steps:
           
       *   odporúčania: intervencie, školské zaradenie, ďalší odborníci.
     uuid: 26238c0d-1988-4787-a4d8-750761f85542
+  - title: "2. krok Návšteva psychiatra & pedopsychiatra "
+    body: >-
+      Ako sme spomínali v kroku [Dva pojmy: Diagnostika a Potvrdenie
+      diagnózy](https://kompasio-site-prod.apps.czetech.net/zivotne-situacie/diagnostika-autizmu-preco-kde-kedy-ako-a-kto/1)
+      diagnostikou to nekončí. Ak potrebujete z akéhokoľvek dôvodu si dať
+      potvrdiť diagnózu, musíte sa objednať k psychiatrovi alebo
+      pedopsychiatrovi.
+
+
+      Ako také stretnutie prebieha? Dobrý príklad z praxe vyzerá nasledovne:
+
+
+      *   lekár, špecialista, si odvás prevezme dokumentáciu, ktorú máte (správy
+      od iných lekárov a diagnostickú správu od psychológa alebo zariadenia
+      poradenstva a prevencie, a pod.), ktorú si v rámci čsovýcm možností rýchlo
+      naštuduje,
+          
+      *   nasleduje rozhovor s Vami bez dieťaťa,
+          
+      *   neskôr vstupuje do ambulancie aj dieťa, ktoré čakalo v čakárni s iným
+      rodinným príslušníkom, kým vy ste mali rozhovor s lekárom/lekárkou,
+          
+      *   sledovanie správanie dieťaťa v ambulancií a porovnanie s
+      dokumentáciou, ktorú si mal možnosť lekár prečítať (aleo aspoň čiastočne
+      rýchlo prejsť očami dôležité body a oblasti zo správy),
+          
+      *   odchod dieťaťa z ambulancie
+          
+      *   spísanie lekárskej správy, potvrdzujúcej diagnózu alebo nie:
+          
+
+      Nie vždy musíte odísť s potvrdenou diagnózou od lekára. Lekár môže mať
+      pochybnosti, alebo je dieťa ešte primladé a necháva čas dieťaťu dozrieť v
+      rámci vývoja. Vtedy zväčša nastáva, že sa dohodnete s lekárom na ďalšej
+      návšteve ( možno o rok ) a za ten čas sa zistí, čo sa zmenilo.
+    uuid: 36ef21dd-d819-4d37-bb25-f36f22538cca
   - title: Kedy a ako sa objednať (čakacie doby)
     body: >-
       ### Čakacie doby sú v súčanosti veľmi dlhé.
 
 
-      *   Diagnostika je možná už **od 1,5 – 2 rokov** pri výrazných príznakoch
+      1.  Diagnostika:
           
-      *   **Čakacie doby**:
-          
-          *   V nemocniciach a centrách: **8 -15 mesiacov**
+          1.  Včasná diagnostika je však kľúčová, najmä do 3 rokov veku dieťaťa, dá sa však diagnostikovať aj skôr.
               
-          *   Súkromní odborníci: **4** **– 12 týždňov**, ale za poplatok
+          2.  Čakacie doby sa líšia – štátne zariadenia sú preťažené, preto sa rodičia často obracajú na súkromných odborníkov. Z tohto dôvodu sú termíny veľmi variabilné od 4-12 týždňov až k 1-2 rokom.
 
               
-
-      Čakacie doby sa líšia – štátne zariadenia sú preťažené, preto sa rodičia
-      často obracajú na súkromných odborníkov. Včasná diagnostika je však
-      kľúčová, najmä do 3 rokov veku dieťaťa.
+      2.  Potvrdenie diagnózy u lekára
+          
+          1.  Na termín u psychiatra sa musíte tiež objednať a termíny sa líši.
     uuid: 91961219-cea1-440f-8793-0568d4356f22
   - title: Záver - Diagnóza nie je nálepka - je to odpoveď
     body: >-
@@ -225,40 +258,4 @@ steps:
 
       **Diagnostika nie je koniec. Je to začiatok cesty.**
     uuid: cdf15479-74ae-43cb-84de-020897557615
-  - title: "2. krok Návšteva psychiatra & pedopsychiatra "
-    body: >-
-      Ako sme spomínali v kroku [Dva pojmy: Diagnostika a Potvrdenie
-      diagnózy](https://kompasio-site-prod.apps.czetech.net/zivotne-situacie/diagnostika-autizmu-preco-kde-kedy-ako-a-kto/1)
-      diagnostikou to nekončí. Ak potrebujete z akéhokoľvek dôvodu si dať
-      potvrdiť diagnózu, musíte sa objednať k psychiatrovi alebo
-      pedopsychiatrovi.
-
-
-      Ako také stretnutie prebieha? Dobrý príklad z praxe vyzerá nasledovne:
-
-
-      *   lekár, špecialista, si odvás prevezme dokumentáciu, ktorú máte (správy
-      od iných lekárov a diagnostickú správu od psychológa alebo zariadenia
-      poradenstva a prevencie, a pod.), ktorú si v rámci čsovýcm možností rýchlo
-      naštuduje,
-          
-      *   nasleduje rozhovor s Vami bez dieťaťa,
-          
-      *   neskôr vstupuje do ambulancie aj dieťa, ktoré čakalo v čakárni s iným
-      rodinným príslušníkom, kým vy ste mali rozhovor s lekárom/lekárkou,
-          
-      *   sledovanie správanie dieťaťa v ambulancií a porovnanie s
-      dokumentáciou, ktorú si mal možnosť lekár prečítať (aleo aspoň čiastočne
-      rýchlo prejsť očami dôležité body a oblasti zo správy),
-          
-      *   odchod dieťaťa z ambulancie
-          
-      *   spísanie lekárskej správy, potvrdzujúcej diagnózu alebo nie:
-          
-
-      Nie vždy musíte odísť s potvrdenou diagnózou od lekára. Lekár môže mať
-      pochybnosti, alebo je dieťa ešte primladé a necháva čas dieťaťu dozrieť v
-      rámci vývoja. Vtedy zväčša nastáva, že sa dohodnete s lekárom na ďalšej
-      návšteve ( možno o rok ) a za ten čas sa zistí, čo sa zmenilo.
-    uuid: 36ef21dd-d819-4d37-bb25-f36f22538cca
 uuid: 9eb9b2fd-0b95-4436-9028-856bade90680
