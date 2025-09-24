@@ -2,8 +2,9 @@ title: "Diagnostika autizmu: prečo, kde, kedy, ako a kto "
 category: 0672d6e8-1771-46a1-9520-42437b3f2026
 type: knowledge
 description: >-
-  **Zameranie:** bežný čitateľ (rodič, laik)  
-    
+  **Zameranie:** bežný čitateľ (rodič, laik)
+
+
   Máte podozrenie, že vaše dieťa môže byť na autistickom spektre? Rýchly
   sprievodca do sveta diagnostiky.
 steps:
@@ -12,7 +13,7 @@ steps:
       Diagnostika poruchy autistického spektra (PAS) nie je len pomenovanie
       odlišnosti - je to **proces porozumenia**, prečo dieťa vníma svet inak,
       reaguje inak a čo potrebuje. Dáva rodičom a ľuďom na autistickom spektre
-      odpovedene na otázku: "čo sa deje a prečo sa to deje".
+      odpovede na otázku: "Čo sa deje a prečo sa to deje".
 
 
       **<u>Včasná</u> a <u>kvalitná</u> diagnostika** pomáha:
@@ -31,15 +32,82 @@ steps:
 
       Diagnóza nie je nálepka – je to **nástroj na pomoc**, nie obmedzenie.
     uuid: 2f16dcb1-1135-484c-b100-e288343a466d
-  - title: Kto môže diagnostikovať autizmus na Slovensku
-    body: |-
+  - title: "Dva pojmy: Diagnostika a Potvrdenie diagnózy"
+    body: >-
+      Ide o dva rozličné pojmy.
+
+
+      ### Čo je diagnostika?
+
+
+      **Diagnostika** je celý **proces zisťovania a posudzovania**, ktorý vedie
+      k lepšiemu pochopeniu toho, či a aká porucha alebo stav u človeka
+      existuje. Môže zahŕňať:
+
+
+      *   rozhovory s rodičmi alebo klientom,
+          
+      *   pozorovanie správania,
+          
+      *   psychologické a špeciálno-pedagogické testovanie,
+          
+      *   dotazníky, škály,
+          
+      *   zber anamnestických údajov,
+          
+      *   spoluprácu viacerých odborníkov (napr. psychológ, logopéd, neurológ,
+      atď).
+          
+
+      Je to **proces skúmania**, nie definitívne rozhodnutie.
+
+
+      ### Čo je potvrdenie diagnózy?
+
+
+      **Potvrdenie diagnózy** znamená, že odborník (lekár) **oficiálne
+      rozhodne,** že človek spĺňa kritériá pre konkrétnu poruchu – napríklad
+      **poruchu autistického spektra (PAS)**.
+
+
+      Diagnózu môže **stanoviť** iba odborník s príslušnou kvalifikáciou –
+      napríklad:
+
+
+      *   **psychiater**,
+          
+      *   **pedopsychiater**.
+          
+
+      ### Prečo práve oni?
+
+
+      Veľmi zjednodušene povedané - zdravotnú dokumentáciu majú na starosti
+      lekári a oblasť autizmu spadá do kompetencie psychiatrie.
+    uuid: a5629d64-0a05-4057-abc6-ec5cb26c2c0e
+  - title: 1. krok. Diagnostika
+    body: >-
       Odborníci, ktorí môžu vykonávať diagnostiku:
 
-      *   psychológovia
+
+      *   psychológovia v zariadeniach poradenstva a prevencie,
+          
+      *   klinický psychológovia,
           
       *   psychiatri.
+          
+
+      Psychiatri väčšinou nevykonávajú diagnostiku autizmu, nie je to však
+      pravdilo.  
+
+      Môžete naraziť na psychiatra/psychiatričku, ktorí diagnostiku vykonávajú
+      (hlavne v súkromnom sektore).
+
+
+      Diagnostiku preto vykonávajú psychológovia, ktorý prejdú celý proces
+      diagnostiky s vami, alebo vami a vašim dieťaťom.
     uuid: 779dd6e2-823c-4140-a77e-2df8c9c88cad
-  - title: Ako prebieha diagnostika (kroky a testy)
+  - title: Ako prebieha diagnostika
     body: >-
       ### Diagnostika zväčša prebieha:
 
@@ -54,7 +122,7 @@ steps:
       odporúčania
           
 
-      ### Aké testy sa najčastie používajú
+      ### Aké testy sa najčastie používajú:
 
 
       *   **ADOS-2 (Autism Diagnostic Observation Schedule)** – najuznávanejší
@@ -65,8 +133,8 @@ steps:
       *   iné
           
 
-      ADOS-2 je momentálne zlatý štandard v diagnostike autizmu. Ide o
-      štruktúrované pozorovanie správania, ktoré trvá 30–60 minút. Robí ho
+      ADOS-2 je momentálne považovaný za zlatý štandard v diagnostike autizmu.
+      Ide o štruktúrované pozorovanie správania, ktoré trvá 30–60 minút. Robí ho
       vyškolený psychológ alebo psychiater.
     uuid: e5b2abac-c5a9-4c43-b66e-f61811f6047d
   - title: Čo dostanem po diagnostike
@@ -109,10 +177,6 @@ steps:
       často obracajú na súkromných odborníkov. Včasná diagnostika je však
       kľúčová, najmä do 3 rokov veku dieťaťa.
     uuid: 91961219-cea1-440f-8793-0568d4356f22
-  - title: "Diagnostika nerovná sa potvrdenie diagnózy "
-    body: na začiatku vysvetliť rozdiel diagnostika verzus diagnóza kto čo robí a
-      kto stanovuje diagnozu
-    uuid: a5629d64-0a05-4057-abc6-ec5cb26c2c0e
   - title: Záver - Diagnóza nie je nálepka - je to odpoveď
     body: >-
       Diagnostika autizmu a potvrdenie diagnózy psychiatrom môže byť náročný a
