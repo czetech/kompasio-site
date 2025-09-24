@@ -100,13 +100,22 @@ steps:
     uuid: 5b1b9334-c0f2-406a-a740-3a1f70139193
   - title: Čo mám teda hľadať?
     body: >-
-      Úprimne, nie je to jednoduché. Ponuka terapií pre deti s autizmom je
-      široká a často zmätočná. O čo sa však môže rodič pri výbere opierať?
+      Úprimne, nie je to jednoduché.  
+
+      To že niekto neprešiel dlhodobým konkrétnym výcvikom automaticky
+      neznamená, že nie je skvelý v tom, čo robí.  
+
+      Znamená to len to, že sa nešpecializuje na konkrétnu metódu a využíva pri
+      práci rôzne techniky a metódy.  
+
+      Ponuka terapií pre deti s autizmom je široká a často zmätočná.  
+
+      O čo sa teda môže rodič pri výbere opierať?
 
 
       1.  **Zdieľanie skúseností iných rodičov**
           
-          Skúsenosti s konkrétnymi inštitúciami alebo odborníkmi môžu byť veľmi cenné. Rodičovské recenzie a odporúčania často pomáhajú vyhnúť sa neserióznym poskytovateľom.
+          Skúsenosti s konkrétnymi inštitúciami alebo odborníkmi môžu byť veľmi cenné. Rodičovské recenzie a odporúčania často pomáhajú ďalším rozhodnúť sa, koho kontaktujú.
 
           
       2.  **Vzdelanie a skúsenosti poskytovateľov**
@@ -143,10 +152,8 @@ steps:
 
 
       3.  Ak už niekto tvrdí, že poskytuje konkrétnu terapiu, mal by to vedieť
-      potvrdiť platným certifikátom od príslušnej inštitúcie. V našom katalógu
-      miest podpory nájdete terapeutov s overenými certifikáciami pre niektoré
-      typy terapií. Link na katalóg nájdete
-      [**TU.**](https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=zoznam-certifikovanych-terapeutov)
+      potvrdiť platným certifikátom od príslušnej inštitúcie.  
+          V našej aplikácií Kompasio nájdete [terapeutov s overenými certifikáciami](https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=zoznam-certifikovanych-terapeutov) pre niektoré typy terapií.
     uuid: f93dce67-5814-4155-91bc-81064b211d3e
   - title: Alternatívne terapie vs. vedecky podložené metódy
     body: >-
@@ -166,7 +173,7 @@ steps:
       A teraz to najdôležitejšie — každé dieťa je unikát, a to, čo funguje u
       jedného, nemusí fungovať u druhého. Je to ako hľadať správny kľúč do zámku
       – nie každý kľúč pasuje do každých dverí. Niekedy chvíľu trvá, kým nájdeme
-      ten správny, ale keď zapadne, všetko začne dávať zmysel.
+      ten správny vo zväzku kľúčov, ale keď zapadne, všetko začne dávať zmysel.
     uuid: e1e4c591-169f-460e-8c4b-502b6540b8b4
   - title: Je potrebné vyskúšať všetko naraz? Panebože, NIE!
     body: >-
