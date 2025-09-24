@@ -134,8 +134,7 @@ steps:
 
       *   **posudkový lekár** príslušného úradu práce, sociálnych vecí a rodiny,
           
-      *   **sociálny pracovník** príslušého úradu práce, sociálnych vecí a
-      rodiny.
+      *   **sociálny pracovník** rovnakého úradu.
           
 
       **Výsledok je komplexný posudok, ktorý obsahuje:**
@@ -160,8 +159,11 @@ steps:
       *   odôvodnenie komplexného posudku
           
 
-      🟡_Dobré vedieť: ak lekársky posudok stanoví mieru funkčnej poruchy pod 50
-      %, komplexný posudok sa sa nevypracuje._
+      🟡_Dobré vedieť:_  
+
+      Ak **posudkový lekár** stanoví mieru funkčnej poruchy **nižšiu ako 50 %**,
+      komplexný posudok sa **nevypracúva** – pretože osoba **nespĺňa základnú
+      podmienku pre uznanie ŤZP**.
     uuid: 77f9fe6e-bfa7-4649-b2c8-3d7079f9fde7
   - title: "Vysvetlenie ŤZP na príkladoch "
     body: >-
