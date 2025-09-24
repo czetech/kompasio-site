@@ -139,24 +139,17 @@ steps:
     uuid: e5b2abac-c5a9-4c43-b66e-f61811f6047d
   - title: Čo dostanem po diagnostike
     body: >-
-      Po diagnostike si Vás zväčša odborník zavolá na stretnutie, kde Vám
-      poskytne dokumentáciu a odporúčania: Stretnutie sa nesie v duchu
+      Po diagnostike u psychológa si Vás zväčša odborník zavolá na stretnutie,
+      kde Vám poskytne dokumentáciu a odporúčania: Stretnutie sa nesie v duchu
       rozhovoru:
 
 
-      *   **Písomná správa s diagnózou** (napr. F84.0)
+      *   **Písomná správa s predpokladom na diagnózu (ak diagnostiku vykonával
+      psychológ),**
           
-      *   Popis pozorovania, výsledky testov
+      *   popis pozorovania, výsledky testov,
           
-      *   Odporúčania: intervencie, školské zaradenie, ďalší odborníci
-          
-      *   Možnosť žiadať o:
-          
-          *   Kompenzačné príspevky (cez ÚPSVaR)
-              
-          *   Asistenta do školy
-              
-          *   Špeciálno-pedagogickú pomoc
+      *   odporúčania: intervencie, školské zaradenie, ďalší odborníci.
     uuid: 26238c0d-1988-4787-a4d8-750761f85542
   - title: Kedy a ako sa objednať (čakacie doby)
     body: >-
@@ -230,4 +223,30 @@ steps:
 
       **Diagnostika nie je koniec. Je to začiatok cesty.**
     uuid: cdf15479-74ae-43cb-84de-020897557615
+  - title: "2. krok Návšteva psychiatra & pedopsychiatra "
+    body: >-
+      Ako sme spomínali v kroku [Dva pojmy: Diagnostika a Potvrdenie
+      diagnózy](https://kompasio-site-prod.apps.czetech.net/zivotne-situacie/diagnostika-autizmu-preco-kde-kedy-ako-a-kto/1)
+      diagnostikou to nekončí. Ak potrebujete z akéhokoľvek dôvodu si dať
+      potvrdiť diagnózu, musíte sa objednať k psychiatrovi alebo
+      pedopsychiatrovi.
+
+
+      Ako také stretnutie prebieha? Dobrý príklad z praxe vyzerá nasledovne:
+
+
+      *   Prevezme si od vás dokumentáciu, ktorú máte (správy od iných lekárov a
+      diagnostickú správu od psychológa alebo zariadenia poradenstva a
+      prevencie, a pod.)
+          
+      *   rozhovor s Vami bez dieťaťa,
+          
+      *   následne vstupuje do ambulancie aj dieťa, ktoré čakalo v čakárni s
+      iným rodinným príslušníkom, kým vy ste mali rozhovor s lekárom/lekárkou,
+          
+      *   sledovanie správanie dieťaťa v ambulancií a porovnanie so správami,
+      ktoré si mal možnosť lekár prečítať
+          
+      *   odchod dieťaťa z ambulancie
+    uuid: 36ef21dd-d819-4d37-bb25-f36f22538cca
 uuid: 9eb9b2fd-0b95-4436-9028-856bade90680
