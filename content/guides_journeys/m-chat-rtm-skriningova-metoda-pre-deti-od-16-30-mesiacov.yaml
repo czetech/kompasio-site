@@ -116,20 +116,19 @@ steps:
     uuid: 89f80e6a-4195-4f70-855a-8fd25587df76
   - title: "Vyhodnotenie M-CHAT "
     body: >-
-      | skóre | Ďalší posup |
+      | Skóre | Ďalší posup |
 
       | --- | --- |
 
       | 0-2 body | nie je potrebné ďalšie vyšetrenie PAS (na autizmus) |
 
-      | 3-7 bodov | nutné pokračovať s overovacím dotazníkom M-CHAT -F: |
+      | 3-7 bodov | nutné pokračovať v overovaní v spolupráci s odborníkmi |
 
       | 8-20 bodov | Skríning je pozitívny, dieťa treba odoslať k špecialistom
-      na diagnostiu ohľadom možného PAS (autizmu) |
-    uuid: 401232dc-1d70-4957-b14e-8bf70ed59090
-  - title: Čo robiť s výsledkom
-    body: >-
-      Podľa bodového vyhodnotenia, aké ste dosiahli v dotazníku, existujú cesty:
+      na diagnostiu ohľadom možného PAS (autizmu). |
+
+
+      Vysvetlenie:
 
 
       *   pokiaľ ste dosiahli 0-2 body, nie je predpoklad, že by sa jednalo o
@@ -139,7 +138,7 @@ steps:
       odborníkmi. Mali by ste pokračovať v pátraní a osloviť diagnostické
       centrá, aby dieťa diagnostikovali.
           
-      *   ak výsledok v dotazníku je 8 a viac bodov, odporúča sa osloviť
+      *   ak výsledok v dotazníku je 8 a viac bodov, taktiež sa odporúča osloviť
       zariadenie, ktoré vykonáva diagnostiku autizmu a podstúpiť ju.
           
 
@@ -150,6 +149,8 @@ steps:
       Pokiaľ hľadáte rýchleho sprievodcu do úvodu problematiky autizmu
       (pochybnosti, prvé príznaky, diagnostický proces a pod.), odporúčame vám
       začať s čítaním sekcie [Diagnóza a
-      prijatie.](https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=22)
+      prijatie.](https://kompasio-site-prod.apps.czetech.net/navody/doprava)
+    uuid: 401232dc-1d70-4957-b14e-8bf70ed59090
+  - title: Čo robiť s výsledkom
     uuid: 7c185023-2470-44ee-b7f0-83fffd2e5c7d
 uuid: 63d47c57-cc12-4fd0-9d93-b919ac18895d
