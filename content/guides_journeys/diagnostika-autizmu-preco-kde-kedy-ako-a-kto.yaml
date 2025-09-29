@@ -185,9 +185,9 @@ steps:
           
 
       Nie vždy musíte odísť s potvrdenou diagnózou od lekára. Lekár môže mať
-      pochybnosti - ak je dieťa ešte primladé a necháva čas dieťaťu dozrieť v
-      rámci vývoja. Vtedy zväčša lekár odporúči návštevu cca o rok - kde si
-      poviete, čo sa za ten rok stalo & zmenilo.
+      pochybnosti - ak je dieťa ešte primladé, odloží toto rozhodnutie na budúcu
+      návštevu. Lekár zväčša odporúči návštevu cca o rok - kde si poviete, čo sa
+      za ten rok stalo & zmenilo.
     uuid: 36ef21dd-d819-4d37-bb25-f36f22538cca
   - title: Kedy a ako sa objednať (čakacie doby)
     body: >-
