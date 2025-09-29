@@ -16,7 +16,7 @@ steps:
 
 
       Dotazník nie je diagnostickým nástrojom, ale pomáha určiť, či je vhodné
-      odporučiť dieťa na odborné vyšetrenie.
+      odporučiť dieťa na odborné vyšetrenie (na diagnostický proces).
     uuid: 947bb26d-f37a-4472-bf76-92059b50b9e8
   - title: Otázky
     body: >-
