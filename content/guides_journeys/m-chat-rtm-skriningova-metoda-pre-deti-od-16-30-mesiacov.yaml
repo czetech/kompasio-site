@@ -99,17 +99,14 @@ steps:
         uuid: d44a8ca6-6ed3-42fb-8368-a4e3053f316d
     uuid: cca1cf25-d224-4954-a467-0868161959b9
   - title: Skórovanie
-    body: >-
+    body: |-
       Ako vyhodnotiť dotazník:
-
 
       Pri otázkach:
 
-
-      *   2, 5 a 12 , ak ste uviedli "ÁNO" pripočítajte za každú odpoveďjeden
-      bod.
+      *   2, 5 a 12 , ak ste uviedli "ÁNO" pripočítajte za každú odpoveď 1 bod.
           
-      *   pri ostatných otázkach pripočítajte jeden bod za každú odpoveď "NIE".
+      *   pri ostatných otázkach pripočítajte 1 bod za každú odpoveď "NIE".
           
 
       Body spočítajte.
@@ -130,4 +127,29 @@ steps:
       | 8-20 bodov | Skríning je pozitívny, dieťa treba odoslať k špecialistom
       na diagnostiu ohľadom možného PAS (autizmu) |
     uuid: 401232dc-1d70-4957-b14e-8bf70ed59090
+  - title: Čo robiť s výsledkom
+    body: >-
+      Podľa bodového vyhodnotenia, aké ste dosiahli v dotazníku, existujú cesty:
+
+
+      *   pokiaľ ste dosiahli 0-2 body, nie je predpoklad, že by sa jednalo o
+      autizmus.
+          
+      *   pokiaľ ste v dotazníku dosiahli 3-7 bodov, bolo by vhodné poradiť sa s
+      odborníkmi. Mali by ste pokračovať v pátraní a osloviť diagnostické
+      centrá, aby dieťa diagnostikovali.
+          
+      *   ak výsledok v dotazníku je 8 a viac bodov, odporúča sa osloviť
+      zariadenie, ktoré vykonáva diagnostiku autizmu a podstúpiť ju.
+          
+
+      Zoznam inštitúcií, ktoré diagnostikujú autizmus Vám prinášame
+      [TU](https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=22).
+
+
+      Pokiaľ hľadáte rýchleho sprievodcu do úvodu problematiky autizmu
+      (pochybnosti, prvé príznaky, diagnostický proces a pod.), odporúčame vám
+      začať s čítaním sekcie [Diagnóza a
+      prijatie.](https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=22)
+    uuid: 7c185023-2470-44ee-b7f0-83fffd2e5c7d
 uuid: 63d47c57-cc12-4fd0-9d93-b919ac18895d
