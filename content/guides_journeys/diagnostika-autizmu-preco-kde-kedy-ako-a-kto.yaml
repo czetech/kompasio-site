@@ -139,7 +139,7 @@ steps:
     uuid: e5b2abac-c5a9-4c43-b66e-f61811f6047d
   - title: Čo dostanem po diagnostike
     body: >-
-      Po diagnostike si Vás zväčša odborník zavolá na stretnutie, kde vám
+      Po diagnostike si vás zväčša odborník zavolá na stretnutie, kde vám
       poskytne dokumentáciu a odporúčania. Stretnutie sa nesie v duchu
       rozhovoru.  
 
@@ -151,7 +151,9 @@ steps:
           
       *   popis pozorovania, výsledky testov,
           
-      *   odporúčania: intervencie, školské zaradenie, ďalší odborníci.
+      *   odporúčania: intervencie, školské zaradenie, ďalších odborníkov,
+          
+      *   návšteva pedopsychiatra pre potvrdenie diagnózy.
     uuid: 26238c0d-1988-4787-a4d8-750761f85542
   - title: "2. krok Návšteva psychiatra & pedopsychiatra "
     body: >-
