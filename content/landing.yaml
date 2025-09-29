@@ -1,6 +1,12 @@
 heroTitle: Autizmus v Apke
 heroImage: /images/hero-example.png
 cards:
+  - title: Objavte svet ŤZP zliav
+    url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=poskytovanie-tzp
+    color: white
+    image: /images/landing page .png
+    description: Zistite, kde všade získate vstup za výhodnejšiu cenu – kultúra,
+      zábava aj voľný čas.
   - title: Mapa a miesta podpory
     url: https://kompasio.sk/app/sk/map/zoznam
     color: orange
