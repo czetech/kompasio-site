@@ -18,4 +18,116 @@ steps:
       Dotazník nie je diagnostickým nástrojom, ale pomáha určiť, či je vhodné
       odporučiť dieťa na odborné vyšetrenie.
     uuid: 947bb26d-f37a-4472-bf76-92059b50b9e8
+  - title: Otázky
+    body: >-
+      Vezmite si papier a pero a odpovedzte na otázky. Zapíšte si vždy číslo
+      otázky a odpoveď.
+
+
+      | Číslo | Otázka | Možnosti |
+
+      | --- | --- | --- |
+
+      | 1   | Ak ukážete na hračku cez miestnosť, pozerá Vaše dieťa na ňu?
+      (napríklad ak ukážete na hračku alebo zvieratko, pozrie sa dieťa na tú
+      hračku alebo zvieratko) | Áno / Nie |
+
+      | 2   | Mali ste niekedy obavy, že vaše dieťa nepočuje? | Áno / Nie |
+
+      | 3   | Hrá sa Vaše dieťa tak, že napodobňuje niečo alebo sa hrá s
+      predstieraním niečoho? (napríklad napodobňuje, že pije z prázdneho
+      pohárika, napodobňuje, že telefonuje alebo napodobňuje, že kŕmi bábiku
+      alebo plyšovú hračku) | Áno / Nie |
+
+      | 4   | Vylieza rado Vaše dieťa na predmety? (napríklad na nábytok, na
+      preliezky, po schodoch) | Áno / Nie |
+
+      | 5   | Robí dieťa nezvyčajné pohyby prstami blízko očí? (napríklad
+      pohybuje prstami hore dole blízko svojich očí) | Áno / Nie |
+
+      | 6   | Ukazuje Vaše dieťa ukazováčikom, ak niečo chce alebo si pýta takto
+      pomoc? (napríklad ukáže na jedlo alebo hračku, na ktoré nedočiahne) | Áno
+      / Nie |
+
+      | 7   | Ukazuje ukazováčikom na niečo, čo ho zaujalo? (napríklad ukáže na
+      lietadlo na oblohe alebo na veľké nákladné auto na ceste) | Áno / Nie |
+
+      | 8   | Prejavuje Vaše dieťa primeraný záujem o iné deti? (napríklad
+      pozoruje druhé deti, usmeje sa na ne alebo ide k nim) | Áno / Nie |
+
+      | 9   | Prináša Vám Vaše dieťa veci, aby vám ich ukázalo – nielen aby ste
+      mu pomohli, ale len aby sa s Vami podelilo o zážitok? (napríklad ukáže Vám
+      kvetinku, plyšovú hračku alebo autíčko) | Áno / Nie |
+
+      | 10  | Reaguje Vaše dieťa na oslovenie svojim menom? (napríklad keď ho
+      oslovíte jeho menom, pozrie sa, povie niečo, vydá zvuk alebo zastaví, čo
+      práve robí) | Áno / Nie |
+
+      | 11  | Usmeje sa Vaše dieťa na Vás, keď sa vy usmejete na neho? | Áno /
+      Nie |
+
+      | 12  | Znepokojujú Vaše dieťa bežné zvuky? (napríklad kričí alebo plače
+      kvôli hluku ako je zvuk vysávača alebo hlučnejšia hudba) | Áno / Nie |
+
+      | 13  | Chodí Vaše dieťa? | Áno / Nie |
+
+      | 14  | Pozerá Vám dieťa do očí, keď s ním hovoríte, hráte sa s ním alebo
+      ho obliekate? | Áno / Nie |
+
+      | 15  | Snaží sa napodobňovať, čo robíte? (napríklad zakýva Vám, zatlieska
+      alebo zopakuje zvuky po Vás) | Áno / Nie |
+
+      | 16  | Ak otočíte hlavou, aby ste sa na niečo pozreli, obzrie sa Vaše
+      dieťa, aby videlo na čo sa pozeráte? | Áno / Nie |
+
+      | 17  | Snaží sa Vaše dieťa, aby ste mu venovali pozornosť? (napríklad
+      pozrie sa na Vás, aby ste ho pochválili alebo povie „pozri sa“ alebo
+      „pozeraj sa na mňa“) | Áno / Nie |
+
+      | 18  | Rozumie dieťa, ak mu poviete, aby niečo urobilo? (napríklad keď
+      neukážete prstom, porozumie slovám „daj knihu na stoličku“ alebo „dones mi
+      tvoju deku“) | Áno / Nie |
+
+      | 19  | Ak sa stane niečo nové, pozrie sa dieťa na Vás, aby zistilo, čo si
+      o tom myslíte? (napríklad ak počuje zvláštny alebo smiešny zvuk, vidí novú
+      hračku, pozrie sa na Vás) | Áno / Nie |
+
+      | 20  | Má Vaše dieťa rado pohybové aktivity? (napríklad hojdanie sa alebo
+      nadhadzovanie na Vašich kolenách) | Áno / Nie |
+    tasks:
+      - body: odpovede zakrúžkované
+        uuid: d44a8ca6-6ed3-42fb-8368-a4e3053f316d
+    uuid: cca1cf25-d224-4954-a467-0868161959b9
+  - title: Skórovanie
+    body: >-
+      Ako vyhodnotiť dotazník:
+
+
+      Pri otázkach:
+
+
+      *   2, 5 a 12 , ak ste uviedli "ÁNO" pripočítajte za každú odpoveďjeden
+      bod.
+          
+      *   pri ostatných otázkach pripočítajte jeden bod za každú odpoveď "NIE".
+          
+
+      Body spočítajte.
+    tasks:
+      - body: Skontrolované a body spočítané
+        uuid: f87c3e8e-d57e-4cb2-ab66-8586ca7eb656
+    uuid: 89f80e6a-4195-4f70-855a-8fd25587df76
+  - title: "Vyhodnotenie M-CHAT "
+    body: >-
+      | skóre | Ďalší posup |
+
+      | --- | --- |
+
+      | 0-2 body | nie je potrebné ďalšie vyšetrenie PAS (na autizmus) |
+
+      | 3-7 bodov | nutné pokračovať s overovacím dotazníkom M-CHAT -F: |
+
+      | 8-20 bodov | Skríning je pozitívny, dieťa treba odoslať k špecialistom
+      na diagnostiu ohľadom možného PAS (autizmu) |
+    uuid: 401232dc-1d70-4957-b14e-8bf70ed59090
 uuid: 63d47c57-cc12-4fd0-9d93-b919ac18895d
