@@ -134,37 +134,16 @@ steps:
     uuid: 77f9fe6e-bfa7-4649-b2c8-3d7079f9fde7
   - title: "Vysvetlenie ŤZP na príkladoch "
     body: >-
-      Prinášame ti 3 príklady pre lepšie pochopenie, ako to môže vyzerať v
+      Prinášame ti 2 príklady pre lepšie pochopenie, ako to môže vyzerať v
       praxi.
 
 
       _Upozorňujeme, že dôvody či uvádzané percentá sú vymyslené a nemusia
-      zodpovedať skutočnosti. Príklady slúžia na základné pochopenie
-      problematiky a mechanizmu posudzovania._
+      zodpovedať realite. Príklady slúžia na základné pochopenie problematiky a
+      mechanizmu posudzovania._
 
 
       ### Modelová situácia A
-
-
-      Peter má **reumu**, takže ho bolia kĺby a horšie sa mu chodí – to by mohlo
-      byť okolo **30 %**.  
-
-      Okrem toho má **chronické problémy s pľúcami** (astmu), kvôli ktorým sa
-      rýchlo unaví a má problémy s dýchaním – ďalších **20 %**.  
-
-      A k tomu ešte **kolísavý tlak**, ktorý pridáva ďalšie zdravotné obmedzenia
-      – napríklad **15 %**.
-
-
-      Tieto problémy sa **nesčítavajú priamo**, ale keďže spolu **výrazne
-      zhoršujú jeho každodenné fungovanie**, úrad mu môže určiť **celkovú
-      poruchu 50 %**.
-
-
-      ➡️ **Peter sa tak môže stať osobou s ŤZP.**
-
-
-      ### Modelová situácia B
 
 
       Martina má cukrovku (diabetes).  
@@ -174,7 +153,7 @@ steps:
       ŤZP**.
 
 
-      Ale keď sa jej stav zhorší a **musí si dať dávku inzulínu**, pridajú sa
+      Ale ak sa jej stav zhorší a **musí si dať dávku inzulínu**, pridajú sa
       komplikácie – únava, kolísavý cukor, zhoršené videnie či citlivosť v
       nohách.  
 
@@ -185,7 +164,7 @@ steps:
       ➡️ **Vtedy sa môže stať osobou ŤZP.**
 
 
-      ### Modelová situácia C
+      ### Modelová situácia B
 
 
       **Tomáš má poruchu autistického spektra.**  
@@ -205,9 +184,10 @@ steps:
       teda byť osobou s **ŤZP alebo dokonca ŤZP-S** (s potrebou sprievodcu).
 
 
-      💡 Ako sme si ukázali na troch príkladoch, status ŤZP nemusí vychádzať len
-      z jednej diagnózy. Často ide o súbeh viacerých zdravotných problémov,
-      ktoré spolu výrazne ovplyvňujú bežný život. Varianty môžu byť veľmi rôzne.
+      💡 Status ŤZP nemusí vychádzať len z jednej "diagnózy".  
+
+      Často ide o súbeh viacerých zdravotných problémov, ktoré spolu výrazne
+      ovplyvňujú bežný život. Varianty môžu byť veľmi rôzne.
     uuid: 354a96a6-5275-4da1-8550-b4fc285b7e13
   - title: "Diagnóza ≠ ŤZP. Prečo? "
     body: >-
