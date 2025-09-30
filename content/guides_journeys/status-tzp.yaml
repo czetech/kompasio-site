@@ -100,8 +100,8 @@ steps:
 
       Títo ľudia nemusia na prvý pohľad pôsobiť „ťažko chorí“, no ak ich
       zdravotný stav vážne ovplyvňuje každodenný život a miera funkčného
-      postihnutia dosiahne 50 % alebo viac, môžu byť posúdení ako osoby s ťažkým
-      zdravotným postihnutím (ŤZP).
+      postihnutia dosiahne 50 % alebo viac, **môžu** byť posúdení ako osoby s
+      ťažkým zdravotným postihnutím (ŤZP).
     uuid: 536f0e21-757c-4c56-b213-9a83172d38be
   - title: "Ako sa človek stáva ŤZP? Kto o tom rozhoduje? "
     body: >-
