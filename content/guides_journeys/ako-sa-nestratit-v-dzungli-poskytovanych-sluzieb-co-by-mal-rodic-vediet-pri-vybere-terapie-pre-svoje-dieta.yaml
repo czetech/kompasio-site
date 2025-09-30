@@ -102,8 +102,8 @@ steps:
       *   Ten kto má certifikát, uvádza: _"poskytujem ABA terapiu,
       muzikuterapie, prípadne som certifikovaná ABA terapeutka a pod. "_
           
-      *   Ten, kto certifikát nemá: uvádza: _"využívam prvky terapie ABA, prvky
-      muzikoterapie, prvky programu TEACH."_
+      *   Ten, kto certifikát nemá, by mal uvádzať: _"využívam prvky terapie
+      ABA, prvky muzikoterapie, prvky programu TEACH."_
     uuid: 5b1b9334-c0f2-406a-a740-3a1f70139193
   - title: Čo mám teda hľadať?
     body: >-
