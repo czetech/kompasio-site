@@ -173,6 +173,10 @@ content:
         description: Journey name.
         type: text
         required: true
+      - name: active
+        label: Active
+        description: Journey is published.
+        type: boolean
       - name: category
         label: Category
         description: Journey category.
