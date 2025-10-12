@@ -12,7 +12,7 @@ const { category } = Astro.props;
 
 const journeys = await getCollection(
   "guidesJourneys",
-  ({ data }) => data.category === category.data.uuid,
+  ({ data }) => data.active && data.category === category.data.uuid,
 );
 
 export const getStaticPaths = async () => {

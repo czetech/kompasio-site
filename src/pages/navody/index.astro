@@ -14,7 +14,7 @@ const categories = await getCollection("guidesCategories");
 const guides = await getEntry("guides", "guides");
 
 const featuredJourneys = await getCollection("guidesJourneys", ({ data }) =>
-  guides.data.featured.includes(data.uuid),
+  data.active && guides.data.featured.includes(data.uuid),
 );
 ---
 

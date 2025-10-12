@@ -19,7 +19,7 @@ const { journeySlug, stepIndex, journey } = Astro.props;
 const step = journey.steps[stepIndex];
 
 export const getStaticPaths = async () => {
-  return (await getCollection("guidesJourneys")).flatMap((journey) =>
+return (await getCollection("guidesJourneys", ({ data }) => data.active)).flatMap((journey) =>
     journey.data.steps.map((_, index) => ({
       params: {
         journey: path.join(journey.id, index ? index.toString() : null),
