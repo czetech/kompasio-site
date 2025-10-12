@@ -6,8 +6,8 @@ import Section from "~/components/Section.astro";
 import Item from "~/components/Item.astro";
 import List from "~/components/List.astro";
 import BaseLayout from "~/layouts/BaseLayout.astro";
-import Library from "lucide-solid/icons/library";
-import Footprints from "lucide-solid/icons/footprints";
+import BookOpen from "lucide-solid/icons/book-open";
+import ListCheck from "lucide-solid/icons/list-check";
 
 const categories = await getCollection("guidesCategories");
 
@@ -42,9 +42,9 @@ const featuredJourneys = await getCollection("guidesJourneys", ({ data }) =>
             description={journey.data.description}
           >
             {journey.data.type === "journey" ? (
-              <Footprints slot="icon" />
+              <ListCheck slot="icon" />
             ) : (
-              <Library slot="icon" />
+              <BookOpen slot="icon" />
             )}
           </Item>
         ))

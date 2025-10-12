@@ -10,8 +10,8 @@ import StepListToggle from "~/components/StepListToggle.tsx";
 import StepListClear from "~/components/StepListClear.tsx";
 import StepListItem from "~/components/StepListItem.tsx";
 import Markdown from "~/components/Markdown.astro";
-import Library from "lucide-solid/icons/library";
-import Footprints from "lucide-solid/icons/footprints";
+import BookOpen from "lucide-solid/icons/book-open";
+import ListCheck from "lucide-solid/icons/list-check";
 import ChevronRight from "lucide-solid/icons/chevron-right";
 import Shrinkwrap from "~/components/Shrinkwrap.tsx";
 
@@ -71,9 +71,9 @@ const breadcrumbItems = [
     <h1 class="mb-6 flex items-center gap-x-2 text-xl md:mb-8 md:text-2xl">
       {
         journey.type === "journey" ? (
-          <Footprints class="flex-none" />
+          <ListCheck class="flex-none" />
         ) : (
-          <Library class="flex-none" />
+          <BookOpen class="flex-none" />
         )
       }
       <span>{journey.title}</span>
