@@ -29,11 +29,11 @@ const Search: Component = (props) => {
   const [query, setQuery] = createSignal("");
   const [response] = createResource(query, search);
 
-  const isQueryNavigation = (e) => {
+  const isSamePage = (e) => {
     const fromUrl = new URL(e.from);
     const toUrl = new URL(e.to);
-    fromUrl.searchParams.delete("q");
-    toUrl.searchParams.delete("q");
+    fromUrl.search = "";
+    toUrl.search = "";
     return fromUrl.href === toUrl.href;
   };
 
@@ -42,11 +42,11 @@ const Search: Component = (props) => {
   };
 
   const handleAstroBeforePreparation = (e) => {
-    if (isQueryNavigation(e)) e.loader = async () => {};
+    if (isSamePage(e)) e.loader = async () => {};
   };
 
   const handleAstroBeforeSwap = (e) => {
-    if (isQueryNavigation(e)) {
+    if (isSamePage(e)) {
       e.swap = () => {};
       e.viewTransition.skipTransition();
       setQueryUrl(e.to);
