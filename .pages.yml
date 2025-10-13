@@ -238,7 +238,7 @@ content:
             type: rich-text-full
             required: true
             options:
-              media: images
+              media: article_images
           - name: tasks
             label: Tasks
             description: Step task.
