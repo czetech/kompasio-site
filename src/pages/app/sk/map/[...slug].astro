@@ -24,7 +24,6 @@ try {
   content = (await response.json()).content;
 } catch (e) {
   console.log(e.message)
-  Astro.response.status = 500;
   error = e.message;
 }
 
