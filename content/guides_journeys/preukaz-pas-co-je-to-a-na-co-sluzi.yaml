@@ -130,7 +130,7 @@ steps:
       7.  Pečiatka poskytovateľa a podpis určeného lekára. 🖋️
     uuid: 22039d68-9739-45d7-a0b0-731cbe8d270a
   - title: Vzor dokladu
-    body: "![](/images/infobaza/preukaz_PAS.jpg)"
+    body: "![](/images/infobaza/preukaz_PAS.jpg)![](/images/preukaz_PAS.jpg)"
     uuid: 1a208831-62d4-47d6-b91b-b52497e1311e
   - title: |
       Často kladené otázky
