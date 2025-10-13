@@ -12,6 +12,19 @@ media:
       - png
       - svg
       - webp
+  - name: article_images
+    label: Article images
+    input: public/images
+    output: /images
+    extensions:
+      - apng
+      - avif
+      - gif
+      - jpeg
+      - jpg
+      - png
+      - svg
+      - webp
 content:
   - name: global
     label: Global
