@@ -24,7 +24,7 @@ steps:
       ✔️ Aj metóda _pokus – omyl_ má v procese svoje miesto. Hlavne, ak je
       sprevádzaná rešpektom, trpezlivosťou a ochotou upraviť prístup.
     uuid: 24ab8b42-fb90-4e7c-b643-1b9494352a22
-  - title: "1. Postupné začlenenie a adaptačné prostredie "
+  - title: 1. Postupné začlenenie a adaptačné obdobie
     body: >-
       **Pre mnohé deti** je prechod do materskej školy prirodzený krok, na ktorý
       reagujú zvedavo a s radosťou.  
@@ -137,7 +137,7 @@ steps:
       individuálnych potrebách dieťaťa, čo mu umožňuje lepšie plánovať ďalšiu
       podporu a prácu s dieťaťom.
     uuid: 2d4e74c7-6df6-4623-9efa-61bc9007c272
-  - title: "2. Predmet z domu ako pocit istoty a bezpečia "
+  - title: 2. Zástupný predmet z domu- áno či nie
     body: >-
       Hračka, deka ako **<u>zástupný predmet z domu</u>** môže byť pre niektoré
       deti počas adaptačného obdobia **silným zdrojom istoty**. Ide o
@@ -310,7 +310,187 @@ steps:
       *   menej stresu znamená lepšiu ochotu dieťaťa zapojiť sa do kolektívnych
       aktivít a udržať pokojné prostredie pre všetkých.
     uuid: f57ca509-2511-40f2-a665-3bfbd2646ffe
-  - title: 5. Búchanie, rámus, zhadzovanie kociek a iné
+  - title: "5. Hovorte jasne a konkrétne "
+    body: >-
+      Deti na autistickom spektre **lepšie rozumejú konkrétnym, jednoznačným
+      pokynom** než abstraktným alebo viacvýznamovým vetám. Zároveň je dobré
+      pokyny rozdeľovať na krátke, jedno-dvojkrokové úlohy.  
+
+      Jasná komunikácia im pomáha cítiť sa bezpečne, orientovať sa v situáciách
+      a predchádzať nedorozumeniam či frustrácii.
+
+
+      Príklady:
+
+
+      | Výrok (nesprávny) | upravená verzia výroku |
+
+      | --- | --- |
+
+      | "Prípravíme sa von." | **"Papučky si vyzujeme, obujeme si topánky a
+      oblečieme si bundu**." |
+
+      | "Uprac si hračky." | **"Daj kocky do oranžovej krabice. Autíčka daj na
+      poličku**." |
+
+      | "Ideme na obed." | "**Umyte si ruky a sadnite si k stolu v jedálni.**" |
+
+      | "Je čas ísť spať." | **"Vyzlečieme sa, oblečieme si pyžamo a každý si
+      ľahne do svojej postielky."** |
+
+
+      Ak to dieťaťu pomáha, **je vhodné používať aj vizuálnu pomôcku** (ukázať
+      napr. topánky + kabátik).  
+
+      Časom uvidíte, či vizuálna pomôcka je stále potrebná, alebo už nie je
+      nutná - to záleží vždy od konkrétneho dieťaťa.
+
+
+      ### **🎯 Pridaná hodnota pre pedagóga**
+
+
+      *   Zníži sa počet nedorozumení a konfliktných situácií — deti presne
+      vedia, čo sa od nich očakáva.
+          
+      *   Učiteľ ušetrí čas a energiu, ktorú by inak venoval opakovanému
+      vysvetľovaniu pokynov.
+          
+      *   Trieda funguje pokojnejšie, pretože deti majú jasnú predstavu o tom,
+      čo majú robiť.
+          
+      *   Deti sa rýchlejšie učia samostatnosti — konkrétne inštrukcie im
+      pomáhajú orientovať sa v rutine.
+          
+      *   Pedagóg posilňuje vzťah dôvery — dieťa sa cíti isté, pretože rozumie
+      slovám dospelého.
+    uuid: 3fdb864c-5f55-4ee6-a913-6497ea162d18
+  - title: "6. Slepý bod, keď hovoríme konkrétne "
+    body: >-
+      Hovoriť jasne a konkrétne sa pri autistických deťoch vypláca. Zároveň je
+      dôležité uvedomiť si, **ako veľmi doslovne deti vaše slová vnímajú**.
+
+
+      Dávajte si **pozor na slovné spojenia**, ktoré môžu v **dieťati vyvolať
+      strach, zmätok alebo doslovné predstavy.** Je nutné uvedomiť si aj
+      **význam slov –** v niektorých prípadoch **môžu spôsobiť viac problémov
+      než osohu.**
+
+
+      | Výrok (nejasný, zraňujúci): | <p style="text-align: center">Ako to môže
+      dieťa pochopiť</p> | <p style="text-align: center">Vhodnejšia
+      alternatíva</p> |
+
+      | --- | --- | --- |
+
+      | **"Zjedz to, lebo tu budeš sedieť do večera."** | \* spanikári, môže ísť
+      do úzkosti a mať obavy že sa zmení celý plán aktivít  <br>  <br>\* vznik
+      obáv, že skutočne bude v škôlke do večera  <br>  <br>\* bude chcieť zjesť
+      všetko, aj keby to bolo kontraproduktívne | "Zjedz ešte 5 lyžičiek". |
+
+      | "**Poď rýchlejšie, lebo ťa tu necháme."** | \* obava, že ho tam skutočne
+      necháte, začne pociťovať úzkosť a strach, zníži sa dôvera  <br>  <br>\*
+      nabudúce nemusí spolupracovať a môže odmietať prechádzku kvôli obavám, že
+      ho tam budete chcieť nechať | "Musíme ísť spolu a rovnakým tempom." |
+
+      | **"Sadni si a ani sa nepohni."** | \* dieťa sa nechce pohnúť, lebo to má
+      v jeho ponímaní zakázané  <br>  <br>\* nepohne rukou, nohou, a ak sa
+      potrebuje pošrabať na nose, má dilemu, či môže  <br>  <br>\* spôsobuje to
+      v ňom úzkosť | "Vezmi si puzzle a posladaj si ich. Pomôže ti to upokojiť
+      sa." |
+
+      | **"Potrebujem, aby si tu teraz nebol."**  <br>(napr. pani učiteľka
+      pripavuje materiál na aktivitu a dieťa ju vyrušilo) | \* pochopilo, že tam
+      teraz nemá byť a má pokyn "odísť"  <br>  <br>\* dieťa môže nepozorovane
+      odísť z priestorov triedy ale i areálu škôlky  <br>  <br>\* dieťa sa vám
+      môže niekam schovať a nebudete ho vedieť nájsť | "Teraz pripravujem
+      aktivitu. Môžeš sa zatiaľ zahrať s kockami. Keď toto dokončím, prídem za
+      tebou." |
+
+
+      ### 🎯 **Pridaná hodnota pre pedagóga:**
+
+
+      Takto formulované pokyny:
+
+
+      *   znižujú riziko nedorozumení a úzkosti,
+          
+      *   posilňujú dôveru dieťaťa k pedagógovi,
+          
+      *   podporujú pokojné a bezpečné prostredie.
+    uuid: 61a93336-ded5-417d-bf18-39c5dd7562e7
+  - title: 7. Dieťa má špecifické správanie (napr. točí hlavou)
+    body: >-
+      Niektoré deti robia určité pohyby alebo zvuky – napríklad si točia hlavou,
+      kývu rukou, točia sa okolo svojej osi alebo si spievajú.
+
+
+      ### Prečo to robí?
+
+
+      *   Môže im to pomáhať **uvoľniť sa, cítiť sa spokojnejšie alebo
+      sústredenejšie**.
+          
+      *   ak tým **nikomu neubližujú, netreba to riešiť ani napomínať**.
+          
+
+      ### 🟢**Ako to vysvetliť deťom:**
+
+
+      *   Ak si všimnete, že sa spolužiak napríklad točí hlavou alebo robí
+      niečo, čo je pre neho typické, **neupozorňujeme ho na to** a **nesmejeme
+      sa mu**.
+          
+      *   Toto správanie **mu pomáha cítiť sa lepšie** a **nikomu neubližuje**.
+          
+      *   Ak by ste aj vy mali chuť si zatočiť hlavou, môžete to skúsiť a
+      povedať mi, ako ste sa pri tom cítili.
+          
+      *   Dôležité je, že **každý z nás má niečo, čo mu pomáha cítiť sa dobre**
+      a ak to neubližuje druhým, nie je dôvod to rozoberať ďalej.
+          
+
+      💬 _Pedagogicky cieľ:_ Učiť deti prijímaniu rozdielov, empatii a rešpektu
+      bez zbytočného zvýrazňovania odlišnosti.
+    uuid: d1d3c07d-2568-4516-86f3-d8cac7a9afa4
+  - title: "8. Keď dieťa s PAS ničí hru alebo skladačku "
+    body: >-
+      Deti sa často hnevajú, keď im spolužiak s PAS rozoberie alebo zničí to, čo
+      postavili.  
+
+      Je však dôležité pochopiť, že dieťa s PAS **to väčšinou nerobí
+      naschvál**.  
+
+      Často **nerozumie pravidlám hry** a myslí si, že takto sa hrá – že keď
+      niečo zničí - to je jeho spôsob hry.
+
+
+      ### 🟢**Ako to deťom vysvetliť:**
+
+
+      *   "Niekedy sa náš spolužiak chce len zapojiť, ale **nevie ako**.
+          
+      *   Keď nám niečo rozoberie, **nekričíme naňho**, ale môžeme povedať
+      napríklad:  
+          👉 _„Poď, poskladáme to spolu. Ukážem ti, ako sa s tým hrá.“_
+
+          
+      *   _Čím skôr ho to začneme učiť, tým skôr Vám to prestane ničiť. Jeden
+      deň mu môžeš pomôcť ty Anička, zajtra zas ty Peťo. Nebolo by skvelé, keby
+      vďaka Vám sa to naučil? Ja vám s tým viem pomôcť._
+          
+      *   _Môžem ho to učiť aj ja. Aj sa ku mne bude chcieť niekto pridať,
+      príďte. Naučíme ho to spoločne._
+          
+
+      Ak sa to dieťa časom naučí, pochváliť ostatné deti za trpezlivosť a
+      láskavosť, ktorú do toho vložili.
+
+
+      💬 Pedagogický _cieľ:_ pomáhať deťom chápať správanie spolužiaka s PAS,
+      reagovať s trpezlivosťou a podporovať spoločnú hru namiesto konfliktu.
+    uuid: 27738414-d96b-4aa2-a3a3-07615cf524ff
+  - title: 9. Búchanie, rámus, zhadzovanie kociek a iné
     body: >-
       Niektoré deti **búchajú, hádžu alebo zhadzujú predmety** z dôvodu potreby
       **zvukovej stimulácie** (hyposenzitivita).
@@ -386,184 +566,4 @@ steps:
           
       *   **posilňuje sa dôvera** medzi pedagógom a dieťaťom.
     uuid: 262ba4ec-87fc-4ae4-a8b1-9e5330636dbc
-  - title: "6. Hovorte jasne a konkrétne "
-    body: >-
-      Deti na autistickom spektre **lepšie rozumejú konkrétnym, jednoznačným
-      pokynom** než abstraktným alebo viacvýznamovým vetám. Zároveň je dobré
-      pokyny rozdeľovať na krátke, jedno-dvojkrokové úlohy.  
-
-      Jasná komunikácia im pomáha cítiť sa bezpečne, orientovať sa v situáciách
-      a predchádzať nedorozumeniam či frustrácii.
-
-
-      Príklady:
-
-
-      | Výrok (nesprávny) | upravená verzia výroku |
-
-      | --- | --- |
-
-      | "Prípravíme sa von." | **"Papučky si vyzujeme, obujeme si topánky a
-      oblečieme si bundu**." |
-
-      | "Uprac si hračky." | **"Daj kocky do oranžovej krabice. Autíčka daj na
-      poličku**." |
-
-      | "Ideme na obed." | "**Umyte si ruky a sadnite si k stolu v jedálni.**" |
-
-      | "Je čas ísť spať." | **"Vyzlečieme sa, oblečieme si pyžamo a každý si
-      ľahne do svojej postielky."** |
-
-
-      Ak to dieťaťu pomáha, **je vhodné používať aj vizuálnu pomôcku** (ukázať
-      napr. topánky + kabátik).  
-
-      Časom uvidíte, či vizuálna pomôcka je stále potrebná, alebo už nie je
-      nutná - to záleží vždy od konkrétneho dieťaťa.
-
-
-      ### **🎯 Pridaná hodnota pre pedagóga**
-
-
-      *   Zníži sa počet nedorozumení a konfliktných situácií — deti presne
-      vedia, čo sa od nich očakáva.
-          
-      *   Učiteľ ušetrí čas a energiu, ktorú by inak venoval opakovanému
-      vysvetľovaniu pokynov.
-          
-      *   Trieda funguje pokojnejšie, pretože deti majú jasnú predstavu o tom,
-      čo majú robiť.
-          
-      *   Deti sa rýchlejšie učia samostatnosti — konkrétne inštrukcie im
-      pomáhajú orientovať sa v rutine.
-          
-      *   Pedagóg posilňuje vzťah dôvery — dieťa sa cíti isté, pretože rozumie
-      slovám dospelého.
-    uuid: 3fdb864c-5f55-4ee6-a913-6497ea162d18
-  - title: "7. Slepý bod, keď hovoríme konkrétne "
-    body: >-
-      Hovoriť jasne a konkrétne sa pri autistických deťoch vypláca. Zároveň je
-      dôležité uvedomiť si, **ako veľmi doslovne deti vaše slová vnímajú**.
-
-
-      Dávajte si **pozor na slovné spojenia**, ktoré môžu v **dieťati vyvolať
-      strach, zmätok alebo doslovné predstavy.** Je nutné uvedomiť si aj
-      **význam slov –** v niektorých prípadoch **môžu spôsobiť viac problémov
-      než osohu.**
-
-
-      | Výrok (nejasný, zraňujúci): | <p style="text-align: center">Ako to môže
-      dieťa pochopiť</p> | <p style="text-align: center">Vhodnejšia
-      alternatíva</p> |
-
-      | --- | --- | --- |
-
-      | **"Zjedz to, lebo tu budeš sedieť do večera."** | \* spanikári, môže ísť
-      do úzkosti a mať obavy že sa zmení celý plán aktivít  <br>  <br>\* vznik
-      obáv, že skutočne bude v škôlke do večera  <br>  <br>\* bude chcieť zjesť
-      všetko, aj keby to bolo kontraproduktívne | "Zjedz ešte 5 lyžičiek". |
-
-      | "**Poď rýchlejšie, lebo ťa tu necháme."** | \* obava, že ho tam skutočne
-      necháte, začne pociťovať úzkosť a strach, zníži sa dôvera  <br>  <br>\*
-      nabudúce nemusí spolupracovať a môže odmietať prechádzku kvôli obavám, že
-      ho tam budete chcieť nechať | "Musíme ísť spolu a rovnakým tempom." |
-
-      | **"Sadni si a ani sa nepohni."** | \* dieťa sa nechce pohnúť, lebo to má
-      v jeho ponímaní zakázané  <br>  <br>\* nepohne rukou, nohou, a ak sa
-      potrebuje pošrabať na nose, má dilemu, či môže  <br>  <br>\* spôsobuje to
-      v ňom úzkosť | "Vezmi si puzzle a posladaj si ich. Pomôže ti to upokojiť
-      sa." |
-
-      | **"Potrebujem, aby si tu teraz nebol."**  <br>(napr. pani učiteľka
-      pripavuje materiál na aktivitu a dieťa ju vyrušilo) | \* pochopilo, že tam
-      teraz nemá byť a má pokyn "odísť"  <br>  <br>\* dieťa môže nepozorovane
-      odísť z priestorov triedy ale i areálu škôlky  <br>  <br>\* dieťa sa vám
-      môže niekam schovať a nebudete ho vedieť nájsť | "Teraz pripravujem
-      aktivitu. Môžeš sa zatiaľ zahrať s kockami. Keď toto dokončím, prídem za
-      tebou." |
-
-
-      ### 🎯 **Pridaná hodnota pre pedagóga:**
-
-
-      Takto formulované pokyny:
-
-
-      *   znižujú riziko nedorozumení a úzkosti,
-          
-      *   posilňujú dôveru dieťaťa k pedagógovi,
-          
-      *   podporujú pokojné a bezpečné prostredie.
-    uuid: 61a93336-ded5-417d-bf18-39c5dd7562e7
-  - title: 8. Dieťa má špecifické správanie ( napr. točí hlavou)
-    body: >-
-      Niektoré deti robia určité pohyby alebo zvuky – napríklad si točia hlavou,
-      kývu rukou, točia sa okolo svojej osi alebo si spievajú.
-
-
-      ### Prečo to robí?
-
-
-      *   Môže im to pomáhať **uvoľniť sa, cítiť sa spokojnejšie alebo
-      sústredenejšie**.
-          
-      *   ak tým **nikomu neubližujú, netreba to riešiť ani napomínať**.
-          
-
-      ### 🟢**Ako to vysvetliť deťom:**
-
-
-      *   Ak si všimnete, že sa spolužiak napríklad točí hlavou alebo robí
-      niečo, čo je pre neho typické, **neupozorňujeme ho na to** a **nesmejeme
-      sa mu**.
-          
-      *   Toto správanie **mu pomáha cítiť sa lepšie** a **nikomu neubližuje**.
-          
-      *   Ak by ste aj vy mali chuť si zatočiť hlavou, môžete to skúsiť a
-      povedať mi, ako ste sa pri tom cítili.
-          
-      *   Dôležité je, že **každý z nás má niečo, čo mu pomáha cítiť sa dobre**
-      a ak to neubližuje druhým, nie je dôvod to rozoberať ďalej.
-          
-
-      💬 _Pedagogicky cieľ:_ Učiť deti prijímaniu rozdielov, empatii a rešpektu
-      bez zbytočného zvýrazňovania odlišnosti.
-    uuid: d1d3c07d-2568-4516-86f3-d8cac7a9afa4
-  - title: "Keď dieťa s PAS ničí hru alebo skladačku "
-    body: >-
-      Deti sa často hnevajú, keď im spolužiak s PAS rozoberie alebo zničí to, čo
-      postavili.  
-
-      Je však dôležité pochopiť, že dieťa s PAS **to väčšinou nerobí
-      naschvál**.  
-
-      Často **nerozumie pravidlám hry** a myslí si, že takto sa hrá – že keď
-      niečo zničí - to je jeho spôsob hry.
-
-
-      ### 🟢**Ako to deťom vysvetliť:**
-
-
-      *   "Niekedy sa náš spolužiak chce len zapojiť, ale **nevie ako**.
-          
-      *   Keď nám niečo rozoberie, **nekričíme naňho**, ale môžeme povedať
-      napríklad:  
-          👉 _„Poď, poskladáme to spolu. Ukážem ti, ako sa s tým hrá.“_
-
-          
-      *   _Čím skôr ho to začneme učiť, tým skôr Vám to prestane ničiť. Jeden
-      deň mu môžeš pomôcť ty Anička, zajtra zas ty Peťo. Nebolo by skvelé, keby
-      vďaka Vám sa to naučil? Ja vám s tým viem pomôcť._
-          
-      *   _Môžem ho to učiť aj ja. Aj sa ku mne bude chcieť niekto pridať,
-      príďte. Naučíme ho to spoločne._
-          
-
-      Ak sa to dieťa časom naučí, pochváliť ostatné deti za trpezlivosť a
-      láskavosť, ktorú do toho vložili.
-
-
-      💬 Pedagogický _cieľ:_ pomáhať deťom chápať správanie spolužiaka s PAS,
-      reagovať s trpezlivosťou a podporovať spoločnú hru namiesto konfliktu.
-    uuid: 27738414-d96b-4aa2-a3a3-07615cf524ff
 uuid: 6e7b0273-1f78-4efb-af58-e7ebc2dec9e8
