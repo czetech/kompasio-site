@@ -266,6 +266,7 @@ content:
     view:
       fields:
         - title
+        - active
         - description
       sort:
         - title
