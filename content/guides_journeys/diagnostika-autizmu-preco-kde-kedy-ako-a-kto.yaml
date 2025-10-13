@@ -32,7 +32,7 @@ steps:
 
       Diagnóza nie je nálepka – je to **nástroj na pomoc**, nie obmedzenie.
     uuid: 2f16dcb1-1135-484c-b100-e288343a466d
-  - title: "Dva pojmy: Diagnostika a Potvrdenie diagnózy"
+  - title: "Dva pojmy: diagnostika a diagnostický záver "
     body: >-
       Ide o dva rozličné pojmy.
 
@@ -63,15 +63,15 @@ steps:
       Je to **proces skúmania**, nie definitívne rozhodnutie.
 
 
-      ### Čo je potvrdenie diagnózy?
+      ### Čo je diagnostický záver?
 
 
       **Potvrdenie diagnózy** znamená, že odborník (lekár) **oficiálne
       rozhodne,** že človek spĺňa kritériá pre **autistické spektru (PAS)**.
 
 
-      Diagnózu (diagnostický záver) môže **stanoviť** iba odborník s príslušnou
-      kvalifikáciou – napríklad:
+      Diagnózu **(diagnostický záver)** môže **stanoviť** iba odborník s
+      príslušnou kvalifikáciou – napríklad:
 
 
       *   **psychiater** (pri dospelých),
@@ -112,13 +112,13 @@ steps:
       ### Proces diagnostiky dieťaťa zväčša prebieha:
 
 
-      *   **Anamnéza s rodičom** – rozhovor o vývine, správaní, komunikácii
+      *   **anamnéza s rodičom** – rozhovor o vývine, správaní, komunikácii
           
-      *   **Pozorovanie dieťaťa** – štruktúrované aj neštruktúrované
+      *   **pozorovanie dieťaťa** – štruktúrované aj neštruktúrované
           
-      *   **Štandardizované testy** (pozri nižšie)
+      *   **štandardizované testy** (pozri nižšie)
           
-      *   **Záver a písomná správa** – predpoklady, návrhy intervencie,
+      *   **záver a písomná správa** – predpoklady, návrhy intervencie,
       odporúčania
           
 
@@ -196,16 +196,14 @@ steps:
       ### Čakacie doby sú v súčanosti veľmi dlhé.
 
 
-      1.  Diagnostika:
+      1.  **Diagnostika:**
           
-          1.  Včasná diagnostika je však kľúčová, najmä do 3 rokov veku dieťaťa, dá sa však diagnostikovať aj skôr.
-              
-          2.  Čakacie doby sa líšia – štátne zariadenia sú preťažené, preto sa rodičia často obracajú na súkromných odborníkov. Z tohto dôvodu sú termíny veľmi variabilné od 4-12 týždňov až k 1-2 rokom.
+          *   Čakacie doby sa líšia – štátne zariadenia sú preťažené, preto sa rodičia často obracajú na odborníkov pôsobiacich v súkromnom sektore. Z tohto dôvodu sú termíny veľmi variabilné od 4-12 týždňov až k 1-2 rokom.
 
               
-      2.  Potvrdenie diagnózy u lekára ( stanovenie diagnostického záveru)
+      2.  **Potvrdenie diagnózy u lekára** (stanovenie diagnostického záveru)
           
-          1.  Na termín u pedopsychiatra (prípadne psychiatra) sa musíte tiež objednať a termíny sa líši rovnako, ako v prípade diagnostiky.
+          *   Na termín u pedopsychiatra (prípadne psychiatra) sa musíte tiež objednať a termíny sa líši rovnako, ako v prípade diagnostiky.
     uuid: 91961219-cea1-440f-8793-0568d4356f22
   - title: "Od diagnostiky k pedopsychiatrovi "
     body: >-
@@ -227,7 +225,7 @@ steps:
       obavách, v pocite, že „nemôžu nič robiť, kým to niekto nepotvrdí“.
 
 
-      ### **🚨Ale tu je zásadná vec, ktorú si potrebujeme uvedomiť:**
+      ### **🚨Tu je zásadná vec, ktorú si potrebujeme uvedomiť:**
 
 
       Existujú dve paralelné roviny:
@@ -255,9 +253,9 @@ steps:
       *   Hľadať si komunitu rodičov, odborníkov, ktorí rozumejú neurodiverzite,
           
       *   komunikovať s odborníkmi, ktorí vám pomôžu vybrať intervencie alebo
-      terapie vhodné pre vaše dieťa na podporu rozvoja tých oblastí ktoré vaše
-      dieťa potrebuje - v mladom veku sa jedná aj tak zväčša o rozvoj
-      prostredníctvom hry.
+      terapie vhodné pre vaše dieťa na podporu rozvoja tých oblastí, ktoré vaše
+      dieťa potrebuje - v mladom veku sa jedná aj tak zväčša o systematický
+      rozvoj prostredníctvom hry.
           
       *   konzultovať s odborníkmi, ako prispôsobiť domáce prostredie, aby bolo
       menej zahlcujúce,
@@ -270,17 +268,20 @@ steps:
           
 
       Dieťa, ktoré máte pred sebou dnes, je to isté dieťa, aké budete mať aj o
-      rok. Dieťa sa vyvíja podľa toho, **aké prostredie mu vytvoríte, aké
-      signály od neho dokážete zachytiť a ako na ne reagujete.**
+      rok.
+
+
+      > **Dieťa sa vyvíja podľa toho, aké prostredie mu vytvoríte, aké signály
+      od neho dokážete zachytiť a ako na ne reagujete.**
 
 
       **Aj keď s dieťaťom pracujete preventívne, bez potvrdenej diagnózy, nijako
-      mu tým neškodíte. Naopak – vytvárate mu podmienky na rast.**
+      mu tým neškodíte. Práve naopak – vytvárate mu podmienky pre rast.**
     uuid: ba9b8320-7866-4e4e-9754-02db17373a69
   - title: Záver - Diagnóza nie je nálepka - je to odpoveď
     body: >-
-      Diagnostika autizmu a potvrdenie diagnózy psychiatrom môže byť náročný a
-      emocionálne vyčerpávajúci proces.  
+      Diagnostika autizmu a potvrdenie diagnózy pedopsychiatrom (alebo
+      psychiatrom) môže byť náročný a emocionálne vyčerpávajúci proces.  
 
       Je však kľúčovým krokom k pochopeniu potrieb dieťaťa aj celej rodiny.  
 
@@ -300,8 +301,7 @@ steps:
 
 
       Mnohí rodičia aj samotní ľudia na autistickom spektre opisujú po stanovení
-      diagnózy **pocit úľavy** – nie preto, že by boli „označení“, ale preto, že
-      **pochopili súvislosti**.
+      diagnózy **pocit úľavy** – preto, že **pochopili súvislosti**.
 
 
       Pre niektorých rodičov prichádza úľava hneď – pretože **majú odpoveď**.
@@ -312,9 +312,10 @@ steps:
       > **„Som rád, že viem, čo sa deje. Teraz môžeme konať.“**
 
 
-      A čo samotní ľudia na autistickom spektre? Aj u nich neprichádza úľava
-      vždy okamžite. Ale **poznanie** im často umožní rozvíjať väčšiu
-      **sebalásku a sebaprijatie**.  
+      A čo samotní ľudia na autistickom spektre?  
+
+      Aj u nich neprichádza úľava vždy okamžite. Ale **poznanie** im často
+      umožní rozvíjať väčšiu **sebalásku a sebaprijatie**.  
 
       Keď sa v ich prostredí – doma, v škole, v práci – zavedú **opatrenia,
       ktoré im reálne pomáhajú**, často si práve vtedy prvýkrát uvedomia:
