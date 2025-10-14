@@ -43,9 +43,8 @@ cards:
     url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=specializovane-zariadenia
     color: white
     image: /images/special zariadenia.png
-    description: Zariadenia poskytujú podporu, starostlivosť a bezpečné prostredie
-      pre deti aj dospelých na autistickom spektre. Špecifická odborná
-      starostlivosť, denné programy alebo bývanie podľa individuálnych potrieb.
+    description: Sociálna služba a podpora pre deti i dospelých s autizmom.
+      Špecializovaná odborná starostlivosť a individuálne denné programy.
   - title: Zariadenia poradenstva a prevencie
     url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=84
     color: white
