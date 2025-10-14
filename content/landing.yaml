@@ -37,8 +37,8 @@ cards:
     url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=stomatol&p%5B29%5D%5B0%5D=215
     color: blue
     image: /images/stomatolog.png
-    description: Návšteva zubára bez stresu. Viete o ďalších zubných ambulanciách,
-      kde je na prvom mieste pacient a jeho pohodlie? Dajte nám o nich vedieť.
+    description: Aj zubár môže byť zážitok bez stresu. Poznáte ďalšiu ambulanciu,
+      kde sa cítite naozaj dobre? Dajte nám o nej vedieť!
   - title: "Špecializované zariadenia "
     url: https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=specializovane-zariadenia
     color: white
