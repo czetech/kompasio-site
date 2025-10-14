@@ -17,7 +17,7 @@ let content;
 let error;
 
 try {
-  const response = await fetch(`https://kompas.cassiopea.sk${Astro.url.pathname}`, fetchOptions);
+  const response = await fetch(`https://kompas.cassiopea.sk${Astro.url.pathname}${Astro.url.search}`, fetchOptions);
   if (!response.ok) {
     throw new Error(`Failed to fetch: ${response.status} ${response.statusText}`);
   }
