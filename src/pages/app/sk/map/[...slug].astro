@@ -53,3 +53,14 @@ try {
     }
   });
 </script>
+
+<script>
+  document.addEventListener('astro:after-swap', () => {
+    document.querySelectorAll('template[shadowrootmode]').forEach(template => {
+      const mode = template.getAttribute('shadowrootmode');
+      const shadowRoot = template.parentElement.attachShadow({ mode });
+      shadowRoot.appendChild(template.content.cloneNode(true));
+      template.remove();
+    });
+  });
+</script>
