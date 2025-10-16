@@ -65,6 +65,7 @@ try {
   function deleteGuest() {
     const oldHost = document.getElementById('legacy-content-host');
     oldHost.remove();
+    console.log('legacy-content-host removed');
   }
 
   document.addEventListener('astro:before-swap', deleteGuest);
