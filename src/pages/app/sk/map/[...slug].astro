@@ -63,9 +63,18 @@ try {
   }
 
   function deleteGuest() {
-    const oldHost = document.getElementById('legacy-content-host');
-    oldHost.remove();
-    console.log('legacy-content-host removed');
+    const host = document.getElementById('legacy-content-host');
+    if (host && host.shadowRoot) {
+      const dsdGuestAppDestroyEvent = new CustomEvent('guest-app:destroy', {
+        bubbles: true,
+        composed: true,
+        detail: {
+          message: 'DSD Guest App content should be destroyed.'
+        }
+      });
+      host.dispatchEvent(dsdGuestAppDestroyEvent);
+      console.log('guest-app:destroy event dispatched.'); // For debugging
+    }
   }
 
   document.addEventListener('astro:before-swap', deleteGuest);
