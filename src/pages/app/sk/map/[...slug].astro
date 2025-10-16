@@ -36,3 +36,20 @@ try {
     </template>
   </div>
 </BaseLayout>
+
+<script>
+  requestAnimationFrame(() => {
+    const host = document.getElementById('legacy-content-host');
+    if (host && host.shadowRoot) {
+      const dsdGuestAppReadyEvent = new CustomEvent('guest-app:ready', {
+        bubbles: true,
+        composed: true,
+        detail: {
+          message: 'DSD Guest App content is ready.'
+        }
+      });
+
+      host.dispatchEvent(dsdGuestAppReadyEvent);
+    }
+  });
+</script>
