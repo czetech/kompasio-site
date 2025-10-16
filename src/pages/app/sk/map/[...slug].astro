@@ -29,7 +29,7 @@ try {
 ---
 
 <BaseLayout>
-  <div id="legacy-content-host">
+  <div id="legacy-content-host" class="w-full">
     <template shadowrootmode="open">
       { content && <Fragment set:html={content} /> }
       { error && <h1>Error 500</h1><pre>{error}</pre> }
