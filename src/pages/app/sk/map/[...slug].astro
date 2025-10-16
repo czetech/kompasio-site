@@ -38,7 +38,16 @@ try {
 </BaseLayout>
 
 <script>
-  requestAnimationFrame(() => {
+  function initializeDSD() {
+    document.querySelectorAll('template[shadowrootmode]').forEach(template => {
+      if (template.parentElement && !template.parentElement.shadowRoot) {
+        const mode = template.getAttribute('shadowrootmode');
+        const shadowRoot = template.parentElement.attachShadow({ mode });
+        shadowRoot.appendChild(template.content.cloneNode(true));
+        template.remove();
+      }
+    });
+
     const host = document.getElementById('legacy-content-host');
     if (host && host.shadowRoot) {
       const dsdGuestAppReadyEvent = new CustomEvent('guest-app:ready', {
@@ -48,19 +57,10 @@ try {
           message: 'DSD Guest App content is ready.'
         }
       });
-
       host.dispatchEvent(dsdGuestAppReadyEvent);
+      console.log('guest-app:ready event dispatched.'); // For debugging
     }
-  });
-</script>
+  }
 
-<script>
-  document.addEventListener('astro:after-swap', () => {
-    document.querySelectorAll('template[shadowrootmode]').forEach(template => {
-      const mode = template.getAttribute('shadowrootmode');
-      const shadowRoot = template.parentElement.attachShadow({ mode });
-      shadowRoot.appendChild(template.content.cloneNode(true));
-      template.remove();
-    });
-  });
+  document.addEventListener('astro:page-load', initializeDSD);
 </script>
