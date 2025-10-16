@@ -62,5 +62,11 @@ try {
     }
   }
 
+  function deleteGuest() {
+    const oldHost = document.getElementById('legacy-content-host');
+    oldHost.remove();
+  }
+
+  document.addEventListener('astro:before-swap', deleteGuest);
   document.addEventListener('astro:page-load', initializeDSD);
 </script>
