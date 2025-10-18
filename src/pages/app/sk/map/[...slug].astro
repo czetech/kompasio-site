@@ -86,6 +86,9 @@ try {
     console.log("guestSetHash", hash);
   }
 
+  window.guest = window.guest || {};
+  window.quest.setHash = guestSetHash;
+
   document.addEventListener('astro:before-swap', deleteGuest);
   document.addEventListener('astro:page-load', initializeDSD);
 </script>
