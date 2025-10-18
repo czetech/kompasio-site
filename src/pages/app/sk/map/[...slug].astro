@@ -83,6 +83,7 @@ try {
 
   function guestSetHash(hash) {
     location.hash = hash;
+    console.log("guestSetHash", hash);
   }
 
   document.addEventListener('astro:before-swap', deleteGuest);
