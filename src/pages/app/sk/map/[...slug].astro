@@ -39,6 +39,8 @@ try {
 
 <script>
   function initializeDSD() {
+    console.log("Astro debug: page-load");
+
     document.querySelectorAll('template[shadowrootmode]').forEach(template => {
       if (template.parentElement && !template.parentElement.shadowRoot) {
         const mode = template.getAttribute('shadowrootmode');
@@ -63,6 +65,8 @@ try {
   }
 
   function deleteGuest() {
+    console.log("Astro debug: before-swap");
+
     const host = document.getElementById('legacy-content-host');
     if (host && host.shadowRoot) {
       const dsdGuestAppDestroyEvent = new CustomEvent('guest-app:destroy', {
