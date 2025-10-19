@@ -38,6 +38,8 @@ try {
 </BaseLayout>
 
 <script>
+  import { navigate } from "astro:transitions/client";
+
   function initializeDSD() {
     console.log("Astro debug: page-load");
 
@@ -81,8 +83,32 @@ try {
     }
   }
 
+  const isSamePage = (e) => {
+    const fromUrl = new URL(e.from);
+    const toUrl = new URL(e.to);
+    fromUrl.hash = "";
+    toUrl.hash = "";
+    return fromUrl.href === toUrl.href;
+  };
+
+  const handleAstroBeforePreparation = (e) => {
+    if (isSamePage(e)) e.loader = async () => {};
+  };
+
+  const handleAstroBeforeSwap = (e) => {
+    if (isSamePage(e)) {
+      e.swap = () => {};
+      e.viewTransition.skipTransition();
+    }
+  };
+
+  document.addEventListener('astro:before-preparation', handleAstroBeforePreparation);
+  document.addEventListener('astro:before-swap', handleAstroBeforeSwap);
+
   function guestSetHash(hash) {
-    location.hash = hash;
+    const url = new URL(window.location);
+    url.hash = hash;
+    navigate(url, { history: "replace" });
     console.log("guestSetHash", hash);
   }
 
