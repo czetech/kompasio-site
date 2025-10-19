@@ -38,7 +38,7 @@ try {
 </BaseLayout>
 
 <script>
-  import { navigate } from "astro:transitions/client";
+  import { navigate, supportsViewTransitions } from "astro:transitions/client";
 
   function initializeDSD() {
     console.log("Astro debug: page-load");
@@ -83,6 +83,9 @@ try {
     }
   }
 
+  document.addEventListener('astro:before-swap', deleteGuest);
+  document.addEventListener('astro:page-load', initializeDSD);
+
   const isSamePage = (e) => {
     const fromUrl = new URL(e.from);
     const toUrl = new URL(e.to);
@@ -108,13 +111,15 @@ try {
   function guestSetHash(hash) {
     const url = new URL(window.location);
     url.hash = hash;
-    navigate(url, { history: "replace" });
+    if (supportsViewTransitions) {
+      navigate(url, { history: "replace" });
+    }
+    else {
+      history.replaceState(null, '', url.href);
+    }
     console.log("guestSetHash", hash);
   }
 
   window.guest = window.guest || {};
   window.guest.setHash = guestSetHash;
-
-  document.addEventListener('astro:before-swap', deleteGuest);
-  document.addEventListener('astro:page-load', initializeDSD);
 </script>
