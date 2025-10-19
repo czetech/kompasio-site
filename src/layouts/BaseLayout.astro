@@ -50,7 +50,7 @@ const navItems = [
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="manifest" href="/manifest.json" />
     <title>Kompasio</title>
-    <ClientRouter />
+    <ClientRouter fallback="none" />
     {pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} />}
   </head>
   <body class="text-space-blue bg-shuttle-white">
