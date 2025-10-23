@@ -27,7 +27,7 @@ const fetchOptions = {
   method: Astro.request.method,
   body: body,
   headers: {
-    Accept: Astro.request.body ? undefined : "application/json",
+    Accept: "application/json",
     "Content-Type": Astro.request.body ? "application/x-www-form-urlencoded" : undefined,
     Authorization: `Basic ${Buffer.from(`${AUTH_USER}:${AUTH_PASS}`).toString("base64")}`,
   },
