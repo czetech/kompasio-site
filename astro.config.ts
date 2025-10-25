@@ -13,5 +13,8 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  site: "https://kompasio-site-prod.apps.czetech.net"
+  site: "https://kompasio-site-prod.apps.czetech.net",
+  security: {
+    checkOrigin: false
+  }
 });
