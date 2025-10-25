@@ -49,7 +49,7 @@ try {
   if (response.status >= 300 && response.status < 400) {
     console.log(response.status);
     console.log(`Redirect to: ${response.status} ${response.headers.get('location')}`);
-    return Astro.redirect(response.headers.get('location').replace("https://kompas.cassiopea.sk/app/sk/map/zoznam", "/app/sk/map/zoznam/"), response.status);
+    return Astro.redirect(response.headers.get('location').replace("https://kompas.cassiopea.sk/app/sk/map/zoznam", "/app/sk/map/zoznam/").replace("/zoznam/?", "/zoznam?"), response.status);
   }
   console.log(response.status);
   content = (await response.json()).content;
