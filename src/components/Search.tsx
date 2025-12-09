@@ -27,6 +27,7 @@ const Search: Component = (props) => {
 
   const [referrer, setReferrer] = createSignal("");
   const [query, setQuery] = createSignal("");
+  const [tab, setTab] = createSignal("places");
   const [response] = createResource(query, search);
 
   const isSamePage = (e) => {
@@ -74,7 +75,7 @@ const Search: Component = (props) => {
   });
 
   return (
-    <div class="flex w-full max-w-5xl grow flex-col gap-y-4 p-4">
+    <div class="flex w-full max-w-5xl xl:max-w-[80%] grow flex-col gap-y-4 p-4">
       <div class="flex justify-between gap-x-4">
         <div class="flex flex-col gap-y-4">
           <p class="flex items-center gap-x-2">
@@ -98,20 +99,20 @@ const Search: Component = (props) => {
               </Switch>
             </span>
           </p>
-          <div class="text-vibrant-blue flex flex-col gap-y-2 font-semibold">
-            <div class="flex items-center gap-x-2">
+          <div class="text-vibrant-blue flex flex-col gap-y-2">
+            <div class="flex items-center gap-x-2" onClick={() => setTab("places")}>
               <ArrowUp
                 class="bg-vibrant-blue text-shuttle-white h-4 w-4 rounded-full"
                 style={{ transform: `rotate(${90}deg)` }}
               />
-              <p class="">Miesta ({response()?.results[0]?.nbHits ?? 0})</p>
+              <p classList={{"font-semibold": tab() === "places"}} class="lg:font-semibold">Miesta ({response()?.results[0]?.nbHits ?? 0})</p>
             </div>
-            <div class="flex items-center gap-x-2">
+            <div class="flex items-center gap-x-2" onClick={() => setTab("guides")}>
               <ArrowUp
                 class="bg-vibrant-blue text-shuttle-white h-4 w-4 rounded-full"
                 style={{ transform: `rotate(${90}deg)` }}
               />
-              <p>Návody ({response()?.results[1]?.nbHits ?? 0})</p>
+              <p classList={{"font-semibold": tab() === "guides"}} class="lg:font-semibold">Návody ({response()?.results[1]?.nbHits ?? 0})</p>
             </div>
           </div>
         </div>
@@ -123,13 +124,26 @@ const Search: Component = (props) => {
           <X class="" />
         </button>
       </div>
-      <Scrollable class="px-6 pt-4 pb-8 md:px-8">
-        <div class="flex flex-col gap-y-4">
-          <For each={response()?.results[0]?.hits}>
-            {(item) => <ResultPlace item={item} />}
-          </For>
+      <div class="grid xl:grid-cols-2 h-full">
+        <div classList={{"hidden": tab() !== "places"}} class="lg:block">
+        <Scrollable class="px-6 pt-4 pb-8 md:px-8">
+          <div class="flex flex-col gap-y-4">
+            <For each={response()?.results[0]?.hits}>
+              {(item) => <ResultPlace item={item} />}
+            </For>
+          </div>
+        </Scrollable>
         </div>
-      </Scrollable>
+        <div classList={{"hidden": tab() !== "guides"}} class="lg:block">
+        <Scrollable class="px-6 pt-4 pb-8 md:px-8">
+          <div class="flex flex-col gap-y-4">
+            <For each={response()?.results[1]?.hits}>
+              {(item) => <ResultJourney item={item} />}
+            </For>
+          </div>
+        </Scrollable>
+        </div>
+      </div>
     </div>
   );
 };
