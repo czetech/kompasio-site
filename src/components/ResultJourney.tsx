@@ -14,7 +14,7 @@ const ResultJourney: Component = (props) => {
   }
 
   return (
-    <div class="text-vibrant-blue rounded-3xl border p-6">
+    <a class="text-vibrant-blue rounded-3xl border p-6" href={`/zivotne-situacie/${props.item.slug}`}>
       <h2
         class="mb-4 text-2xl"
         innerHTML={props.item._highlightResult.title.value}
@@ -50,7 +50,7 @@ const ResultJourney: Component = (props) => {
           {props.item.category}
         </p>
       </div>
-    </div>
+    </a>
   );
 };
 

@@ -4,11 +4,7 @@ const global = await getEntry("global", "global");
 
 export const navItemsPrimary = [
   {
-    title: `${global.data.navItemPlaces} (Rev. proxy)`,
-    href: "/app/sk/map/",
-  },
-  {
-    title: `${global.data.navItemPlaces} (PoC)`,
+    title: global.data.navItemPlaces,
     href: "/miesta",
   },
   {

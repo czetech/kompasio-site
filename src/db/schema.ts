@@ -28,6 +28,14 @@ export const addressRelations = relations(address, ({ one }) => ({
   }),
 }));
 
+export const alias = mysqlTable("alias", {
+  id: int("id").notNull(),
+  path: varchar("path", { length: 255 }).notNull(),
+  presenter: varchar("presenter", { length: 128 }).notNull(),
+  paramId: varchar("param_id", { length: 8 }).notNull(),
+  oneWay: boolean("one_way").notNull(),
+});
+
 export const category = mysqlTable("category", {
   id: int("id").notNull(),
   description: text("description").notNull(),

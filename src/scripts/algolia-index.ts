@@ -1,7 +1,7 @@
 import { algoliasearch } from "algoliasearch";
 import { db } from "~/db/index.ts";
 import * as schema from "~/db/schema.ts";
-import { inArray, eq, gt } from "drizzle-orm";
+import { inArray, eq, gt, and, gte } from "drizzle-orm";
 import { convert } from "html-to-text";
 import fs from "fs/promises";
 import path from "path";
@@ -60,6 +60,7 @@ async function indexGuidesCategories() {
       descriptionHtml: splitTopLevelElementsWithParse5(
         await processHtml(data.description),
       ),
+      slug: path.parse(filePath).name,
     };
 
     await client.addOrUpdateObject({
@@ -108,6 +109,7 @@ async function indexGuidesJourneys() {
       ),
       steps: algoliaSteps,
       category: categories[data.category].title,
+      slug: path.parse(filePath).name,
     };
 
     await client.addOrUpdateObject({
@@ -214,7 +216,10 @@ async function indexPlaces() {
     columns: {
       id: true,
     },
-    where: (place, { eq }) => eq(schema.place.active, 1),
+    where: and(
+      eq(schema.place.active, 1),
+      gte(schema.place.id, 1183),
+    ),
   });
 
   const parameters = await db.query.parameter.findMany();
@@ -302,6 +307,16 @@ async function indexPlaces() {
       Object.entries(parameters).map(([key, arr]) => [key, [...new Set(arr)]]),
     );
 
+    const path = (await db.query.alias.findFirst({
+      columns: {
+        path: true,
+      },
+      where: and(
+        eq(schema.alias.paramId, id),
+        eq(schema.alias.presenter, "Place:default"),
+      ),
+    })).path;
+
     const algoliaObject = {
       alias: place.alias,
       name: place.name,
@@ -354,6 +369,7 @@ async function indexPlaces() {
             }
           : null,
       parameters: dedupedParameters,
+      path: path,
     };
 
     await client.addOrUpdateObject({
@@ -392,8 +408,8 @@ async function indexPlacesCategories() {
   }
 }
 
-//indexGuidesCategories();
-//indexGuidesJourneys();
+indexGuidesCategories();
+indexGuidesJourneys();
 //indexLocations();
 //indexPlacesCategories();
-indexPlaces();
+//indexPlaces();
