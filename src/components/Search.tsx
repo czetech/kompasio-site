@@ -128,19 +128,21 @@ const Search: Component = (props) => {
       </div>
       <div class="grid xl:grid-cols-2 h-full">
         <div classList={{"hidden": tab() !== "places"}} class="lg:block">
-          <div class="flex gap-x-4 overflow-x-clip pt-4 flex-wrap gap-y-2 px-6 md:px-8 mb-4">
+          <Scrollable class="px-6 pt-4 pb-8 md:px-8">
+          <div class="flex gap-x-4 overflow-x-clip pt-4 flex-wrap gap-y-2 mb-8">
             <For each={response()?.results[2]?.hits}>
               {(category) => (
-                <p
+                <a
+                  href={`https://kompasio.sk/app/sk/map/kategoria/${category.alias}`}
                   class={`text-shuttle-white bg-vibrant-blue rounded-full px-2
                   text-sm text-nowrap`}
                 >
                   {category.name}
-                </p>
+                </a>
               )}
             </For>
           </div>
-          <Scrollable class="px-6 pt-4 pb-8 md:px-8">
+
             <div class="flex flex-col gap-y-4">
               <For each={response()?.results[0]?.hits}>
                 {(item) => <ResultPlace item={item} />}
@@ -149,19 +151,21 @@ const Search: Component = (props) => {
           </Scrollable>
           </div>
           <div classList={{"hidden": tab() !== "guides"}} class="lg:block">
-          <div class="flex gap-x-4 overflow-x-clip pt-4 flex-wrap gap-y-2 px-6 md:px-8 mb-4">
+          <Scrollable class="px-6 pt-4 pb-8 md:px-8">
+          <div class="flex gap-x-4 overflow-x-clip pt-4 flex-wrap gap-y-2 mb-8">
             <For each={response()?.results[3]?.hits}>
               {(category) => (
-                <p
+                <a
+                  href={`/navody/${category.slug}`}
                   class={`text-shuttle-white bg-vibrant-blue rounded-full px-2
                   text-sm text-nowrap`}
                 >
                   {category.title}
-                </p>
+                </a>
               )}
             </For>
           </div>
-          <Scrollable class="px-6 pt-4 pb-8 md:px-8">
+
             <div class="flex flex-col gap-y-4">
               <For each={response()?.results[1]?.hits}>
                 {(item) => <ResultJourney item={item} />}
