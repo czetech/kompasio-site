@@ -7,8 +7,11 @@ import "@fontsource/poppins/600.css";
 import "~/styles/global.css";
 import Footer from "~/components/Footer.astro";
 import Header from "~/components/Header.astro";
+import { getEntry } from "astro:content";
 
 const { strictHeight = false } = Astro.props;
+
+const global = await getEntry("global", "global");
 
 const navItems = [
   {
@@ -42,14 +45,17 @@ const navItems = [
     <meta name="application-name" content="Kompasio" />
     <meta
       name="description"
-      content="Kompasio je portál pre autistov resp. osoby s poruchou autistického spektra (PAS)."
+      content={global.data.metaDescription}
     />
     <meta name="generator" content={Astro.generator} />
-    <meta name="keywords" content="autizmus, pas" />
+    <meta name="keywords" content={global.data.metaKeywords.join()} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:description" content={global.data.metaDescription} />
+    <meta property="og:image" content="https://kompasio.sk/app/sk/map/frontend/assets/images/kompasio-logo-square.png?v=4" />
+    <meta property="og:title" content={global.data.metaTitle} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="manifest" href="/manifest.json" />
-    <title>Kompasio</title>
+    <title>{global.data.metaTitle}</title>
     <ClientRouter fallback="none" />
     {pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} />}
   </head>

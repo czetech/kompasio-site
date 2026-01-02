@@ -31,6 +31,30 @@ content:
     type: file
     path: content/global.yaml
     fields:
+      - name: metaTitle
+        label: Meta Title
+        description: Title used in site metadata.
+        type: text
+        required: true
+      - name: metaDescription
+        label: Meta Description
+        description: Description used in site metadata (max 160 characters).
+        type: text
+        required: true
+      - name: meta Keywords
+        label: Meta Keywords
+        description: Keywords used in site metadata.
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{fields.title}"
+        fields:
+          - name: keyword
+            label: Keyword
+            description: Keyword used in site metadata.
+            type: text
+            required: true
       - name: navItemPlaces
         label: Nav Item Places
         description: Places text in primary navigation.
