@@ -48,7 +48,7 @@ const navItems = [
       content={global.data.metaDescription}
     />
     <meta name="generator" content={Astro.generator} />
-    <meta name="keywords" content={global.data.metaKeywords.join()} />
+    {global.data.metaKeywords && <meta name="keywords" content={global.data.metaKeywords.join()} />}
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta property="og:description" content={global.data.metaDescription} />
     <meta property="og:image" content="https://kompasio.sk/app/sk/map/frontend/assets/images/kompasio-logo-square.png?v=4" />
