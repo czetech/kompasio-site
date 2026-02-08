@@ -57,7 +57,6 @@ const navItems = [
     <link rel="manifest" href="/manifest.json" />
     <title>{global.data.metaTitle}</title>
     <ClientRouter fallback="none" />
-    {pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} />}
   </head>
   <body class="text-space-blue bg-shuttle-white">
     <div
