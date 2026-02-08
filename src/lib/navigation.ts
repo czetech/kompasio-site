@@ -5,7 +5,7 @@ const global = await getEntry("global", "global");
 export const navItemsPrimary = [
   {
     title: global.data.navItemPlaces,
-    href: "/miesta",
+    href: "https://kompasio.sk/app/sk/map/zoznam",
   },
   {
     title: global.data.navItemGuides,
