@@ -70,7 +70,7 @@ jobs:
           # Verify your Dockerfile path! Standard Nginx is /usr/share/nginx/html
           docker cp dist:/usr/share/nginx/html ./dist-extracted
           # Clean up
-          docker rm extract-container
+          docker rm dist
           # Zip it
           zip -r "kompasio-site.zip" ./dist-extracted
       - name: Create GitHub Release
