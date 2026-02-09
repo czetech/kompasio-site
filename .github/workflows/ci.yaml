@@ -65,16 +65,32 @@ jobs:
         run: |
           IMAGE_TAG="ghcr.io/czetech/kompasio-site:${{ steps.versioning.outputs.version }}"
           # Create a temporary container (not running, just created)
-          docker create --name extract-container "$IMAGE_TAG"
+          docker create --name dist "$IMAGE_TAG"
           # Copy the built files from Nginx root (usually /usr/share/nginx/html) to local folder
           # Verify your Dockerfile path! Standard Nginx is /usr/share/nginx/html
-          docker cp extract-container:/usr/share/nginx/html ./dist-extracted
+          docker cp dist:/usr/share/nginx/html ./dist-extracted
           # Clean up
           docker rm extract-container
           # Zip it
-          zip -r "kompasio-site-${{ steps.versioning.outputs.version }}.zip" ./dist-extracted
+          zip -r "kompasio-site.zip" ./dist-extracted
       - name: Create GitHub Release
         uses: softprops/action-gh-release@a06a81a03ee405af7f2048a818ed3f03bbf83c7b # v2.5.0
         with:
-          files: "kompasio-site-${{ steps.versioning.outputs.version }}.zip"
+          files: "kompasio-site.zip"
           tag_name: nightly
+      - name: Upload as artifacts
+        uses:
+          # yamllint disable-line rule:line-length
+          actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f  # v6.0.0
+        with:
+          name: kompasio-site-zipped
+          path: kompasio-site.zip
+          if-no-files-found: error
+      - name: Upload as artifacts
+        uses:
+          # yamllint disable-line rule:line-length
+          actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f  # v6.0.0
+        with:
+          name: kompasio-site
+          path: dist-extracted
+          if-no-files-found: error
