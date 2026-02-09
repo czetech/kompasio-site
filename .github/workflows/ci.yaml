@@ -44,6 +44,32 @@ jobs:
           tags: ghcr.io/czetech/kompasio-site:${{ steps.versioning.outputs.version }}
           secrets: |
             "DATABASE_URL=${{ secrets.DATABASE_URL }}"
+
+          load: true
+
+      - name: Extract Static Site from Docker Image
+        run: |
+          IMAGE_TAG="ghcr.io/czetech/kompasio-site:${{ steps.versioning.outputs.version }}"
+          # Create a temporary container (not running, just created)
+          docker create --name extract-container "$IMAGE_TAG"
+          # Copy the built files from Nginx root (usually /usr/share/nginx/html) to local folder
+          # Verify your Dockerfile path! Standard Nginx is /usr/share/nginx/html
+          docker cp extract-container:/usr/share/nginx/html ./dist-extracted
+          # Clean up
+          docker rm extract-container
+          # Zip it
+          zip -r "kompasio-site-${{ steps.versioning.outputs.version }}.zip" ./dist-extracted
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@c95fe1489396fe8a9eb87c0abf8aa5b2ef267fda # v2.2.1
+        with:
+          tag_name: "${{ steps.versioning.outputs.version }}"
+          name: "Build ${{ steps.versioning.outputs.version }}"
+          files: "site-${{ steps.versioning.outputs.version }}.zip"
+          draft: false
+          prerelease: false
+          generate_release_notes: true
+
       - name: Install Helm
         uses: azure/setup-helm@b9e51907a09c216f16ebe8536097933489208112 # v4.3.0
       - name: Package Helm Chart

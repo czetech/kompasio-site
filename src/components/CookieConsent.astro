@@ -30,10 +30,9 @@ import 'vanilla-cookieconsent/dist/cookieconsent.css';
   }
 
   /**
-   * Helper to send consent to your backend (Replaces $.post)
+   * Helper to send consent to backend
    */
   async function saveConsentToBackend(cookie) {
-    // Replace with your actual backend URL
     const BASE_URL = 'https://kompasio.sk'; 
     const endpoint = `${BASE_URL}/app/sk/map/cookies/store-consent`;
 
