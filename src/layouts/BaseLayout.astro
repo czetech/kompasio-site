@@ -8,6 +8,7 @@ import "~/styles/global.css";
 import Footer from "~/components/Footer.astro";
 import Header from "~/components/Header.astro";
 import { getEntry } from "astro:content";
+import CookieConsent from '../components/CookieConsent.astro';
 
 const { strictHeight = false } = Astro.props;
 
@@ -69,5 +70,6 @@ const navItems = [
       </main>
     </div>
     <Footer navItems={navItems} />
+    <CookieConsent />
   </body>
 </html>
