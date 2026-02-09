@@ -56,6 +56,10 @@ import 'vanilla-cookieconsent/dist/cookieconsent.css';
   // --- Initialize the Plugin ---
   CookieConsent.run({
     root: '#cc-container',
+
+    cookie: {
+      domain: "kompasio.sk"
+    },
     
     // 1. Configure Categories (formerly "toggle" in blocks)
     categories: {
