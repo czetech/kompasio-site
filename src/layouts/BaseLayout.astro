@@ -58,6 +58,14 @@ const navItems = [
     <link rel="manifest" href="/manifest.json" />
     <title>{global.data.metaTitle}</title>
     <ClientRouter fallback="none" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GTM-WLZ82XGH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'GTM-WLZ82XGH');
+    </script>
   </head>
   <body class="text-space-blue bg-shuttle-white">
     <div
