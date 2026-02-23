@@ -8,7 +8,7 @@ jobs:
   image:
     name: Build image
     permissions:
-      contents: write
+      contents: read
       packages: write
     runs-on: ubuntu-24.04
     steps:

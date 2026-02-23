@@ -1,5 +1,4 @@
 ---
-import { pwaInfo } from "virtual:pwa-info";
 import { ClientRouter } from "astro:transitions";
 import "@fontsource/poppins/400.css";
 import "@fontsource/poppins/500.css";
@@ -8,7 +7,6 @@ import "~/styles/global.css";
 import Footer from "~/components/Footer.astro";
 import Header from "~/components/Header.astro";
 import { getEntry } from "astro:content";
-import CookieConsent from '../components/CookieConsent.astro';
 
 const { strictHeight = false } = Astro.props;
 
@@ -58,28 +56,9 @@ const navItems = [
     <link rel="manifest" href="/manifest.json" />
     <title>{global.data.metaTitle}</title>
     <ClientRouter fallback="none" />
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('consent', 'default', {
-        'ad_storage': 'denied',
-        'ad_user_data': 'denied',
-        'ad_personalization': 'denied',
-        'analytics_storage': 'denied',
-        'wait_for_update': 500
-      });
-    </script>
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-			new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-			j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-			'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','GTM-WLZ82XGH');
-    </script>
+    <script src="../lib/cookieconsent.ts"></script>
   </head>
   <body class="text-space-blue bg-shuttle-white">
-    <noscript>
-      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WLZ82XGH" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
     <div
       class="flex min-h-dvh flex-col"
       class:list={{ "min-h-dvh": !strictHeight, "h-dvh": strictHeight }}
@@ -90,6 +69,5 @@ const navItems = [
       </main>
     </div>
     <Footer navItems={navItems} />
-    <CookieConsent />
   </body>
 </html>

@@ -94,8 +94,8 @@ const currentYear = new Date().getFullYear();
   </div>
   <hr class="border-t-2" />
   <div class="grid grid-cols-1 gap-x-16 gap-y-8 p-4 sm:p-8 lg:grid-cols-2">
-    <div class="grid grid-cols-1 gap-x-8 gap-y-2 sm:grid-cols-2">
-      <div class="flex flex-wrap justify-center gap-x-2 sm:justify-start">
+    <div class="flex flex-col gap-y-4 sm:gap-y-8 sm:mb-4">
+      <div class="flex justify-center gap-x-2 lg:justify-start">
         {
           socialIcons.map(
             (socialIcon) =>
@@ -114,30 +114,30 @@ const currentYear = new Date().getFullYear();
           )
         }
       </div>
-      <div
-        class={`flex flex-col items-center gap-y-2 text-sm sm:row-span-2
-          sm:row-start-1 sm:items-start`}
-      >
-        {
-          navItemsPrimary.map((navItem) => (
-            <a
-              href={navItem.href}
-              target={navItem.target}
-              class="hover:underline"
-            >
-              {navItem.title}
-            </a>
-          ))
-        }
-      </div>
-      <div class="flex flex-col items-center gap-y-2 text-sm sm:items-start">
-        {
-          navItemsSecondary.map((secondaryNavItem) => (
-            <a href={secondaryNavItem.url} class="hover:underline">
-              {secondaryNavItem.title}
-            </a>
-          ))
-        }
+      <div class="grid sm:grid-cols-2 gap-y-2 text-sm lg:text-base [&>div]:flex [&>div]:flex-col [&>div]:items-center [&>div]:gap-y-2 lg:[&>div]:items-start">
+        <div>
+          {
+            navItemsPrimary.map((navItem) => (
+              <a
+                href={navItem.href}
+                target={navItem.target}
+                class="hover:underline"
+              >
+                {navItem.title}
+              </a>
+            ))
+          }
+        </div>
+        <div>
+          {
+            navItemsSecondary.map((secondaryNavItem) => (
+              <a href={secondaryNavItem.url} class="hover:underline">
+                {secondaryNavItem.title}
+              </a>
+            ))
+          }
+          <button type="button" class="hover:underline" data-cc="c-settings">Nastavenia cookies</button>
+        </div>
       </div>
     </div>
     <div
@@ -155,7 +155,7 @@ const currentYear = new Date().getFullYear();
         ))
       }
     </div>
-    <div class="flex flex-col gap-y-2 text-xs lg:col-start-2 lg:row-start-1">
+    <div class="flex flex-col gap-y-2 text-xs lg:text-sm lg:col-start-2 lg:row-start-1">
       <p>{footer.data.fundingHeadline}</p>
       <p class="text-justify">{footer.data.fundingText}</p>
     </div>
