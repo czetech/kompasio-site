@@ -25,35 +25,18 @@ spec:
         {{- toYaml .Values.http.affinity | nindent 8 }}
       containers:
       - name: app
-        env:
-        - name: DATABASE_URL
-          value: {{ toYaml .Values.databaseUrl }}
         image: {{ .Values.image.repository }}:{{ if .Values.image.tag }}{{ .Values.image.tag }}{{ else }}{{ .Chart.AppVersion }}{{ end }}
         imagePullPolicy: {{ toYaml .Values.image.pullPolicy }}
         lifecycle:
           {{- toYaml .Values.http.lifecycle | nindent 10 }}
         ports:
-        - name: app
-          containerPort: 4321
-        resources:
-          {{- toYaml .Values.http.resources | nindent 10 }}
-      - name: nginx
-        image: nginx:1.27-alpine
-        imagePullPolicy: IfNotPresent
-        ports:
         - name: http
           containerPort: 80
-        volumeMounts:
-        - name: nginx-config
-          mountPath: /etc/nginx/nginx.conf
-          subPath: nginx.conf
+        resources:
+          {{- toYaml .Values.http.resources | nindent 10 }}
       imagePullSecrets:
         {{- toYaml .Values.imagePullSecrets | nindent 8 }}
       nodeSelector:
         {{- toYaml .Values.http.nodeSelector | nindent 8 }}
       tolerations:
         {{- toYaml .Values.http.tolerations | nindent 8 }}
-      volumes:
-      - name: nginx-config
-        configMap:
-          name: {{ include "kompasio-site.fullname" . }}-nginx

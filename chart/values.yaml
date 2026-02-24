@@ -20,7 +20,6 @@ image:
 # -- [Registry secret][k8s-registry] (imagePullSecrets of a pod, see example in
 # [values.yaml])
 imagePullSecrets:
-- name: registry-credentials
 # Example:
 # - name: registry-secret-name
 
