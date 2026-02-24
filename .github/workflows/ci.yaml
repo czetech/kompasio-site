@@ -65,7 +65,7 @@ jobs:
         run: |
           IMAGE_TAG="ghcr.io/czetech/kompasio-site:${{ steps.versioning.outputs.version }}"
           docker create --name app "$IMAGE_TAG"
-          docker cp dist-astro:/usr/share/nginx/html ./dist-astro
+          docker cp app:/usr/share/nginx/html ./dist-astro
           docker rm app
       - name: Upload as artifacts
         uses:
