@@ -64,14 +64,37 @@ jobs:
       - name: Extract Static Site from Docker Image
         run: |
           IMAGE_TAG="ghcr.io/czetech/kompasio-site:${{ steps.versioning.outputs.version }}"
-          docker create --name dist "$IMAGE_TAG"
-          docker cp dist:/usr/share/nginx/html ./dist-extracted
-          docker rm dist
+          docker create --name app "$IMAGE_TAG"
+          docker cp dist-astro:/usr/share/nginx/html ./dist-astro
+          docker rm app
       - name: Upload as artifacts
         uses:
           # yamllint disable-line rule:line-length
           actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f  # v6.0.0
         with:
-          name: dist
-          path: dist-extracted
+          name: dist-astro
+          path: dist-astro
+          if-no-files-found: error
+
+
+  lib:
+    name: Build lib
+    permissions:
+      contents: read
+      packages: write
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - name: NPM Install
+        run: npm ci
+      - name: Vite build
+        run: npx vite build
+      - name: Upload as artifacts
+        uses:
+          # yamllint disable-line rule:line-length
+          actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f  # v6.0.0
+        with:
+          name: dist-lib
+          path: dist-lib
           if-no-files-found: error

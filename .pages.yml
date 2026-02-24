@@ -481,5 +481,200 @@ content:
             required: true
             options:
               media: images
+  - name: cookieconsent
+    label: Cookie Consent
+    type: file
+    path: content/footer.yaml
+    fields:
+      - name: consentTitle
+        label: Consent title
+        description: Consent modal title.
+        type: text
+        required: true
+      - name: consentDescription
+        label: Consent description
+        description: Consent modal description.
+        type: text
+        required: true
+      - name: consentPrimaryButton
+        label: Consent primary button
+        description: Consent modal primary button.
+        type: text
+        required: true
+      - name: consentSecondaryButton
+        label: Consent secondary button
+        description: Consent modal secondary button.
+        type: text
+        required: true
+      - name: consentSettingsButton
+        label: Consent settings button
+        description: Consent modal settings button.
+        type: text
+        required: true
+      - name: settingsTitle
+        label: Settings title
+        description: Settings modal title.
+        type: text
+        required: true
+      - name: settingsSaveButton
+        label: Settings save button
+        description: Settings modal save button.
+        type: text
+        required: true
+      - name: settingsAcceptAllButton
+        label: Settings accept all button
+        description: Settings modal accept all button.
+        type: text
+        required: true
+      - name: settingsRejectAllButton
+        label: Settings reject all button
+        description: Settings modal reject all button.
+        type: text
+        required: true
+      - name: settingsCloseButton
+        label: Settings close button
+        description: Settings modal close button.
+        type: text
+        required: true
+      - name: settingsTableCol1
+        label: Settings table col 1
+        description: Settings modal table column 1 name.
+        type: text
+        required: true
+      - name: settingsTableCol2
+        label: Settings table col 2
+        description: Settings modal table column 2 name.
+        type: text
+        required: true
+      - name: settingsTableCol3
+        label: Settings table col 3
+        description: Settings modal table column 3 name.
+        type: text
+        required: true
+      - name: settingsTableCol4
+        label: Settings table col 4
+        description: Settings modal table column 4 name.
+        type: text
+        required: true
+      - name: settingsBlocksUsageTitle
+        label: Settings usage block title
+        description: Settings modal usage block title.
+        type: text
+        required: true
+      - name: settingsBlocksUsageDescription
+        label: Settings usage block description
+        description: Settings modal usage block description.
+        type: text
+        required: true
+      - name: settingsBlocksNecessaryTitle
+        label: Settings necessary block title
+        description: Settings modal necessary block title.
+        type: text
+        required: true
+      - name: settingsBlocksNecessaryDescription
+        label: Settings necessary block description
+        description: Settings modal necessary block description.
+        type: text
+        required: true
+      - name: settingsBlocksNecessaryCookie1Col1
+        label: Settings necessary block cookie 1 col 1
+        description: Settings modal necessary block cookie 1 column 1.
+        type: text
+        required: true
+      - name: settingsBlocksNecessaryCookie1Col2
+        label: Settings necessary block cookie 1 col 2
+        description: Settings modal necessary block cookie 1 column 2.
+        type: text
+        required: true
+      - name: settingsBlocksNecessaryCookie1Col3
+        label: Settings necessary block cookie 1 col 3
+        description: Settings modal necessary block cookie 1 column 3.
+        type: text
+        required: true
+      - name: settingsBlocksNecessaryCookie1Col4
+        label: Settings necessary block cookie 1 col 4
+        description: Settings modal necessary block cookie 1 column 4.
+        type: text
+        required: true
+      - name: settingsBlocksNecessaryCookie2Col1
+        label: Settings necessary block cookie 2 col 1
+        description: Settings modal necessary block cookie 2 column 1.
+        type: text
+        required: true
+      - name: settingsBlocksNecessaryCookie2Col2
+        label: Settings necessary block cookie 2 col 2
+        description: Settings modal necessary block cookie 2 column 2.
+        type: text
+        required: true
+      - name: settingsBlocksNecessaryCookie2Col3
+        label: Settings necessary block cookie 2 col 3
+        description: Settings modal necessary block cookie 2 column 3.
+        type: text
+        required: true
+      - name: settingsBlocksNecessaryCookie2Col4
+        label: Settings necessary block cookie 2 col 4
+        description: Settings modal necessary block cookie 2 column 4.
+        type: text
+        required: true
+      - name: settingsBlocksAnalyticsTitle
+        label: Settings analytics block title
+        description: Settings modal analytics block title.
+        type: text
+        required: true
+      - name: settingsBlocksAnalyticsDescription
+        label: Settings analytics block description
+        description: Settings modal analytics block description.
+        type: text
+        required: true
+      - name: settingsBlocksAnalyticsCookie1Col1
+        label: Settings analytics block cookie 1 col 1
+        description: Settings modal analytics block cookie 1 column 1.
+        type: text
+        required: true
+      - name: settingsBlocksAnalyticsCookie1Col2
+        label: Settings analytics block cookie 1 col 2
+        description: Settings modal analytics block cookie 1 column 2.
+        type: text
+        required: true
+      - name: settingsBlocksAnalyticsCookie1Col3
+        label: Settings analytics block cookie 1 col 3
+        description: Settings modal analytics block cookie 1 column 3.
+        type: text
+        required: true
+      - name: settingsBlocksAnalyticsCookie1Col4
+        label: Settings analytics block cookie 1 col 4
+        description: Settings modal analytics block cookie 1 column 4.
+        type: text
+        required: true
+      - name: settingsBlocksAnalyticsCookie2Col1
+        label: Settings analytics block cookie 2 col 1
+        description: Settings modal analytics block cookie 2 column 1.
+        type: text
+        required: true
+      - name: settingsBlocksAnalyticsCookie2Col2
+        label: Settings analytics block cookie 2 col 2
+        description: Settings modal analytics block cookie 2 column 2.
+        type: text
+        required: true
+      - name: settingsBlocksAnalyticsCookie2Col3
+        label: Settings analytics block cookie 2 col 3
+        description: Settings modal analytics block cookie 2 column 3.
+        type: text
+        required: true
+      - name: settingsBlocksAnalyticsCookie2Col4
+        label: Settings analytics block cookie 2 col 4
+        description: Settings modal analytics block cookie 2 column 4.
+        type: text
+        required: true
+      - name: settingsBlocksInfoTitle
+        label: Settings info block title
+        description: Settings modal info block title.
+        type: text
+        required: true
+      - name: settingsBlocksInfoDescription
+        label: Settings info block description
+        description: Settings modal info block description.
+        type: text
+        required: true
 settings:
   hide: true

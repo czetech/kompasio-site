@@ -42,12 +42,14 @@
     "yaml": "^2.8.1"
   },
   "devDependencies": {
+    "@rollup/plugin-yaml": "^4.1.2",
     "@vite-pwa/astro": "^1.1.0",
     "prettier": "^3.5.3",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-classnames": "^0.7.7",
     "prettier-plugin-merge": "^0.7.3",
-    "prettier-plugin-tailwindcss": "^0.6.11"
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "vite-plugin-css-injected-by-js": "^3.5.2"
   },
   "prettier": {
     "endingPosition": "absolute-with-indent",
@@ -57,6 +59,6 @@
       "prettier-plugin-tailwindcss",
       "prettier-plugin-classnames",
       "prettier-plugin-merge"
-    ] 
+    ]
   }
 }
