@@ -1,5 +1,6 @@
 import 'vanilla-cookieconsent';
 import 'vanilla-cookieconsent/dist/cookieconsent.css';
+import '../styles/cookieconsent.css';
 import content from '../../content/cookieconsent.yaml';
 
 const BASE_URL = 'https://kompasio.sk';
@@ -78,7 +79,7 @@ export const runCookieConsent = () => {
         sk: {
           consent_modal: {
             title: content.consentTitle,
-            description: `${content.consentDescription}<br><button type="button" data-cc="c-settings" class="cc-link">${content.consentSettingsButton}</button>`,
+            description: `${content.consentDescription}<br><button type="button" data-cc="c-settings" class="cc-link" style="margin-top: 0.5rem">${content.consentSettingsButton}</button>`,
             primary_btn: {
                 text: content.consentPrimaryButton,
                 role: 'accept_all'
