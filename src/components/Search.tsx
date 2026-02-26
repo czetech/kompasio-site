@@ -4,7 +4,6 @@ import { algoliasearch } from "algoliasearch";
 import Scrollable from "~/components/Scrollable.tsx";
 import ResultJourney from "~/components/ResultJourney.tsx";
 import ResultPlace from "~/components/ResultPlace.tsx";
-import ResultPlaceCategory from "~/components/ResultPlaceCategory.tsx";
 import { makeEventListener } from "@solid-primitives/event-listener";
 import { navigate } from "astro:transitions/client";
 import SearchIcon from "lucide-solid/icons/search";
@@ -77,7 +76,7 @@ const Search: Component = (props) => {
   });
 
   return (
-    <div class="flex w-full max-w-5xl xl:max-w-[80%] grow flex-col gap-y-4 p-4">
+    <div class="flex w-full max-w-5xl grow flex-col gap-y-4 p-4 xl:max-w-[80%]">
       <div class="flex justify-between gap-x-4">
         <div class="flex flex-col gap-y-4">
           <p class="flex items-center gap-x-2">
@@ -102,19 +101,35 @@ const Search: Component = (props) => {
             </span>
           </p>
           <div class="text-vibrant-blue flex flex-col gap-y-2">
-            <div class="flex items-center gap-x-2" onClick={() => setTab("places")}>
+            <div
+              class="flex items-center gap-x-2"
+              onClick={() => setTab("places")}
+            >
               <ArrowUp
                 class="bg-vibrant-blue text-shuttle-white h-4 w-4 rounded-full"
                 style={{ transform: `rotate(${90}deg)` }}
               />
-              <p classList={{"font-semibold": tab() === "places"}} class="lg:font-semibold">Miesta ({response()?.results[0]?.nbHits ?? 0})</p>
+              <p
+                classList={{ "font-semibold": tab() === "places" }}
+                class="lg:font-semibold"
+              >
+                Miesta ({response()?.results[0]?.nbHits ?? 0})
+              </p>
             </div>
-            <div class="flex items-center gap-x-2" onClick={() => setTab("guides")}>
+            <div
+              class="flex items-center gap-x-2"
+              onClick={() => setTab("guides")}
+            >
               <ArrowUp
                 class="bg-vibrant-blue text-shuttle-white h-4 w-4 rounded-full"
                 style={{ transform: `rotate(${90}deg)` }}
               />
-              <p classList={{"font-semibold": tab() === "guides"}} class="lg:font-semibold">Návody ({response()?.results[1]?.nbHits ?? 0})</p>
+              <p
+                classList={{ "font-semibold": tab() === "guides" }}
+                class="lg:font-semibold"
+              >
+                Návody ({response()?.results[1]?.nbHits ?? 0})
+              </p>
             </div>
           </div>
         </div>
@@ -126,22 +141,24 @@ const Search: Component = (props) => {
           <X class="" />
         </button>
       </div>
-      <div class="grid xl:grid-cols-2 h-full">
-        <div classList={{"hidden": tab() !== "places"}} class="lg:block">
+      <div class="grid h-full xl:grid-cols-2">
+        <div classList={{ hidden: tab() !== "places" }} class="lg:block">
           <Scrollable class="px-6 pt-4 pb-8 md:px-8">
-          <div class="flex gap-x-4 overflow-x-clip pt-4 flex-wrap gap-y-2 mb-8">
-            <For each={response()?.results[2]?.hits}>
-              {(category) => (
-                <a
-                  href={`https://kompasio.sk/app/sk/map/kategoria/${category.alias}`}
-                  class={`text-shuttle-white bg-vibrant-blue rounded-full px-2
-                  text-sm text-nowrap`}
-                >
-                  {category.name}
-                </a>
-              )}
-            </For>
-          </div>
+            <div
+              class={"mb-8 flex flex-wrap gap-x-4 gap-y-2 overflow-x-clip pt-4"}
+            >
+              <For each={response()?.results[2]?.hits}>
+                {(category) => (
+                  <a
+                    href={`https://kompasio.sk/app/sk/map/kategoria/${category.alias}`}
+                    class={`text-shuttle-white bg-vibrant-blue rounded-full px-2
+                    text-sm text-nowrap`}
+                  >
+                    {category.name}
+                  </a>
+                )}
+              </For>
+            </div>
 
             <div class="flex flex-col gap-y-4">
               <For each={response()?.results[0]?.hits}>
@@ -149,22 +166,24 @@ const Search: Component = (props) => {
               </For>
             </div>
           </Scrollable>
-          </div>
-          <div classList={{"hidden": tab() !== "guides"}} class="lg:block">
+        </div>
+        <div classList={{ hidden: tab() !== "guides" }} class="lg:block">
           <Scrollable class="px-6 pt-4 pb-8 md:px-8">
-          <div class="flex gap-x-4 overflow-x-clip pt-4 flex-wrap gap-y-2 mb-8">
-            <For each={response()?.results[3]?.hits}>
-              {(category) => (
-                <a
-                  href={`/navody/${category.slug}`}
-                  class={`text-shuttle-white bg-vibrant-blue rounded-full px-2
-                  text-sm text-nowrap`}
-                >
-                  {category.title}
-                </a>
-              )}
-            </For>
-          </div>
+            <div
+              class={"mb-8 flex flex-wrap gap-x-4 gap-y-2 overflow-x-clip pt-4"}
+            >
+              <For each={response()?.results[3]?.hits}>
+                {(category) => (
+                  <a
+                    href={`/navody/${category.slug}`}
+                    class={`text-shuttle-white bg-vibrant-blue rounded-full px-2
+                    text-sm text-nowrap`}
+                  >
+                    {category.title}
+                  </a>
+                )}
+              </For>
+            </div>
 
             <div class="flex flex-col gap-y-4">
               <For each={response()?.results[1]?.hits}>

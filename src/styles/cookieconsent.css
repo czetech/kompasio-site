@@ -15,7 +15,9 @@
     border-color: transparent;
   }
 
-  .cc_div .cc-link:active, .cc_div .cc-link:hover, .cc_div .cc-link:focus {
+  .cc_div .cc-link:active,
+  .cc_div .cc-link:hover,
+  .cc_div .cc-link:focus {
     border-color: var(--cc-text);
   }
 

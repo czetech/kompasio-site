@@ -216,10 +216,7 @@ async function indexPlaces() {
     columns: {
       id: true,
     },
-    where: and(
-      eq(schema.place.active, 1),
-      gte(schema.place.id, 1183),
-    ),
+    where: and(eq(schema.place.active, 1), gte(schema.place.id, 1183)),
   });
 
   const parameters = await db.query.parameter.findMany();
@@ -307,15 +304,17 @@ async function indexPlaces() {
       Object.entries(parameters).map(([key, arr]) => [key, [...new Set(arr)]]),
     );
 
-    const path = (await db.query.alias.findFirst({
-      columns: {
-        path: true,
-      },
-      where: and(
-        eq(schema.alias.paramId, id),
-        eq(schema.alias.presenter, "Place:default"),
-      ),
-    })).path;
+    const path = (
+      await db.query.alias.findFirst({
+        columns: {
+          path: true,
+        },
+        where: and(
+          eq(schema.alias.paramId, id),
+          eq(schema.alias.presenter, "Place:default"),
+        ),
+      })
+    ).path;
 
     const algoliaObject = {
       alias: place.alias,

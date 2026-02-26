@@ -79,10 +79,7 @@ const Select: Component<StyledSelectProps> = (props) => {
           classList={{ "rotate-180": isOpen() }}
         />
 
-        <span
-          class="grow truncate pl-2"
-          innerHTML={selectedName()}
-        />
+        <span class="grow truncate pl-2" innerHTML={selectedName()} />
       </button>
       <button
         class="absolute top-0 right-0.5 p-1.5"

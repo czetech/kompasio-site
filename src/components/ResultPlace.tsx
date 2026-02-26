@@ -10,7 +10,10 @@ const ResultPlace: Component = (props) => {
     );
 
   return (
-    <a class="bg-vibrant-blue relative rounded-3xl pt-16" href={`https://kompasio.sk/app/sk/map/${props.item.path}`}>
+    <a
+      class="bg-vibrant-blue relative rounded-3xl pt-16"
+      href={`https://kompasio.sk/app/sk/map/${props.item.path}`}
+    >
       <div class="text-vibrant-blue bg-shuttle-white rounded-3xl border p-6">
         <h2
           class="text-xl font-semibold"

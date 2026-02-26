@@ -45,9 +45,7 @@ jobs:
           secrets: |
             "DATABASE_URL=${{ secrets.DATABASE_URL }}"
 
-
           load: true
-
 
       - name: Install Helm
         uses: azure/setup-helm@b9e51907a09c216f16ebe8536097933489208112 # v4.3.0
@@ -60,7 +58,6 @@ jobs:
         run: |
           helm push "kompasio-site-${{ steps.versioning.outputs.version }}.tgz" oci://ghcr.io/czetech/charts
 
-
       - name: Extract Static Site from Docker Image
         run: |
           IMAGE_TAG="ghcr.io/czetech/kompasio-site:${{ steps.versioning.outputs.version }}"
@@ -70,12 +67,11 @@ jobs:
       - name: Upload as artifacts
         uses:
           # yamllint disable-line rule:line-length
-          actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f  # v6.0.0
+          actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
         with:
           name: dist-astro
           path: dist-astro
           if-no-files-found: error
-
 
   lib:
     name: Build lib
@@ -93,7 +89,7 @@ jobs:
       - name: Upload as artifacts
         uses:
           # yamllint disable-line rule:line-length
-          actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f  # v6.0.0
+          actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
         with:
           name: dist-lib
           path: dist-lib

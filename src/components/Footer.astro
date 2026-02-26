@@ -13,9 +13,7 @@ import Youtube from "lucide-solid/icons/youtube";
 import Linkedin from "lucide-solid/icons/linkedin";
 import Earth from "lucide-solid/icons/earth";
 import ContentImage from "~/components/ContentImage.astro";
-import {navItemsPrimary, navItemsSecondary } from "~/lib/navigation.ts";
-
-const { navItems } = Astro.props;
+import { navItemsPrimary, navItemsSecondary } from "~/lib/navigation.ts";
 
 const footer = await getEntry("footer", "footer");
 
@@ -94,7 +92,7 @@ const currentYear = new Date().getFullYear();
   </div>
   <hr class="border-t-2" />
   <div class="grid grid-cols-1 gap-x-16 gap-y-8 p-4 sm:p-8 lg:grid-cols-2">
-    <div class="flex flex-col gap-y-4 sm:gap-y-8 sm:mb-4">
+    <div class="flex flex-col gap-y-4 sm:mb-4 sm:gap-y-8">
       <div class="flex justify-center gap-x-2 lg:justify-start">
         {
           socialIcons.map(
@@ -114,7 +112,11 @@ const currentYear = new Date().getFullYear();
           )
         }
       </div>
-      <div class="grid sm:grid-cols-2 gap-y-2 text-sm lg:text-base [&>div]:flex [&>div]:flex-col [&>div]:items-center [&>div]:gap-y-2 lg:[&>div]:items-start">
+      <div
+        class={`grid gap-y-2 text-sm sm:grid-cols-2 lg:text-base [&>div]:flex
+          [&>div]:flex-col [&>div]:items-center [&>div]:gap-y-2
+          lg:[&>div]:items-start`}
+      >
         <div>
           {
             navItemsPrimary.map((navItem) => (
@@ -136,7 +138,9 @@ const currentYear = new Date().getFullYear();
               </a>
             ))
           }
-          <button type="button" class="hover:underline" data-cc="c-settings">Nastavenia cookies</button>
+          <button type="button" class="hover:underline" data-cc="c-settings"
+            >Nastavenia cookies</button
+          >
         </div>
       </div>
     </div>
@@ -155,7 +159,10 @@ const currentYear = new Date().getFullYear();
         ))
       }
     </div>
-    <div class="flex flex-col gap-y-2 text-xs lg:text-sm lg:col-start-2 lg:row-start-1">
+    <div
+      class={`flex flex-col gap-y-2 text-xs lg:col-start-2 lg:row-start-1
+        lg:text-sm`}
+    >
       <p>{footer.data.fundingHeadline}</p>
       <p class="text-justify">{footer.data.fundingText}</p>
     </div>

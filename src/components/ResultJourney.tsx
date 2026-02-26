@@ -14,7 +14,10 @@ const ResultJourney: Component = (props) => {
   }
 
   return (
-    <a class="text-vibrant-blue rounded-3xl border p-6" href={`/zivotne-situacie/${props.item.slug}`}>
+    <a
+      class="text-vibrant-blue rounded-3xl border p-6"
+      href={`/zivotne-situacie/${props.item.slug}`}
+    >
       <h2
         class="mb-4 text-2xl"
         innerHTML={props.item._highlightResult.title.value}

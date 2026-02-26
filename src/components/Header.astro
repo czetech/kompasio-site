@@ -1,7 +1,7 @@
 ---
 import Logo from "~/components/Logo.astro";
 import Nav from "~/components/Nav.tsx";
-import {navItemsPrimary } from "~/lib/navigation.ts";
+import { navItemsPrimary } from "~/lib/navigation.ts";
 import { getEntry } from "astro:content";
 
 const global = await getEntry("global", "global");
@@ -13,7 +13,12 @@ const global = await getEntry("global", "global");
   transition:name="header"
   class="text-vibrant-blue border-b-2 p-2 md:p-3"
 >
-<Nav client:load navItems={navItemsPrimary} pathname={Astro.url.pathname} searchPlaceholder={global.data.searchPlaceholder}>
+  <Nav
+    client:load
+    navItems={navItemsPrimary}
+    pathname={Astro.url.pathname}
+    searchPlaceholder={global.data.searchPlaceholder}
+  >
     <Logo />
   </Nav>
 </header>

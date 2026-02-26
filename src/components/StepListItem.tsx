@@ -28,7 +28,7 @@ const StepListItem: Component = (props) => {
   return (
     <a
       href={stepPath()}
-      class="hover:underline text-vibrant-blue"
+      class="text-vibrant-blue hover:underline"
       classList={{ "font-semibold": isActive() }}
     >
       <Show when={props.numbering && props.stepIndex}>

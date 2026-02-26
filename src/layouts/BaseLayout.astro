@@ -11,30 +11,6 @@ import { getEntry } from "astro:content";
 const { strictHeight = false } = Astro.props;
 
 const global = await getEntry("global", "global");
-
-const navItems = [
-  {
-    title: "Zoznam",
-    href: "/zoznam/",
-  },
-  {
-    title: "Miesta",
-    href: "/miesta",
-  },
-  {
-    title: "Návody",
-    href: "/navody",
-    test: "^\/(?:navody|zivotne-situacie)(?:\/.*)?$",
-  },
-  {
-    title: "Kontakt",
-    href: "/kontakt",
-  },
-  {
-    title: "Chcem podporiť",
-    href: "/podpora",
-  },
-];
 ---
 
 <html lang="en">
@@ -42,21 +18,25 @@ const navItems = [
     <meta charset="utf-8" />
     <meta name="author" content="Modrá hliadka" />
     <meta name="application-name" content="Kompasio" />
-    <meta
-      name="description"
-      content={global.data.metaDescription}
-    />
+    <meta name="description" content={global.data.metaDescription} />
     <meta name="generator" content={Astro.generator} />
-    {global.data.metaKeywords && <meta name="keywords" content={global.data.metaKeywords.join()} />}
+    {
+      global.data.metaKeywords && (
+        <meta name="keywords" content={global.data.metaKeywords.join()} />
+      )
+    }
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta property="og:description" content={global.data.metaDescription} />
-    <meta property="og:image" content="https://kompasio.sk/app/sk/map/frontend/assets/images/kompasio-logo-square.png?v=4" />
+    <meta
+      property="og:image"
+      content="https://kompasio.sk/app/sk/map/frontend/assets/images/kompasio-logo-square.png?v=4"
+    />
     <meta property="og:title" content={global.data.metaTitle} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="manifest" href="/manifest.json" />
     <title>{global.data.metaTitle}</title>
-    <ClientRouter fallback="none" />
     <script src="../lib/cookieconsent.ts"></script>
+    <ClientRouter fallback="none" />
   </head>
   <body class="text-space-blue bg-shuttle-white">
     <div
@@ -68,6 +48,6 @@ const navItems = [
         <slot />
       </main>
     </div>
-    <Footer navItems={navItems} />
+    <Footer />
   </body>
 </html>

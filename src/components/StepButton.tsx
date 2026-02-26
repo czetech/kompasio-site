@@ -2,7 +2,7 @@ import type { Component } from "solid-js";
 import { splitProps } from "solid-js";
 import { Dynamic } from "solid-js/web";
 
-const Button: Component = (props) => {
+const StepButton: Component = (props) => {
   const [, otherProps] = splitProps(props, ["class", "classList", "secondary"]);
 
   const classCommon = `disabled:bg-frontier-gray rounded-full border px-4 py-2
@@ -24,4 +24,4 @@ const Button: Component = (props) => {
   return <Dynamic component={otherProps.href ? a : button} />;
 };
 
-export default Button;
+export default StepButton;

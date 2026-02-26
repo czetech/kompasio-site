@@ -1,4 +1,4 @@
-import Button from "./Button2.tsx";
+import StepButton from "./StepButton.tsx";
 import ChevronLeft from "lucide-solid/icons/chevron-left";
 import ChevronRight from "lucide-solid/icons/chevron-right";
 import { journeyStore } from "~/stores/journey";
@@ -38,38 +38,40 @@ const StepPagination: Component = (props) => {
       classList={{ "!justify-end": props.previousStepIndex === null }}
     >
       <Show when={props.nextStepIndex}>
-        <Button
+        <StepButton
           secondary={!stepState()?.isCompleted}
           classList={{
             "motion-safe:animate-spring": triggeredComplete(),
           }}
           style="--spring-shift: -1rem;"
-          class="self-end pr-1 duration-250 lg:self-auto lg:pr-2 flex items-center gap-x-2 max-w-full min-w-0"
+          class={`flex max-w-full min-w-0 items-center gap-x-2 self-end pr-1
+            duration-250 lg:self-auto lg:pr-2`}
           href={stepPath(props.nextStepIndex)}
         >
-          <div class="flex flex-col min-w-0">
+          <div class="flex min-w-0 flex-col">
             <div>
               {props.type === "journey" ? "Nasledujúci krok" : "Čítať ďalej"}
             </div>
             <div class="truncate text-xs">{props.nextStepTitle}</div>
           </div>
           <ChevronRight class="flex-none" />
-        </Button>
+        </StepButton>
       </Show>
       <Show when={props.previousStepIndex !== null}>
-        <Button
+        <StepButton
           secondary
-          class="self-start pl-1 lg:self-auto lg:pl-2 flex items-center gap-x-2 max-w-full min-w-0"
+          class={`flex max-w-full min-w-0 items-center gap-x-2 self-start pl-1
+            lg:self-auto lg:pl-2`}
           href={stepPath(props.previousStepIndex)}
         >
           <ChevronLeft class="flex-none" />
-          <div class="flex flex-col min-w-0">
+          <div class="flex min-w-0 flex-col">
             <div>
               {props.type === "journey" ? "Predchádzajúci krok" : "Naspäť"}
             </div>
             <div class="truncate text-xs">{props.previousStepTitle}</div>
           </div>
-        </Button>
+        </StepButton>
       </Show>
     </div>
   );

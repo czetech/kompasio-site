@@ -4,7 +4,7 @@ import { createStore, produce } from "solid-js/store";
 import { createPresence } from "@solid-primitives/presence";
 import Check from "lucide-solid/icons/check";
 
-import Button from "./Button2.tsx";
+import StepButton from "./StepButton.tsx";
 import InlineButton from "./InlineButton";
 import { journeyStore } from "~/stores/journey";
 
@@ -57,7 +57,7 @@ const StepUI: Component = (props) => {
     <div class="border-red-orange mb-6 border-y py-3 md:mb-8 md:py-4">
       <Show when={tasks.length}>
         <div class="mb-4 flex flex-col gap-y-3 md:mb-6 md:gap-y-4">
-          <p class="text-red-orange font-medium">Úlohy:</p>
+          <p class="text-red-orange font-semibold">Úlohy:</p>
           <For each={tasks}>
             {(task) => (
               <div class="flex items-center gap-x-3 md:gap-x-4">
@@ -82,7 +82,7 @@ const StepUI: Component = (props) => {
         </div>
       </Show>
       <div class="grid items-center *:col-start-1 *:row-start-1">
-        <Button
+        <StepButton
           disabled={!isCompleteVisible() || !isAllTasksDone()}
           onClick={handleCompleteClick}
           classList={{
@@ -92,7 +92,7 @@ const StepUI: Component = (props) => {
           class="justify-self-center duration-250"
         >
           {props.nextStepId ? "Vybavené, poďme ďalej!" : "Hotovo!"}
-        </Button>
+        </StepButton>
         <div
           classList={{ invisible: isCompleteMounted() }}
           class="flex items-center gap-x-4 md:gap-x-6"
@@ -106,7 +106,7 @@ const StepUI: Component = (props) => {
             }}
           />
           <div>
-            <p class="text-red-orange font-medium">Vybavené!</p>
+            <p class="text-red-orange font-semibold">Vybavené!</p>
             <p>
               <span>Ak sa chcete vrátiť späť, môžete tento krok návodu </span>
               <InlineButton onClick={handleUndoClick}>

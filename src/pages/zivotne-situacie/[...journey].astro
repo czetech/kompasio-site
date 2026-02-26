@@ -19,7 +19,9 @@ const { journeySlug, stepIndex, journey } = Astro.props;
 const step = journey.steps[stepIndex];
 
 export const getStaticPaths = async () => {
-return (await getCollection("guidesJourneys", ({ data }) => data.active)).flatMap((journey) =>
+  return (
+    await getCollection("guidesJourneys", ({ data }) => data.active)
+  ).flatMap((journey) =>
     journey.data.steps.map((_, index) => ({
       params: {
         journey: path.join(journey.id, index ? index.toString() : null),
@@ -55,13 +57,19 @@ const breadcrumbItems = [
 <BaseLayout>
   <div class="w-full max-w-6xl p-4 md:p-8">
     <nav aria-label="Breadcrumb" class="mb-2">
-      <ol class="flex gap-x-2 flex-wrap gap-y-1">
+      <ol class="flex flex-wrap gap-x-2 gap-y-1">
         {
           breadcrumbItems.map(({ name, href }) => (
             <li>
               <Shrinkwrap client:load class="items-center gap-x-2">
-                <a href={href} class="text-vibrant-blue hover:underline">{name}</a>
-                <ChevronRight class="w-5 h-5 flex-none" aria-hidden="true" slot="after" />
+                <a href={href} class="text-vibrant-blue hover:underline">
+                  {name}
+                </a>
+                <ChevronRight
+                  class="h-5 w-5 flex-none"
+                  aria-hidden="true"
+                  slot="after"
+                />
               </Shrinkwrap>
             </li>
           ))
@@ -108,7 +116,7 @@ const breadcrumbItems = [
             : null}
           nextStepTitle={journey.steps[stepIndex + 1]?.title}
           type={journey.type}
-            />
+        />
       </div>
       <aside>
         <StepListToggle client:load />

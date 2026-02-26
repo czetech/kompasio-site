@@ -10,11 +10,13 @@ const Shrinkwrap: Component = (props) => {
 
   const [widthDiff, setWidthDiff] = createSignal(0);
 
-  const translateX = createMemo(() => widthDiff ? `translateX(${widthDiff()}px)` : null);
+  const translateX = createMemo(() =>
+    widthDiff ? `translateX(${widthDiff()}px)` : null,
+  );
 
   const handleContainerResizeObserver = () => {
-    const {width: containerWidth} = containerRef.getBoundingClientRect();
-    const {width: contentWidth} = contentRef.getBoundingClientRect();
+    const { width: containerWidth } = containerRef.getBoundingClientRect();
+    const { width: contentWidth } = contentRef.getBoundingClientRect();
     setWidthDiff(contentWidth - containerWidth);
   };
 
@@ -33,9 +35,7 @@ const Shrinkwrap: Component = (props) => {
           {props.children}
         </div>
       </div>
-      <div style={{transform: translateX()}}>
-        {props.after}
-      </div>
+      <div style={{ transform: translateX() }}>{props.after}</div>
     </div>
   );
 };

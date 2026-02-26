@@ -148,8 +148,11 @@ const Nav: Component = (props) => {
             value={searchQuery()}
             onInput={handleSearchInput}
             placeholder={props.searchPlaceholder}
-            class="md:w-full focus:outline-none"
-            classList={{"w-0 pointer-events-none": !isSearchOpen(), "w-full": isSearchOpen()}}
+            class="focus:outline-none md:w-full"
+            classList={{
+              "w-0 pointer-events-none": !isSearchOpen(),
+              "w-full": isSearchOpen(),
+            }}
             disabled={!isSearchOpen()}
           />
           <Show when={isSearchOpen()}>
