@@ -38,12 +38,11 @@ jobs:
           # yamllint disable-line rule:line-length
           docker/build-push-action@263435318d21b8e681c14492fe198d362a7d2c83 # v6.18.0
         with:
+          build-args: PUBLIC_PLACES_ORIGIN=${{ vars.PUBLIC_PLACES_ORIGIN }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
           push: true
           tags: ghcr.io/czetech/kompasio-site:${{ steps.versioning.outputs.version }}
-          secrets: |
-            "DATABASE_URL=${{ secrets.DATABASE_URL }}"
 
           load: true
 

@@ -60,7 +60,7 @@ export const runCookieConsent = () => {
   cookieConsent.run({
     cookie_expiration: 365,
     cookie_necessary_only_expiration: 91,
-    cookie_domain: "kompasio.sk",
+    // cookie_domain: "kompasio.sk",
     current_lang: "sk",
     autoclear_cookies: true,
 

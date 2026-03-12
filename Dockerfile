@@ -3,6 +3,7 @@ WORKDIR /app
 COPY package-lock.json package.json ./
 RUN npm ci
 COPY . .
+ARG PUBLIC_PLACES_ORIGIN
 RUN npm run build
 
 FROM nginx:alpine
