@@ -1,0 +1,11 @@
+---
+import { getEntry } from "astro:content";
+import BaseLayout from "~/layouts/BaseLayout.astro";
+
+const contact = await getEntry("contact", "contact");
+---
+
+<BaseLayout>
+  <Section heading="Stránka nenájdená">
+  </Section>
+</BaseLayout>
