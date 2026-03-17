@@ -93,3 +93,12 @@ jobs:
           name: dist-lib
           path: dist-lib
           if-no-files-found: error
+
+  trigger_deploy:
+    name: Trigger Deploy
+    runs-on: ubuntu-24.04
+    steps:
+    - name: Dispatch
+      run: gh api repos/czetech/kompasio-deploy/dispatches -f event_type=deploy
+      env:
+        GH_TOKEN: ${{ secrets.DEPLOY_TRIGGER_TOKEN }}
