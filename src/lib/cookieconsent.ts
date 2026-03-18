@@ -7,6 +7,8 @@ const BASE_URL = "https://kompasio.sk";
 const CONSENT_ENDPOINT = `${BASE_URL}/app/sk/map/cookies/store-consent`;
 const GTM_ID = "GTM-WLZ82XGH";
 
+let cookieConsent: ReturnType<typeof initCookieConsent>;
+
 export const runCookieConsent = () => {
   function gtag() {
     dataLayer.push(arguments);
@@ -56,7 +58,7 @@ export const runCookieConsent = () => {
     analytics_storage: "denied",
   });
 
-  const cookieConsent = initCookieConsent();
+  cookieConsent = initCookieConsent();
   cookieConsent.run({
     cookie_expiration: 365,
     cookie_necessary_only_expiration: 91,
@@ -181,3 +183,9 @@ if (document.readyState === "loading") {
 } else {
   runCookieConsent();
 }
+
+document.addEventListener("astro:page-load", () => {
+  document.querySelectorAll("[data-cc='c-settings']").forEach((el) => {
+    el.addEventListener("click", () => cookieConsent.showSettings());
+  });
+});

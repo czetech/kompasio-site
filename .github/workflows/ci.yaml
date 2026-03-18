@@ -99,6 +99,6 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
     - name: Dispatch
-      run: gh api repos/czetech/kompasio-deploy/dispatches -f event_type=deploy
+      run: gh api repos/czetech/kompasio-deploy/dispatches -f event_type=site
       env:
         GH_TOKEN: ${{ secrets.DEPLOY_TRIGGER_TOKEN }}
