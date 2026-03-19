@@ -132,6 +132,7 @@ const Nav: Component = (props) => {
           md:grid-cols-[auto_1fr_auto] md:before:w-48`}
       >
         <div
+          data-nav-search
           onClick={handleSearchClick}
           class={`bg-shuttle-white flex w-full items-center gap-x-2 rounded-full
             border-2 duration-250 md:justify-self-center md:px-1`}
@@ -166,7 +167,7 @@ const Nav: Component = (props) => {
           </Show>
         </div>
         <div class="flex justify-end md:w-48">
-          <button onClick={handleMenuClick}>
+          <button data-nav-menu-button onClick={handleMenuClick}>
             <Circle>
               <svg
                 class="[&_path]:duration-250"
@@ -186,6 +187,7 @@ const Nav: Component = (props) => {
         </div>
       </div>
       <div
+        data-nav-menu
         class="grid duration-250"
         classList={{
           "grid-rows-[1fr]": isMenuOpen(),
@@ -193,6 +195,7 @@ const Nav: Component = (props) => {
         }}
       >
         <div
+          data-nav-menu-content
           class="overflow-hidden duration-500"
           classList={{ "opacity-0": !isMenuOpen() }}
         >
