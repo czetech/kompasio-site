@@ -1,6 +1,12 @@
 ---
-import Footer from "~/components/Header.astro";
+import Header from "~/components/Header.astro";
+import { shadowCss } from "~/lib/shadow-css.ts";
 
 export const partial = true;
 ---
-<Footer />
+<div>
+  <template shadowrootmode="open">
+    <style set:html={shadowCss}></style>
+    <Header />
+  </template>
+</div>
