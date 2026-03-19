@@ -1,7 +1,4 @@
 import globalCss from "~/styles/global.css?inline";
-import poppins400 from "@fontsource/poppins/400.css?inline";
-import poppins500 from "@fontsource/poppins/500.css?inline";
-import poppins600 from "@fontsource/poppins/600.css?inline";
 
 /**
  * Tailwind CSS prepared for use inside declarative shadow DOM.
@@ -11,8 +8,6 @@ import poppins600 from "@fontsource/poppins/600.css?inline";
  *    and convert initial values to regular CSS variables as a fallback
  * 3. Convert rem units to px (rem references document root, not shadow host)
  * 4. Set baseline styles on :host to prevent inheritance from outer page
- *
- * @see https://github.com/tailwindlabs/tailwindcss/issues/15005
  */
 
 const REM_BASE = 16;
@@ -27,7 +22,7 @@ function remToPx(css: string): string {
 const propertyRules: string[] = [];
 const vars: string[] = [];
 
-const combined = [poppins400, poppins500, poppins600, globalCss].join("\n");
+const combined = globalCss;
 
 export const shadowCss = remToPx(
   combined
@@ -44,7 +39,7 @@ export const shadowCss = remToPx(
       },
     ) +
     (vars.length > 0 ? `\n*,::before,::after{${vars.join(";")}}` : "") +
-    "\n:host{font-size:16px;background-color:var(--color-shuttle-white)}",
+    "\n:host{font-size:16px;background-color:var(--color-shuttle-white);font-family:'Roboto',sans-serif}",
 );
 
 export const propertyCss = propertyRules.join("\n");
