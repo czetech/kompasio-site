@@ -1,12 +1,9 @@
 ---
 import Header from "~/components/Header.astro";
-import { shadowCss } from "~/lib/shadow-css.ts";
+import PartialLayout from "~/layouts/PartialLayout.astro";
 
 export const partial = true;
 ---
-<div>
-  <template shadowrootmode="open">
-    <style set:html={shadowCss}></style>
-    <Header />
-  </template>
-</div>
+<PartialLayout>
+  <Header />
+</PartialLayout>

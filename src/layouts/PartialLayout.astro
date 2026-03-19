@@ -1,0 +1,15 @@
+---
+import { shadowCss } from "~/lib/shadow-css.ts";
+
+export const partial = true;
+---
+<div>
+  <template shadowrootmode="open">
+    <div>
+      <template shadowrootmode="open">
+        <style set:html={shadowCss}></style>
+        <slot />
+      </template>
+    </div>
+  </template>
+</div>
