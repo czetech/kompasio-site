@@ -10,6 +10,7 @@ import poppins600 from "@fontsource/poppins/600.css?inline";
  * 2. Extract @property declarations (browsers ignore them inside shadow DOM)
  *    and convert initial values to regular CSS variables as a fallback
  * 3. Convert rem units to px (rem references document root, not shadow host)
+ * 4. Set baseline styles on :host to prevent inheritance from outer page
  *
  * @see https://github.com/tailwindlabs/tailwindcss/issues/15005
  */
