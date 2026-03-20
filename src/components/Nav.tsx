@@ -108,9 +108,12 @@ const Nav: Component = (props) => {
   );
 
   onMount(() => {
+    if (props.pathname == null) setPathname(window.location.pathname);
+
     makeEventListener(document, "astro:before-swap", handleAstroBeforeSwap);
     makeEventListener(document, "astro:after-swap", handleAstroAfterSwap);
     makeEventListener(document, "keydown", handleKeydown);
+
     initSearch();
   });
 

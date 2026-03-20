@@ -16,7 +16,7 @@ const global = await getEntry("global", "global");
   <Nav
     client:load
     navItems={navItemsPrimary}
-    pathname={Astro.url.pathname}
+    pathname={Astro.props.partial ? null : Astro.url.pathname}
     searchPlaceholder={global.data.searchPlaceholder}
   >
     <Logo />
