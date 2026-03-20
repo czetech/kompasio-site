@@ -53,7 +53,7 @@ export const shadowCss = remToPx(
       },
     ) +
     (vars.length > 0 ? `\n*,::before,::after{${vars.join(";")}}` : "") +
-    "\n:host{font-size:16px;background-color:var(--color-shuttle-white)}",
+    "\n:host{background-color:var(--color-shuttle-white);font-size:16px;text-align:initial;}",
 );
 
 export const propertyCss = propertyRules.join("\n");
