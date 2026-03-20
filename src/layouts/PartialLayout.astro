@@ -2,6 +2,15 @@
 import { fontCss, shadowCss } from "~/lib/shadow-css.ts";
 
 export const partial = true;
+
+// @font-face must live in the document scope — browsers don't reliably
+// register fonts declared inside shadow DOM in their global font cache.
+//
+// Two levels of declarative shadow DOM:
+// - Outer: isolates the partial from the host page's styles so that the
+//   host's CSS (e.g. :host, *, body selectors) doesn't bleed in.
+// - Inner: contains our own Tailwind CSS. Without the outer boundary,
+//   our :host and wildcard selectors would leak out and style the host page.
 ---
 <style set:html={fontCss}></style>
 <div>
