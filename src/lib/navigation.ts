@@ -6,11 +6,12 @@ export const navItemsPrimary = [
   {
     title: global.data.navItemPlaces,
     href: "/app/sk/map/zoznam",
+    test: "^\/app\/sk\/map\/",
   },
   {
     title: global.data.navItemGuides,
     href: "/navody",
-    test: "^\/(?:navody|zivotne-situacie)(?:\/.*)?$",
+    test: "^\/(?:navody|zivotne-situacie)(?:\/|$)",
   },
   {
     title: global.data.navItemContact,
