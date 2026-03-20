@@ -1,4 +1,7 @@
 import globalCss from "~/styles/global.css?inline";
+import poppins400 from "@fontsource/poppins/400.css?inline";
+import poppins500 from "@fontsource/poppins/500.css?inline";
+import poppins600 from "@fontsource/poppins/600.css?inline";
 
 /**
  * Tailwind CSS prepared for use inside declarative shadow DOM.
@@ -22,10 +25,21 @@ function remToPx(css: string): string {
 const propertyRules: string[] = [];
 const vars: string[] = [];
 
-const combined = globalCss;
+const fontFaceRules: string[] = [];
+const poppinsCss = [poppins400, poppins500, poppins600].join("\n");
+
+// Extract @font-face rules — they must live in the document scope,
+// not inside shadow DOM, to register in the browser's font cache.
+poppinsCss.replace(/@font-face\s*\{[^}]*\}/g, (match) => {
+  fontFaceRules.push(match);
+  return "";
+});
+
+/** CSS with @font-face rules for injection into the document scope. */
+export const fontCss = fontFaceRules.join("\n");
 
 export const shadowCss = remToPx(
-  combined
+  globalCss
     .replaceAll(":root", ":root,:host")
     .replace(
       /@property\s+(--[\w-]+)\s*\{([^}]*)\}/g,
@@ -39,7 +53,7 @@ export const shadowCss = remToPx(
       },
     ) +
     (vars.length > 0 ? `\n*,::before,::after{${vars.join(";")}}` : "") +
-    "\n:host{font-size:16px;background-color:var(--color-shuttle-white);font-family:'Roboto',sans-serif}",
+    "\n:host{font-size:16px;background-color:var(--color-shuttle-white)}",
 );
 
 export const propertyCss = propertyRules.join("\n");
