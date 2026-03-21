@@ -214,17 +214,12 @@ const Nav: Component = (props) => {
                     ? new RegExp(navItem.test).test(pathname())
                     : navItem.href === pathname(),
                 );
-                const isExternal = createMemo(() =>
-                  /^https?:\/\//.test(navItem.href),
-                );
                 return (
                   <a
                     href={navItem.href}
-                    target={isExternal() ? "_blank" : null}
                     class={`border-current/50 md:not-first:pl-4
                     md:not-last:border-r-2 md:not-last:pr-4`}
                     classList={{
-                      "after:content-['_↗']": isExternal(),
                       "font-semibold": isActive(),
                     }}
                   >
