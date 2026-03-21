@@ -6,7 +6,7 @@ import cssInjectedByJsPlugin from "vite-plugin-css-injected-by-js";
 export default defineConfig({
   plugins: [yaml(), cssInjectedByJsPlugin()],
   build: {
-    outDir: "dist-lib",
+    outDir: "dist-cookieconsent",
 
     lib: {
       entry: resolve(__dirname, "src/lib/cookieconsent.js"),

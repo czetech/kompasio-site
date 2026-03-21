@@ -73,7 +73,7 @@ jobs:
           if-no-files-found: error
 
   lib:
-    name: Build lib
+    name: Build CookieConsent lib
     permissions:
       contents: read
       packages: write
@@ -84,14 +84,14 @@ jobs:
       - name: NPM Install
         run: npm ci
       - name: Vite build
-        run: npx vite build
+        run: npx vite --config vite.cookieconsent.config.js build
       - name: Upload as artifacts
         uses:
           # yamllint disable-line rule:line-length
           actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
         with:
-          name: dist-lib
-          path: dist-lib
+          name: dist-cookieconsent
+          path: dist-cookieconsent
           if-no-files-found: error
 
   trigger_deploy:
