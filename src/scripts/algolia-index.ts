@@ -216,7 +216,7 @@ async function indexPlaces() {
     columns: {
       id: true,
     },
-    where: and(eq(schema.place.active, 1), gte(schema.place.id, 1183)),
+    where: and(eq(schema.place.active, true), gte(schema.place.id, 1183)),
   });
 
   const parameters = await db.query.parameter.findMany();
