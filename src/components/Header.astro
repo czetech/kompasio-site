@@ -18,6 +18,7 @@ const global = await getEntry("global", "global");
     navItems={navItemsPrimary}
     pathname={Astro.props.partial ? null : Astro.url.pathname}
     searchPlaceholder={global.data.searchPlaceholder}
+    searchRedirectOnly={!!Astro.props.partial}
   >
     <Logo />
   </Nav>

@@ -63,8 +63,9 @@ const Nav: Component = (props) => {
   };
 
   const handleSearchClick = () => {
-    if (!isSearchPathname() || props.searchRedirectOnly) {
+    if (!isSearchPathname()) {
       navigate(searchPathname);
+      if (props.searchRedirectOnly) return;
     }
     setIsSearchOpen(true);
   };
