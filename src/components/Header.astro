@@ -23,12 +23,3 @@ const global = await getEntry("global", "global");
     <Logo />
   </Nav>
 </header>
-
-<script>
-  document.addEventListener("astro:before-swap", (e) => {
-    const header = document.getElementById("header");
-    if (header && e.from.pathname !== e.to.pathname) {
-      header.dataset.previous = e.from.pathname + e.from.search;
-    }
-  });
-</script>

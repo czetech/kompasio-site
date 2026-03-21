@@ -56,12 +56,9 @@ const Search: Component = (props) => {
   };
 
   const handleClose = () => {
-    const header = document.getElementById("header");
-    const referrerUrl = document.referrer && new URL(document.referrer);
-    const previous = header?.dataset.previous
-      || (referrerUrl?.origin === window.location.origin && referrerUrl.pathname + referrerUrl.search)
-      || "/";
-    navigate(previous);
+    const previous = sessionStorage.getItem("searchReturnTo");
+    sessionStorage.removeItem("searchReturnTo");
+    navigate(previous || "/");
   };
 
   const resultsCount = createMemo(
