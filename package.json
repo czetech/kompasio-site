@@ -3,8 +3,10 @@
   "version": "0.1.0",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
+    "build": "npm run build:astro && npm run build:cookieconsent",
+    "build:astro": "astro build",
+    "build:cookieconsent": "vite --config vite.cookieconsent.config.js build",
+    "preview:astro": "astro preview",
     "astro": "astro",
     "index": "tsx src/scripts/algolia-index.ts"
   },
