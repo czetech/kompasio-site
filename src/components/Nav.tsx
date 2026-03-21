@@ -63,8 +63,10 @@ const Nav: Component = (props) => {
   };
 
   const handleSearchClick = () => {
+    if (!isSearchPathname() || props.searchRedirectOnly) {
+      navigate(searchPathname);
+    }
     setIsSearchOpen(true);
-    searchInputRef.focus();
   };
 
   const handleSearchClearClick = (e) => {
@@ -87,7 +89,6 @@ const Nav: Component = (props) => {
   createEffect(() => {
     if (isSearchOpen()) {
       searchInputRef.focus();
-      if (!isSearchPathname()) navigate(searchPathname);
     } else {
       setSearchQuery("");
     }

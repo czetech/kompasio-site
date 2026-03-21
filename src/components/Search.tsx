@@ -57,7 +57,11 @@ const Search: Component = (props) => {
 
   const handleClose = () => {
     const header = document.getElementById("header");
-    navigate(header.dataset.previous ?? "/");
+    const referrerUrl = document.referrer && new URL(document.referrer);
+    const previous = header?.dataset.previous
+      || (referrerUrl?.origin === window.location.origin && referrerUrl.pathname)
+      || "/";
+    navigate(previous);
   };
 
   const resultsCount = createMemo(
