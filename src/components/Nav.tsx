@@ -64,7 +64,7 @@ const Nav: Component = (props) => {
 
   const handleSearchClick = () => {
     if (!isSearchPathname()) {
-      currentPage = window.location.href.replace(window.location.origin, '');
+      const currentPage = window.location.href.replace(window.location.origin, '');
       sessionStorage.setItem("searchReturnTo", currentPage);
       navigate(searchPathname);
       if (props.searchRedirectOnly) return;
