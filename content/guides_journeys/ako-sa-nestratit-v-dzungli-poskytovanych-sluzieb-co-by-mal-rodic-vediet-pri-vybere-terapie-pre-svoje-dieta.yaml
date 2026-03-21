@@ -161,7 +161,7 @@ steps:
 
       3.  Ak už niekto tvrdí, že poskytuje konkrétnu terapiu, mal by to vedieť
       potvrdiť platným certifikátom od príslušnej inštitúcie.  
-          V našej aplikácií Kompasio nájdete [terapeutov s overenými certifikáciami](https://kompasio.sk/app/sk/map/zoznam/?category%5B0%5D=zoznam-certifikovanych-terapeutov) pre niektoré typy terapií.
+          V našej aplikácií Kompasio nájdete [terapeutov s overenými certifikáciami](/app/sk/map/zoznam/?category%5B0%5D=zoznam-certifikovanych-terapeutov) pre niektoré typy terapií.
     uuid: f93dce67-5814-4155-91bc-81064b211d3e
   - title: Alternatívne terapie vs. vedecky podložené metódy
     body: >-
