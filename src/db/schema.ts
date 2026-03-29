@@ -61,6 +61,10 @@ export const categoryRelations = relations(category, ({ one, many }) => ({
   children: many(category, {
     relationName: "parent_category",
   }),
+  htmlHeadAttributes: one(htmlHeadAttributes, {
+    fields: [category.htmlHeadAttributesId],
+    references: [htmlHeadAttributes.id],
+  }),
   placeCategories: many(placeCategory),
 }));
 
@@ -77,6 +81,24 @@ export const country = mysqlTable("country", {
   color: varchar("color", { length: 7 }).notNull(),
   name: varchar("name", { length: 128 }).notNull(),
 });
+
+export const htmlHeadAttributes = mysqlTable("html_head_attributes", {
+  id: int("id").notNull().primaryKey().autoincrement(),
+  title: varchar("title", { length: 255 }).notNull(),
+  metaDescription: longtext("meta_description").notNull(),
+  ogImage: varchar("og_image", { length: 255 }).notNull(),
+  name: varchar("name", { length: 128 }).notNull(),
+});
+
+export const htmlHeadAttributesRelations = relations(
+  htmlHeadAttributes,
+  ({ one }) => ({
+    category: one(category, {
+      fields: [htmlHeadAttributes.id],
+      references: [category.htmlHeadAttributesId],
+    }),
+  }),
+);
 
 export const countryRelations = relations(country, ({ many }) => ({
   addresses: many(address),

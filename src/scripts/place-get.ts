@@ -106,20 +106,34 @@ async function main() {
     }
   }
 
+  function tryParseJson(value: string): unknown {
+    try {
+      return JSON.parse(value);
+    } catch {
+      return value;
+    }
+  }
+
   const result = {
     id: place.id,
     name: place.name,
     description: place.description,
     shortDescription: place.shortDescription,
     address,
+    addressInstructions: place.addressInstructions || null,
     website: place.website || null,
+    additionalWebsites: tryParseJson(place.additionalWebsites),
     email: place.publicEmail || null,
+    additionalEmails: tryParseJson(place.additionalEmails),
     location:
       place.locationLat != null && place.locationLng != null
         ? { lat: place.locationLat, lng: place.locationLng }
         : null,
     parameters,
     categories,
+    externalReferences: tryParseJson(place.externalReferences),
+    internalNote: place.internalNote || null,
+    eduid: place.eduid || null,
   };
 
   console.log(stringify(result, { lineWidth: 0 }));
