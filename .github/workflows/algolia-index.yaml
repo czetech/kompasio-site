@@ -1,0 +1,76 @@
+name: Algolia Index
+on:
+  schedule:
+    # Nightly at 02:30 UTC (03:30 CET / 04:30 CEST)
+    - cron: '30 2 * * *'
+  workflow_dispatch:
+    inputs:
+      type:
+        description: Index type to sync (leave empty to sync all)
+        type: choice
+        required: false
+        default: ''
+        options:
+          - ''
+          - guides_categories
+          - guides_journeys
+          - places
+          - places_categories
+      id:
+        description: Single object ID to sync (requires type)
+        type: string
+        required: false
+        default: ''
+  repository_dispatch:
+    types:
+      - algolia-index
+permissions:
+  contents: read
+jobs:
+  sync:
+    name: Sync Algolia
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - name: Setup Node
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: '22'
+      - name: NPM Install
+        run: npm ci
+      - name: Resolve Inputs
+        id: inputs
+        run: |
+          case "${{ github.event_name }}" in
+            workflow_dispatch)
+              TYPE="${{ inputs.type }}"
+              ID="${{ inputs.id }}"
+              ;;
+            repository_dispatch)
+              TYPE="${{ github.event.client_payload.type }}"
+              ID="${{ github.event.client_payload.id }}"
+              ;;
+            *)
+              TYPE=""
+              ID=""
+              ;;
+          esac
+          ARGS=""
+          if [ -n "$TYPE" ]; then
+            ARGS="--type $TYPE"
+            if [ -n "$ID" ]; then
+              ARGS="$ARGS --id $ID"
+            fi
+          elif [ -n "$ID" ]; then
+            echo "Error: id provided without type" >&2
+            exit 1
+          fi
+          echo "args=$ARGS" >> $GITHUB_OUTPUT
+          echo "Running with: $ARGS"
+      - name: Run Algolia Index
+        run: npx tsx src/scripts/algolia-index.ts ${{ steps.inputs.outputs.args }}
+        env:
+          ALGOLIA_APP_ID: ${{ secrets.ALGOLIA_APP_ID }}
+          ALGOLIA_ADMIN_KEY: ${{ secrets.ALGOLIA_ADMIN_KEY }}
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
