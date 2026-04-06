@@ -71,7 +71,17 @@ async function main() {
         })
       : [];
 
-  const allOptionIds = placeParamValues.flatMap((pv) =>
+  const paramMap = new Map(
+    allParameters.map((p) => [p.id, { name: p.name, type: p.type }]),
+  );
+
+  // Collect option IDs only for select/multiselect parameters
+  const selectParamValues = placeParamValues.filter((pv) => {
+    const param = paramMap.get(pv.parameterId!);
+    return param && (param.type === "select" || param.type === "multiselect");
+  });
+
+  const allOptionIds = selectParamValues.flatMap((pv) =>
     pv.value
       .split(",")
       .map((v) => parseInt(v.trim()))
@@ -86,23 +96,26 @@ async function main() {
       : [];
 
   const optionMap = new Map(allOptions.map((o) => [o.id, o.name]));
-  const paramMap = new Map(allParameters.map((p) => [p.id, p.name]));
 
-  const parameters: Record<string, string[]> = {};
+  const parameters: Record<string, string | string[]> = {};
   for (const pv of placeParamValues) {
-    const paramName = paramMap.get(pv.parameterId!);
-    if (!paramName) continue;
+    const param = paramMap.get(pv.parameterId!);
+    if (!param) continue;
 
-    const optionNames = pv.value
-      .split(",")
-      .map((v) => parseInt(v.trim()))
-      .filter((n) => !isNaN(n))
-      .map((id) => optionMap.get(id))
-      .filter(Boolean) as string[];
+    if (param.type === "select" || param.type === "multiselect") {
+      const optionNames = pv.value
+        .split(",")
+        .map((v) => parseInt(v.trim()))
+        .filter((n) => !isNaN(n))
+        .map((id) => optionMap.get(id))
+        .filter(Boolean) as string[];
 
-    if (optionNames.length > 0) {
-      if (!parameters[paramName]) parameters[paramName] = [];
-      parameters[paramName].push(...optionNames);
+      if (optionNames.length > 0) {
+        if (!parameters[param.name]) parameters[param.name] = [];
+        (parameters[param.name] as string[]).push(...optionNames);
+      }
+    } else if (param.type === "text") {
+      parameters[param.name] = pv.value;
     }
   }
 
