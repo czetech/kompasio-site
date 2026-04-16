@@ -1,7 +1,6 @@
 ---
 import { getEntry } from "astro:content";
 import BaseLayout from "~/layouts/BaseLayout.astro";
-import Markdown from "~/components/Markdown.astro";
 import Section from "~/components/Section.astro";
 
 const donate = await getEntry("donate", "donate");
@@ -15,8 +14,7 @@ const campaignId = "d0dcc286-b7a2-44aa-b908-dcbd9912a8d5";
         action="https://api.darujme.sk/v1/donations/post/"
         method="post"
         enctype="application/x-www-form-urlencoded"
-        class={`flex w-full max-w-md flex-col gap-5 self-start
-          justify-self-center mx-4`}
+        class="mx-auto flex w-full max-w-md flex-col gap-5 px-4"
       >
         <input type="hidden" name="campaign_id" value={campaignId} />
         <input type="hidden" name="value" id="donation-value" value="10" />
