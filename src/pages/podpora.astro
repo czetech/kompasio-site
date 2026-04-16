@@ -5,23 +5,323 @@ import Markdown from "~/components/Markdown.astro";
 import Section from "~/components/Section.astro";
 
 const donate = await getEntry("donate", "donate");
+const campaignId = "d0dcc286-b7a2-44aa-b908-dcbd9912a8d5";
 ---
 
 <BaseLayout>
   <Section heading={donate.data.title}>
-    <div
-      class={`grid max-w-7xl gap-x-32 gap-y-8 px-8 pt-4 md:gap-y-16
-        lg:grid-cols-2`}
-    >
-      <Markdown content={donate.data.body} />
-      <stripe-buy-button
-        class="self-start justify-self-center"
-        buy-button-id={donate.data.stripePayButtonId}
-        publishable-key={donate.data.stripePublishableKey}
+      <form
+        id="donation-form"
+        action="https://api.darujme.sk/v1/donations/post/"
+        method="post"
+        enctype="application/x-www-form-urlencoded"
+        class={`flex w-full max-w-md flex-col gap-5 self-start
+          justify-self-center`}
       >
-      </stripe-buy-button>
-    </div>
+        <input type="hidden" name="campaign_id" value={campaignId} />
+        <input type="hidden" name="value" id="donation-value" value="10" />
+        <input type="hidden" name="kind" value="person" />
+
+        <fieldset>
+          <legend class="mb-2 font-semibold">Periodicita</legend>
+          <div class="grid grid-cols-2 gap-2" data-donation-periodicity>
+            <label class="cursor-pointer">
+              <input
+                type="radio"
+                name="periodicity"
+                value="onetime"
+                class="peer sr-only"
+                checked
+              />
+              <span
+                class={`border-space-blue peer-checked:bg-vibrant-blue
+                  peer-checked:text-shuttle-white peer-checked:border-vibrant-blue
+                  block rounded-full border-2 py-2 text-center`}
+                >Jednorazovo</span
+              >
+            </label>
+            <label class="cursor-pointer">
+              <input
+                type="radio"
+                name="periodicity"
+                value="periodical"
+                class="peer sr-only"
+              />
+              <span
+                class={`border-space-blue peer-checked:bg-vibrant-blue
+                  peer-checked:text-shuttle-white peer-checked:border-vibrant-blue
+                  block rounded-full border-2 py-2 text-center`}
+                >Pravidelne</span
+              >
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend class="mb-2 font-semibold">Výška daru (€)</legend>
+          <div
+            class="mb-3 grid grid-cols-4 gap-2"
+            data-donation-fixed="onetime"
+          >
+            {
+              [10, 20, 30, 50].map((amount, i) => (
+                <label class="cursor-pointer">
+                  <input
+                    type="radio"
+                    name="fixed_value"
+                    value={amount}
+                    class="peer sr-only"
+                    checked={i === 0}
+                  />
+                  <span
+                    class={`border-space-blue peer-checked:bg-vibrant-blue
+                      peer-checked:text-shuttle-white peer-checked:border-vibrant-blue
+                      block rounded-full border-2 py-2 text-center`}
+                  >
+                    {amount}
+                  </span>
+                </label>
+              ))
+            }
+          </div>
+          <div
+            class="mb-3 hidden grid-cols-4 gap-2"
+            data-donation-fixed="periodical"
+          >
+            {
+              [10, 15, 20, 50].map((amount) => (
+                <label class="cursor-pointer">
+                  <input
+                    type="radio"
+                    name="fixed_value"
+                    value={amount}
+                    class="peer sr-only"
+                  />
+                  <span
+                    class={`border-space-blue peer-checked:bg-vibrant-blue
+                      peer-checked:text-shuttle-white peer-checked:border-vibrant-blue
+                      block rounded-full border-2 py-2 text-center`}
+                  >
+                    {amount}
+                  </span>
+                </label>
+              ))
+            }
+          </div>
+          <input
+            type="number"
+            id="donation-custom"
+            min="1"
+            max="99999"
+            step="any"
+            placeholder="Vlastná suma"
+            class={`border-space-blue focus:border-vibrant-blue w-full
+              rounded-full border-2 bg-transparent px-4 py-2 outline-none`}
+          />
+        </fieldset>
+
+        <fieldset>
+          <legend class="mb-2 font-semibold">Spôsob platby</legend>
+          <div class="flex flex-col gap-2" data-donation-payment="onetime">
+            {
+              [
+                ["1342d2af-a343-4e73-9f5a-7593b9978697", "Platobná karta"],
+                ["38409407-c4ec-4060-b4a1-4792f29335ad", "TatraPay"],
+                ["c07e714c-74ed-4ac6-ab63-3898a73f1fa0", "SporoPay"],
+                ["c58f76e1-cade-4300-9531-71e275476edd", "PayPal"],
+                ["f2e7956e-a3f6-4bff-9e18-2ab3096a5bed", "ePlatby VÚB"],
+                ["3dcf55d1-6383-45b4-b098-dc588187b854", "Bankový prevod"],
+              ].map(([id, label], i) => (
+                <label class="flex cursor-pointer items-center gap-2">
+                  <input
+                    type="radio"
+                    name="payment_method_id"
+                    value={id}
+                    checked={i === 0}
+                    class="accent-vibrant-blue"
+                  />
+                  <span>{label}</span>
+                </label>
+              ))
+            }
+          </div>
+          <div
+            class="hidden flex-col gap-2"
+            data-donation-payment="periodical"
+          >
+            {
+              [
+                ["b71ff7cf-39f7-40db-8a34-e1f30292c215", "Platobná karta"],
+                ["f425f4af-74ce-4a9b-82d6-783c93b80f17", "Bankový prevod"],
+              ].map(([id, label]) => (
+                <label class="flex cursor-pointer items-center gap-2">
+                  <input
+                    type="radio"
+                    name="payment_method_id"
+                    value={id}
+                    class="accent-vibrant-blue"
+                  />
+                  <span>{label}</span>
+                </label>
+              ))
+            }
+          </div>
+        </fieldset>
+
+        <div class="flex flex-col gap-3">
+          <label class="flex flex-col gap-1">
+            <span>Meno *</span>
+            <input
+              type="text"
+              name="first_name"
+              required
+              class={`border-space-blue focus:border-vibrant-blue rounded-full
+                border-2 bg-transparent px-4 py-2 outline-none`}
+            />
+          </label>
+          <label class="flex flex-col gap-1">
+            <span>Priezvisko *</span>
+            <input
+              type="text"
+              name="last_name"
+              required
+              class={`border-space-blue focus:border-vibrant-blue rounded-full
+                border-2 bg-transparent px-4 py-2 outline-none`}
+            />
+          </label>
+          <label class="flex flex-col gap-1">
+            <span>Email *</span>
+            <input
+              type="email"
+              name="email"
+              required
+              class={`border-space-blue focus:border-vibrant-blue rounded-full
+                border-2 bg-transparent px-4 py-2 outline-none`}
+            />
+          </label>
+        </div>
+
+        <label class="flex items-start gap-2 text-sm">
+          <input
+            type="checkbox"
+            required
+            class="accent-vibrant-blue mt-1"
+          />
+          <span
+            >Súhlasím s <a
+              href="https://darujme.sk/vseobecne-obchodne-podmienky/"
+              target="_blank"
+              rel="noopener"
+              class="text-vibrant-blue-dark hover:underline"
+              >podmienkami DARUJME.sk</a
+            > *</span
+          >
+        </label>
+        <label class="flex items-start gap-2 text-sm">
+          <input
+            type="checkbox"
+            required
+            class="accent-vibrant-blue mt-1"
+          />
+          <span
+            >Súhlasím so spracovaním mojich <a
+              href="/gdpr"
+              class="text-vibrant-blue-dark hover:underline"
+              >osobných údajov</a
+            > *</span
+          >
+        </label>
+
+        <button
+          type="submit"
+          class={`gradient text-shuttle-white hover:opacity-90 mt-2
+            rounded-full px-6 py-3 font-semibold transition-opacity`}
+          >Darovať</button
+        >
+      </form>
   </Section>
 </BaseLayout>
 
-<script async src="https://js.stripe.com/v3/buy-button.js"></script>
+<script>
+  const initDonationForm = () => {
+    const form = document.getElementById(
+      "donation-form",
+    ) as HTMLFormElement | null;
+    if (!form) return;
+
+    const value = form.querySelector<HTMLInputElement>("#donation-value")!;
+    const custom = form.querySelector<HTMLInputElement>("#donation-custom")!;
+    const periodicityRadios = form.querySelectorAll<HTMLInputElement>(
+      'input[name="periodicity"]',
+    );
+    const fixedSections =
+      form.querySelectorAll<HTMLElement>("[data-donation-fixed]");
+    const paymentSections = form.querySelectorAll<HTMLElement>(
+      "[data-donation-payment]",
+    );
+
+    const showForPeriodicity = (mode: string) => {
+      fixedSections.forEach((el) => {
+        const match = el.dataset.donationFixed === mode;
+        el.classList.toggle("hidden", !match);
+        el.classList.toggle("grid", match);
+      });
+      paymentSections.forEach((el) => {
+        const match = el.dataset.donationPayment === mode;
+        el.classList.toggle("hidden", !match);
+        el.classList.toggle("flex", match);
+      });
+
+      if (!custom.value) {
+        const visibleFixed = form.querySelector<HTMLElement>(
+          `[data-donation-fixed="${mode}"]`,
+        );
+        const firstFixed = visibleFixed?.querySelector<HTMLInputElement>(
+          'input[name="fixed_value"]',
+        );
+        if (firstFixed) {
+          firstFixed.checked = true;
+          value.value = firstFixed.value;
+        }
+      }
+
+      const visiblePayment = form.querySelector<HTMLElement>(
+        `[data-donation-payment="${mode}"]`,
+      );
+      const firstPayment = visiblePayment?.querySelector<HTMLInputElement>(
+        'input[name="payment_method_id"]',
+      );
+      if (firstPayment && !visiblePayment!.querySelector("input:checked")) {
+        firstPayment.checked = true;
+      }
+    };
+
+    periodicityRadios.forEach((r) =>
+      r.addEventListener("change", () => showForPeriodicity(r.value)),
+    );
+
+    form.addEventListener("change", (e) => {
+      const target = e.target as HTMLInputElement;
+      if (target.name === "fixed_value") {
+        value.value = target.value;
+        custom.value = "";
+      }
+    });
+
+    custom.addEventListener("input", () => {
+      form
+        .querySelectorAll<HTMLInputElement>('input[name="fixed_value"]:checked')
+        .forEach((el) => (el.checked = false));
+      value.value = custom.value;
+    });
+
+    form.addEventListener("submit", () => {
+      form
+        .querySelectorAll('input[name="fixed_value"], #donation-custom')
+        .forEach((el) => el.remove());
+    });
+  };
+
+  initDonationForm();
+  document.addEventListener("astro:page-load", initDonationForm);
+</script>
