@@ -11,20 +11,107 @@ description: >-
   po tom, ako sa vám zverí. Praktický sprievodca ochranou detí – vrátane detí
   neverbálnych a detí so znevýhodnením._
 steps:
-  - title: "Úvod "
+  - title: Prečo sa to týka aj vás
     body: >-
-      Väčšina z nás verí v dobro ľudí a pomáha z vnútorného presvedčenia.
-      Existujú však odborníci, ktorí sa s tzv. „pomocou“ stretávajú v úplne
-      inom, omnoho temnejšom kontexte – riešia situácie, ktoré sú za každou
-      mysliteľnou hranicou.
+      Safeguarding – ochrana detí pred zneužívaním – sa týka každého prostredia,
+      kde sú deti: rodiny, školy, klubu, krúžku aj online priestoru.
 
 
-      Práve preto je kritické myslenie také dôležité. O to viac, ak chceme
-      chrániť to najcennejšie, čo máme – **deti. Všetky deti.**
+      Deti s PAS a s intelektuálnym znevýhodnením sú **obzvlášť zraniteľné** –
+      často nerozpoznajú skryté úmysly a ťažšie o zážitku hovoria. Zahraničné
+      štatistiky (prednáška Mgr. Gažovej, Špeciálne olympiády Slovensko)
+      uvádzajú, že zneužitých bolo 8 z 10 žien a 5 z 10 mužov s intelektuálnym
+      znevýhodnením – a nahlásených je iba 7 % prípadov.
 
 
-      Návod vychádza z prednášky **Mgr. Gažovej** o safeguardingu a ochrane pred
-      sexuálnym zneužívaním, ktorá odznela na Špeciálnopedagogických dňoch
-      Katedry špeciálnej pedagogiky Univerzity Komenského v Bratislave.
+      Netýka sa to len verbálnych detí. Aj neverbálne deti komunikujú –
+      piktogramami, obrázkami, emotikonmi. Práve v online priestore preto
+      potrebujú vedieť, čo je bezpečné, čo posielajú a čo im prichádza.
     uuid: bcd50792-4881-426f-ad1f-2ccbe613ebda
+  - title: Ako funguje agresor
+    body: >-
+      Nemá typický vzhľad ani povolanie – môže to byť ktokoľvek: tréner,
+      učiteľka, rodinný známy. **8 z 10 zneužívateľov sú ľudia, ktorých dieťa aj
+      rodina poznajú.** Typicky:
+
+
+      *   buduje si vzťah s dieťaťom dlhodobo a nikam sa neponáhľa,
+          
+      *   vytvára dobrý dojem v komunite – preto mu okolie často uverí skôr než
+      dieťaťu,
+          
+      *   vyberá si „najslabší článok": dieťa osamelé, šikanované alebo so
+      znevýhodnením, dieťa z neúplnej rodiny, alebo dieťa, ktorému sa doma
+      nevenuje veľa pozornosti,
+          
+      *   dôveru si kupuje pochvalami, pozornosťou a darčekmi.
+    uuid: 72e5721e-15ef-446a-b026-d8bb8e464ac3
+  - title: Zásady prevencie
+    body: >-
+      *   **Žiadne aktivity osamote za zatvorenými dverami.** Doučovanie či
+      dodatočný tréning len na verejne viditeľnom mieste. Chráni to dieťa aj
+      dospelého.
+          
+      *   **Pravidlá platia pre každého** – aj pre ľudí, ktorým dôverujete.
+          
+      *   **Všímajte si oddeľovanie od skupiny.** Ak niekto dieťa opakovane
+      berie bokom, je to varovný signál.
+          
+      *   **Odvozy na krúžky:** vždy dvaja dospelí v aute alebo viac detí naraz
+      – nie jeden dospelý s jedným dieťaťom každý týždeň.
+    uuid: 8a53477d-5188-4a0e-aca8-8a5a3f1b21c8
+  - title: Varovné signály
+    body: 'Najvýraznejším signálom je **zmena správania**: dieťa bolo veselé a zrazu
+      je utiahnuté, nechce chodiť do školy, má bolesti brucha, je podráždené,
+      „inakšie". Nemusí ísť o zneužívanie – ale niečo sa deje. Spozornite.'
+    uuid: 75008c6a-31bb-4bbf-af9c-85a18766dcdf
+  - title: Ako viesť rozhovor
+    body: >-
+      **Nepýtajte sa priamo** na modriny, zmenu nálady ani na samotný akt. Dieťa
+      sa hanbí, nechce sa rozpamätávať a agresor ho často presvedčil, že vinné
+      je ono. Pýtajte sa všeobecne:
+
+
+      *   Aký si mal/mala víkend, prázdniny?
+          
+      *   S kým si bol/bola? Zmenilo sa niečo doma, v škole, v klube?
+          
+      *   Ako sa cítiš?
+          
+
+      Keď sa dieťa rozrozpráva: vypočujte ho, neprerušujte, nespochybňujte,
+      oceňte jeho odvahu.
+
+
+      _“Pamätáte si, ak ste mali v škole dobré známky a potom ste raz dostali
+      trojku, nebodaj štvorku? Niekedy, ak to situácia dovoľovala, ste sa
+      priznali možno po 2 týždňoch. A to išlo len o známku -  predstavte si
+      dieťa, ktoré bolo zneužité - ako Vám to má povedať, keď len horšiu známku
+      sme mali problém priznať? Dieťa to vníma ako zlyhanie. Myslite na to.”_
+    uuid: ccfc6261-3270-4eaf-a8ee-c73d11b402dd
+  - title: Čo urobiť, keď sa vám dieťa zverí
+    body: >-
+      1.  **Uverte mu.** Dieťa, ktoré sa zverí, robí najodvážnejší krok svojho
+      života.
+          
+      2.  **Hneď po rozhovore si všetko detailne zapíšte.** Deti – najmä so
+      znevýhodnením – neskôr pod tlakom výpoveď menia. Stávate sa SVEDKOM:
+      **jediný, komu dieťa povedalo, čo sa skutočne stalo.**
+          
+      3.  **Informujte vedenie organizácie** – riaditeľa školy, klubu,
+      zamestnávateľa. Aj pri samotnom podozrení.
+          
+      4.  Vedenie má zistenie **nahlásiť orgánom činným v trestnom konaní**. Ako
+      rodič sa môžete obrátiť priamo na políciu.
+          
+          Ticho chráni agresora, nie dieťa.
+
+          
+
+      > „Radšej budem hysterická matka, ako matka zneužívaného dieťaťa." (Mgr.
+      Gažová)
+    uuid: 5894e0de-16e2-422d-bb46-c0832a8b4ac4
+  - title: Mýty a fakty
+    body: "![](/images/myty-a-fakty.png)"
+    uuid: de36091a-ddff-453a-bcdc-f132b1fae496
 uuid: 5ac8f02e-3ab5-4b8e-8213-36383b425f57
