@@ -10,17 +10,21 @@ description: >-
   _Ako rozpoznať varovné signály, ako viesť rozhovor s dieťaťom a čo urobiť hneď
   po tom, ako sa vám zverí. Praktický sprievodca ochranou detí – vrátane detí
   neverbálnych a detí so znevýhodnením._
+
+
+  Tento rýchly sprievodca vznikol na základe prednášky, ktorú 20. novembra 2025
+  na Katedre špeciálnej pedagogiky Univerzity Komenského v Bratislave predniesla
+  Jana Gažová, národná riaditeľka Špeciálnych olympiád Slovensko.
 steps:
   - title: Prečo sa to týka aj vás
     body: >-
       Safeguarding - ochrana detí pred zneužívaním - sa týka každého prostredia,
-      kde sú deti: rodiny, školy, klubu, krúžku aj online priestoru.
+      kde sú deti: rodiny, školy, kluby, krúžky aj online priestoru.
 
 
       Deti s PAS a s intelektuálnym znevýhodnením sú **obzvlášť zraniteľné** –
       často nerozpoznajú skryté úmysly a ťažšie o zážitku hovoria. Zahraničné
-      štatistiky (prednáška Mgr. Gažovej, Špeciálne olympiády Slovensko)
-      uvádzajú, že ak hovoríme o intelektovom znevýhodnený, až:
+      štatistiky uvádzajú, že ak hovoríme o intelektovom znevýhodnený, až:
 
 
       *   8 z 10 žien bolo zneužitých,
@@ -60,24 +64,34 @@ steps:
       dodatočný tréning len na verejne viditeľnom mieste. Chráni to dieťa aj
       dospelého.
           
-      *   **Pravidlá platia pre každého** – aj pre ľudí, ktorým dôverujete.
+      *   **Pravidlá platia pre každého**. Aj pre ľudí, ktorým dôverujete.
           
       *   **Všímajte si oddeľovanie od skupiny.** Ak niekto dieťa opakovane
       berie bokom, je to varovný signál.
           
-      *   **Odvozy na krúžky:** vždy dvaja dospelí v aute alebo viac detí naraz
+      *   **Odvozy na krúžky.** Vždy dvaja dospelí v aute alebo viac detí naraz
       – nie jeden dospelý s jedným dieťaťom každý týždeň.
     uuid: 8a53477d-5188-4a0e-aca8-8a5a3f1b21c8
   - title: Varovné signály
-    body: 'Najvýraznejším signálom je **zmena správania**: dieťa bolo veselé a zrazu
-      je utiahnuté, nechce chodiť do školy, má bolesti brucha, je podráždené,
-      „inakšie". Nemusí ísť o zneužívanie – ale niečo sa deje. Spozornite.'
+    body: >-
+      Najvýraznejším signálom je **zmena správania**.
+
+
+      Dieťa bolo veselé a zrazu je utiahnuté, nechce chodiť do školy, má bolesti
+      brucha, je podráždené, „inakšie". Nemusí ísť o zneužívanie – ale niečo sa
+      deje.
+
+
+      **Spozornite.**
     uuid: 75008c6a-31bb-4bbf-af9c-85a18766dcdf
   - title: Ako viesť rozhovor
     body: >-
       **Nepýtajte sa priamo** na modriny, zmenu nálady ani na samotný akt. Dieťa
-      sa hanbí, nechce sa rozpamätávať a agresor ho často presvedčil, že vinné
-      je ono. Pýtajte sa všeobecne:
+      sa hanbí, nechce sa rozpamätať a agresor ho často presvedčil, že je dieťa
+      na vine.
+
+
+      Pýtajte sa všeobecne:
 
 
       *   Aký si mal/mala víkend, prázdniny?
@@ -87,8 +101,8 @@ steps:
       *   Ako sa cítiš?
           
 
-      Keď sa dieťa rozrozpráva: vypočujte ho, neprerušujte, nespochybňujte,
-      oceňte jeho odvahu.
+      **Keď sa dieťa rozrozpráva: vypočujte ho, neprerušujte, nespochybňujte,
+      oceňte jeho odvahu.**
 
 
       _“Pamätáte si, ak ste mali v škole dobré známky a potom ste raz dostali
@@ -96,6 +110,7 @@ steps:
       priznali možno po 2 týždňoch. A to išlo len o známku -  predstavte si
       dieťa, ktoré bolo zneužité - ako Vám to má povedať, keď len horšiu známku
       sme mali problém priznať? Dieťa to vníma ako zlyhanie. Myslite na to.”_
+      (prednáška Mgr. Gažovej, Špeciálne olympiády Slovensko)
     uuid: ccfc6261-3270-4eaf-a8ee-c73d11b402dd
   - title: Čo urobiť, keď sa vám dieťa zverí
     body: >-
@@ -116,9 +131,20 @@ steps:
 
           
 
-      > „Radšej budem hysterická matka, ako matka zneužívaného dieťaťa." (Mgr.
-      Gažová)
+      > „Radšej budem hysterická matka, ako matka zneužívaného dieťaťa."
+      (Gažová)
     uuid: 5894e0de-16e2-422d-bb46-c0832a8b4ac4
+  - title: Stali ste sa svedkom
+    body: >-
+      **Získali ste dôveru obete. TO SKUTOČNE NIE JE MÁLO.**
+
+
+      Váš strach vám nemôže brániť v tom, aby ste konali v najlepšom záujme
+      dieťaťa. Je nutné ohlásiť túto skutočnosť vedeniu organizácie, kde
+      pracujeme a pred orgánmi činnými v tresnom konaní je vaša výpoveď tá,
+      ktorej sa budú držať. Preto je nutné si všetko zapísať presne tak, ako sa
+      Vám dieťa zverilo.
+    uuid: 462cd353-c691-4828-82de-ec4ac463fcdf
   - title: Mýty a fakty
     body: "![](/images/myty-a-fakty.png)"
     uuid: de36091a-ddff-453a-bcdc-f132b1fae496
