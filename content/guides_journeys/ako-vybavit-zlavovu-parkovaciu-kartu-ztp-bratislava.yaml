@@ -3,12 +3,12 @@ active: true
 category: 3d6262d1-f09e-46ec-91fd-02a3f4cc2268
 type: journey
 description: >-
-  Parkovacia karta v systému PAAS pre osobu s ŤZP umožnuje v zónach PAAS
+  Parkovacia karta v systému PAAS pre osobu s ŤZP umožňuje v zónach PAAS
   parkovať so zľavou 90%. Parkovanie môžete platiť ľubovoľným spôsobom ako
   doteraz (apka PAAS, parkomat, apka HOPIN).
 
 
-  Parkovacia karta sa vzťahuje na vozidlo, resp na EČV (ŠPZ).
+  Parkovacia karta sa vzťahuje na vozidlo, resp. na EČV (ŠPZ).
 
 
   Nikam nechoďte. Celý proces vybavíte online.
@@ -33,7 +33,7 @@ steps:
       zaslanie nasledujúceho potvrdenia zamestnávateľa.
 
 
-      UPOZORNENIE: Vyplnenie takéhoto potvrdenie môže viesť v niektorých
+      UPOZORNENIE: Vyplnenie takéhoto potvrdenia môže viesť v niektorých
       prípadoch k daňovým povinnostiam prevyšujúcim potenciálnu zľavu na
       parkovaní. Poraďte sa so svojím daňovým poradcom.
 
@@ -45,7 +45,7 @@ steps:
       doložiť písomnú nájomnú zmluvu.
 
 
-      Pozor, magistrát poskytuje zľavu iba tým, kotrí majú auto prenajaté "za
+      Pozor, magistrát poskytuje zľavu iba tým, ktorí majú auto prenajaté "za
       komerčných podmienok".  
 
       Vzor nájomnej zmluvy nájdete napr aj TU.
@@ -57,7 +57,7 @@ steps:
     body: |-
       Najprv si vytvorte konto v systéme parkdots.
 
-      Prejdite na stránku [**pakrdots.com**](https://parkdots.com)
+      Prejdite na stránku [**parkdots.com**](https://parkdots.com)
 
       Vpravo hore kliknite na **Môj účet.**
 
@@ -68,7 +68,7 @@ steps:
       - body: Konto vytvorené
         uuid: f1e2f7b1-e4b0-4b5b-b8d2-172e561bad4f
     uuid: f6263913-84b0-4c9f-905e-6d13be58cf36
-  - title: "Žiadosť o vydanie zľavovej karty "
+  - title: Žiadosť o vydanie zľavovej karty
     body: >-
       Vyplnenie žiadosti:
 
@@ -124,7 +124,7 @@ steps:
     uuid: 8498d6a3-206b-43c0-b808-6d19603da292
   - title: Žiadosť odoslaná
     body: |-
-      Žiadosť a doklady sa odoslali na schovaľovanie.
+      Žiadosť a doklady sa odoslali na schvaľovanie.
 
       Schválenie žiadosti Vám príde **emailom** spolu **s pokynmi na úhradu**.
 

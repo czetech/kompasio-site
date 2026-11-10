@@ -105,7 +105,7 @@ steps:
 
       Pri otázkach:
 
-      *   2, 5 a 12 , ak ste uviedli "ÁNO" pripočítajte za každú odpoveď 1 bod.
+      *   2, 5 a 12, ak ste uviedli "ÁNO" pripočítajte za každú odpoveď 1 bod.
           
       *   pri ostatných otázkach pripočítajte 1 bod za každú odpoveď "NIE".
           
@@ -117,7 +117,7 @@ steps:
     uuid: 89f80e6a-4195-4f70-855a-8fd25587df76
   - title: "Vyhodnotenie M-CHAT "
     body: >-
-      | Skóre | Ďalší posup |
+      | Skóre | Ďalší postup |
 
       | --- | --- |
 
@@ -126,7 +126,7 @@ steps:
       | 3-7 bodov | nutné pokračovať v overovaní v spolupráci s odborníkmi |
 
       | 8-20 bodov | Skríning je pozitívny, dieťa treba odoslať k špecialistom
-      na diagnostiu ohľadom možného PAS (autizmu). |
+      na diagnostiku ohľadom možného PAS (autizmu). |
 
 
       Vysvetlenie:
@@ -170,6 +170,6 @@ steps:
       odkaze.](/zivotne-situacie/diagnostika-autizmu-preco-kde-kedy-ako-a-kto)
 
 
-      Zdroj: [Solen.sk](https://share.google/8pHPgsw026d5qW8NC)
+      Zdroj: [Solen.sk](https://www.solen.sk/storage/file/article/PED_2_2018_final_Hnilicova.pdf)
     uuid: 401232dc-1d70-4957-b14e-8bf70ed59090
 uuid: 63d47c57-cc12-4fd0-9d93-b919ac18895d
