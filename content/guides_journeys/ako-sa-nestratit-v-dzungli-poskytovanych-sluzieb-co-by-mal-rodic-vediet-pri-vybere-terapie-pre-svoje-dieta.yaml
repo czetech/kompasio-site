@@ -8,9 +8,9 @@ description: >-
   Čo by mal rodič vedieť pri výbere terapie pre svoje dieťa. Ponúkame základné
   informácie, ako sa lepšie zorientovať v spleti možností, ktoré existujú.
 steps:
-  - title: "100 + druhov terapií "
+  - title: 100 + druhov terapií
     body: >-
-      Čim viac možností, tým je človek viac paralyzovaný.  
+      Čím viac možností, tým je človek viac paralyzovaný.  
 
       Vybrať terapiu pre svoje dieťa môže byť ako vyraziť na výpravu do pralesa
       bez mapy — veľa ciest, nejasné značky. Neviete, ktorou cestou sa vybrať,
@@ -24,7 +24,7 @@ steps:
       ### Aké možnosti vzdelávania majú odborníci:
 
 
-      Pre lepšie pochopie, ako to môže vyzerať vo svete autizmu (v ponuke
+      Pre lepšie pochopenie, ako to môže vyzerať vo svete autizmu (v ponuke
       **<u>terapií</u>**) pozrime sa na to pomocou príkladov:
 
 
@@ -34,15 +34,15 @@ steps:
               
           *   Je to ako zaplatiť si 2 týždňový kurz cyklistiky - naučia ťa základy, aké časti má bicykel, kde sú brzdy, alebo ako si vymeniť koleso. Ukážu ti, ako môžeš motivovať dieťa a možno sa tu naučíš 1-2 nové techniky, ktoré využiješ v praxi. Rozšíria ti vedomosti, ktoré máš, ale nespraví to z teba profesionálneho inštruktora danej metódy.
               
-          *   Dôležité v tomto prípade je, aké vzdelanie a skúseností má odborník už vo svojom porfóliu. Absolvovanie takýchto kurzov je jednoznačne obohacujúce a odborníci vďaka nim získavajú neustále nové poznatky.
+          *   Dôležité v tomto prípade je, aké vzdelanie a skúsenosti má odborník už vo svojom portfóliu. Absolvovanie takýchto kurzov je jednoznačne obohacujúce a odborníci vďaka nim získavajú neustále nové poznatky.
               
-          *   Zároveň tieto kurzy predstavujú dobrý základ pre odborníkov, ktorý chcú začať využívať novú metódu vo svojej praxi a radi by sa s danou metódou oboznámili.
+          *   Zároveň tieto kurzy predstavujú dobrý základ pre odborníkov, ktorí chcú začať využívať novú metódu vo svojej praxi a radi by sa s danou metódou oboznámili.
               
           *   Záleží, **čo je obsahom kurzu** a **pre koho** je určený. Niektoré sú zamerané:
               
               *   viac pre odborníkov so vzdelaním,
                   
-              *   širokej verenosti (napr. pre rodičov týchto detí a pod.).
+              *   širokej verejnosti (napr. pre rodičov týchto detí a pod.).
                   
           *   Platí, že tieto kurzy sú limitujúce (časom a hĺbkou), preto je kľúčové pozerať sa na to, **kto** kurz absolvoval – nie len **že** ho absolvoval. Je dobré pozrieť si celý príbeh konkrétneho človeka, kým sa k nemu vydáš a odovzdáš mu svoje dieťa.
 
@@ -53,13 +53,13 @@ steps:
               
           *   **Môže ísť o fakt skvelých odborníkov** - znalosti a skúsenosti sa naučili praxou, inšpirovali sa navzájom kolegami či kolegyňami, samoštúdiom alebo skúšaním rôznych techník. Možno absolvovali aj nejaký webinár alebo rýchlokurz.
               
-          *   Títo odborníci si nespravili oficiálne kurz konkrétnej terapie/metódy, avšak môžu mať dlhoročné skúsenosti vďaka práci, ktorú vykonávali.
+          *   Títo odborníci si nespravili oficiálny kurz konkrétnej terapie/metódy, avšak môžu mať dlhoročné skúsenosti vďaka práci, ktorú vykonávali.
               
           *   Tu by mal rodič sledovať okrem iného akú prax má za sebou daný človek a kde všade pôsobil - pomôže to v rozhodovaní, či sa rodič obráti na daného odborníka alebo nie.
 
               
 
-      Aj prvá aj druhá skupina odborníkov môže používať vo svojich popisoch
+      Aj prvá aj druhá skupina odborníkov môže používať vo svojich opisoch
       _využívam "_**_<u>prvky"</u>_** _aba <u>terapie</u>, prvky muzikoterapie_
       a pod.).
 
@@ -101,10 +101,10 @@ steps:
 
 
       *   Ten kto má certifikát, uvádza: _"poskytujem ABA terapiu,
-      muzikuterapie, prípadne som certifikovaná ABA terapeutka a pod. "_
+      muzikoterapiu, prípadne som certifikovaná ABA terapeutka a pod. "_
           
       *   Ten, kto certifikát nemá, by mal uvádzať: _"využívam prvky terapie
-      ABA, prvky muzikoterapie, prvky programu TEACH."_
+      ABA, prvky muzikoterapie, prvky programu TEACCH."_
     uuid: 5b1b9334-c0f2-406a-a740-3a1f70139193
   - title: Čo mám teda hľadať?
     body: >-
@@ -132,7 +132,7 @@ steps:
           
           1.  Môže ísť však o odborníkov, ktorí majú:
               
-              *   vzdelanie napríklad v špeciálnej pedagogike, liečebnej pedagogike, psychológií a iné,
+              *   vzdelanie napríklad v špeciálnej pedagogike, liečebnej pedagogike, psychológii a iné,
                   
               *   absolvované workshopy alebo kratšie kurzy z oblasti danej terapie,
                   
@@ -161,7 +161,7 @@ steps:
 
       3.  Ak už niekto tvrdí, že poskytuje konkrétnu terapiu, mal by to vedieť
       potvrdiť platným certifikátom od príslušnej inštitúcie.  
-          V našej aplikácií Kompasio nájdete [terapeutov s overenými certifikáciami](/app/sk/map/zoznam/?category%5B0%5D=zoznam-certifikovanych-terapeutov) pre niektoré typy terapií.
+          V našej aplikácii Kompasio nájdete [terapeutov s overenými certifikáciami](/app/sk/map/zoznam/?category%5B0%5D=zoznam-certifikovanych-terapeutov) pre niektoré typy terapií.
     uuid: f93dce67-5814-4155-91bc-81064b211d3e
   - title: Alternatívne terapie vs. vedecky podložené metódy
     body: >-
@@ -206,14 +206,14 @@ steps:
 
 
       Je úplne v poriadku skúsiť jednu terapiu a ak sa neujme, vyskúšať inú. Nie
-      je však rozumné aby dieťa absolvovalo 15 rôznych druhov terapií počas
+      je však rozumné, aby dieťa absolvovalo 15 rôznych druhov terapií počas
       jedného týždňa - ani ty sa nenaučíš hovoriť anglicky, ak si si v pondelok
       otvoril angličtinu, utorok čínštinu, stredu fínštinu, štvrtok
       španielčinu.  
 
-      A ako v každom smere, aj tu- treba systém a vytrvalosť.  
+      A ako v každom smere, aj tu – treba systém a vytrvalosť.  
 
-      A počkať nejaké obdobie, či terapie zaberajú (napr. 3- 5 mesiacov).  
+      A počkať nejaké obdobie, či terapie zaberajú (napr. 3 – 5 mesiacov).  
 
       Aj keď chudneš (alebo chceš pribrať), nestane sa tak za noc či týždeň.  
 
